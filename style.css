@@ -17634,3 +17634,53 @@ header.header-1 a:hover {
 .mycen {
     padding-left: 20px;
 }
+
+
+.blogs-container {
+    padding: 30px;
+}
+
+.all-posts {
+    text-align: left;
+    width: 70%;
+}
+
+.all-posts img {}
+
+.blog-post {
+    margin: 80px 0;
+
+}
+
+.blog-heading a {
+    color: white !important;
+    font-weight: 700;
+
+}
+
+.blog-heading {
+    margin: 15px 0;
+}
+
+.blog-heading a:hover {
+    color: #0079ff;
+    font-weight: 700;
+
+}
+
+
+.post_date {
+    background: #086ad7;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.blog-details {
+    margin: 15px 0;
+    color: darkgray;
+}
+
+.mynv {
+    padding-left: 0 !important;
+}
