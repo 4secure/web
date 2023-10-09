@@ -17041,8 +17041,25 @@ h3 {
     background-color: transparent;
 }
 
+#mobile-map {
+    display: none;
+}
+
+#map {
+    display: block;
+}
+
 
 @media (max-width: 767px) {
+
+    #mobile-map {
+        display: block;
+    }
+
+    #map {
+        display: none;
+    }
+
     .hero-3 .single-slide .hero-contents h1 {
         font-size: 59px;
     }
