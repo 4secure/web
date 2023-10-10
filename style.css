@@ -376,13 +376,13 @@ h6 {
 h1 {
     font-size: 42px;
     line-height: 55px;
-    letter-spacing: -3px;
+    letter-spacing: -1px;
 }
 
 @media (max-width: 767px) {
     h1 {
         font-size: 2rem;
-        line-height: 3rem;
+        line-height: 2rem;
     }
 }
 
@@ -400,7 +400,7 @@ h1.fs-lg {
 h2 {
     font-size: 36px;
     line-height: 130%;
-    letter-spacing: -3px;
+    letter-spacing: -1px;
 }
 
 h3 {
@@ -6144,6 +6144,10 @@ header.stop .top-header {
     top: -40px;
     text-transform: uppercase;
     margin: 0px auto;
+}
+
+.myblog span {
+    left: 21%;
 }
 
 @media (max-width: 991px) {
@@ -17060,6 +17064,20 @@ h3 {
         display: none;
     }
 
+    .all-posts {
+        width: 100% !important;
+    }
+
+
+
+    .resources-h {
+        text-align: center !important;
+
+        margin-left: 0 !important;
+    }
+
+
+
     .hero-3 .single-slide .hero-contents h1 {
         font-size: 59px;
     }
@@ -17067,7 +17085,7 @@ h3 {
     h1,
     h2,
     {
-    letter-spacing: -2px;
+    letter-spacing: -1px !important;
 }
 
 .mobile-nav.show {
@@ -17169,6 +17187,20 @@ option {
     font-size: 10px;
 }
 
+
+
+.blog-heading a {
+    font-size: 25px;
+    line-height: 0px;
+    letter-spacing: -1.5px;
+    font-weight: 600;
+}
+
+.myblog span {
+    left: 50%;
+}
+
+
 }
 
 /* Add some basic CSS for styling the dropdown */
@@ -17179,6 +17211,15 @@ option {
     border-radius: 6px;
 }
 
+
+.blog-h {
+    color: lightgray !important;
+}
+
+.resources-h {
+    text-align: left;
+    margin-left: 100px;
+}
 
 
 /* Style for the container that wraps the dropdown and content */
@@ -17638,6 +17679,7 @@ header.header-1 a:hover {
 
 .blogs-container {
     padding: 30px;
+    margin: 60px 0;
 }
 
 .all-posts {

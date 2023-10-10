@@ -457,13 +457,13 @@ Author: RRDevs
     function loader() {
         $(window).on('load', function () {
             // Animate loader off screen
-            $(".preloader").delay(0.2).fadeOut();
+            $(".preloader").delay(0.1).fadeOut();
 
             /*** AOS */
             AOS.init({
                 once: true,
-                offset: 0.1,
-                duration: 0.1,
+                offset: 0.01,
+                duration: 0.01,
             });
         });
     }
