@@ -6134,7 +6134,7 @@ header.stop .top-header {
     font-weight: 900;
     font-size: 120px;
     line-height: 1;
-    color: #111e37;
+    color: gray;
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
