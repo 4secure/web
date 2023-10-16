@@ -11835,19 +11835,19 @@ header.stop .top-header {
 }
 
 .accordion .card-header a:after {
-    content: "⤵";
+    content: "+";
     font-family: "Font Awesome 5 Pro";
     position: absolute;
     right: 0;
     top: 50%;
-    font-weight: 700;
+    font-weight: 900;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    color: #086ad7;
+    color: black;
 }
 
 .accordion .card-header a[aria-expanded=true]:after {
-    content: "⤴";
+    content: "-";
     /* <i class="fal fa-angle-up"></i> */
 }
 
@@ -11866,6 +11866,7 @@ header.stop .top-header {
     padding-left: 28px;
     padding-top: 10px;
     padding-bottom: 30px;
+    text-align: left;
 }
 
 .single-faq-card {
@@ -17422,6 +17423,7 @@ h6 a {
 
 .snip1533 figcaption {
     padding: 13% 10% 12%;
+    height: 425px;
 }
 
 
