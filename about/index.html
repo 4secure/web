@@ -437,15 +437,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                < </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
-    <section class="our-team-wrapper section-padding">
+    <!-- <section class="our-team-wrapper section-padding">
         <div class="container">
             <div class="row align-items-center mb-40">
                 <div class="col-12 col-md-6">
@@ -553,10 +553,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
-    <section class="reviews">
+    <!-- <section class="reviews">
         <div class="container">
             <p id="feedback">Feedback From</p>
             <h2>Our Presitage Customers</h2>
@@ -661,10 +661,93 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+
+    <section class="myabout">
+        <section class="about-us-wrapper section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 col-12 mycenter">
+                        <div class="section-title style-3 mb-30">
+                            <span>about</span>
+                            <!-- <p>SINCE 2018</p> -->
+                            <h1 style="font-size: 38px;">SUCCESSFULLY SERVE IN FOLLOWING INDUSTRIES</h1>
+                        </div>
+
+                        <div class="about-icon-box">
+                            <div class="icon">
+                            </div>
+                            <div class="content">
+                                <h3> <i class="ri-star-line"></i> Financial Sector</h3>
+                                <h3> <i class="ri-star-line"></i> Information Technology</h3>
+                                <h3> <i class="ri-star-line"></i> Small/Medium Business</h3>
+                                <h3> <i class="ri-star-line"></i> Telecommunication</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-xl-6 col-12 offset-xl-1">
+                        <div class="consultations-form style-2 bg-cover"
+                            style="background-image: url('assets/img/cs-form-bg.jpg')">
+                            <h1>Let's Get Connected</h1>
+                            <form id="myForm" action="#">
+                                <div class="input-box">
+                                    <input id="myname" type="text" placeholder="Your Name ">
+                                    <div class="error name-error" id="nameError"></div>
+                                </div>
+                                <div class="input-box">
+                                    <input id="Email" type="email" placeholder="Your Email">
+                                    <div class="error name-error" id="emailError"></div>
+                                </div>
+
+
+
+
+                                <!-- <label for="meetingSelector">Meeting Scheduling For :</label> -->
+                                <div class="input-box">
+                                    <div class="dropdown-container" id="meeting-dropdown">
+                                        <select id="meetingSelector">
+                                            <option value="" disabled selected>Meeting Scheduleing For</option>
+                                            <option value="cyberSecurity">Cyber Security</option>
+                                            <option value="digitalMarketing">Digital Marketing</option>
+                                            <option value="appDevelopment">App Development</option>
+                                            <option value="webDevelopment">Web Development</option>
+                                            <option value="consulting">Consulting</option>
+                                            <option value="training">Training</option>
+                                            <option value="other">Other</option>
+                                        </select>
+
+                                        <!-- <div class="content-below-dropdown">
+                                                                            
+                                                                        </div> -->
+                                    </div>
+                                    <div class="error name-error" id="serviceError"></div>
+                                </div>
+
+
+                                <div class="input-box">
+                                    <textarea id="mymassage" placeholder="Write a short message"></textarea>
+                                    <div class="error sms-error" id="messageError"></div>
+                                </div>
+
+                                <button class="theme-btn" type="submit" id="popupBtn">Schedule a meeting<i
+                                        class="ri-arrow-right-line"></i></button>
+
+                                <!-- Popup content -->
+                                <div class="popup" id="popup">
+                                    <div class="checkmark"><i class="ri-check-fill"></i></div>
+                                    <p class="ourteam">Our Team will contact with you shortly</p>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
-
-
-
 
 
 
@@ -778,6 +861,8 @@
         integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+
+
     <script>
         $('.review-slide').slick({
             dots: true,
@@ -818,6 +903,154 @@
                 ]
         });
     </script>
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("rmGtkOdeZtt1VeBKM");
+        })();
+    </script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script>
+
+        function popUp() {
+
+            // Display a success toast, with a title
+            // toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+
+            Command: toastr["success"]("Our Team Will Contact You", "Thank You")
+
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": true,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+
+        }
+
+
+
+        function sendemail() {
+
+
+
+            var templateParams = {
+                name: document.getElementById("myname").value,
+                email: document.getElementById("Email").value,
+                option: document.getElementById("meetingSelector").value,
+                massage: document.getElementById("mymassage").value,
+
+
+            };
+
+            emailjs.send('service_5yo235q', 'template_9qdsjyw', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+        }
+
+
+        const form = document.getElementById('myForm');
+        const nameInput = document.getElementById('myname');
+        const emailInput = document.getElementById('Email');
+        const serviceSelect = document.getElementById('meetingSelector');
+        const messageTextarea = document.getElementById('mymassage');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const serviceError = document.getElementById('serviceError');
+        const messageError = document.getElementById('messageError');
+        const formBtn = document.getElementById('popupBtn');
+        const serviceBorder = document.getElementById('meeting-dropdown');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Name validation (non-empty)
+            if (nameInput.value.trim() === '') {
+                nameError.style.display = 'block';
+                nameError.textContent = 'Name is required';
+                nameInput.style.border = '2px solid red';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+                nameInput.style.border = 'none';
+            }
+
+            // Email validation (valid email format)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value.trim())) {
+                emailError.style.display = 'block';
+                emailError.textContent = 'Enter a valid email address';
+                emailInput.style.border = '2px solid red';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+                emailInput.style.border = 'none';
+            }
+
+            // Service selection validation
+            if (serviceSelect.value === '') {
+                serviceError.style.display = 'block';
+                serviceError.textContent = 'Select a service';
+                serviceBorder.style.border = '2px solid red';
+                isValid = false;
+            } else {
+                serviceError.style.display = 'none';
+                serviceBorder.style.border = 'none';
+            }
+
+            // Message validation (non-empty)
+            if (messageTextarea.value.trim() === '') {
+                messageError.style.display = 'block';
+                messageError.textContent = 'Message is required';
+                messageTextarea.style.border = '2px solid red';
+                isValid = false;
+            } else {
+                messageError.style.display = 'none';
+                messageTextarea.style.border = 'none';
+            }
+
+            if (isValid) {
+                // If all validations pass, you can submit the form or perform other actions.
+                // For this example, we'll just log a success message.
+                console.log('Form submitted successfully!');
+                sendemail()
+                popUp()
+
+                setTimeout(() => {
+                    window.location.reload(true);
+
+                }, 2000);
+
+            }
+        });
+
+
+    </script>
+
 
 </body>
 
