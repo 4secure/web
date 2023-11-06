@@ -6179,7 +6179,7 @@ header.stop .top-header {
 
 .section-title h1 {
     line-height: 50px;
-    font-weight: 900;
+    font-weight: 500;
     text-transform: capitalize;
 }
 
@@ -13547,6 +13547,7 @@ header.stop .top-header {
     margin-bottom: 30px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    height: 230px;
 }
 
 @media (max-width: 585px) {
@@ -17192,7 +17193,7 @@ option {
     font-size: 25px;
     line-height: 0px;
     letter-spacing: -1.5px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .myblog span {
@@ -17702,8 +17703,7 @@ header.header-1 a:hover {
 
 .blog-heading a {
     color: white !important;
-    font-weight: 700;
-
+    font-weight: 500;
 }
 
 .blog-heading {
@@ -17711,9 +17711,7 @@ header.header-1 a:hover {
 }
 
 .blog-heading a:hover {
-    color: #0079ff;
-    font-weight: 700;
-
+    font-weight: 500 !important;
 }
 
 
