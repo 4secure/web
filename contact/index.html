@@ -578,6 +578,7 @@
             </div>
         </div>
     </footer>
+    <button onclick="popUp()">pop up</button>
 
     <!--  ALl JS Plugins
     ====================================== -->
@@ -649,14 +650,14 @@
 
 
 
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
         (function () {
-            emailjs.init("rmGtkOdeZtt1VeBKM");
+            emailjs.init("SbcGkszdCFG95lmBg");
         })();
     </script>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -668,14 +669,14 @@
             // Display a success toast, with a title
             // toastr.success('Have fun storming the castle!', 'Miracle Max Says')
 
-            Command: toastr["success"]("Our Team Will Contact You", "Thank You")
+            Command: toastr["success"]("Our Team Will Contact You", "Thank you ")
 
             toastr.options = {
                 "closeButton": true,
                 "debug": false,
                 "newestOnTop": false,
                 "progressBar": true,
-                "positionClass": "toast-top-right",
+                "positionClass": "toast-top-center",
                 "preventDuplicates": true,
                 "onclick": null,
                 "showDuration": "300",
@@ -687,7 +688,6 @@
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             }
-
         }
 
 
@@ -705,7 +705,7 @@
 
             };
 
-            emailjs.send('service_5yo235q', 'template_9qdsjyw', templateParams)
+            emailjs.send('service_0yjs49l', 'template_iso8i9t', templateParams)
                 .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
                 }, function (error) {
