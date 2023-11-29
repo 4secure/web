@@ -11622,7 +11622,12 @@ header.stop .top-header {
     .funfact-wrapper_2 .funfact-content-grid {
         padding-bottom: 80px;
     }
+
+    .header-btn-cta {
+        display: none;
+    }
 }
+
 
 .funfact-wrapper_2 .single-funfact-item h3 {
     font-family: "Circular Std", sans-serif;
@@ -17769,6 +17774,148 @@ header.header-1 a:hover {
 
     .main {
         display: block;
+        background-color: #2b4d8d;
+        color: white;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .links a {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: "circular std", sans-serif;
+    }
+
+    .link-icon {
+        padding: 20px 40px;
+        display: flex;
+        gap: 30px;
+        margin: 10px 0px 0 30px;
+    }
+
+    .link-icon:hover {
+
+        background-color: #6ec0fb4f;
+    }
+
+
+    .icon-home {
+        background-color: #6ec0fb4f;
+        border-bottom-left-radius: 10px 10px;
+        border-top-left-radius: 10px 10px;
+        margin-right: 0;
+    }
+
+    .link-icon i {
+        font-size: 30px;
+    }
+
+    .nav-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .nav-title span {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "circular std", sans-serif;
+        padding: 35px 0 0 20px;
+        text-transform: capitalize;
+    }
+
+    .nav-title i {
+        font-size: 50px;
+        margin-top: 38px;
+    }
+
+    .bottom-link {
+        margin: 10px 5px 0 30px;
+        text-align: left;
+    }
+
+    .bottom-link a {
+        display: block;
+        padding: 10px 0 0 20px;
+        margin: 5px 5px 0 -70px;
+        text-align: center;
+    }
+
+    .bottom-link .nav-btn {
+        font-size: 17px;
+        font-weight: 600;
+        font-family: "circular std", sans-serif;
+        background-color: #060404d5;
+        border-radius: 10px;
+        margin: 3px 70px;
+        padding: 20px;
+        margin-top: 30px;
+        text-align: center;
+        transform: translatex(-10%);
+    }
+
+    .bottom-link-title {
+        padding-top: 10px;
+    }
+
+    .bottom-link-title span {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "circular std", sans-serif;
+        padding: 45px 0 0 20px;
+        text-transform: capitalize;
+    }
+
+    .mob-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999999;
+        width: 0px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .on-menu {
+        width: 100%;
+    }
+}
+
+
+
+
+@media (max-width: 1200px) {
+
+    .header-btn-cta,
+    a.theme-btn {
+        display: none;
+    }
+
+    .mobile-view {
+        width: 0;
+        position: fixed;
+        top: 0;
+        z-index: 99999;
+        left: 0;
+        height: 100vh;
+        transition: 0.8s;
+        overflow: hidden;
+    }
+
+    .menu-on {
+        width: 100vw;
+    }
+
+    .main {
+        display: block;
+        max-width: 500px;
         background-color: #2b4d8d;
         color: white;
         width: 100vw;
