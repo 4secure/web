@@ -1,864 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- ========== Meta Tags ========== -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="modinatheme">
-    <!-- ======== Page title ============ -->
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/images/logo icon.png"
+    />
     <title>4 Secure - Blogs</title>
-    <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="/images/logo icon.png">
-    <img src="" alt="">
-    <!-- ===========  All Stylesheet ================= -->
-    <!--  Icon css plugins -->
-    <link rel="stylesheet" href="/assets/icons.css">
-    <!--  animate css plugins -->
-    <link rel="stylesheet" href="/assets/animate.css">
-    <!--  magnific-popup css plugins -->
-    <link rel="stylesheet" href="/assets/magnific-popup.css">
-    <!--  owl carosuel css plugins -->
-    <link rel="stylesheet" href="/assets/owl.carousel.min.css">
-    <!-- metis menu css file -->
-    <link rel="stylesheet" href="/assets/metismenu.css">
-    <!--  owl theme css plugins -->
-    <link rel="stylesheet" href="/assets/owl-theme.css">
-    <!--  Bootstrap css plugins -->
-    <link rel="stylesheet" href="/assets/Bootstrap.css">
-    <!--  main style css file -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/assets/css/plugins/fontawesome-6.css" />
+    <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="/assets/css/vendor/metismenu.css" />
+    <link rel="stylesheet" href="/assets/css/plugins/animate.min.css" />
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
 
-    <!-- template main style css file -->
-    <link rel="stylesheet" href="/assets/style.css">
+  <body class="inner-page">
+    <!-- Scripts style two -->
+    <header class="header-area header-one header--sticky">
+      <div class="header-container-one container "style="padding: 25px 10px">
+        <div class="header-wrapper">
+          <a href="/" class="logo">
+            <img
+              src="/assets/images/four secure new logo.png"
+              width="150px"
+              alt="logo"
+            />
+          </a>
+          <div class="header-right">
+            <nav class="nav-area drop-down-rts">
+              <ul class="navbar-nav-1">
+                <li class="menu-item main-nav-on">
+                  <a class="menu-link" href="/"
+                    ><span class="rolling-text">Home</span></a
+                  >
+                </li>
+                <li class="menu-item main-nav-on">
+                  <a class="menu-link" href="/About/"
+                    ><span class="rolling-text">About</span></a
+                  >
+                </li>
+                <li class="menu-item main-nav-on">
+                  <a class="menu-link" href="/Services/"
+                    ><span class="rolling-text">Services</span></a
+                  >
+                </li>
+                <li class="menu-item main-nav-on">
+                  <a class="menu-link" href="/Blogs/"
+                    ><span class="rolling-text">Blogs</span></a
+                  >
+                </li>
+                <li class="menu-item main-nav-on">
+                  <a class="menu-link" href="/Contact/"
+                    ><span class="rolling-text">Contact</span></a
+                  >
+                </li>
+              </ul>
+            </nav>
 
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-
-<body class="body-wrapper">
-
-    <div class="mob-menu">
-        <div class="main">
-            <div class="nav-title">
-                <span>menu</span>
-                <i id="close" class="ri-close-line"></i>
-            </div>
-            <div class="links">
-                <div class="link-icon ">
-                    <i class="ri-home-2-line"></i>
-                    <a href="/"> Home</a>
+            <div class="action-area">
+              <div class="search-icon-header">
+                <div class="icon search-click">
+                  <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 21 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.5547 17.8516C20.1113 18.4453 20.1113 19.373 19.5547 19.9668C18.9609 20.5234 18.0332 20.5234 17.4395 19.9668L13.0234 15.5137C11.502 16.5156 9.64648 17.0352 7.64258 16.7754C4.22852 16.293 1.48242 13.5098 1.03711 10.1328C0.40625 5.08594 4.67383 0.818359 9.7207 1.44922C13.0977 1.89453 15.8809 4.64062 16.3633 8.05469C16.623 10.0586 16.1035 11.9141 15.1016 13.3984L19.5547 17.8516ZM3.93164 9.09375C3.93164 11.7285 6.04688 13.8438 8.68164 13.8438C11.2793 13.8438 13.4316 11.7285 13.4316 9.09375C13.4316 6.49609 11.2793 4.34375 8.68164 4.34375C6.04688 4.34375 3.93164 6.49609 3.93164 9.09375Z"
+                      fill="white"
+                    />
+                  </svg>
                 </div>
-                <div class="link-icon ">
-                    <i class="ri-database-line"></i>
-                    <a href="/about/"> About</a>
-                </div>
-                <div class="link-icon">
-                    <i class="ri-customer-service-2-line"></i>
-                    <a href="/services/"> Service</a>
-                </div>
-                <div class="link-icon icon-home">
-                    <i class="ri-pages-line"></i>
-                    <a href="/blogs/"> Blog</a>
-                </div>
-                <div class="link-icon">
-                    <i class="ri-contacts-line"></i>
-                    <a href="/contact/"> Contact us</a>
-                </div>
-                <div class="bottom-link">
-                    <div class="bottom-link-title">
-                        <span>info</span>
+                <div class="search-offcanvas-wrapper">
+                  <div class="inner">
+                    <div class="close-icon-search">
+                      <i class="far fa-times"></i>
                     </div>
-                    <a href="mailto:info@4secu.com"><i class="ri-mail-line"></i>
-                        info@4secu.com</a>
-                    <a href="tel:+923307083831"><i class="ri-phone-line"></i>+92 330 7083831</a>
-                    <a href="/contact/" class="nav-btn">Consultancy</a>
+                    <form action="#">
+                      <h4 class="text-center">Search on this Page</h4>
+                      <input
+                        type="text"
+                        placeholder="Search Your Result"
+                        required
+                      />
+                      <button>
+                        <i class="fa-light fa-magnifying-glass"></i>
+                      </button>
+                    </form>
+                  </div>
                 </div>
+              </div>
+              <div class="menu-btn">
+                <div class="rts-offcanvas-wrapper">
+                  <div class="container-menu">
+                    <div class="action-menu">
+                      <div class="close-event"></div>
+                      <div class="open-event">
+                        <!-- <div class="text">
+                        <span>Menu</span>
+                        <span>Close</span>
+                    </div> -->
+                        <div class="burger">
+                          <svg
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="icon-close"
+                            data-v-649bbaab=""
+                          >
+                            <line
+                              x1="13.788"
+                              y1="1.28816"
+                              x2="1.06011"
+                              y2="14.0161"
+                              stroke="currentColor"
+                              stroke-width="1.2"
+                            ></line>
+                            <line
+                              x1="1.06049"
+                              y1="1.43963"
+                              x2="13.7884"
+                              y2="14.1675"
+                              stroke="currentColor"
+                              stroke-width="1.2"
+                            ></line>
+                          </svg>
+                          <svg
+                            viewBox="0 0 18 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="icon-burger"
+                            data-v-649bbaab=""
+                          >
+                            <line
+                              x1="18"
+                              y1="0.6"
+                              y2="0.6"
+                              stroke="currentColor"
+                              stroke-width="1.2"
+                              data-v-649bbaab=""
+                            ></line>
+                            <line
+                              x1="18"
+                              y1="5.7167"
+                              y2="5.7167"
+                              stroke="currentColor"
+                              stroke-width="1.2"
+                              data-v-649bbaab=""
+                            ></line>
+                            <line
+                              x1="18"
+                              y1="10.8334"
+                              y2="10.8334"
+                              stroke="currentColor"
+                              stroke-width="1.2"
+                              data-v-649bbaab=""
+                            ></line>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rts-fs-menu">
+                    <div class="rts-fs-container row">
+                      <div class="rts-fs--nav col-12 col-md-6">
+                        <ul class="navbar-nav-button">
+                          <li class="menu-item">
+                            <a href="/">HOME</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="/About/">About US</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="/Services/">Service</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="/Blogs/">Blogs</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="/Contact/">Contact</a>
+                          </li>
+                        </ul>
+                      </div>
 
-            </div>
-        </div>
-    </div>
-
-    <div id="preloader" class="preloader">
-        <div class="animation-preloader">
-            <!-- <div class="spinner">
-                </div>
-                <div class="txt-loading">
-                    <span data-text-preloader="4" class="letters-loading">
-                        4
-                    </span>
-                    <span data-text-preloader="S" class="letters-loading">
-                        S
-                    </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                    <span data-text-preloader="C" class="letters-loading">
-                        C
-                    </span>
-                    <span data-text-preloader="U" class="letters-loading">
-                        U
-                    </span>
-                    <span data-text-preloader="R" class="letters-loading">
-                        R
-                    </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                </div> -->
-            <div class="loading-logo">
-                <img width="400px" src="/images/Loading.gif" alt="">
-            </div>
-            <!-- <p class="text-center">Loading</p> -->
-        </div>
-        <div class="loader">
-            <div class="row">
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- welcome content start from here -->
-
-    <header class="header-wrap header-2">
-        <div class="top-header d-none d-md-block" style="margin-top: -32px !important;">
-            <div class="container-flud">
-                <div class="row">
-                    <div class="col-md-7 pr-md-0 col-12">
-                        <div class="header-cta">
-                            <ul>
+                      <div class="rts-fs--contacts col-12 col-md-6">
+                        <div class="contact-inner">
+                          <div class="contact-information">
+                            <h2 class="heading-title">Our Office</h2>
+                            <div class="address">
+                              <ul>
                                 <li>
-                                    <a href="mailto:info@4secu.com"><i class="ri-mail-line"></i>
-                                        info@4secu.com</a>
+                                  <p>605, Park Avenue, Silicon Oasis,</p>
                                 </li>
                                 <li>
-                                    <a href="tel:+923307083831"><i class="ri-phone-line"></i>+92 330 7083831</a>
+                                  <p>DSO. Dubai</p>
                                 </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-12">
-                        <div class="header-right-cta d-flex justify-content-end">
-                            <div class="social-profile mr-30">
-                                <a target="_blank" href="https://www.facebook.com/foursecure/"><i
-                                        class="ri-facebook-circle-fill"></i></a>
-                                <a target="_blank" href="https://www.instagram.com/four_secure/"><i
-                                        class="ri-instagram-fill"></i></a>
-                                <a target="_blank" href="https://www.linkedin.com/company/foursecure"><i
-                                        class="ri-linkedin-box-fill"></i></a>
-                                <a target="_blank" href="https://twitter.com/FourSecure"><i
-                                        class="ri-twitter-x-fill"></i></a>
+                              </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="main-header-wraper">
-            <div class="container">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="header-logo">
-                        <div class="logo">
-                            <a href="/">
-                                <img src="/images/four secure new logo.png" alt="" width="170px">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header-menu d-none d-xl-block">
-                        <div class="main-menu">
-                            <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/about/">About</a></li>
-                                <li><a href="/services/">Services</a></li>
-                                <li><a href="/blogs/">Blogs</a></li>
-                                <li><a href="/contact/">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header-right d-flex align-items-center">
-                        <div class="header-btn-cta">
-                            <a href="/contact/" class="theme-btn">Consultancy <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                        <div class="mobile-nav-bar d-block ml-3 ml-sm-5 d-xl-none">
-                            <div class="mobile-nav-wrap">
-                                <div id="hamburger">
-                                    <i class="fal fa-bars"></i>
-                                </div>
-                                <!-- mobile menu - responsive menu  -->
-                                <!-- <div class="mobile-nav">
-                                    <button type="button" class="close-nav">
-                                        <i class="fal fa-times-circle"></i>
-                                    </button>
-                                    <nav class="sidebar-nav">
-                                        <ul class="metismenu" id="mobile-menu">
-                                            <li><a href="/">Home</a></li>
-                                            <li><a href="/about/">About</a></li>
-                                            <li><a href="/services/">Services</a></li>
-                                            <li><a href="/blogs/">blogs</a></li>
-                                            <li><a href="/contact/">Contact</a></li>
-                                        </ul>
-                                    </nav>
-
-                                    <div class="action-bar">
-                                        <a href="mailto:modinatheme@gmail.com"><i
-                                                class="fal fa-envelope-open-text"></i>info@4secu.com</a>
-                                        <a href="tel:123-456-7890"><i class="fal fa-phone"></i>+971 4 587 6937</a>
-                                        <a href="/contact/" class="d-btn theme-btn black">Consultancy</a>
-                                    </div>
-                                </div> -->
+                          </div>
+                          <div class="contact-information">
+                            <h2 class="heading-title">Get In Touch</h2>
+                            <div class="contact">
+                              <ul>
+                                <li>
+                                  <a href="mailto:info@4secu.com" class="mail"
+                                    >info@4secu.com</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href="tel:+971554300975"
+                                    class="number"
+                                    style="
+                                      display: block;
+                                      width: max-content !important;
+                                      visibility: visible !important;
+                                    "
+                                  >
+                                    +971 55 430 0975</a
+                                  >
+                                </li>
+                              </ul>
                             </div>
-                            <!-- <div class="overlay"></div> -->
+                            <div class="rts-social-area-one">
+                              <ul>
+                                <li>
+                                  <a
+                                    href="https://www.facebook.com/foursecure/"
+                                    target="_blank"
+                                    ><i class="fa-brands fa-facebook-f"></i
+                                  ></a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="https://www.instagram.com/four_secure/"
+                                    target="_blank"
+                                    ><i class="fa-brands fa-instagram"></i
+                                  ></a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="https://www.linkedin.com/company/98358151/admin/feed/posts/"
+                                    target="_blank"
+                                    ><i class="fa-brands fa-linkedin-in"></i
+                                  ></a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="https://twitter.com/FourSecure"
+                                    target="_blank"
+                                    ><i class="fa-brands fa-twitter"></i
+                                  ></a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </header>
-    <section class="page-banner-wrap bg-cover" style="background-image: url(/images/header.jpg)">
-        <div class="banner-text">Blogs</div>
-        <div class="container">
-            <div class="row align-items-center mycen">
-                <div class="col-md-12 col-12">
-                    <div class="page-heading text-white">
-                        <div class="page-title">
-                            <h1>Blogs</h1>
-                        </div>
-                    </div>
+    <!-- header area two end -->
+    <div
+      class="rts-banner-area-three-start rts-scroll-down-circle-wrapper-2 rts-scroll-down-circle-wrapper"
+    >
+      <!-- banner shape area -->
+      <div class="banner-shape-area">
+        <img src="/assets/images/banner/21.jpg" alt="banner" />
+      </div>
 
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">blogs</li>
-                        </ol>
-                    </nav>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-6 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2"
+          >
+            <div class="banner-content-wrapper-three">
+              <h2 class="title rts_hero__title">
+                BLOGS 
+              </h2>
+              <p class="disc hero__sub-title">
+                Four Secure, your cybersecurity partner, delivers tailored
+                solutions for diverse industries. With a dedicated team of
+                experts, we ensure digital safety and success.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-1 pt--150"
+          >
+            <div class="thumbnail-img-banner-three rts-reveal-one"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- social share banner left three end -->
+    </div>
+    <!-- header area two end -->
+    <!-- Scripts style two End -->
+
+    <!-- blog post area inner  start-->
+    <div class="blog-list-area pb--120 pt--80">
+      <div class="container rts-section-gap">
+        <div class="row">
+          <div class="col-lg-12" id="bCard">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- blog post area inner end -->
+
+    <!-- Footer style two -->
+    <!-- rts footer two area start -->
+    <div class="rts-footer-area-one rts-section-gapTop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="grid-lines-wrapper">
+              <div class="grid-lines">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row rts-section-gapBottom">
+          <div class="col-lg-12">
+            <div class="footer-main-wrapper-one">
+              <!-- footer left area start -->
+              <div class="footer-left-area">
+                <a href="/" class="logo-footer">
+                  <img
+                    src="/assets/images/four secure new logo.png"
+                    style="width: 180px"
+                  />
+                </a>
+                <p class="disc">
+                  Four Secure, your cybersecurity <br />
+                  partner, delivers tailored solutions for diverse <br />
+                  industries. With a dedicated team <br />
+                  of experts, we ensure digital safety and success.
+                </p>
+                <div class="rts-social-area-one">
+                  <ul>
+                    <li>
+                      <a
+                        target="”_blank”"
+                        href="https://www.facebook.com/foursecure/"
+                        ><i class="fa-brands fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        target="”_blank”"
+                        href="https://www.instagram.com/four_secure/"
+                        ><i class="fa-brands fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        target="”_blank”"
+                        href="https://www.linkedin.com/company/98358151/admin/feed/posts/"
+                        ><i class="fa-brands fa-linkedin-in"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a target="”_blank”" href="https://twitter.com/FourSecure"
+                        ><i class="fa-brands fa-twitter"></i
+                      ></a>
+                    </li>
+                  </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container blogs-container">
-            <div class="section-title myblog style-3 text-center">
-                <span class="blog-h">blogs</span>
-                <h1 class="resources-h">Resources</h1>
-            </div>
-            <div class="all-posts">
-                <article class="blog-post">
-                    <a href="cybersecurity for startups/"
-                        title="Navigating The Digital Jungle: Cybersecurity Essentials For Startups">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/cybersecurity for startups.jpg"
-                                alt="Navigating The Digital Jungle: Cybersecurity Essentials For Startups">
-
-                        </figure>
-
+              </div>
+              <!-- footer left area end -->
+              <!-- footer single wized start -->
+              <div class="footer-single-wized-start">
+                <h5 class="title">Links</h5>
+                <ul class="footer-nav">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/About/">About</a></li>
+                  <li><a href="/Services/">Services</a></li>
+                  <li><a href="/Blogs/">Blog</a></li>
+                  <li><a href="/Contact/">Contact</a></li>
+                </ul>
+              </div>
+              <!-- footer single wized end -->
+              <!-- footer single wized start -->
+              <div class="footer-single-wized-start">
+                <h5 class="title">Contact Info</h5>
+                <div class="mail-contact-area">
+                  <div class="single-con-info mb--40">
+                    <a href="#">
+                      605, Park Avenue, Silicon Oasis, DSO. Dubai
                     </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="cybersecurity for startups/">Navigating The Digital
-                                Jungle: Cybersecurity Essentials For Startups
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Feb
-                                20,2024</span>
-
-                        </div>
-                        <p class="blog-details">
-                            Hey there, fellow entrepreneurs! If you're diving into the exciting world of startups.
-                            You're likely juggling a million
-                            things at once – from product development to marketing strategies. But amidst the chaos of
-                            launching your dream venture.
-                            There's one crucial aspect you can't afford to overlook: cybersecurity for startups. It's
-                            imperative to safeguard your
-                            digital assets and customer data right from the start. As a breach could be detrimental to
-                            your fledgling business. So,
-                            while you're hustling to bring your vision to life, make sure to prioritize cybersecurity
-                            measures to protect your
-                            company and its future success.💻🔒
-                        </p>
-                        <p>
-                            <a href="cybersecurity for startups/" class="theme-btn minimal-btn "
-                                style="color: white;">Read
-                                More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Guarding against insider threats/" title="Guarding against insider threats">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/insider Threats.png" alt="Guarding against insider threats">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="Guarding against insider threats/">Guarding against insider
-                                threats
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Jan
-                                10,2024</span>
-
-                        </div>
-                        <p class="blog-details">
-                            In a period dominated by digital advancements, associations are constantly challenged to
-                            fortify their cybersecurity
-                            measures against an array of pitfalls. While external pitfalls like malware and phishing
-                            attacks frequently take centre
-                            stage, it's pivotal not to overlook the implicit pitfalls that may lurk within an
-                            association – bigwig pitfalls. These
-                            pitfalls, forming from workers, contractors, or other trusted individualities, pose a
-                            significant peril to the security
-                            and integrity of sensitive data. In this blog, we will claw into the significance of
-                            guarding against bigwig pitfalls
-                            and how our cybersecurity services can help fortify your association's internal
-                            defences.💻🔒
-                        </p>
-                        <p>
-                            <a href="Guarding against insider threats/" class="theme-btn minimal-btn "
-                                style="color: white;">Read
-                                More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Cybersecurity Mindset Stay Vigilant/" title="Cybersecurity Mindset: Stay Vigilant!">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/cybersecurity mindset.jpg" alt="Cybersecurity Mindset: Stay Vigilant!">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="Cybersecurity Mindset Stay Vigilant/">Cybersecurity
-                                Mindset: Stay Vigilant!
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Jan
-                                01,2024</span>
-
-                        </div>
-                        <p class="blog-details">
-                            The significance of cybersecurity in a time when our daily lives are deeply entwined with
-                            the digital web cannot be
-                            emphasized. Data is the new currency in our world, but sadly, not everyone is looking out
-                            for our best interests. For
-                            this reason, cybersecurity mindset: stay vigilant!🌎🚀
-                        </p>
-                        <p>
-                            <a href="Cybersecurity Mindset Stay Vigilant/" class="theme-btn minimal-btn "
-                                style="color: white;">Read More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Combining Biometrics and Cybersecurity to Strengthen Security via Synergy/"
-                        title="Biological Security: Combining Biometrics and Cybersecurity to Strengthen Security via Synergy">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/Biometrics-01.jpg"
-                                alt="Biological Security: Combining Biometrics and Cybersecurity to Strengthen Security via Synergy">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a
-                                href="Combining Biometrics and Cybersecurity to Strengthen Security via Synergy/">Biological
-                                Security: Combining Biometrics and Cybersecurity to Strengthen Security via Synergy
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Dec
-                                15,2023</span>
-
-                        </div>
-                        <p class="blog-details">
-                            There is a greater need than ever for strong security measures in the constantly-changing
-                            world of digital dangers. The
-                            combination of cybersecurity and biometrics appears as a potent coalition as we negotiate
-                            the intricacies of the
-                            contemporary world, providing a comprehensive strategy for protecting our most precious
-                            resources. This blog delves into
-                            the ways that biological security might strengthen our defenses against a variety of cyber
-                            attacks as it examines the
-                            synergy between biometrics and cybersecurity.🌎🚀
-                        </p>
-                        <p>
-                            <a href="Combining Biometrics and Cybersecurity to Strengthen Security via Synergy/"
-                                class="theme-btn minimal-btn " style="color: white;">Read
-                                More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Exposing Cybercrime as a Service (CaaS)/"
-                        title="Exposing Cybercrime as a Service (CaaS): An Increasing Danger in the Digital Era">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/Cass LI.png"
-                                alt="Exposing Cybercrime as a Service (CaaS): An Increasing Danger in the Digital Era">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="Exposing Cybercrime as a Service (CaaS)/">Exposing Cybercrime
-                                as a Service (CaaS): An Increasing Danger in the Digital Era
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Nov
-                                14,2023</span>
-
-                        </div>
-                        <p class="blog-details">A concerning development in the constantly changing field of
-                            cybersecurity is the emergence of Cybercrime as a Service (CaaS). 💻🔒 <br>
-                            Cybercriminals use this devious behavior to facilitate the initiation of assaults by
-                            providing a variety of
-                            unlawful services. As a result of CaaS's growth, entrance barriers for would-be hackers have
-                            been greatly reduced,
-                            giving them access to sophisticated tools and methods without requiring highly developed
-                            technical knowledge. This blog
-                            delves into the sneaky realm of CaaS, illuminating its workings, consequences, and threats
-                            to our online safety.🌎🚀
-                        </p>
-                        <p>
-                            <a href="Exposing Cybercrime as a Service (CaaS)/" class="theme-btn minimal-btn "
-                                style="color: white;">Read
-                                More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="OT ICS Cybersecurity/" title="OT/ICS Cybersecurity: The next big target of Pakistan">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/OT  ICS cybersecurity.png"
-                                alt="OT/ICS Cybersecurity: The next big target of Pakistan">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="OT ICS Cybersecurity/">OT/ICS Cybersecurity: The next big
-                                target of Pakistan
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Nov
-                                06,2023</span>
-
-                        </div>
-                        <p class="blog-details">The next big target of Pakistan. 🌍
-                            Pakistan's first-ever OT/ICS Cybersecurity conference organized by ACET Solutions brought
-                            together industry experts.
-
-                            Operational Technology (OT) and Industrial Control Systems (ICS) cybersecurity is a critical
-                            field that focuses on
-                            securing the technology and systems used in industrial and critical infrastructure settings.
-                            🚀 💻
-                            <br>
-
-                            This evolving field is due to the increasing sophistication of cyber threats. It requires a
-                            combination of technical
-                            measures, policies, and human awareness to maintain a secure industrial control system
-                            environment. 🌐
-                        </p>
-                        <p>
-                            <a href="OT ICS Cybersecurity/" class="theme-btn minimal-btn " style="color: white;">Read
-                                More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="The Impact of 5G on Cybersecurity/"
-                        title="A New Era of Challenges and Opportunities: The Impact of 5G on Cybersecurity">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/Impact-of-5g-on-cyuber-security.png"
-                                alt="The Impact of 5G on cyberSecurity">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="The Impact of 5G on Cybersecurity/">A New Era of Challenges
-                                and Opportunities: The Impact of 5G on Cybersecurity
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Oct
-                                20,2023</span>
-
-                        </div>
-                        <p class="blog-details">With higher data rates, lower latency, and a variety of cutting-edge
-                            applications promised by the deployment of 5G
-                            technology, telecommunications capabilities will see a considerable improvement. But hidden
-                            under the attraction of
-                            quicker connections and fresh opportunities is a complicated web of cybersecurity issues.
-                            The tremendous effects of 5G
-                            technology on cybersecurity and how it is changing the security environment will be
-                            discussed in this blog article.</p>
-                        <p>
-                            <a href="The Impact of 5G on Cybersecurity/" class="theme-btn minimal-btn "
-                                style="color: white;">Read More
-                                <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Quantum Computing's Growing Threat/"
-                        title="Untangling the Mysteries: Quantum Computing's Growing Threat">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/Quantum computing (1).png" alt="threat of quantum computing">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="Quantum Computing's Growing Threat/">Untangling the
-                                Mysteries: Quantum Computing's Growing Threat
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Oct
-                                17,2023</span>
-
-                        </div>
-                        <p class="blog-details">In a world where technical progress rules, a quiet revolution is
-                            unfolding that might upend the fundamentals of our
-                            digital security and encryption. Our world is about to undergo a transformation we never
-                            could have imagined thanks to
-                            quantum computing, a cutting-edge area that blends computer science with quantum physics
-                            concepts. However, tremendous
-                            power also comes with great responsibility, and the IT community is beginning to agree that
-                            this marvel of modern
-                            technology also poses a rising threat.</p>
-                        <p>
-                            <a href="Quantum Computing's Growing Threat/" class="theme-btn minimal-btn "
-                                style="color: white;">Read More <i class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Raise of deep/" title="A New Frontier in the Digital Age: The Rise of Deepfake Technology
-                ">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="../images/deepfakes.png" alt="deepfakes">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a href="Raise of deep/">A New Frontier in the Digital Age: The Rise of
-                                Deepfake Technology
-                            </a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>Oct
-                                14,2023</span>
-
-                        </div>
-                        <p class="blog-details">It wasn't that long ago that the concept of making realistic films of
-                            people saying or doing things they never did was
-                            strictly science fiction. The idea has moved from the world of fantasy to the fore of our
-                            digital landscape,
-                            nevertheless, as a result of the quick growth of technology. Artificial intelligence
-                            (AI)-driven deep-fake technology
-                            has taken the globe by storm, igniting discussions, posing ethical questions, and
-                            highlighting the potential for both
-                            good and bad in this quickly developing sector.</p>
-                        <p>
-                            <a href="Raise of deep/" class="theme-btn minimal-btn " style="color: white;">Read More <i
-                                    class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="" title="Cisco acquired cybersecurity company Splunk in cash deal
-                        worth $28 billion">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="/images/splank.jpeg" alt="">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a
-                                href="Cisco acquired cybersecurity company Splunk in cash deal worth $28 billion/">Cisco
-                                acquired cybersecurity company Splunk in cash
-                                deal
-                                worth $28 billion</a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i class="ri-calendar-event-line"></i>
-                                June
-                                15,2023</span>
-
-                        </div>
-                        <p class="blog-details">Cisco has announced its acquisition of the cybersecurity software firm
-                            Splunk for $157 per share in a cash transaction
-                            valued at approximately $28 billion. This strategic move is part of Cisco's ongoing efforts
-                            to expand its cybersecurity
-                            offerings through acquisitions.
-                        </p>
-                        <p>
-                            <a href="Cisco acquired cybersecurity company Splunk in cash deal worth $28 billion/"
-                                class="theme-btn minimal-btn " style="color: white;">Read More <i
-                                    class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-                <article class="blog-post">
-                    <a href="Artificial Intelligence and Machine Learning in Cybersecurity/"
-                        title="Artificial Intelligence and Machine Learning in Cybersecurity 🌐💻">
-
-                        <figure class="stretchy_wrapper ratio_2-1" style="background-image: url('')">
-
-                            <img src="/images/AI.png" alt="">
-
-                        </figure>
-
-                    </a>
-                    <div class="section-title">
-                        <h1 class="blog-heading"><a
-                                href="Artificial Intelligence and Machine Learning in Cybersecurity/">Artificial
-                                Intelligence and Machine Learning in
-                                Cybersecurity 🌐💻</a></h1>
-                    </div>
-                    <div class="post_figure_and_info">
-                        <div class="post_sub"><span class="post_info post_date"><i
-                                    class="ri-calendar-event-line"></i>June
-                                17,2023</span>
-
-                        </div>
-                        <p class="blog-details">Cyber threats becoming increasingly sophisticated, and traditional
-                            security measures alone are insufficient to protect
-                            sensitive data and critical infrastructure. Enter Artificial Intelligence (AI) and Machine
-                            Learning (ML), two powerful
-                            technological innovations that are revolutionizing the field of cybersecurity...</p>
-                        <p>
-                            <a href="Artificial Intelligence and Machine Learning in Cybersecurity/"
-                                class="theme-btn minimal-btn " style="color: white;">Read More <i
-                                    class="ri-arrow-right-line"></i></a>
-                        </p>
-                </article>
-
-
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <footer class="footer-3 footer-wrap bg-cover" style="background-image: url(/images/footer.jpg)">
-        <div class="footer-widgets">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xl-3 col-12 pr-xl-4">
-                        <div class="single-footer-wid site_footer_widget">
-                            <a href="/">
-                                <img src="/images/four secure new logo.png" alt="" width="170px">
-                            </a>
-                            <p class="mt-4">Four Secure, your cybersecurity partner, delivers tailored solutions for
-                                diverse industries. With a dedicated team of
-                                experts, we ensure digital safety and success.</p>
-                            <div class="social-link mt-30">
-                                <a target="_blank" href="https://www.facebook.com/foursecure/"><i
-                                        class="ri-facebook-circle-fill"></i></a>
-                                <a target="_blank" href="https://www.instagram.com/four_secure/"><i
-                                        class="ri-instagram-fill"></i></a>
-                                <a target="_blank" href="https://www.linkedin.com/company/foursecure"><i
-                                        class="ri-linkedin-box-fill"></i></a>
-                                <a target="_blank" href="https://twitter.com/FourSecure"><i
-                                        class="ri-twitter-x-fill"></i></a>
-
-                            </div>
-                        </div>
-
-
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
-                    <div class="mylinks col-md-6 col-xl-2 col-12">
-                        <div class="single-footer-wid">
-                            <div class="wid-title">
-                                <h4>Pages</h4>
-                            </div>
-                            <ul class="footer-links">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/about/">About Us</a></li>
-                                <li><a href="/services/">Services</a></li>
-                                <li><a href="/blogs/">Blogs</a></li>
-                                <li><a href="/contact/">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
-                    <div class="col-md-6 col-xl-3 col-12" style="width: max-content;">
-                        <div class="single-footer-wid recent_post_widget">
-                            <div class="wid-title">
-                                <h4>News</h4>
-                            </div>
-                            <div class="recent-post-list">
-                                <div class="single-recent-post">
-                                    <div class="thumb bg-cover" style="background-image: url(/images/AI.png);">
-                                    </div>
-                                    <div class="post-data">
-                                        <span><i class="fal fa-calendar-alt"></i>June 17,2023</span>
-                                        <h5><a style="letter-spacing: 0px;" href="/blogs/">AI and ML in Cybersecurity
-                                                🌐💻</a></h5>
-                                    </div>
-                                </div>
-                                <div class="single-recent-post">
-                                    <div class="thumb bg-cover" style="background-image: url(/images//splank.jpeg);">
-                                    </div>
-                                    <div class="post-data">
-                                        <span><i class="fal fa-calendar-alt"></i>June 15,2023</span>
-                                        <h5><a style="letter-spacing: 0px;" href="/blogs/">Cisco acquires Splunk for $28
-                                                billion in cash.</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
+                  </div>
+                  <div class="single-con-info">
+                    <a href="mailto:info@4secu.com">info@4secu.com</a>
+                  </div>
+                  <div class="single-con-info">
+                    <a href="tel:+971554300975">+971 55 430 0975</a>
+                  </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container text-center">
-                <div class="footer-bottom-content text-white">
-                    <p>© 2024 <a href="/">4Secure</a>. All Rights Reserved</p>
+              </div>
+              <!-- footer single wized end -->
+              <!-- footer single wized start -->
+              <div class="footer-single-wized-start">
+                <h5 class="title">Subscribe Us</h5>
+                <div class="subscribtion-area">
+                  <p class="disc">
+                    Subscribe our newsletter for future updates.
+                  </p>
+                  <form action="#" class="subscribtion-input">
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email..."
+                      required
+                    />
+                    <label for="email"
+                      ><i class="fa-regular fa-envelope"></i
+                    ></label>
+                    <button type="submit" class="rts-btn btn-dark">
+                      subscribe
+                    </button>
+                  </form>
                 </div>
+              </div>
+              <!-- footer single wized end -->
             </div>
+          </div>
         </div>
-    </footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="copyright-area text-center">
+              <div class="left">
+                <p>2024 © <a href="#">4secure</a>. All rights reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- rts footer two area end -->
 
-    <!--  ALl JS Plugins
-    ====================================== -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/modernizr.min.js"></script>
-    <script src="/assets/js/jquery.easing.js"></script>
-    <script src="/assets/js/popper.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/isotope.pkgd.min.js"></script>
-    <script src="/assets/js/imageload.min.js"></script>
-    <script src="/assets/js/scrollUp.min.js"></script>
-    <script src="/assets/js/owl.carousel.min.js"></script>
-    <script src="/assets/js/magnific-popup.min.js"></script>
-    <script src="/assets/js/easypiechart.min.js"></script>
-    <script src="/assets/js/counterup.min.js"></script>
-    <script src="/assets/js/wow.min.js"></script>
-    <script src="/assets/js/metismenu.js"></script>
-    <script src="/assets/js/timeline.min.js"></script>
-    <script src="/assets/js/ajax-mail.js"></script>
-    <script src="/assets/js/aos.min.js"></script>
-    <script src="/assets/js/active.js"></script>
+    <!-- Footer style two End -->
 
+    <!-- Scripts style two -->
 
+    <div class="bg-noise"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- back to top start -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+    </div>
+    <!-- back to top end -->
 
-    <script>
-        $('.review-slide').slick({
-            dots: true,
-            infinite: true,
-            speed: 300,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            responsive:
-                [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                    // You can unslick at a given breakpoint now by adding:
-                    // settings: "unslick"
-                    // instead of a settings object
-                ]
-        });
-    </script>
-    <script src="../mobile-menu.js"></script>
+    <!-- pre loader start -->
 
-</body>
+    <!-- pre loader end -->
 
+    <script defer src="/assets/js/vendor/jquery.min.js"></script>
+    <script defer src="/assets/js/plugins/bootstrap.min.js"></script>
+    <script defer src="/assets/js/plugins/contact.form.js"></script>
+    <script defer src="/assets/js/vendor/waypoint.js"></script>
+    <script defer src="/assets/js/plugins/swiper.js"></script>
+
+    <!-- for side bar sticky -->
+    <script defer src="/assets/js/plugins/resizer-sensor.js"></script>
+    <script defer src="/assets/js/plugins/sticky-sidebar.js"></script>
+    <!-- for side bar sticky end-->
+
+    <script defer src="/assets/js/plugins/isotop.js"></script>
+    <script defer src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+
+    <script defer src="/assets/js/plugins/smoothscroll-varticle.js"></script>
+    <script defer src="/assets/js/vendor/gsap.js"></script>
+    <script defer src="/assets/js/plugins/scrolltiger.js"></script>
+    <script defer src="/assets/js/plugins/scrolltoplugin.js"></script>
+    <script defer src="/assets/js/plugins/splittext.js"></script>
+    <script defer src="/assets/js/plugins/smoothscroll.js"></script>
+
+    <!-- title opacity scroll magix -->
+    <script defer src="/assets/js/plugins/scrollmagic.js"></script>
+    <script defer src="/assets/js/plugins/animate-scrollmagic.js"></script>
+    <!-- title opacity scroll magic end -->
+
+    <script defer src="/assets/js/plugins/tilt.js"></script>
+    <script defer src="/assets/js/plugins/counterup.js"></script>
+
+    <script defer src="/assets/js/vendor/waw.js"></script>
+    <!-- custom javascripts -->
+    <script defer src="/assets/js/main.js"></script>
+    <script src="../assets/js/blogs.js"></script>
+
+    <!-- Scripts style two End -->
+  </body>
 </html>
