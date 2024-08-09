@@ -27918,7 +27918,7 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
 }
 
 .blog-details-main-wrapper .thumbnail-banner-large-iamge {
-  background-image: url(../images/blog/15.jpg);
+  /* background-image: url(../images/blog/15.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

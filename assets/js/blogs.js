@@ -3,7 +3,8 @@ const blogData = [
     id: 2,
     title:
       "Cisco Acquired Cybersecurity Company Splunk In Cash Deal Worth $28 Billion",
-    Image: "https://4secu.com/images/splank.jpeg",
+    Image: "/assets/images/splank.jfif",
+    link:"/Cisco acquired cybersecurity company Splunk in cash deal worth $28 billion",
     content: `
     Cisco has announced its acquisition of the cybersecurity software firm Splunk for $157 per share in a cash transaction valued at approximately $28 billion. This strategic move is part of Cisco's ongoing efforts to expand its cybersecurity offerings through acquisitions.
 
@@ -35,7 +36,8 @@ This acquisition marks a pivotal moment in Cisco's ongoing expansion efforts in 
     id: 1,
     date: " June 15,2023",
     title: "Artificial Intelligence And Machine Learning In Cybersecurity 🌐💻",
-    Image: "https://4secu.com/images/AI.png",
+    Image: "/assets/images/ai.jfif",
+    link:"/Artificial Intelligence and Machine Learning in Cybersecurity",
     content: `
 Hey there, fellow entrepreneurs! If you're diving into the exciting world of startups. You're likely juggling a million things at once – from product development to marketing strategies. But amidst the chaos of launching your dream venture. There's one crucial aspect you can't afford to overlook: cybersecurity for startups. It's imperative to safeguard your digital assets and customer data right from the start. As a breach could be detrimental to your fledgling business. So, while you're hustling to bring your vision to life, make sure to prioritize cybersecurity measures to protect your company and its future success.
 
@@ -91,7 +93,7 @@ const BlogInfo = document.getElementById("BlogInfo");
 const htmlData = blogData.map((e, i) => {
   return `
               <div class="single-blog-list-one rts-skew-up-gsap">
-              <a href="blog-details.html" class="thumbnail">
+              <a href="${e.link}" class="thumbnail">
                 <img src="${e.Image}" />
               </a>
               <div class="blog-content-area">
@@ -102,7 +104,7 @@ const htmlData = blogData.map((e, i) => {
                 <p class="disc">
                   ${e.ShortContent}
                 </p>
-                <a href="" id="BlogInfo" class="read-more-bb">Read More</a>
+                <a href="${e.link}" id="BlogInfo" class="read-more-bb">Read More</a>
               </div>
             </div>
         `;
