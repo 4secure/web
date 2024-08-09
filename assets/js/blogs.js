@@ -97,7 +97,7 @@ const htmlData = blogData.map((e, i) => {
                 <img src="${e.Image}" />
               </a>
               <div class="blog-content-area">
-                <a href="blog-details.html">
+                <a href="${e.link}">
                   <h3 class="title">${e.title}
                   </h3>
                 </a>
