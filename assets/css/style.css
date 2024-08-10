@@ -27905,6 +27905,12 @@ section.svg-container:nth-last-of-type(0) svg.radial-progress {
   margin: 0;
 }
 
+b {
+  font-size: 16px;
+  color: rgb(180, 178, 178);
+  font-weight: 400;
+}
+
 .blog-details-main-wrapper .main-wrapper {
   height: 665px;
   width: 100%;
