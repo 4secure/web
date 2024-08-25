@@ -30152,7 +30152,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   line-height: 46px;
   font-size: 24px;
-  color: var(--color-primary);
+  color: #f8f9fa;;
   left: 0;
   top: 0;
   height: 46px;
