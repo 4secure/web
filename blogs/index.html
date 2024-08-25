@@ -1,432 +1,407 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/assets/images/logo icon.png"
-    />
-    <title>4Secure - Blogs</title>
-    <link rel="stylesheet" href="/assets/css/plugins/fontawesome-6.css" />
-    <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
-    <link rel="stylesheet" href="/assets/css/vendor/metismenu.css" />
-    <link rel="stylesheet" href="/assets/css/plugins/animate.min.css" />
-    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-  </head>
 
-  <body class="inner-page">
-    <!-- Scripts style two -->
-    <header class="header-area header-one header--sticky">
-      <div class="header-container-one container" style="padding: 25px 10px">
-        <div class="header-wrapper">
-          <a href="/" class="logo">
-            <img src="/assets/images/four secure new logo.png" width="150px" alt="logo" />
-          </a>
-          <div class="header-right">
-            <nav class="nav-area drop-down-rts">
-              <ul class="navbar-nav-1">
-                <li class="menu-item main-nav-on">
-                  <a class="menu-link" href="/"><span class="rolling-text">Home</span></a>
-                </li>
-                <li class="menu-item main-nav-on">
-                  <a class="menu-link" href="../about/"><span class="rolling-text">About</span></a>
-                </li>
-                <li class="menu-item main-nav-on">
-                  <a class="menu-link" href="../services/"><span class="rolling-text">Services</span></a>
-                </li>
-                <li class="menu-item main-nav-on">
-                  <a class="menu-link" href="../blogs/"><span class="rolling-text">Blogs</span></a>
-                </li>
-                <li class="menu-item main-nav-on">
-                  <a class="menu-link" href="../contact/"><span class="rolling-text">Contact</span></a>
-                </li>
-              </ul>
-            </nav>
-  
-            <div class="action-area">
-              <div class="search-icon-header">
-                <div class="icon search-click">
-                  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M19.5547 17.8516C20.1113 18.4453 20.1113 19.373 19.5547 19.9668C18.9609 20.5234 18.0332 20.5234 17.4395 19.9668L13.0234 15.5137C11.502 16.5156 9.64648 17.0352 7.64258 16.7754C4.22852 16.293 1.48242 13.5098 1.03711 10.1328C0.40625 5.08594 4.67383 0.818359 9.7207 1.44922C13.0977 1.89453 15.8809 4.64062 16.3633 8.05469C16.623 10.0586 16.1035 11.9141 15.1016 13.3984L19.5547 17.8516ZM3.93164 9.09375C3.93164 11.7285 6.04688 13.8438 8.68164 13.8438C11.2793 13.8438 13.4316 11.7285 13.4316 9.09375C13.4316 6.49609 11.2793 4.34375 8.68164 4.34375C6.04688 4.34375 3.93164 6.49609 3.93164 9.09375Z"
-                      fill="white" />
-                  </svg>
-                </div>
-                <div class="search-offcanvas-wrapper">
-                  <div class="inner">
-                    <div class="close-icon-search">
-                      <i class="far fa-times"></i>
-                    </div>
-                    <form action="#">
-                      <h4 class="text-center">Search on this Page</h4>
-                      <input type="text" placeholder="Search Your Result" required />
-                      <button>
-                        <i class="fa-light fa-magnifying-glass"></i>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <div class="menu-btn">
-                <div class="rts-offcanvas-wrapper">
-                  <div class="container-menu">
-                    <div class="action-menu">
-                      <div class="close-event"></div>
-                      <div class="open-event">
-                        <!-- <div class="text">
-                          <span>Menu</span>
-                          <span>Close</span>
-                      </div> -->
-                        <div class="burger">
-                          <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-close"
-                            data-v-649bbaab="">
-                            <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" stroke="currentColor"
-                              stroke-width="1.2"></line>
-                            <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" stroke="currentColor"
-                              stroke-width="1.2"></line>
-                          </svg>
-                          <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-burger"
-                            data-v-649bbaab="">
-                            <line x1="18" y1="0.6" y2="0.6" stroke="currentColor" stroke-width="1.2" data-v-649bbaab="">
-                            </line>
-                            <line x1="18" y1="5.7167" y2="5.7167" stroke="currentColor" stroke-width="1.2"
-                              data-v-649bbaab=""></line>
-                            <line x1="18" y1="10.8334" y2="10.8334" stroke="currentColor" stroke-width="1.2"
-                              data-v-649bbaab=""></line>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rts-fs-menu">
-                    <div class="rts-fs-container row">
-                      <div class="rts-fs--nav col-12 col-md-6">
-                        <ul class="navbar-nav-button">
-                          <li class="menu-item">
-                            <a href="/">HOME</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="../about/">About US</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="../services/">Service</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="../blogs/">Blogs</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="../contact/">Contact</a>
-                          </li>
-                        </ul>
-                      </div>
-  
-                      <div class="rts-fs--contacts col-12 col-md-6">
-                        <div class="contact-inner">
-                          <div class="contact-information">
-                            <h2 class="heading-title">Our Office</h2>
-                            <div class="address">
-                              <ul>
-                                <li>
-                                  <p>Diamond Residency Defence
-                                  </p>
-                                </li>
-                                <li>
-                                  <p>View Phase 3. Karachi</p>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="contact-information">
-                            <h2 class="heading-title">Get In Touch</h2>
-                            <div class="contact">
-                              <ul>
-                                <li>
-                                  <a href="mailto:info@4secu.com" class="mail">info@4secu.com</a>
-                                </li>
-                                <li>
-                                  <a href="tel:+923307083831" class="number" style="
-                                        display: block;
-                                        width: max-content !important;
-                                        visibility: visible !important;
-                                      ">
-                                    +92 330 7083831</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="rts-social-area-one">
-                              <ul>
-                                <li>
-                                  <a href="https://www.facebook.com/foursecure/" target="_blank"><i
-                                      class="fa-brands fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                  <a href="https://www.instagram.com/four_secure/" target="_blank"><i
-                                      class="fa-brands fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                  <a href="https://www.linkedin.com/company/98358151/admin/feed/posts/" target="_blank"><i
-                                      class="fa-brands fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
-                                  <a href="https://twitter.com/FourSecure" target="_blank"><i
-                                      class="fa-brands fa-twitter"></i></a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- header area two end -->
-    <div
-      class="rts-banner-area-three-start rts-scroll-down-circle-wrapper-2 rts-scroll-down-circle-wrapper"
-    >
-      <!-- banner shape area -->
-      <div class="banner-shape-area">
-        <img src="/assets/images/banner/21.jpg" alt="banner" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo icon.png" />
+  <title>4Secure - Blogs</title>
+  <link rel="stylesheet" href="/assets/css/plugins/fontawesome-6.css" />
+  <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+  <link rel="stylesheet" href="/assets/css/vendor/metismenu.css" />
+  <link rel="stylesheet" href="/assets/css/plugins/animate.min.css" />
+  <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
 
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-6 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2"
-          >
-            <div class="banner-content-wrapper-three">
-              <h2 class="title rts_hero__title">BLOGS</h2>
-              <p class="disc hero__sub-title">
-                Four Secure, your cybersecurity partner, delivers tailored
-                solutions for diverse industries. With a dedicated team of
-                experts, we ensure digital safety and success.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-6 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-1 pt--150"
-          >
-            <div class="thumbnail-img-banner-three rts-reveal-one"></div>
-          </div>
-        </div>
-      </div>
+<body class="inner-page">
+  <!-- Scripts style two -->
+  <header class="header-area header-one header--sticky">
+    <div class="header-container-one container" style="padding: 25px 10px">
+      <div class="header-wrapper">
+        <a href="/" class="logo">
+          <img src="/assets/images/four secure new logo.png" width="150px" alt="logo" />
+        </a>
+        <div class="header-right">
+          <nav class="nav-area drop-down-rts">
+            <ul class="navbar-nav-1">
+              <li class="menu-item main-nav-on">
+                <a class="menu-link" href="/"><span class="rolling-text">Home</span></a>
+              </li>
+              <li class="menu-item main-nav-on">
+                <a class="menu-link" href="../about/"><span class="rolling-text">About</span></a>
+              </li>
+              <li class="menu-item main-nav-on">
+                <a class="menu-link" href="../services/"><span class="rolling-text">Services</span></a>
+              </li>
+              <li class="menu-item main-nav-on">
+                <a class="menu-link" href="../blogs/"><span class="rolling-text">Blogs</span></a>
+              </li>
+              <li class="menu-item main-nav-on">
+                <a class="menu-link" href="../contact/"><span class="rolling-text">Contact</span></a>
+              </li>
+            </ul>
+          </nav>
 
-      <!-- social share banner left three end -->
-    </div>
-    <!-- header area two end -->
-    <!-- Scripts style two End -->
-
-    <!-- blog post area inner  start-->
-    <div class="blog-list-area pb--120 pt--80">
-      <div class="container rts-section-gap">
-        <div class="row">
-          <div class="col-lg-12" id="bCard"></div>
-        </div>
-      </div>
-    </div>
-    <!-- blog post area inner end -->
-
-    <!-- Footer style two -->
-    <!-- rts footer two area start -->
-    <div class="rts-footer-area-one rts-section-gapTop">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="grid-lines-wrapper">
-              <div class="grid-lines">
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
+          <div class="action-area">
+            <div class="search-icon-header">
+              <div class="icon search-click">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.5547 17.8516C20.1113 18.4453 20.1113 19.373 19.5547 19.9668C18.9609 20.5234 18.0332 20.5234 17.4395 19.9668L13.0234 15.5137C11.502 16.5156 9.64648 17.0352 7.64258 16.7754C4.22852 16.293 1.48242 13.5098 1.03711 10.1328C0.40625 5.08594 4.67383 0.818359 9.7207 1.44922C13.0977 1.89453 15.8809 4.64062 16.3633 8.05469C16.623 10.0586 16.1035 11.9141 15.1016 13.3984L19.5547 17.8516ZM3.93164 9.09375C3.93164 11.7285 6.04688 13.8438 8.68164 13.8438C11.2793 13.8438 13.4316 11.7285 13.4316 9.09375C13.4316 6.49609 11.2793 4.34375 8.68164 4.34375C6.04688 4.34375 3.93164 6.49609 3.93164 9.09375Z"
+                    fill="white" />
+                </svg>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row rts-section-gapBottom">
-          <div class="col-lg-12">
-            <div class="footer-main-wrapper-one">
-              <!-- footer left area start -->
-              <div class="footer-left-area">
-                <a href="/" class="logo-footer">
-                  <img
-                    src="/assets/images/four secure new logo.png"
-                    style="width: 180px"
-                  />
-                </a>
-                <p class="disc">
-                  Four Secure, your cybersecurity <br />
-                  partner, delivers tailored solutions for diverse <br />
-                  industries. With a dedicated team <br />
-                  of experts, we ensure digital safety and success.
-                </p>
-                <div class="rts-social-area-one">
-                  <ul>
-                    <li>
-                      <a
-                        target="”_blank”"
-                        href="https://www.facebook.com/foursecure/"
-                        ><i class="fa-brands fa-facebook-f"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a
-                        target="”_blank”"
-                        href="https://www.instagram.com/four_secure/"
-                        ><i class="fa-brands fa-instagram"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a
-                        target="”_blank”"
-                        href="https://www.linkedin.com/company/98358151/admin/feed/posts/"
-                        ><i class="fa-brands fa-linkedin-in"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a target="”_blank”" href="https://twitter.com/FourSecure"
-                        ><i class="fa-brands fa-twitter"></i
-                      ></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- footer left area end -->
-              <!-- footer single wized start -->
-              <div class="footer-single-wized-start">
-                <h5 class="title">Links</h5>
-                <ul class="footer-nav">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="../about/">About</a></li>
-                  <li><a href="../services/">Services</a></li>
-                  <li><a href="../blogs/">Blog</a></li>
-                  <li><a href="../contact/">Contact</a></li>
-                </ul>
-              </div>
-              <!-- footer single wized end -->
-              <!-- footer single wized start -->
-              <div class="footer-single-wized-start">
-                <h5 class="title">Contact Info</h5>
-                <div class="mail-contact-area">
-                  <div class="single-con-info mb-2">
-                    <a href="#">
-                      Diamond Residency Defence
-View Phase 3. Karachi
-                    </a>
+              <div class="search-offcanvas-wrapper">
+                <div class="inner">
+                  <div class="close-icon-search">
+                    <i class="far fa-times"></i>
                   </div>
-                  <div class="single-con-info">
-                    <a href="mailto:info@4secu.com">info@4secu.com</a>
-                  </div>
-                  <div class="single-con-info">
-                    <a href="tel:+923307083831">+92 330 7083831</a>
-                  </div>
-                </div>
-              </div>
-              <!-- footer single wized end -->
-              <!-- footer single wized start -->
-              <div class="footer-single-wized-start">
-                <h5 class="title">Subscribe Us</h5>
-                <div class="subscribtion-area">
-                  <p class="disc">
-                    Subscribe our newsletter for future updates.
-                  </p>
-                  <form action="#" class="subscribtion-input">
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="Enter your email..."
-                      required
-                    />
-                    <label for="email"
-                      ><i class="fa-regular fa-envelope"></i
-                    ></label>
-                    <button type="submit" class="rts-btn btn-dark">
-                      subscribe
+                  <form action="#">
+                    <h4 class="text-center">Search on this Page</h4>
+                    <input type="text" placeholder="Search Your Result" required />
+                    <button>
+                      <i class="fa-light fa-magnifying-glass"></i>
                     </button>
                   </form>
                 </div>
               </div>
-              <!-- footer single wized end -->
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="copyright-area text-center">
-              <div class="left">
-                <p>2024 © <a href="#">4secure</a>. All rights reserved.</p>
+            <div class="menu-btn">
+              <div class="rts-offcanvas-wrapper">
+                <div class="container-menu">
+                  <div class="action-menu">
+                    <div class="close-event"></div>
+                    <div class="open-event">
+                      <!-- <div class="text">
+                          <span>Menu</span>
+                          <span>Close</span>
+                      </div> -->
+                      <div class="burger">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-close"
+                          data-v-649bbaab="">
+                          <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" stroke="currentColor"
+                            stroke-width="1.2"></line>
+                          <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" stroke="currentColor"
+                            stroke-width="1.2"></line>
+                        </svg>
+                        <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-burger"
+                          data-v-649bbaab="">
+                          <line x1="18" y1="0.6" y2="0.6" stroke="currentColor" stroke-width="1.2" data-v-649bbaab="">
+                          </line>
+                          <line x1="18" y1="5.7167" y2="5.7167" stroke="currentColor" stroke-width="1.2"
+                            data-v-649bbaab=""></line>
+                          <line x1="18" y1="10.8334" y2="10.8334" stroke="currentColor" stroke-width="1.2"
+                            data-v-649bbaab=""></line>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rts-fs-menu">
+                  <div class="rts-fs-container row">
+                    <div class="rts-fs--nav col-12 col-md-6">
+                      <ul class="navbar-nav-button">
+                        <li class="menu-item">
+                          <a href="/">HOME</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="../about/">About US</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="../services/">Service</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="../blogs/">Blogs</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="../contact/">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="rts-fs--contacts col-12 col-md-6">
+                      <div class="contact-inner">
+                        <div class="contact-information">
+                          <h2 class="heading-title">Our Office</h2>
+                          <div class="address">
+                            <ul>
+                              <li>
+                                <p>Diamond Residency Defence
+                                </p>
+                              </li>
+                              <li>
+                                <p>View Phase 3. Karachi</p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="contact-information">
+                          <h2 class="heading-title">Get In Touch</h2>
+                          <div class="contact">
+                            <ul>
+                              <li>
+                                <a href="mailto:info@4secu.com" class="mail">info@4secu.com</a>
+                              </li>
+                              <li>
+                                <a href="tel:+92 330 7083831" class="number" style="
+                                        display: block;
+                                        width: max-content !important;
+                                        visibility: visible !important;
+                                      ">
+                                  +92 330 7083831</a>
+                              </li>
+                              <li>
+                                <a href="tel:021 38894489" class="number" style="
+                                        display: block;
+                                        width: max-content !important;
+                                        visibility: visible !important;
+                                      ">
+                                  021 38894489</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="rts-social-area-one">
+                            <ul>
+                              <li>
+                                <a href="https://www.facebook.com/foursecure/" target="_blank"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                              </li>
+                              <li>
+                                <a href="https://www.instagram.com/four_secure/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                              </li>
+                              <li>
+                                <a href="https://www.linkedin.com/company/98358151/admin/feed/posts/" target="_blank"><i
+                                    class="fa-brands fa-linkedin-in"></i></a>
+                              </li>
+                              <li>
+                                <a href="https://twitter.com/FourSecure" target="_blank"><i
+                                    class="fa-brands fa-twitter"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- rts footer two area end -->
-
-    <!-- Footer style two End -->
-
-    <!-- Scripts style two -->
-
-    <div class="bg-noise"></div>
-
-    <!-- back to top start -->
-    <div class="progress-wrap">
-      <svg
-        class="progress-circle svg-content"
-        width="100%"
-        height="100%"
-        viewBox="-1 -1 102 102"
-      >
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-      </svg>
+  </header>
+  <!-- header area two end -->
+  <div class="rts-banner-area-three-start rts-scroll-down-circle-wrapper-2 rts-scroll-down-circle-wrapper">
+    <!-- banner shape area -->
+    <div class="banner-shape-area">
+      <img src="/assets/images/banner/21.jpg" alt="banner" />
     </div>
-    <!-- back to top end -->
 
-    <!-- pre loader start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 order-xl-1 order-lg-1 order-md-2 order-sm-2 order-2">
+          <div class="banner-content-wrapper-three">
+            <h2 class="title rts_hero__title">BLOGS</h2>
+            <p class="disc hero__sub-title">
+              Four Secure, your cybersecurity partner, delivers tailored
+              solutions for diverse industries. With a dedicated team of
+              experts, we ensure digital safety and success.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-1 pt--150">
+          <div class="thumbnail-img-banner-three rts-reveal-one"></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- pre loader end -->
+    <!-- social share banner left three end -->
+  </div>
+  <!-- header area two end -->
+  <!-- Scripts style two End -->
 
-    <script defer src="/assets/js/vendor/jquery.min.js"></script>
-    <script defer src="/assets/js/plugins/bootstrap.min.js"></script>
-    <script defer src="/assets/js/plugins/contact.form.js"></script>
-    <script defer src="/assets/js/vendor/waypoint.js"></script>
-    <script defer src="/assets/js/plugins/swiper.js"></script>
+  <!-- blog post area inner  start-->
+  <div class="blog-list-area pb--120 pt--80">
+    <div class="container rts-section-gap">
+      <div class="row">
+        <div class="col-lg-12" id="bCard"></div>
+      </div>
+    </div>
+  </div>
+  <!-- blog post area inner end -->
 
-    <!-- for side bar sticky -->
-    <script defer src="/assets/js/plugins/resizer-sensor.js"></script>
-    <script defer src="/assets/js/plugins/sticky-sidebar.js"></script>
-    <!-- for side bar sticky end-->
+  <!-- Footer style two -->
+  <!-- rts footer two area start -->
+  <div class="rts-footer-area-one rts-section-gapTop">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="grid-lines-wrapper">
+            <div class="grid-lines">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row rts-section-gapBottom">
+        <div class="col-lg-12">
+          <div class="footer-main-wrapper-one">
+            <!-- footer left area start -->
+            <div class="footer-left-area">
+              <a href="/" class="logo-footer">
+                <img src="/assets/images/four secure new logo.png" style="width: 180px" />
+              </a>
+              <p class="disc">
+                Four Secure, your cybersecurity <br />
+                partner, delivers tailored solutions for diverse <br />
+                industries. With a dedicated team <br />
+                of experts, we ensure digital safety and success.
+              </p>
+              <div class="rts-social-area-one">
+                <ul>
+                  <li>
+                    <a target="”_blank”" href="https://www.facebook.com/foursecure/"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a target="”_blank”" href="https://www.instagram.com/four_secure/"><i
+                        class="fa-brands fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a target="”_blank”" href="https://www.linkedin.com/company/98358151/admin/feed/posts/"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a target="”_blank”" href="https://twitter.com/FourSecure"><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- footer left area end -->
+            <!-- footer single wized start -->
+            <div class="footer-single-wized-start">
+              <h5 class="title">Links</h5>
+              <ul class="footer-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="../about/">About</a></li>
+                <li><a href="../services/">Services</a></li>
+                <li><a href="../blogs/">Blog</a></li>
+                <li><a href="../contact/">Contact</a></li>
+              </ul>
+            </div>
+            <!-- footer single wized end -->
+            <!-- footer single wized start -->
+            <div class="footer-single-wized-start">
+              <h5 class="title">Contact Info</h5>
+              <div class="mail-contact-area">
+                <div class="single-con-info mb-2">
+                  <a href="#">
+                    Diamond Residency Defence
+                    View Phase 3. Karachi
+                  </a>
+                </div>
+                <div class="single-con-info">
+                  <a href="mailto:info@4secu.com">info@4secu.com</a>
+                </div>
+                <div class="single-con-info">
+                  <a href="tel:+923307083831">+92 330 7083831</a><br>
+                  <a href="tel:021 38894489">021 38894489</a>
+                </div>
+              </div>
+            </div>
+            <!-- footer single wized end -->
+            <!-- footer single wized start -->
+            <div class="footer-single-wized-start">
+              <h5 class="title">Subscribe Us</h5>
+              <div class="subscribtion-area">
+                <p class="disc">
+                  Subscribe our newsletter for future updates.
+                </p>
+                <form action="#" class="subscribtion-input">
+                  <input id="email" type="email" placeholder="Enter your email..." required />
+                  <label for="email"><i class="fa-regular fa-envelope"></i></label>
+                  <button type="submit" class="rts-btn btn-dark">
+                    subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+            <!-- footer single wized end -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-area text-center">
+            <div class="left">
+              <p>2024 © <a href="#">4secure</a>. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- rts footer two area end -->
 
-    <script defer src="/assets/js/plugins/isotop.js"></script>
-    <script defer src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+  <!-- Footer style two End -->
 
-    <script defer src="/assets/js/plugins/smoothscroll-varticle.js"></script>
-    <script defer src="/assets/js/vendor/gsap.js"></script>
-    <script defer src="/assets/js/plugins/scrolltiger.js"></script>
-    <script defer src="/assets/js/plugins/scrolltoplugin.js"></script>
-    <script defer src="/assets/js/plugins/splittext.js"></script>
-    <script defer src="/assets/js/plugins/smoothscroll.js"></script>
+  <!-- Scripts style two -->
 
-    <!-- title opacity scroll magix -->
-    <script defer src="/assets/js/plugins/scrollmagic.js"></script>
-    <script defer src="/assets/js/plugins/animate-scrollmagic.js"></script>
-    <!-- title opacity scroll magic end -->
+  <div class="bg-noise"></div>
 
-    <script defer src="/assets/js/plugins/tilt.js"></script>
-    <script defer src="/assets/js/plugins/counterup.js"></script>
+  <!-- back to top start -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+  <!-- back to top end -->
 
-    <script defer src="/assets/js/vendor/waw.js"></script>
-    <!-- custom javascripts -->
-    <script defer src="/assets/js/main.js"></script>
-    <script src="../assets/js/blogs.js"></script>
+  <!-- pre loader start -->
 
-    <!-- Scripts style two End -->
-  </body>
+  <!-- pre loader end -->
+
+  <script defer src="/assets/js/vendor/jquery.min.js"></script>
+  <script defer src="/assets/js/plugins/bootstrap.min.js"></script>
+  <script defer src="/assets/js/plugins/contact.form.js"></script>
+  <script defer src="/assets/js/vendor/waypoint.js"></script>
+  <script defer src="/assets/js/plugins/swiper.js"></script>
+
+  <!-- for side bar sticky -->
+  <script defer src="/assets/js/plugins/resizer-sensor.js"></script>
+  <script defer src="/assets/js/plugins/sticky-sidebar.js"></script>
+  <!-- for side bar sticky end-->
+
+  <script defer src="/assets/js/plugins/isotop.js"></script>
+  <script defer src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+
+  <script defer src="/assets/js/plugins/smoothscroll-varticle.js"></script>
+  <script defer src="/assets/js/vendor/gsap.js"></script>
+  <script defer src="/assets/js/plugins/scrolltiger.js"></script>
+  <script defer src="/assets/js/plugins/scrolltoplugin.js"></script>
+  <script defer src="/assets/js/plugins/splittext.js"></script>
+  <script defer src="/assets/js/plugins/smoothscroll.js"></script>
+
+  <!-- title opacity scroll magix -->
+  <script defer src="/assets/js/plugins/scrollmagic.js"></script>
+  <script defer src="/assets/js/plugins/animate-scrollmagic.js"></script>
+  <!-- title opacity scroll magic end -->
+
+  <script defer src="/assets/js/plugins/tilt.js"></script>
+  <script defer src="/assets/js/plugins/counterup.js"></script>
+
+  <script defer src="/assets/js/vendor/waw.js"></script>
+  <!-- custom javascripts -->
+  <script defer src="/assets/js/main.js"></script>
+  <script src="../assets/js/blogs.js"></script>
+
+  <!-- Scripts style two End -->
+</body>
+
 </html>
