@@ -30208,8 +30208,8 @@ body::-webkit-scrollbar-thumb {
 .progress-wrap svg {
   color: var(--color-primary);
   border-radius: 50%;
-  background: #ededed;
-  mix-blend-mode: exclusion;
+  background: blue;
+  /* mix-blend-mode: exclusion; */
 }
 
 .progress-wrap svg.progress-circle path {
