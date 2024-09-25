@@ -179,13 +179,13 @@ $(function () {
       transitionDuration: 2000,
       slides: [
         {
-          src: "./assets/images/banner1.webp",
+          src: "./assets/images/banner1.jpg",
         },
         {
-          src: "./assets/images/banner2.webp",
+          src: "./assets/images/banner2.jpg",
         },
         {
-          src: "./assets/images/banner3.webp",
+          src: "./assets/images/banner3.jpg",
         },
       ],
       animation: [
