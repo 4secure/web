@@ -31365,7 +31365,20 @@ background-color: #2c2c2c;
   -moz-transition: visibility 0s 0s, opacity 0.3s 0s;
   transition: visibility 0s 0s, opacity 0.3s 0s;
 }
-
-button#popupBtn {
-  margin-top: 15px;
+.about-shieldx h2 {
+  font-size: 2.5rem;
 }
+
+.description {
+  font-size: 1.2rem;
+}
+
+.ceo {
+  font-size: 1.1rem;
+}
+.text-section{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/*  */
