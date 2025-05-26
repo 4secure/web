@@ -19,18 +19,11 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+ document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("contactForm");
+  if (!form) {
+    console.error("Form with id 'contactForm' not found.");
+    return;
   }
   mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
@@ -210,41 +203,45 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-})();
+  // ——————————
+  // Form code inside DOMContentLoaded to avoid null element error
+  // ——————————
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+    const sentMessage = document.querySelector(".sent-message");
+    const errorMessage = document.querySelector(".error-message");
 
+    if (!form) {
+      console.error("Form with id 'contactForm' not found.");
+      return;
+    }
 
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+      const formData = new FormData(form);
 
-
-
-
-
-//form js 
-const form = document.getElementById("contactForm");
-const sentMessage = document.querySelector(".sent-message");
-const errorMessage = document.querySelector(".error-message");
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent default form submission
-  const formData = new FormData(form);
-
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => {
-      if (response.ok) {
-        // Show success message
-        sentMessage.style.display = "block";
-        errorMessage.style.display = "none";
-        form.reset(); // Reset the form
-      } else {
-        throw new Error("Form submission failed");
-      }
-    })
-    .catch((error) => {
-      // Show error message
-      errorMessage.textContent = "Something went wrong. Please try again!";
-      errorMessage.style.display = "block";
-      sentMessage.style.display = "none";
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            if (sentMessage) sentMessage.style.display = "block";
+            if (errorMessage) errorMessage.style.display = "none";
+            form.reset(); // Reset the form
+          } else {
+            throw new Error("Form submission failed");
+          }
+        })
+        .catch((error) => {
+          if (errorMessage) {
+            errorMessage.textContent = "Something went wrong. Please try again!";
+            errorMessage.style.display = "block";
+          }
+          if (sentMessage) sentMessage.style.display = "none";
+          console.error("Form submission error:", error);
+        });
     });
-});
+  });
+
+})();})
