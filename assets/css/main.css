@@ -2035,6 +2035,12 @@ section,
   color: #fff;
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  
+}
+.contact1 input::placeholder,
+.contact1 textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* white with 60% opacity */
+  opacity: 1;
 }
 
 .contact1  input[type=text]:focus,
@@ -2942,8 +2948,6 @@ section,
   border-radius: 5px;
   text-decoration: none;
 }
-<<<<<<< HEAD
-
 .nav-link {
   padding: 10px 15px;
   color: #fff;
@@ -2955,5 +2959,4 @@ section,
 .nav-link:hover {
   background-color: #0056b3;
 }
-=======
->>>>>>> 5def7bee773811c0677c0b281d95186d15900529
+
