@@ -863,12 +863,13 @@ section,
 
 .hero {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
-  padding: 120px 0 60px 0;
+  padding: 160px 0 100px 0;
   display: flex;
   align-items: center;
   background: url("/assets/img/banner.jpeg") center center;
+    /* background-color: #ff0000; if you want it visible for layout test */
   background-size: cover;
   background-repeat: no-repeat;
 }
