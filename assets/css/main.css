@@ -320,6 +320,24 @@ h6 {
     padding-right: 10;
   }
 
+  .navmenu>ul>li:last-child a,
+  .navmenu>ul>li:last-child a:focus {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .navmenu>ul>li:last-child a:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    color: #ffffff;
+  }
+
+  .navmenu>ul>li:last-child a:before {
+    display: none;
+  }
+
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
