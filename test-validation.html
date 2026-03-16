@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Form Validation</title>
+    <style>
+        .error { border: 2px solid red !important; }
+        .form-error { color: red; font-size: 0.8rem; margin-top: 5px; }
+        .custom-dropdown.error { border: 2px solid red !important; }
+    </style>
+</head>
+<body>
+    <h1>Test Service Validation</h1>
+    
+    <form id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+        <textarea id="message" name="message" placeholder="Message" required></textarea><br><br>
+        
+        <div class="custom-dropdown">
+            <div class="dropdown-trigger" id="service-dropdown-trigger">
+                <span class="dropdown-selected">Select a service</span>
+            </div>
+            <div class="dropdown-menu" id="service-dropdown-menu">
+                <div class="dropdown-item" data-value="test">Test Service</div>
+            </div>
+        </div>
+        <input type="hidden" id="service" name="service" value="">
+        <span class="form-error"></span><br><br>
+        
+        <button type="submit">Submit</button>
+        <div class="form-success" style="display: none; color: green;">Success!</div>
+    </form>
+
+    <script src="js/validate.js"></script>
+    <script>
+        // Test the validation
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Form type detection test:');
+            const form = document.getElementById('contact-form');
+            const hasFirstName = form.querySelector('#first-name') !== null;
+            console.log('Has first-name field:', hasFirstName);
+            console.log('Should use unified form:', !hasFirstName);
+        });
+    </script>
+</body>
+</html>

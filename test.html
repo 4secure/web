@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Stack Effect - Case Studies</title>
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    *,
+    *::before,
+    *::after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+      --color-dark: #020b18;
+      --color-white: #fff;
+      --accent-cyan: #6ec0fb;
+      --accent-blue: #2b4d8d;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    header p {
+      margin-bottom: 16px;
+      color: var(--accent-cyan);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header h1 {
+      margin-bottom: 24px;
+      font-size: 3.5rem;
+      line-height: 1.2;
+    }
+
+    header h1 span {
+      color: var(--accent-cyan);
+    }
+
+    header div {
+      margin-bottom: 24px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #7a9bb5;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header a {
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      opacity: 1;
+      transition: opacity .3s linear;
+      text-decoration: none;
+      border: 1px solid var(--accent-cyan);
+      padding: 12px 30px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    header a:hover {
+      background: var(--accent-cyan);
+      color: var(--color-dark);
+    }
+
+    .l-cards {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .c-card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px;
+      width: 100%;
+      height: 90vh;
+      min-height: 600px;
+      background-color: transparent;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+      will-change: transform;
+    }
+
+    .c-card__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      background: rgba(6, 20, 40, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(110, 192, 251, 0.12);
+      border-radius: 16px;
+    }
+
+    .c-card__tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .c-card__title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .c-card__excerpt {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #7a9bb5;
+    }
+
+    .c-card__cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .c-card__cta a {
+      width: max-content;
+      padding: 12px 30px;
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .c-card__cta a:hover {
+      background: var(--accent-cyan);
+      color: var(--color-dark);
+    }
+
+    .c-card__figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(110, 192, 251, 0.2);
+    }
+
+    .c-card__figure img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .c-card:hover .c-card__figure img {
+      transform: scale(1.05);
+    }
+
+    .frame-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .frame-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, #d4af37, #f0e68c, #d4af37);
+      border-radius: 18px;
+      z-index: -1;
+    }
+
+    .spacer {
+      width: 100%;
+      height: 30vh;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .c-card {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: auto;
+        gap: 20px;
+      }
+      
+      .c-card__description {
+        order: 2;
+      }
+      
+      .c-card__figure {
+        order: 1;
+        height: 400px;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 568px) {
+      .c-card__title {
+        font-size: 1.8rem;
+      }
+      
+      .c-card__cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <header>
+    <p>Customer Success Stories</p>
+    <h1>Case <span>Studies</span></h1>
+    <div>
+      See how we've helped leading organizations strengthen their security and respond to threats with our enterprise-grade solutions.
+    </div>
+    
+    <a href="#" target="_blank">
+      View All Case Studies
+    </a>
+  </header>
+  
+  <div class="l-cards">
+    <!-- CARD 1 - Banking -->
+    <div class="c-card">
+      <div class="c-card__description">
+        <div class="c-card__tagline">
+          Financial Services
+        </div>
+        
+        <h2 class="c-card__title">
+          Banking Institution Secures Multi-Million Dollar Assets
+        </h2>
+        
+        <div class="c-card__excerpt">
+          In late 2023, a leading financial institution faced vulnerability to advanced persistent threats targeting their core banking systems. Our SOC monitoring and comprehensive VAPT identified 47 critical vulnerabilities before they could be exploited, resulting in zero breaches and protecting over $450M in assets.
+        </div>
+        
+        <div class="c-card__cta">
+          <a href="#">Read Case Study</a>
+        </div>
+      </div>
+
+      <figure class="c-card__figure">
+        <div class="frame-wrapper">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Banking Security">
+        </div>
+      </figure>
+    </div>
+    
+    <!-- CARD 2 - SaaS Startup -->
+    <div class="c-card">
+      <div class="c-card__description">
+        <div class="c-card__tagline">
+          SaaS & Technology
+        </div>
+        
+        <h2 class="c-card__title">
+          SaaS Startup Achieves ISO 27001 in 90 Days
+        </h2>
+        
+        <div class="c-card__excerpt">
+          A rapidly scaling SaaS company needed ISO 27001 compliance urgently to unlock enterprise contracts. In just 90 days, our consulting team designed and deployed a complete security framework. The result: compliance achieved and $2.5M in previously blocked enterprise deals unlocked.
+        </div>
+        
+        <div class="c-card__cta">
+          <a href="#">Read Case Study</a>
+        </div>
+      </div>
+
+      <figure class="c-card__figure">
+        <div class="frame-wrapper">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Compliance Success">
+        </div>
+      </figure>
+    </div>
+    
+    <!-- CARD 3 - Telecom -->
+    <div class="c-card">
+      <div class="c-card__description">
+        <div class="c-card__tagline">
+          Telecommunications
+        </div>
+        
+        <h2 class="c-card__title">
+          Telecom Provider Stops APT Campaign
+        </h2>
+        
+        <div class="c-card__excerpt">
+          A major telecommunications provider discovered an ongoing APT campaign targeting their infrastructure. Our incident response team mobilized within minutes and contained the breach in just 4 hours. We prevented an estimated $15M in losses and protected over 500,000 customer accounts from data theft.
+        </div>
+        
+        <div class="c-card__cta">
+          <a href="#">Read Case Study</a>
+        </div>
+      </div>
+
+      <figure class="c-card__figure">
+        <div class="frame-wrapper">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Incident Response">
+        </div>
+      </figure>
+    </div>
+    
+    <!-- CARD 4 - Enterprise -->
+    <div class="c-card">
+      <div class="c-card__description">
+        <div class="c-card__tagline">
+          Enterprise
+        </div>
+        
+        <h2 class="c-card__title">
+          Enterprise Consolidates Security with 40% Cost Savings
+        </h2>
+        
+        <div class="c-card__excerpt">
+          A Fortune 500 enterprise needed to consolidate 6 different security vendors into one unified platform. Our solution delivered 40% reduction in annual security spend while simultaneously improving threat detection coverage by 300% through advanced automation and intelligent analytics.
+        </div>
+        
+        <div class="c-card__cta">
+          <a href="#">Read Case Study</a>
+        </div>
+      </div>
+
+      <figure class="c-card__figure">
+        <div class="frame-wrapper">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Enterprise Security">
+        </div>
+      </figure>
+    </div>
+    
+    <!-- CARD 5 - Healthcare -->
+    <div class="c-card">
+      <div class="c-card__description">
+        <div class="c-card__tagline">
+          Healthcare
+        </div>
+        
+        <h2 class="c-card__title">
+          Healthcare Organization Achieves HIPAA Compliance
+        </h2>
+        
+        <div class="c-card__excerpt">
+          A multi-facility healthcare provider needed to achieve HIPAA compliance across their entire infrastructure. Our cloud security and data protection solutions encrypted all patient data, implemented zero-trust access controls, and achieved 100% audit compliance in just 6 months.
+        </div>
+        
+        <div class="c-card__cta">
+          <a href="#">Read Case Study</a>
+        </div>
+      </div>
+
+      <figure class="c-card__figure">
+        <div class="frame-wrapper">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Healthcare Security">
+        </div>
+      </figure>
+    </div>
+  </div>
+  
+  <div class="spacer"></div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Select all cards
+    const cards = gsap.utils.toArray(".c-card");
+    const lastCardIndex = cards.length - 1;
+    
+    // Create ScrollTriggers for reference points
+    const firstCardST = ScrollTrigger.create({
+      trigger: cards[1],
+      start: "center center"
+    });
+    
+    const lastCardST = ScrollTrigger.create({
+      trigger: cards[cards.length - 1],
+      start: "center center"
+    });
+    
+    // Iterate over each card
+    cards.forEach((card, index) => {
+      // Scale value: 0.5 for all except last card (scale 1)
+      const scale = index === lastCardIndex ? 1 : 0.5;
+      
+      // Create scale animation
+      const scaleDown = gsap.to(card, {
+        scale: scale,
+        ease: "none"
+      });
+      
+      // Create ScrollTrigger for pinning and animation
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top top",
+        end: () => lastCardST.start,
+        pin: true,
+        pinSpacing: false,
+        scrub: 0.5,
+        ease: "none",
+        animation: scaleDown,
+        toggleActions: "restart none none reverse"
+      });
+    });
+    
+    // Add a special effect for the first card to scale from 1 to 0.5
+    ScrollTrigger.create({
+      trigger: cards[0],
+      start: "top top",
+      end: () => firstCardST.start,
+      scrub: 0.5,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        // Scale from 1 to 0.5 as we scroll
+        const scale = 1 - (progress * 0.5);
+        gsap.set(cards[0], { scale: scale });
+      }
+    });
+    
+    // Refresh ScrollTrigger on resize
+    window.addEventListener('resize', () => {
+      ScrollTrigger.refresh();
+    });
+  });
+</script>
+
+<!-- Alternative simpler version if the above doesn't work perfectly -->
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const cards = document.querySelectorAll('.c-card');
+    
+    cards.forEach((card, index) => {
+      if (index < cards.length - 1) {
+        gsap.to(card, {
+          scale: 0.5,
+          scrollTrigger: {
+            trigger: card,
+            start: "top top",
+            end: () => "+=" + (window.innerHeight * 1.5),
+            pin: true,
+            pinSpacing: false,
+            scrub: 0.5,
+            ease: "none"
+          }
+        });
+      }
+    });
+  });
+</script> -->
+  <section id="case-studies" class="section cs-section">
+    <div class="cs-header container" style="max-width:1400px;">
+      <div class="section-tag reveal">Security Intelligence</div>
+      <h2 class="section-title reveal">Insights</h2>
+      <p class="section-subtitle reveal">See how we've helped leading organizations strengthen their security and
+        respond to threats</p>
+    </div>
+
+    <!-- Outer: tall enough to scroll through all cards -->
+    <div class="cs-outer" id="csOuter">
+      <div class="cs-sticky" id="csSticky">
+
+        <!-- Deck wrapper — cards stack here -->
+        <div class="cs-deck" id="csDeck">
+
+          <!-- CARD 1 -->
+          <div class="cs-card" data-index="0">
+            <div class="case-study-featured">
+              <div class="case-study-content"     >
+                <h3>The Rise of AI-Driven vCISO Platforms</h3>
+                <p>How artificial intelligence is democratizing executive-level security expertise and transforming the
+                  way organizations approach strategic cybersecurity leadership.</p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <button class="btn btn-primary"><a href="/Blogs/blog-1.html">Read More</a></button>
+                  <button class="btn btn-secondary"><a href="blog.html">All Articles</a></button>
+                </div>
+              </div>
+              <div class="case-study-image-frame">
+                <div class="frame-wrapper">
+                  <img src="/assets/images/blog-1.jpg"
+                    alt="Banking Security">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="cs-card" data-index="1">
+            <div class="case-study-featured">
+              <div class="case-study-content">
+                <h3>From Reactive to Proactive Security Operations</h3>
+                <p>Learn how leading security teams are shifting left, implementing threat hunting, and building
+                  proactive defense mechanisms that stop attacks before they execute.</p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <button class="btn btn-primary"><a href="/Blogs/blog-2.html">Read More</a></button>
+                  <button class="btn btn-secondary"><a href="blog.html">All Articles</a></button>
+                </div>
+
+              </div>
+              <div class="case-study-image-frame">
+                <div class="frame-wrapper">
+                  <img src="/assets/images/blog-2.jpg"
+                    alt="Compliance Success">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="cs-card" data-index="2">
+            <div class="case-study-featured">
+
+              <div class="case-study-content">
+                <h3> Closing the Gap in Global Cyber Defense
+                </h3>
+                <p>An in-depth analysis of the cybersecurity skills shortage and how organizations are bridging the gap
+                  through automation, AI-assisted operations, and innovative training programs for the next generation.
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                  <button class="btn btn-primary"><a href="/Blogs/blog-3.html">Read More</a></button>
+                  <button class="btn btn-secondary"><a href="blog.html">All Articles</a></button>
+                </div>
+
+              </div>
+              <div class="case-study-image-frame">
+                <div class="frame-wrapper">
+                              <img src="/assets/images/blog-3.jpg"
+
+                    alt="Incident Response">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <!-- <div class="cs-card" data-index="3">
+            <div class="case-study-featured">
+              <div class="case-study-content">
+                <h3>Enterprise Consolidates Security with 40% Cost Savings</h3>
+                <p>A Fortune 500 enterprise needed to consolidate 6 different security vendors into one unified
+                  platform. Our solution delivered 40% reduction in annual security spend while simultaneously improving
+                  threat detection coverage by 300% through advanced automation and intelligent analytics.</p>
+                <button class="btn btn-primary"
+                  onclick="Calendly.initPopupWidget({url:'https://calendly.com/4secu-info'}); return false;">Let's
+                  Discuss</button>
+              </div>
+              <div class="case-study-image-frame">
+                <div class="frame-wrapper">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+                    alt="Enterprise Security">
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- CARD 5 -->
+          <!-- <div class="cs-card" data-index="4">
+            <div class="case-study-featured">
+              <div class="case-study-content">
+                <h3>Healthcare Organization Achieves HIPAA Compliance</h3>
+                <p>A multi-facility healthcare provider needed to achieve HIPAA compliance across their entire
+                  infrastructure. Our cloud security and data protection solutions encrypted all patient data,
+                  implemented zero-trust access controls, and achieved 100% audit compliance in just 6 months.</p>
+                <button class="btn btn-primary"
+                  onclick="Calendly.initPopupWidget({url:'https://calendly.com/4secu-info'}); return false;">Let's
+                  Discuss</button>
+              </div>
+              <div class="case-study-image-frame">
+                <div class="frame-wrapper">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop"
+                    alt="Healthcare Security">
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        </div><!-- /cs-deck -->
+
+        <!-- Dot navigation -->
+        <div class="scroll-indicator" id="csDots"></div>
+
+        <!-- Scroll hint on first view -->
+        <div class="cs-scroll-hint" id="csScrollHint">
+          <span>Scroll to explore</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
