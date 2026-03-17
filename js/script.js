@@ -2,6 +2,41 @@
    FOUR SECURE - MAIN JAVASCRIPT
    ============================================ */
 
+// ============================================
+// LOADER FUNCTIONALITY
+// ============================================
+// Hide loader when page is fully loaded
+window.addEventListener('load', function() {
+  const loaderWrapper = document.querySelector('.loader-wrapper');
+  if (loaderWrapper) {
+    setTimeout(function() {
+      loaderWrapper.classList.add('hidden');
+      document.body.classList.add('loaded');
+    }, 500); // Show loader for at least 500ms
+  }
+});
+
+// Also hide loader when DOM is ready (fallback)
+document.addEventListener('DOMContentLoaded', function() {
+  // If page loads very quickly, still show loader briefly
+  setTimeout(function() {
+    const loaderWrapper = document.querySelector('.loader-wrapper');
+    if (loaderWrapper) {
+      loaderWrapper.classList.add('hidden');
+      document.body.classList.add('loaded');
+    }
+  }, 1000);
+});
+
+// Force hide loader after 3 seconds as ultimate fallback
+setTimeout(function() {
+  const loaderWrapper = document.querySelector('.loader-wrapper');
+  if (loaderWrapper && !loaderWrapper.classList.contains('hidden')) {
+    loaderWrapper.classList.add('hidden');
+    document.body.classList.add('loaded');
+  }
+}, 3000);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================
@@ -1109,4 +1144,4 @@ document.addEventListener('DOMContentLoaded', () => {
     return a + (b - a) * t;
   }
 
-})();
+  })();
