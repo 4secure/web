@@ -2464,7 +2464,7 @@ footer::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/assets/images/favicon.png");
+  background-image: url("/favicon.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: 520px;
