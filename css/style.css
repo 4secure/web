@@ -2134,7 +2134,7 @@ background: linear-gradient(to bottom, #ffffff 30%, var(--accent-cyan) 100%);
    CONTACT FORM SECTION — LIGHT (permanent)
    ============================================ */
 #contact-form-section {
-  padding: 100px 0;
+  padding: 50px 0;
   background: #010810;
   position: relative;
 }
@@ -2162,7 +2162,10 @@ background: linear-gradient(to bottom, #ffffff 30%, var(--accent-cyan) 100%);
   color: #334155;
 }
 
-.contact-form-content p, h1{
+.contact-form-content p{
+display: none;
+}
+.contact-form-content  h1{
   margin-bottom: 20px;
   
   text-align: center;
@@ -5936,6 +5939,10 @@ button[type="submit"]:disabled {
   .form-row {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
   }
 
   .cta-box {
