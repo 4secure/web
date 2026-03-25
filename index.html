@@ -1,546 +1,1089 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
   <!-- Google Tag Manager -->
+
   <script>(function (w, d, s, l, i) {
+
       w[l] = w[l] || []; w[l].push({
+
         'gtm.start':
+
           new Date().getTime(), event: 'gtm.js'
+
       }); var f = d.getElementsByTagName(s)[0],
+
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+
     })(window, document, 'script', 'dataLayer', 'GTM-TVCMTHMF');</script>
+
   <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description"
+
     content="Four Secure — Advanced cybersecurity solutions for enterprises. SOC monitoring, penetration testing, incident response, and cloud security.">
+
   <title>Four Secure | Advanced Cybersecurity for the Digital World</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/style.css?v=1.0.0">
+
   <link rel="icon" type="image/svg+xml" href="/favicon.png">
 
+
+
   <!-- Calendly -->
+
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+
 
 </head>
 
+
+
 <body>
 
+
+
   <!-- Loader -->
+
   <div class="loader-wrapper">
+
     <div class="loader"></div>
+
   </div>
+
+
 
   <!-- Google Tag Manager (noscript) -->
+
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVCMTHMF" height="0" width="0"
+
       style="display:none;visibility:hidden"></iframe></noscript>
+
   <!-- End Google Tag Manager (noscript) -->
 
+
+
   <nav id="navbar">
+
     <div class="nav-inner">
+
       <a href="index.html" class="nav-logo1">
+
         <img src="assets/images/logo.png" alt="Four Secure Logo" class="logo-img" style="width: 100px; height: auto;">
+
       </a>
 
+
+
       <ul class="nav-links">
+
         <li><a href="index.html">Home</a></li>
+
         <li><a href="about.html">About</a></li>
+
         <li class="mega-menu-trigger">
+
           <a href="services.html" id="services-mega-trigger">Services
+
             <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
               <polyline points="6 9 12 15 18 9" />
+
             </svg>
+
           </a>
+
         </li>
+
         <li><a href="blog.html">Blog</a></li>
+
         <li><a href="contact.html">Contact</a></li>
+
       </ul>
 
+
+
       <div class="nav-actions">
+
         <button class="btn btn-primary nav-cta"
+
           onclick="Calendly.initPopupWidget({url:'https://calendly.com/4secu-info'}); return false;">Let's
+
           Discuss</button>
+
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+
           <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
             <circle cx="12" cy="12" r="5" />
+
             <line x1="12" y1="1" x2="12" y2="3" />
+
             <line x1="12" y1="21" x2="12" y2="23" />
+
             <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+
             <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+
             <line x1="1" y1="12" x2="3" y2="12" />
+
             <line x1="21" y1="12" x2="23" y2="12" />
+
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+
           </svg>
+
           <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+
           </svg>
+
         </button>
+
       </div>
+
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+
         <span></span><span></span><span></span>
+
       </button>
+
     </div>
+
   </nav>
 
+
+
   <!-- Mega Menu - Compact with View All Button -->
+
   <div class="mega-menu" id="services-mega-menu">
+
     <div class="container">
+
       <div class="mega-menu-grid">
+
         <!-- Column 1: Security Operations -->
+
         <div class="mega-menu-category">
+
           <h3>Security Operations</h3>
+
           <div class="mega-menu-items">
+
             <a href="../Services/24x7-SOC.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <rect x="2" y="3" width="20" height="14" rx="2" />
+
                 <line x1="8" y1="21" x2="16" y2="21" />
+
                 <line x1="12" y1="17" x2="12" y2="21" />
+
               </svg>
+
               <span>24x7 Managed SOC</span>
+
             </a>
+
             <a href="../Services/threat-intel.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <circle cx="12" cy="12" r="10" />
+
                 <path d="M12 6v6l4 2" />
+
               </svg>
+
               <span>Threat Intelligence</span>
+
             </a>
+
             <a href="../Services/mss.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+
               </svg>
+
               <span>Managed Security</span>
+
             </a>
+
             <a href="../Services/automation.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <path
+
                   d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+
               </svg>
+
               <span>SOAR & Automation</span>
+
             </a>
+
           </div>
+
         </div>
+
+
 
         <!-- Column 2: Assessment & Testing -->
+
         <div class="mega-menu-category">
+
           <h3>Assessment & Testing</h3>
+
           <div class="mega-menu-items">
+
             <a href="../Services/vapt.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <circle cx="11" cy="11" r="8" />
+
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
+
                 <line x1="11" y1="8" x2="11" y2="14" />
+
                 <line x1="8" y1="11" x2="14" y2="11" />
+
               </svg>
+
               <span>VAPT</span>
+
             </a>
+
             <a href="../Services/assessment.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+
                 <line x1="12" y1="9" x2="12" y2="13" />
+
                 <line x1="12" y1="17" x2="12.01" y2="17" />
+
               </svg>
+
               <span>Assessments & Audits</span>
+
             </a>
+
             <a href="../Services/appsec.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <rect x="2" y="2" width="20" height="20" rx="2" />
+
                 <line x1="8" y1="2" x2="8" y2="22" />
+
                 <line x1="16" y1="2" x2="16" y2="22" />
+
               </svg>
+
               <span>Application Security</span>
+
             </a>
+
             <a href="../Services/pci.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <rect x="3" y="3" width="18" height="18" rx="2" />
+
                 <path d="M7 7h.01M7 12h.01M7 17h.01" />
+
               </svg>
+
               <span>PCI‑DSS Compliance</span>
+
             </a>
+
           </div>
+
         </div>
+
+
 
         <!-- Column 3: Infrastructure & Cloud -->
+
         <div class="mega-menu-category">
+
           <h3>Infrastructure & Cloud</h3>
+
           <div class="mega-menu-items">
+
             <a href="../Services/cloud.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
+
               </svg>
+
               <span>Cloud Security</span>
+
             </a>
+
             <a href="../Services/network.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <rect x="2" y="2" width="20" height="20" rx="2.18" />
+
                 <line x1="8" y1="2" x2="8" y2="22" />
+
               </svg>
+
               <span>Network Security</span>
+
             </a>
+
             <a href="../Services/endpoint.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <rect x="2" y="3" width="20" height="14" rx="2" />
+
                 <line x1="8" y1="21" x2="16" y2="21" />
+
                 <line x1="12" y1="17" x2="12" y2="21" />
+
               </svg>
+
               <span>Endpoint Security</span>
+
             </a>
+
             <a href="../Services/ot.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <circle cx="12" cy="12" r="10" />
+
                 <path d="M12 2a14 14 0 010 20 14 14 0 010-20" />
+
               </svg>
+
               <span>OT / ICS Security</span>
+
             </a>
+
           </div>
+
         </div>
+
+
 
         <!-- Column 4: Governance & Strategy -->
+
         <div class="mega-menu-category">
+
           <h3>Governance & Strategy</h3>
+
           <div class="mega-menu-items">
+
             <a href="../Services/grc.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <path d="M9 11l3 3L22 4" />
+
                 <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+
               </svg>
+
               <span>GRC</span>
+
             </a>
+
             <a href="../Services/iam.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <circle cx="12" cy="8" r="4" />
+
                 <path d="M5 20v-2a7 7 0 0114 0v2" />
+
               </svg>
+
               <span>Identity & Access</span>
+
             </a>
+
             <a href="../Services/ir.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+
               </svg>
+
               <span>Incident Response</span>
+
             </a>
+
             <a href="../Services/consulting.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <path
+
                   d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+
                 <path d="M12 22V12" />
+
               </svg>
+
               <span>Consulting</span>
+
             </a>
+
             <!-- <a href="../Services/data-protection.html" class="mega-menu-item">
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <rect x="3" y="3" width="18" height="18" rx="2"/>
+
                 <line x1="3" y1="9" x2="21" y2="9"/>
+
               </svg>
+
               <span>Data Protection</span>
+
             </a> -->
+
           </div>
+
         </div>
+
       </div>
+
+
 
       <!-- View All Services Button -->
+
       <div class="mega-menu-footer">
+
         <a href="services.html">
+
           <span>View All Services</span>
+
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
             <line x1="5" y1="12" x2="19" y2="12" />
+
             <polyline points="12 5 19 12 12 19" />
+
           </svg>
+
         </a>
+
       </div>
+
     </div>
+
   </div>
+
+
 
   <!-- Mega Menu Overlay -->
+
   <div class="mega-menu-overlay" id="mega-menu-overlay"></div>
 
+
+
   <!-- Mobile Nav -->
+
   <div class="mobile-nav" id="mobile-nav">
+
     <ul class="mobile-nav-links">
+
       <li><a href="index.html">Home</a></li>
+
       <li><a href="about.html">About</a></li>
+
       <li class="mobile-dropdown-container">
+
         <div class="mobile-dropdown-wrapper">
+
           <a href="services.html" class="mobile-dropdown-link">Services</a>
+
           <label for="services-dropdown" class="mobile-dropdown-trigger" aria-label="Toggle services menu">
+
             <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+
               width="16">
+
               <polyline points="6 9 12 15 18 9" />
+
             </svg>
+
           </label>
+
         </div>
+
         <input type="checkbox" id="services-dropdown" class="dropdown-checkbox" hidden>
+
         <ul class="mobile-sub-links">
+
           <li><a href="../Services/24x7-SOC.html">SOC Monitoring</a></li>
+
           <li><a href="../Services/vapt.html">Vulnerability Assessment</a></li>
+
           <li><a href="../Services/assessment.html">Cybersecurity Assessments</a></li>
+
           <li><a href="../Services/ir.html">Incident Response</a></li>
+
           <li><a href="../Services/cloud.html">Cloud Security</a></li>
+
           <li><a href="../Services/grc.html">Risk &amp; Compliance</a></li>
+
           <li>
+
             <button type="button" onclick="window.location.href='services.html'" class="btn btn-primary"
+
               style="width:100%;justify-content:center;">View All Services</button>
+
           </li>
+
         </ul>
+
       </li>
+
       <li><a href="blog.html">Blog</a></li>
+
       <li><a href="contact.html">Contact</a></li>
+
     </ul>
+
     <div class="mobile-nav-cta">
+
       <button type="button" onclick="Calendly.initPopupWidget({url:'https://calendly.com/4secu-info'}); return false;"
+
         class="btn btn-primary" style="width:100%;justify-content:center;">Let's Discuss</button>
+
     </div>
+
   </div>
 
+
+
   <!-- ============ HERO ============ -->
+
   <section id="hero">
+
     <!-- Video Background -->
+
     <video src="/assets/video/2.mp4" autoplay muted loop playsinline
+
       style="margin-top: 100px; background-color: none;"></video>
+
+
 
     <!-- <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
 
+
+
     <div class="hero-radial"></div> -->
 
+
+
     <div class="container">
+
       <div class="hero-content">
 
+
+
         <h1 class="hero-headline">
+
           <span class="font-light">Where</span>
+
           <br>
+
           <span class="font-regular">Your Data Stays</span>
+
           <span class="line-highlight font-medium">Safe and Secure</span>
+
         </h1>
+
         <div class="hero-typing-wrapper">
+
           <span id="typing-text"></span>
+
           <span class="typing-cursor"></span>
+
         </div>
+
+
 
         <!-- <p class="hero-desc">
+
           We protect your digital infrastructure with enterprise-grade threat detection, 24/7 SOC monitoring, and rapid incident response — so you can operate with confidence.
+
         </p> -->
 
+
+
         <div class="hero-actions">
+
           <a href="contact.html" class="btn btn-primary">
+
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
               <path d="M12 2L3 7v7c0 5 3.9 9.7 9 10.9C17.1 23.7 21 19 21 14V7L12 2z" />
+
             </svg>
+
             Get Started
+
           </a>
+
           <a href="services.html" class="btn btn-outline">Our Services</a>
+
         </div>
+
+
 
         <!-- <div class="hero-stats">
+
           <div class="hero-stat-item">
+
             <div class="hero-stat-num"><span class="counter" data-target="500">0</span><span class="sanp">+</span></div>
+
             <div class="hero-stat-label">Clients Protected</div>
+
           </div>
+
           <div class="hero-stat-item">
+
             <div class="hero-stat-num"><span class="counter" data-target="1200">0</span><span class="sanp">+</span></div>
+
             <div class="hero-stat-label">Threats Mitigated</div>
+
           </div>
+
           <div class="hero-stat-item">
+
             <div class="hero-stat-num"><span class="counter" data-target="99.9">0</span><span class="sanp">%</span></div>
+
             <div class="hero-stat-label">Uptime Guarantee</div>
+
           </div>
+
         </div> -->
+
       </div>
+
     </div>
+
+
 
     <!-- Decorative cyber rings -->
+
     <div class="hero-visual">
+
     </div>
+
     <!-- <div class="hero-visual">
+
       <div class="cyber-ring"></div>
+
       <div class="cyber-ring"></div>
+
       <div class="cyber-ring"></div>
+
       <div class="cyber-center">
+
         <svg  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" >
+
           <path d="M12 2L3 7v7c0 5 3.9 9.7 9 10.9C17.1 23.7 21 19 21 14V7L12 2z" />
+
         </svg>
+
       </div>
+
     </div> -->
 
+
+
   </section>
+
+
 
   <!-- ============ WHY CHOOSE US ============ -->
+
   <section id="why-us" class="section">
+
     <div class="container">
+
       <div class="why-us-content">
+
         <!-- Left Content -->
+
         <div class="why-us-text">
+
           <div class="section-tag reveal">Why Choose Four Secure</div>
+
           <h2 class="section-title reveal">Security You Can Count On</h2>
+
           <p class="section-subtitle reveal">Welcome to Four Secure Your Premier Partner in Cybersecurity Excellence
+
             In today’s rapidly evolving digital landscape, ensuring robust protection against cyber threats is more
+
             critical than ever. At Four Secure, we stand at the forefront of cybersecurity innovation, offering a
+
             comprehensive suite of services designed to safeguard your organization’s most valuable assets. .</p>
 
+
+
           <!-- <div class="why-us-features reveal">
+
             <div class="why-feature">
+
               <div class="why-feature-icon">
+
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                   <path d="M20 17a4 4 0 0 0-3-6.87A5 5 0 0 0 7 9a4 4 0 0 0 1 8h12z"/>
+
                 </svg>
+
               </div>
+
               <div class="why-feature-content">
+
                 <h3>Cloud Security</h3>
+
                 <p>Secure your cloud infrastructure with continuous protection and real-time threat detection.</p>
+
               </div>
+
             </div>
+
             
+
             <div class="why-feature">
+
               <div class="why-feature-icon">
+
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+
                   <polyline points="22 4 12 14.01 9 11.01" />
+
                 </svg>
+
               </div>
+
               <div class="why-feature-content">
+
                 <h3>Certified Experts</h3>
+
                 <p>Industry veterans with CISSP, CEH, OSCP, and CISM certifications.</p>
+
               </div>
+
             </div>
+
             
+
             <div class="why-feature">
+
               <div class="why-feature-icon">
+
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+
                   <path d="M7 11V7a5 5 0 0110 0v4" />
+
                 </svg>
+
               </div>
+
               <div class="why-feature-content">
+
                 <h3>Enterprise-Grade Security</h3>
+
                 <p>Military-grade encryption and zero-trust architecture for Fortune 500 demands.</p>
+
               </div>
+
             </div>
+
           </div> -->
 
+
+
           <div class="why-us-cta reveal">
+
             <a href="/contact.html" class="btn btn-primary">Get Started</a>
+
           </div>
+
         </div>
+
+
 
         <!-- Right Image -->
+
         <div class="why-us-image reveal">
+
           <img src="/assets/images/about1.gif" alt="Why Choose Four Secure" />
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
+
+
   <!-- ============ SERVICES PREVIEW ============ -->
+
   <!-- ============================================
 
 
+
+
+
    SERVICES SECTION WITH HOVER BACKGROUND IMAGES
+
    ============================================ -->
 
 
+
+
+
   <!-- ============ SERVICES PREVIEW ============ -->
+
   <!-- ============ SERVICES PREVIEW ============ -->
+
   <!-- ============ SERVICES PREVIEW ============ -->
+
   
 
+
+
   <section id="services-preview" class="section">
+
     <div class="container">
+
       <!-- Section Header -->
+
       <div class="section-header">
+
         <span class="section-tag reveal">Our Services</span>
+
         <h2 class="section-title reveal">Services We Offers</h2>
+
         <p class="section-subtitle reveal">Enterprise-grade protection tailored to your business needs</p>
+
       </div>
+
+
 
       <!-- Services Brick Grid with Clickable Cards -->
+
       <div class="services-brick-grid">
+
         <!-- Service Brick 1 - SOC Monitoring -->
+
         <a href="/Services/24x7-SOC.html" class="service-brick" data-service="soc"
+
           data-bg="https://www.cybersecurityeducation.org/wp-content/uploads/2023/11/soc-analyst-750x350-1.jpg">
+
           <div class="brick-bg"
+
             style="background-image: url('https://www.cybersecurityeducation.org/wp-content/uploads/2023/11/soc-analyst-750x350-1.jpg');">
+
           </div>
+
           <div class="brick-content">
+
             
+
             <h3>SOC Monitoring</h3>
+
             <p>24/7 security operations center with real-time threat detection and automated capabilities.</p>
+
             <div class="brick-link">
+
               <span>Explore Service</span>
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <line x1="5" y1="12" x2="19" y2="12" />
+
                 <polyline points="12 5 19 12 12 19" />
+
               </svg>
+
             </div>
+
           </div>
+
         </a>
+
+
 
         <!-- Service Brick 2 - Penetration Testing -->
+
         <a href="/Services/vapt.html" class="service-brick" data-service="vapt"
+
           data-bg="https://ipkeys.com/wp-content/uploads/2023/10/iStock-1446691047.jpg">
+
           <div class="brick-bg"
+
             style="background-image: url('https://ipkeys.com/wp-content/uploads/2023/10/iStock-1446691047.jpg');"></div>
+
           <div class="brick-content">
+
              
+
             <h3>Governance, Risk & Compliance (GRC)</h3>
+
             <p>Governance, risk and compliance (GRC) refers to an organization's strategy, or framework.</p>
+
             <div class="brick-link">
+
               <span>Explore Service</span>
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <line x1="5" y1="12" x2="19" y2="12" />
+
                 <polyline points="12 5 19 12 12 19" />
+
               </svg>
+
             </div>
+
           </div>
+
         </a>
+
+
 
         <!-- Service Brick 3 - Incident Response -->
+
         <a href="/Services/ir.html" class="service-brick brickes" data-service="ir"
+
           data-bg="https://www.bdosecurity.de/getmedia/fc36361a-fa2a-4287-bd3d-14e078ac5bc3/Cyber-Notfallmanagement-1200x630.jpg">
+
           <div class="brick-bg"
+
             style="background-image: url('https://www.bdosecurity.de/getmedia/fc36361a-fa2a-4287-bd3d-14e078ac5bc3/Cyber-Notfallmanagement-1200x630.jpg');">
+
           </div>
+
           <div class="brick-content">
+
              
+
             <h3>Incident Response</h3>
+
             <p>Rapid deployment of expert teams to contain, investigate, and recover from security incidents.</p>
+
             <div class="brick-link">
+
               <span>Explore Service</span>
+
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
                 <line x1="5" y1="12" x2="19" y2="12" />
+
                 <polyline points="12 5 19 12 12 19" />
+
               </svg>
+
             </div>
+
           </div>
+
         </a>
+
       </div>
 
+
+
       <!-- Section Footer -->
+
       <div class="section-footer">
+
         <a href="services.html" class="btn btn-primary reveal fade-up" style="--delay: 4">
+
           <span>View All Services</span>
+
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
             <line x1="5" y1="12" x2="19" y2="12" />
+
             <polyline points="12 5 19 12 12 19" />
+
           </svg>
+
         </a>
+
       </div>
+
     </div>
+
   </section>
+
+
+
+
+
 
 
 
 
   <!-- ============ CASE STUDIES - ORIGINAL STYLING + FIXED SCROLL ============ -->
 
+
+
   <!-- ============ CASE STUDIES - EBRYX STACKING SCROLL EFFECT ============ -->
+
   <!--
+
   HOW IT WORKS (Ebryx style):
+
   - Section is pinned (sticky) for the full scroll duration
+
   - Cards are absolutely stacked on top of each other
+
   - As you scroll, the NEXT card slides in from the right/bottom and lands on top
+
   - Previous cards scale down slightly + shift up to show a "deck" peek behind
+
   - Result: a layered deck of cards growing from behind
+
 -->
 
 
@@ -552,283 +1095,281 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   <!-- ============ BLOG PREVIEW ============ -->
+
   <!-- <section id="blog-preview" class="section">
+
     <div class="container">
+
       <div
+
         style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px;">
+
         <div>
+
           <div class="section-tag reveal">Security Intelligence</div>
+
           <h2 class="section-title reveal" style="margin-bottom:0;">Latest Blogs</h2>
+
         </div>
+
         <a href="blog.html" class="btn btn-ghost reveal">All Articles</a>
+
       </div>
+
+
 
       <div class="grid-3">
+
         <a href="../Blogs/blog-1.html" class="blog-card-link reveal delay-1">
+
           <div class="blog-card">
+
             <div class="blog-img">
+
               <img src="/assets/images/blog-1.jpg" alt="AI & Innovation Blog"
+
                 style="width: 100%; height: 100%; object-fit: cover;">
+
               <span class="blog-category">AI & Innovation</span>
+
             </div>
+
             <div class="blog-body">
+
               <div class="blog-date">February 24, 2026</div>
+
               <h3>The Rise of AI-Driven vCISO Platforms</h3>
+
               <p>How artificial intelligence is democratizing executive-level security expertise and transforming the
+
                 way
+
                 organizations approach strategic cybersecurity leadership.</p>
+
               <span class="btn btn-ghost" style="padding:8px 16px;font-size:0.8rem;">Read More</span>
+
             </div>
+
           </div>
+
         </a>
+
+
 
         <a href="../Blogs/blog-2.html" class="blog-card-link reveal delay-2">
+
           <div class="blog-card">
+
             <div class="blog-img">
+
               <img src="/assets/images/blog-2.jpg" alt="Security Operations Blog"
+
                 style="width: 100%; height: 100%; object-fit: cover;">
+
               <span class="blog-category ">Security Operations</span>
+
             </div>
+
             <div class="blog-body">
+
               <div class="blog-date">February 18, 2026</div>
+
               <h3>From Reactive to Proactive Security Operations</h3>
+
               <p>Learn how leading security teams are shifting left, implementing threat hunting, and building proactive
+
                 defense mechanisms that stop attacks before they execute.</p>
+
               <span class="btn btn-ghost" style="padding:8px 16px;font-size:0.8rem;">Read More</span>
+
             </div>
+
           </div>
+
         </a>
 
+
+
         <a href="../Blogs/blog-3.html" class="blog-card-link reveal delay-3">
+
           <div class="blog-card">
+
             <div class="blog-img">
+
               <img src="assets/images/blog-3.jpg" alt="Cyber Strategy Blog"
+
                 style="width: 100%; height: 100%; object-fit: cover;">
+
               <span class="blog-category">Cyber Strategy</span>
+
             </div>
+
             <div class="blog-body">
+
               <div class="blog-date">January 28, 2026</div>
+
               <h3>Closing the Gap in Global Cyber Defense</h3>
+
               <p>An in-depth analysis of the cybersecurity skills shortage and how organizations are bridging the gap
+
                 through automation, AI-assisted operations, and innovative training programs for the next generation.
+
               </p>
+
               <span class="btn btn-ghost" style="padding:8px 16px;font-size:0.8rem;">Read More</span>
+
             </div>
+
           </div>
+
         </a>
+
       </div>
+
     </div>
+
   </section> -->
 
 
 
-  <!-- FAQ Section -->
-  <section class="about-story "
-    style="padding: 80px 0;   position: relative; z-index: 1; ">
-    <div class="container">
-      <div class="section-tag" style="justify-content:center; color: var(--accent-blue);">Frequently Asked Questions</div>
-      <h2 style="font-size: 2.5rem; margin-bottom: 50px; text-align: center;">FAQ's</h2>
 
-      <div class="faq-grid"
-        style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; min-height: 600px;">
 
-        <!-- FAQ Image on Left -->
-        <div class="faq-image"
-          style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3); height: 600px; order: 1;">
-          <img src="https://securenetworks.pk/wp-content/uploads/2025/01/services-img.webp" alt="Cybersecurity FAQ"
-            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: transform 0.5s ease;"
-            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'100%\' viewBox=\'0 0 400 600\'><rect width=\'400\' height=\'600\' fill=\'%236ec0fb\' opacity=\'0.2\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236ec0fb\' text-anchor=\'middle\' dominant-baseline=\'middle\'>FAQ</text></svg>'">
-        </div>
 
-        <!-- FAQ Content on Right -->
-        <div class="faq-content" style="order: 2; align-items: center; ">
-          <div class="faq-items" style="display: flex; flex-direction: column; gap: 20px; justify-items: center;">
 
-            <div class="faq-item"
-              style="background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-              <button class="faq-question"
-                style="width: 100%; background: none; border: none; padding: 20px 25px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.3;"
-                onclick="toggleFAQ(this)">
-                <span>Why secure network is the best choice for cybersecurity?</span>
-                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="width: 20px; height: 20px; transition: transform 0.3s ease; flex-shrink: 0; transform: rotate(180deg);">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              <div class="faq-answer"
-                style="max-height: 500px; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
-                <p style="color: var(--text-secondary); line-height: 1.6; margin: 0; padding: 0 25px 20px 25px;">With so
-                  many other cybersecurity consulting firms already operational in pakistan, what sets secure network
-                  apart from other cybersecurity vendors is our transparent approach and our dedicated services towards
-                  the customers.We ensure that the solutions that we provided are all tried and tested to give our
-                  customers unbeatable protection against all sorts of cyber security threats. No matter what the
-                  challenge might be, we always go beyond our client's expectations to deliver robust, powerful, and
-                  impactful cybersecurity services.</p>
-              </div>
-            </div>
+  <!-- Cyber Silo -->
+<section class="cybersilo-process">
+  <div class="process-header">
+    <h2>How CyberSilo Protects Your Business</h2>
+    <div class="process-rule"></div>
+    <p>Our comprehensive cybersecurity process ensures complete protection</p>
+  </div>
 
-            <div class="faq-item"
-              style="background: white;; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-              <button class="faq-question"
-                style="width: 100%; background: none; border: none; padding: 20px 25px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.3;"
-                onclick="toggleFAQ(this)">
-                <span>Why cybersecurity is important for businesses in pakistan?</span>
-                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="width: 20px; height: 20px; transition: transform 0.3s ease; flex-shrink: 0;">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              <div class="faq-answer"
-                style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
-                <p style="color: var(--text-secondary); line-height: 1.6; margin: 0; padding: 0 25px 20px 25px;">With so
-                  many other cybersecurity consulting firms already operational in pakistan, what sets secure network
-                  apart from other cybersecurity vendors is our transparent approach and our dedicated services towards
-                  the customers.We ensure that the solutions that we provided are all tried and tested to give our
-                  customers unbeatable protection against all sorts of cyber security threats. No matter what the
-                  challenge might be, we always go beyond our client's expectations to deliver robust, powerful, and
-                  impactful cybersecurity services.</p>
-              </div>
-            </div>
+  <div class="process-timeline">
 
-            <div class="faq-item"
-              style="background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-              <button class="faq-question"
-                style="width: 100%; background: none; border: none; padding: 20px 25px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.3;"
-                onclick="toggleFAQ(this)">
-                <span>How our experienced professionals provide it / cybersecurity services?</span>
-                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="width: 20px; height: 20px; transition: transform 0.3s ease; flex-shrink: 0;">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              <div class="faq-answer"
-                style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
-                <p style="color: var(--text-secondary); line-height: 1.6; margin: 0; padding: 0 25px 20px 25px;">With so
-                  many other cybersecurity consulting firms already operational in pakistan, what sets secure network
-                  apart from other cybersecurity vendors is our transparent approach and our dedicated services towards
-                  the customers.We ensure that the solutions that we provided are all tried and tested to give our
-                  customers unbeatable protection against all sorts of cyber security threats. No matter what the
-                  challenge might be, we always go beyond our client's expectations to deliver robust, powerful, and
-                  impactful cybersecurity services.</p>
-              </div>
-            </div>
-
-            <div class="faq-item"
-              style="background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-              <button class="faq-question"
-                style="width: 100%; background: none; border: none; padding: 20px 25px; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; color: var(--accent-cyan); font-weight: 600; line-height: 1.3;"
-                onclick="toggleFAQ(this)">
-                <span>You need to understand the importance of a cybersecurity company.</span>
-                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  style="width: 20px; height: 20px; transition: transform 0.3s ease; flex-shrink: 0;">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              <div class="faq-answer"
-                style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
-                <p style="color: var(--text-secondary); line-height: 1.6; margin: 0; padding: 0 25px 20px 25px;">With so
-                  many other cybersecurity consulting firms already operational in pakistan, what sets secure network
-                  apart from other cybersecurity vendors is our transparent approach and our dedicated services towards
-                  the customers.We ensure that the solutions that we provided are all tried and tested to give our
-                  customers unbeatable protection against all sorts of cyber security threats. No matter what the
-                  challenge might be, we always go beyond our client's expectations to deliver robust, powerful, and
-                  impactful cybersecurity services.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+    <!-- Step 1: Collect Data -->
+    <div class="process-step">
+      <div class="process-badge">1</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="12" cy="5.5" rx="9" ry="2.8" fill="#2b4d8d" opacity="0.12" stroke="#2b4d8d" stroke-width="1.7"/>
+          <path d="M3 5.5v3.8C3 11 7.03 12.3 12 12.3s9-1.3 9-3V5.5" stroke="#2b4d8d" stroke-width="1.7"/>
+          <path d="M3 9.3v3.8c0 1.66 4.03 3 9 3s9-1.34 9-3V9.3" stroke="#2b4d8d" stroke-width="1.7"/>
+          <path d="M3 13.1V17c0 1.66 4.03 3 9 3s9-1.34 9-3v-3.9" stroke="#2b4d8d" stroke-width="1.7"/>
+        </svg>
       </div>
-
-      <!-- Responsive Styles -->
-      <style>
-        @media (max-width: 768px) {
-          .faq-grid {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
-            min-height: auto !important;
-          }
-
-          .faq-image {
-            height: 350px !important;
-            order: 2 !important;
-          }
-
-          .faq-content {
-            order: 1 !important;
-          }
-
-          .faq-section h2 {
-            font-size: 2rem !important;
-            margin-bottom: 30px !important;
-          }
-
-          .faq-question {
-            font-size: 1rem !important;
-            padding: 15px 20px !important;
-          }
-
-          .faq-answer p {
-            padding: 0 20px 15px 20px !important;
-            font-size: 0.95rem !important;
-          }
-
-          .faq-section {
-            padding: 60px 0 !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .faq-image {
-            height: 280px !important;
-          }
-
-          .faq-section h2 {
-            font-size: 1.8rem !important;
-          }
-
-          .faq-question {
-            font-size: 0.95rem !important;
-            padding: 12px 15px !important;
-          }
-
-          .faq-answer p {
-            padding: 0 15px 12px 15px !important;
-            font-size: 0.9rem !important;
-          }
-
-          .faq-items {
-            gap: 15px !important;
-          }
-
-          .faq-section {
-            padding: 40px 0 !important;
-          }
-        }
-      </style>
+      <div class="process-title">Collect Data</div>
+      <p class="process-desc">Gather logs and security data from networks, endpoints, and critical systems</p>
     </div>
-  </section>
+
+    <!-- Step 2: Detect Threats -->
+    <div class="process-step">
+      <div class="process-badge">2</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7.2" stroke="#2b4d8d" stroke-width="1.8"/>
+          <line x1="16.5" y1="16.5" x2="22.2" y2="22.2" stroke="#2b4d8d" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="process-title">Detect Threats</div>
+      <p class="process-desc">AI-driven analytics identify unusual activity and potential attacks</p>
+    </div>
+
+    <!-- Step 3: Respond & Protect -->
+    <div class="process-step">
+      <div class="process-badge">3</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+            fill="#2b4d8d" opacity="1" stroke="#2b4d8d" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="process-title">Respond &amp; Protect</div>
+      <p class="process-desc">Alerts and automatic security measures keep your business safe</p>
+    </div>
+
+    <!-- Step 4: Monitor & Comply -->
+    <div class="process-step">
+      <div class="process-badge">4</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="3 17 9 11 13 15 21 7" stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="17 7 21 7 21 11"      stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="3" y1="21" x2="21" y2="21"   stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="process-title">Monitor &amp; Comply</div>
+      <p class="process-desc">Continuous monitoring and compliance reporting ensure ongoing protection</p>
+    </div>
+
+  </div>
+</section>
+ 
+
+
 
   <!-- ============ CTA ============ -->
+
   <section id="cta-section">
+
     <div class="container">
+
       <div class="cta-box reveal">
+
         <div class="section-tag" style="justify-content:center;">Take Action Now</div>
+
         <h2>Ready To <span style="color:var(--accent-cyan)">Secure Your Future</span></h2>
+
         <p>Don't wait for a breach. Partner with Four Secure today and build a resilient security posture that protects
+
           what
+
           matters most.</p>
+
         <div class="cta-actions">
+
           <a href="contact.html" class="btn btn-primary">
+
             Contact Us
+
           </a>
+
           <a href="services.html" class="btn btn-outline">Explore Services</a>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -845,109 +1386,217 @@
 
 
   <!-- ============ FOOTER ============ -->
+
   <footer>
+
     <div class="container">
+
       <div class="footer-grid">
+
         <div class="footer-brand">
+
           <a href="index.html" class="nav-logo" style="margin-bottom:0;">
+
             <img src="assets/images/logo.png" alt="Four Secure Logo" class="logo-img"
+
               style="width: 100px; height: auto;">
+
           </a>
+
           <p>Four Secure, your cybersecurity partner, delivers tailored solutions for diverse industries. With a
+
             dedicated team of experts, we ensure digital safety and success.</p>
+
         </div>
 
+
+
         <div class="footer-col">
+
           <h4>Quick Links</h4>
+
           <ul>
+
             <li><a href="/index.html">Home</a></li>
+
             <li><a href="/about.html">About Us</a></li>
+
             <li><a href="/contact.html">Contact Us</a></li>
+
             <li><a href="/blog.html">Blogs</a></li>
+
             <li><a href="/services.html">Services</a></li>
+
             <!-- <li><a href="/press.html">Press &amp; Media</a></li> -->
+
           </ul>
+
         </div>
 
+
+
         <div class="footer-col">
+
           <h4>Services</h4>
+
           <ul>
+
             <li><a href="../Services/24x7-SOC.html">SOC Monitoring</a></li>
+
             <!-- <li><a href="../Services/PenTest.html">Penetration Testing</a></li> -->
+
             <li><a href="../Services/vapt.html">Vulnerability Assessment</a></li>
+
             <li><a href="../Services/ir.html">Incident Response</a></li>
+
             <li><a href="../Services/cloud.html">Cloud Security</a></li>
+
             <li><a href="../Services/grc.html">Governance, Risk, and Compliance (GRC)</a></li>
+
           </ul>
+
         </div>
 
+
+
         <div class="footer-col">
+
           <h4>Contact Info</h4>
+
           <div class="footer-contact-item">
+
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+
               <circle cx="12" cy="10" r="3" />
+
             </svg>
+
             <span>A68 Center Point, Block 21 FB Area, Karachi, Pakistan.</span>
+
           </div>
+
           <div class="footer-contact-item fott">
+
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+
               <polyline points="22,6 12,13 2,6" />
+
             </svg>
+
             <a href="mailto:info@4secu.com" style=" text-decoration: none; ">info@4secu.com</a>
+
           </div>
+
           <div class="footer-contact-item ">
+
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
               <path
+
                 d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+
             </svg>
+
             <a href="tel:+92 330 7083831
+
 " style="  text-decoration: none;">+92 330 7083831
+
             </a>
+
           </div>
+
         </div>
+
       </div>
+
+
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Four Secure Ltd. All rights reserved.</p>
-        <div class="footer-social-links">
-          <a href="https://www.linkedin.com/company/foursecure/" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </a>
-          <a href="https://x.com/FourSecure" class="social-link" aria-label="X (Twitter)">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/foursecure/" class="social-link" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/four_secure/" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <!-- ============ SCRIPTS ============ -->
-  <script src="/js/script.js"></script>
- 
-  <!-- Form Validation -->
-  <script src="js/validate.js"></script>
 
-  </body>
+        <p>&copy; 2026 Four Secure Ltd. All rights reserved.</p>
+
+        <div class="footer-social-links">
+
+          <a href="https://www.linkedin.com/company/foursecure/" class="social-link" aria-label="LinkedIn">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+
+              <rect x="2" y="9" width="4" height="12" />
+
+              <circle cx="4" cy="4" r="2" />
+
+            </svg>
+
+          </a>
+
+          <a href="https://x.com/FourSecure" class="social-link" aria-label="X (Twitter)">
+
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1">
+
+              <path
+
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+
+            </svg>
+
+          </a>
+
+          <a href="https://www.facebook.com/foursecure/" class="social-link" aria-label="Facebook">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+
+            </svg>
+
+          </a>
+
+          <a href="https://www.instagram.com/four_secure/" class="social-link" aria-label="Instagram">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+ 
+
+  </div>
+
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<!-- ============ SCRIPTS ============ -->
+
+<script src="/js/script.js?v=1.0.0"></script>
+
+<!-- Form Validation -->
+
+<script src="js/validate.js?v=1.0.0"></script>
+
+
+
+</body>
 
 </html>

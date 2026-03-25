@@ -1145,3 +1145,60 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   })();
+
+// ============================================
+// ONE-TIME ICON SLIDING EFFECT
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all input and textarea icons
+  const inputIcons = document.querySelectorAll('.input-icon');
+  const textareaIcons = document.querySelectorAll('.textarea-icon');
+  
+  // Add not-slid class to all icons initially (start on left)
+  inputIcons.forEach(icon => icon.classList.add('not-slid'));
+  textareaIcons.forEach(icon => icon.classList.add('not-slid'));
+  
+  // Function to handle one-time slide for input icons
+  function handleInputIconSlide(icon) {
+    const input = icon.previousElementSibling; // Get the input element
+    let hasSlid = false;
+    
+    if (input) {
+      // Listen for focus events
+      input.addEventListener('focus', function() {
+        if (!hasSlid) {
+          // Remove the not-slid class to move icon to right permanently
+          setTimeout(() => {
+            icon.classList.remove('not-slid');
+            hasSlid = true;
+          }, 300); // Wait for the slide animation to complete
+        }
+      });
+    }
+  }
+  
+  // Function to handle one-time slide for textarea icons
+  function handleTextareaIconSlide(icon) {
+    const textarea = icon.previousElementSibling; // Get the textarea element
+    let hasSlid = false;
+    
+    if (textarea) {
+      // Listen for focus events
+      textarea.addEventListener('focus', function() {
+        if (!hasSlid) {
+          // Remove the not-slid class to move icon to right permanently
+          setTimeout(() => {
+            icon.classList.remove('not-slid');
+            hasSlid = true;
+          }, 300); // Wait for the slide animation to complete
+        }
+      });
+    }
+  }
+  
+  // Apply to all input icons
+  inputIcons.forEach(handleInputIconSlide);
+  
+  // Apply to all textarea icons
+  textareaIcons.forEach(handleTextareaIconSlide);
+});
