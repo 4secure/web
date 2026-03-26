@@ -50,6 +50,30 @@
             input.addEventListener('blur', function() {
                 validateField(this, 'contact');
             });
+            
+            // Add phone number input validation for real-time blocking
+            if (input.id === 'phone') {
+                input.addEventListener('input', function(e) {
+                    // Allow only numbers, +, -, (, ), space, and backspace/delete
+                    const allowedChars = /[0-9+\-\(\)\s]/;
+                    const value = e.target.value;
+                    
+                    // Filter out invalid characters
+                    const filteredValue = value.split('').filter(char => allowedChars.test(char)).join('');
+                    
+                    if (value !== filteredValue) {
+                        e.target.value = filteredValue;
+                    }
+                });
+                
+                input.addEventListener('paste', function(e) {
+                    e.preventDefault();
+                    const paste = e.clipboardData.getData('text');
+                    // Filter paste to only allow numbers and common phone characters
+                    const filteredPaste = paste.replace(/[^0-9+\-\(\)\s]/g, '');
+                    e.target.value = filteredPaste;
+                });
+            }
         });
     }
 
@@ -80,6 +104,30 @@
             input.addEventListener('blur', function() {
                 validateField(this, 'unified');
             });
+            
+            // Add phone number input validation for real-time blocking
+            if (input.id === 'phone') {
+                input.addEventListener('input', function(e) {
+                    // Allow only numbers, +, -, (, ), space, and backspace/delete
+                    const allowedChars = /[0-9+\-\(\)\s]/;
+                    const value = e.target.value;
+                    
+                    // Filter out invalid characters
+                    const filteredValue = value.split('').filter(char => allowedChars.test(char)).join('');
+                    
+                    if (value !== filteredValue) {
+                        e.target.value = filteredValue;
+                    }
+                });
+                
+                input.addEventListener('paste', function(e) {
+                    e.preventDefault();
+                    const paste = e.clipboardData.getData('text');
+                    // Filter paste to only allow numbers and common phone characters
+                    const filteredPaste = paste.replace(/[^0-9+\-\(\)\s]/g, '');
+                    e.target.value = filteredPaste;
+                });
+            }
         });
     }
 

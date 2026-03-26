@@ -280,7 +280,8 @@ h6 {
 
 .font-regular {
 
-  font-weight: 400;
+  font-weight: 520;
+  font-size: 65px;
 
 }
 
@@ -288,7 +289,8 @@ h6 {
 
 .font-light {
 
-  font-weight: 300;
+  font-weight: 520;
+  font-size: 65px;
 
 }
 
@@ -1977,6 +1979,7 @@ h6 {
 .hero-typing-wrapper {
 
   height: 50px;
+  /* margin-top: 50px; */
 
   font-size: clamp(1.5rem, 3vw, 2.2rem);
 
@@ -1994,7 +1997,7 @@ h6 {
 
   opacity: 0;
 
-  margin-top: -30px;
+  margin-top: -10px;
 
   transform: translateY(20px);
 
@@ -2131,7 +2134,7 @@ h6 {
   justify-content: center;
 
   gap: 16px;
-
+  margin-top: 20px;
   flex-wrap: wrap;
 
   opacity: 0;
@@ -4498,7 +4501,7 @@ h6 {
 
   width: 100%;
 
-  padding: 12px 16px 12px 45px;
+  padding: 12px 45px 12px 16px;
 
   border: 2px solid var(--border);
 
@@ -4534,7 +4537,7 @@ h6 {
 
   position: absolute;
 
-  left: 16px;
+  right: 16px;
 
   top: 50%;
 
@@ -4554,21 +4557,13 @@ h6 {
 
   z-index: 1;
 
-}
-
-
-
-.form-input:focus+.input-icon {
-
-  opacity: 1;
-
-  left: calc(100% - 36px);
+  box-shadow: 0 10px 30px rgba(43, 77, 141, 0.04);
 
 }
 
 
 
-/* Icon stays on right after first focus */
+/* Make contact form smaller in about.html */
 
 .input-icon.slid-to-right {
 
@@ -4594,7 +4589,7 @@ h6 {
 
   width: 100%;
 
-  padding: 12px 16px 12px 45px;
+  padding: 12px 45px 12px 16px;
 
   border: 2px solid var(--border);
 
@@ -4634,7 +4629,7 @@ h6 {
 
   position: absolute;
 
-  left: 16px;
+  right: 16px;
 
   top: 16px;
 
@@ -4660,7 +4655,7 @@ h6 {
 
   opacity: 1;
 
-  left: calc(100% - 36px);
+  right: 16px;
 
 }
 
@@ -4670,7 +4665,7 @@ h6 {
 
 .textarea-icon.slid-to-right {
 
-  left: calc(100% - 36px);
+  right: 16px;
 
   opacity: 0.6;
 
@@ -13933,128 +13928,52 @@ a.service-brick {
 
   bottom: 80px;
 
-  right: 25px;
-
-  text-align: right;
-
-  max-width: 80%;
-
-}
-
-
-
-.brick-content p {
-
-  font-size: 0.95rem;
-
-  line-height: 1.7;
-
-  margin-bottom: 20px;
-
-  transition: all 0.3s ease;
-
-  opacity: 0;
-
-  transform: translateY(20px);
-
-  position: absolute;
-
-  bottom: 100px;
-
-  right: 25px;
-
   left: 25px;
 
-  width: calc(100% - 50px);
-
-  text-align: right;
-
-  max-height: 0;
-
-  overflow: hidden;
-
-}
-
-
-
-/* Dark theme text colors (default) */
-
-[data-theme="dark"] .brick-content h3,
-
-[data-theme="dark"] .brick-content p,
-
-[data-theme="dark"] .brick-link {
-
-  color: white;
-
-}
-
-
-
-/* Light theme text colors */
-
-[data-theme="light"] .brick-content h3,
-
-[data-theme="light"] .brick-content p,
-
-[data-theme="light"] .brick-link {
-
-  color: #ffffff;
-
-}
-
-
-
-/* Move service name up and show description on hover */
-
-.service-brick:hover .brick-content h3 {
-
-  bottom: 150px;
-
-}
-
-
-
-.service-brick:hover .brick-content p {
-
-  opacity: 1;
-
-  transform: translateY(0);
-
-  max-height: 150px;
-
-}
-
-
-
-.brick-link {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  font-size: 0.85rem;
-
-  font-weight: 600;
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  transition: all 0.3s ease;
-
-  position: absolute;
-
-  bottom: 25px;
-
   right: 25px;
 
+  text-align: center;
+
+  max-width: 100%;
+
 }
 
+.brick-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  bottom: 100px;
+  right: 25px;
+  left: 25px;
+  width: calc(100% - 50px);
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+}
 
+/* ... */
 
+.brick-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+}
+
+/* ... */
 .brick-link svg {
 
   width: 16px;
@@ -14141,6 +14060,26 @@ a.service-brick {
 
 
 
+/* Move service name up and show description on hover */
+
+.service-brick:hover .brick-content h3 {
+
+  bottom: 150px;
+
+}
+
+.service-brick:hover .brick-content p {
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  max-height: 150px;
+
+}
+
+
+
 /* Peek Effect for Bricks */
 
 .service-brick.peek-effect .brick-bg {
@@ -14189,8 +14128,32 @@ a.service-brick {
 
 }
 
+/* Services section View All Services button - smaller size */
+.section-footer .btn-primary {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  min-width: 170px;
+  width: 170px;
+  max-width: 170px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+  gap: 8px;
+}
 
+.btn-primary svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
 
+.btn-primary:hover svg {
+  transform: translateX(5px);
+}
 
 
 .btn-primary::before {
