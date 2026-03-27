@@ -614,7 +614,368 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+ // Portfolio data for carousel - Services We Provide
+        const heroPortfolioData = [
+            {
+                id: 1,
+                title: '24x7 Managed SOC',
+                description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
+                image: '/assets/images/service-1.jpg',
+                link: '../Services/24x7-SOC.html',
+                tech: ['SOC', 'SIEM', 'Threat Detection', 'AI Analysis']
+            },
+            {
+                id: 2,
+                title: 'VAPT',
+                description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
+                image: '/assets/images/service-2.jpg',
+                link: '../Services/vapt.html',
+                tech: ['Pentesting', 'Vulnerability Assessment', 'Security Testing', 'Risk Analysis']
+            },
+            {
+                id: 3,
+                title: 'Assessments & Audits',
+                description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
+                image: '/assets/images/service-3.jpg',
+                link: '../Services/assessment.html',
+                tech: ['Compliance', 'ISO 27001', 'NIST', 'GDPR', 'Gap Analysis']
+            },
+            {
+                id: 4,
+                title: 'Managed Security',
+                description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
+                image: '/assets/images/service-4.jpg',
+                link: '../Services/mss.html',
+                tech: ['Firewall Management', 'Endpoint Security', '24/7 Monitoring', 'Expert Management']
+            },
+            {
+                id: 5,
+                title: 'Threat Intelligence',
+                description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
+                image: '/assets/images/service-5.jpg',
+                link: '../Services/threat-intel.html',
+                tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
+            },
+            {
+                id: 6,
+                title: 'Incident Response',
+                description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
+                image: '/assets/images/service-6.jpg',
+                link: '../Services/ir.html',
+                tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery', '30-min SLA']
+            },
+            {
+                id: 7,
+                title: 'Governance, Risk & Compliance',
+                description: 'Integrated risk management, policy, and alignment with ISO/NIST.',
+                image: '/assets/images/service-7.jpg',
+                link: '../Services/grc.html',
+                tech: ['Risk Management', 'Policy Development', 'ISO/NIST Alignment', 'GRC Framework']
+            },
+            {
+                id: 8,
+                title: 'Identity & Access Management',
+                description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
+                image: '/assets/images/service-8.jpg',
+                link: '../Services/iam.html',
+                tech: ['SSO', 'MFA', 'PAM', 'Identity Governance', 'Access Control']
+            }
+            // {
+            //     id: 9,
+            //     title: 'Cloud Security',
+            //     description: 'AWS, Azure, GCP: CSPM, CWPP, container hardening, architecture review.',
+            //     image: '/assets/images/service-10.jpg',
+            //     link: '../Services/cloud.html',
+            //     tech: ['AWS Security', 'Azure Security', 'CSPM', 'CWPP', 'Container Security']
+            // },
+            // {
+            //     id: 10,
+            //     title: 'SOAR & Automation',
+            //     description: 'Playbook automation, security orchestration, faster incident response.',
+            //     image: '/assets/images/service-11.jpg',
+            //     link: '../Services/automation.html',
+            //     tech: ['Security Orchestration', 'Automation', 'Playbooks', 'SOAR Platform']
+            // },
+            // {
+            //     id: 11,
+            //     title: 'Network Security',
+            //     description: 'Firewall, IDS/IPS, segmentation, secure architecture design.',
+            //     image: '/assets/images/service-12.jpg',
+            //     link: '../Services/network.html',
+            //     tech: ['Firewall', 'IDS/IPS', 'Network Segmentation', 'Security Architecture']
+            // },
+            // {
+            //     id: 12,
+            //     title: 'Application Security',
+            //     description: 'Secure SDLC, code review, SAST/DAST, DevSecOps integration.',
+            //     image: '/assets/images/service-14.jpg',
+            //     link: '../Services/appsec.html',
+            //     tech: ['Secure SDLC', 'Code Review', 'SAST/DAST', 'DevSecOps', 'Application Testing']
+            // }
+        ];
 
+        // Carousel variables
+        let heroCurrentIndex = 0;
+        const heroCarousel = document.getElementById('heroCarousel');
+        const heroIndicatorsContainer = document.getElementById('heroIndicators');
+
+        // Create individual carousel item
+        function heroCreateCarouselItem(data, index) {
+            const item = document.createElement('div');
+            item.className = 'hero-carousel-item';
+            item.dataset.index = index;
+            
+            const techBadges = data.tech.map(tech => 
+                `<span class="hero-tech-badge">${tech}</span>`
+            ).join('');
+            
+            item.innerHTML = `
+                <a href="${data.link}" class="hero-card-link">
+                    <div class="hero-card">
+                        <div class="hero-card-number">0${data.id}</div>
+                        <div class="hero-card-image">
+                            <img src="${data.image}" alt="${data.title}">
+                        </div>
+                        <h3 class="hero-card-title">${data.title}</h3>
+                        <p class="hero-card-description">${data.description}</p>
+                        <div class="hero-card-tech">${techBadges}</div>
+                        <div class="hero-card-cta">Learn More</div>
+                    </div>
+                </a>
+            `;
+            
+            return item;
+        }
+
+        // Initialize carousel with all items
+        function heroInitCarousel() {
+            // Clear any existing content
+            heroCarousel.innerHTML = '';
+            heroIndicatorsContainer.innerHTML = '';
+            
+            // Create carousel items
+            heroPortfolioData.forEach((data, index) => {
+                const item = heroCreateCarouselItem(data, index);
+                heroCarousel.appendChild(item);
+                
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'hero-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicator.dataset.index = index;
+                indicator.addEventListener('click', () => heroGoToSlide(index));
+                heroIndicatorsContainer.appendChild(indicator);
+            });
+            
+            heroUpdateCarousel();
+        }
+
+(function () {
+  function cybersiloCenter(el, ref) {
+    const r = ref.getBoundingClientRect();
+    const e = el.getBoundingClientRect();
+    return {
+      x: e.left + e.width  / 2 - r.left,
+      y: e.top  + e.height / 2 - r.top
+    };
+  }
+
+  function cybersiloRender() {
+    const tl   = document.getElementById('cybersiloTimeline');
+    const svg  = document.getElementById('cybersiloLinesSvg');
+    const dot  = document.getElementById('cybersiloDot');
+    const ic1  = document.getElementById('cybersiloIcon1');
+    const ic2  = document.getElementById('cybersiloIcon2');
+    const ic3  = document.getElementById('cybersiloIcon3');
+
+    if (!tl || !svg || !dot || !ic1 || !ic2 || !ic3) return;
+
+    const W = tl.offsetWidth;
+    const H = tl.offsetHeight;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.innerHTML = '';
+
+    const p1 = cybersiloCenter(ic1, tl);
+    const p2 = cybersiloCenter(ic2, tl);
+    const p3 = cybersiloCenter(ic3, tl);
+
+    const radius = 70; // Half of icon ring width (140px / 2)
+    
+    // Calculate specific connection points: bottom to top
+    const p1Bottom = { x: p1.x, y: p1.y + radius }; // Bottom of circle 1
+    const p2Top = { x: p2.x, y: p2.y - radius };    // Top of circle 2
+    const p2Bottom = { x: p2.x, y: p2.y + radius }; // Bottom of circle 2  
+    const p3Top = { x: p3.x, y: p3.y - radius };    // Top of circle 3
+
+    function cybersiloLine(x1, y1, x2, y2) {
+      const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+      el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+      el.setAttribute('stroke', 'rgba(43,77,141,0.2)');
+      el.setAttribute('stroke-width', '1.5');
+      el.setAttribute('stroke-dasharray', '6 5');
+      svg.appendChild(el);
+    }
+
+    // Connect bottom of circle 1 to top of circle 2
+    cybersiloLine(p1Bottom.x, p1Bottom.y, p2Top.x, p2Top.y);
+    
+    // Connect bottom of circle 2 to top of circle 3
+    cybersiloLine(p2Bottom.x, p2Bottom.y, p3Top.x, p3Top.y);
+
+    // red dot at midpoint of first line
+    const mx = (p1Bottom.x + p2Top.x) / 2;
+    const my = (p1Bottom.y + p2Top.y) / 2;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  }
+
+  const cybersiloGo = () => setTimeout(cybersiloRender, 120);
+  if (document.readyState === 'complete') {
+    cybersiloGo();
+  } else {
+    window.addEventListener('load', cybersiloGo);
+  }
+  window.addEventListener('resize', cybersiloRender);
+})();
+
+        // Update carousel positions based on current index
+        function heroUpdateCarousel() {
+            const items = document.querySelectorAll('.hero-carousel-item');
+            const indicators = document.querySelectorAll('.hero-indicator');
+            const totalItems = items.length;
+            const isMobile = window.innerWidth <= 768;
+            const isTablet = window.innerWidth <= 1024;
+            
+            items.forEach((item, index) => {
+                // Calculate relative position
+                let offset = index - heroCurrentIndex;
+                
+                // Wrap around for continuous rotation
+                if (offset > totalItems / 2) {
+                    offset -= totalItems;
+                } else if (offset < -totalItems / 2) {
+                    offset += totalItems;
+                }
+                
+                const absOffset = Math.abs(offset);
+                const sign = offset < 0 ? -1 : 1;
+                
+                // Reset transform
+                item.style.transform = '';
+                item.style.opacity = '';
+                item.style.zIndex = '';
+                item.style.transition = 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                
+                // Adjust spacing based on screen size
+                let spacing1 = 400;
+                let spacing2 = 600;
+                let spacing3 = 750;
+                
+                if (isMobile) {
+                    spacing1 = 280;
+                    spacing2 = 420;
+                    spacing3 = 550;
+                } else if (isTablet) {
+                    spacing1 = 340;
+                    spacing2 = 520;
+                    spacing3 = 650;
+                }
+                
+                if (absOffset === 0) {
+                    // Center item - fully visible, no transparency
+                    item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
+                    item.style.opacity = '1';
+                    item.style.zIndex = '10';
+                } else if (absOffset === 1) {
+                    // Side items - slightly reduced opacity but still visible
+                    const translateX = sign * spacing1;
+                    const rotation = isMobile ? 20 : 25;
+                    const scale = isMobile ? 0.88 : 0.85;
+                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-150px) rotateY(${-sign * rotation}deg) scale(${scale})`;
+                    item.style.opacity = '0.85';
+                    item.style.zIndex = '5';
+                } else if (absOffset === 2) {
+                    // Further side items - moderately visible
+                    const translateX = sign * spacing2;
+                    const rotation = isMobile ? 30 : 35;
+                    const scale = isMobile ? 0.75 : 0.72;
+                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-280px) rotateY(${-sign * rotation}deg) scale(${scale})`;
+                    item.style.opacity = '0.6';
+                    item.style.zIndex = '3';
+                } else if (absOffset === 3) {
+                    // Further items - subtle visibility
+                    const translateX = sign * spacing3;
+                    const rotation = isMobile ? 38 : 42;
+                    const scale = isMobile ? 0.62 : 0.58;
+                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-400px) rotateY(${-sign * rotation}deg) scale(${scale})`;
+                    item.style.opacity = '0.35';
+                    item.style.zIndex = '2';
+                } else {
+                    // Hidden items (behind) - barely visible
+                    item.style.transform = 'translate(-50%, -50%) translateZ(-550px) scale(0.45)';
+                    item.style.opacity = '0.15';
+                    item.style.zIndex = '1';
+                }
+            });
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === heroCurrentIndex);
+            });
+        }
+
+        // Navigate to next slide
+        function heroNextSlide() {
+            heroCurrentIndex = (heroCurrentIndex + 1) % heroPortfolioData.length;
+            heroUpdateCarousel();
+        }
+
+        // Navigate to previous slide
+        function heroPrevSlide() {
+            heroCurrentIndex = (heroCurrentIndex - 1 + heroPortfolioData.length) % heroPortfolioData.length;
+            heroUpdateCarousel();
+        }
+
+        // Go to specific slide
+        function heroGoToSlide(index) {
+            heroCurrentIndex = index;
+            heroUpdateCarousel();
+        }
+
+        // Event listeners for carousel controls
+        document.getElementById('heroNextBtn').addEventListener('click', heroNextSlide);
+        document.getElementById('heroPrevBtn').addEventListener('click', heroPrevSlide);
+
+        // Auto-rotate carousel every 5 seconds
+        let heroAutoRotate = setInterval(heroNextSlide, 5000);
+
+        // Pause auto-rotation on hover
+        const heroSection = document.querySelector('.hero-carousel-section');
+        heroSection.addEventListener('mouseenter', () => {
+            clearInterval(heroAutoRotate);
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            heroAutoRotate = setInterval(heroNextSlide, 5000);
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') heroPrevSlide();
+            if (e.key === 'ArrowRight') heroNextSlide();
+        });
+
+        // Update carousel on window resize with debounce
+        let heroResizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(heroResizeTimeout);
+            heroResizeTimeout = setTimeout(() => {
+                heroUpdateCarousel();
+            }, 250);
+        });
+
+        // Initialize carousel when page loads
+        heroInitCarousel();
 
 
 
@@ -1255,3 +1616,4 @@ document.addEventListener('DOMContentLoaded', function() {
   document.readyState === 'complete' ? cybersiloGo() : window.addEventListener('load', cybersiloGo);
   window.addEventListener('resize', cybersiloRender);
 })();
+

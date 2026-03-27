@@ -1343,3 +1343,316 @@
 </body>
 </html>
 
+<section class="cybersilo-process">
+  <div class="process-header">
+    <h2 class="reveal fade-up">How Four Secure Protects Your Business</h2>
+    <div class="process-rule reveal fade-up" style="--delay: 0.1"></div>
+    <p class="reveal fade-up" style="--delay: 0.2">Our comprehensive cybersecurity process ensures complete protection</p>
+  </div>
+
+  <div class="process-timeline">
+
+    <!-- Step 1: Collect Data -->
+    <div class="process-step reveal fade-left" style="--delay: 0.3">
+      <div class="process-badge">1</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="12" cy="5.5" rx="9" ry="2.8" fill="#2b4d8d" opacity="0.12" stroke="#2b4d8d" stroke-width="1.7"/>
+          <path d="M3 5.5v3.8C3 11 7.03 12.3 12 12.3s9-1.3 9-3V5.5" stroke="#2b4d8d" stroke-width="1.7"/>
+          <path d="M3 9.3v3.8c0 1.66 4.03 3 9 3s9-1.34 9-3V9.3" stroke="#2b4d8d" stroke-width="1.7"/>
+          <path d="M3 13.1V17c0 1.66 4.03 3 9 3s9-1.34 9-3v-3.9" stroke="#2b4d8d" stroke-width="1.7"/>
+        </svg>
+      </div>
+      <div class="process-title">Collect Data</div>
+      <p class="process-desc">Gather logs and security data from networks, endpoints, and critical systems</p>
+    </div>
+
+    <!-- Step 2: Detect Threats -->
+    <div class="process-step reveal fade-right" style="--delay: 0.5">
+      <div class="process-badge">2</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7.2" stroke="#2b4d8d" stroke-width="1.8"/>
+          <line x1="16.5" y1="16.5" x2="22.2" y2="22.2" stroke="#2b4d8d" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="process-title">Detect Threats</div>
+      <p class="process-desc">AI-driven analytics identify unusual activity and potential attacks</p>
+    </div>
+
+    <!-- Step 3: Respond & Protect -->
+    <div class="process-step reveal fade-left" style="--delay: 0.7">
+      <div class="process-badge">3</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+            fill="#2b4d8d" opacity="1" stroke="#2b4d8d" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="process-title">Respond &amp; Protect</div>
+      <p class="process-desc">Alerts and automatic security measures keep your business safe</p>
+    </div>
+
+    <!-- Step 4: Monitor & Comply -->
+    <div class="process-step reveal fade-right" style="--delay: 0.9">
+      <div class="process-badge">4</div>
+      <div class="process-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="3 17 9 11 13 15 21 7" stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="17 7 21 7 21 11"      stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="3" y1="21" x2="21" y2="21"   stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="process-title">Monitor &amp; Comply</div>
+      <p class="process-desc">Continuous monitoring and compliance reporting ensure ongoing protection</p>
+    </div>
+
+  </div>
+</section>
+<style>
+  
+.cybersilo-process {
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding: 80px 32px;
+
+  font-family: 'Poppins', sans-serif;
+
+  background: #ffffff;
+
+}
+
+
+
+.process-header {
+
+  text-align: center;
+
+  margin-bottom: 56px;
+
+}
+
+
+
+.process-header h2 {
+
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+
+  font-weight: 700;
+
+  color: #1a2340;
+
+  letter-spacing: -0.01em;
+
+}
+
+
+
+.process-rule {
+
+  width: 46px;
+
+  height: 4px;
+
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+
+  border-radius: 2px;
+
+  margin: 14px auto 18px;
+
+}
+
+
+
+.process-header p {
+
+  font-size: 0.92rem;
+
+  color: #64748b;
+
+  font-weight: 400;
+
+}
+
+
+
+.process-timeline {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+
+/* Horizontal connector line */
+
+.process-timeline::before {
+
+  content: '';
+
+  position: absolute;
+
+  top: 22px;
+
+  left: 12.5%;
+
+  right: 12.5%;
+
+  height: 2px;
+
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-cyan) 60%, #c0392b 100%);
+
+  z-index: 0;
+
+}
+
+
+
+.process-step {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 0 10px;
+
+  position: relative;
+
+  z-index: 1;
+
+}
+
+
+
+.process-badge {
+
+  width: 44px;
+
+  height: 44px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #1f3a6e, var(--accent-blue));
+
+  color: #fff;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  font-family: 'Poppins', sans-serif;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+
+  z-index: 2;
+
+  box-shadow: 0 0 0 3px #fff, 0 3px 14px rgba(43, 77, 141, 0.35);
+
+  flex-shrink: 0;
+
+}
+
+
+
+.process-icon {
+
+  margin-top: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 46px;
+
+}
+
+
+
+.process-icon svg {
+
+  width: 36px;
+
+  height: 36px;
+
+}
+
+
+
+.process-title {
+
+  margin-top: 14px;
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  color: #1a2340;
+
+}
+
+
+
+.process-desc {
+
+  margin-top: 8px;
+
+  font-size: 0.78rem;
+
+  color: #64748b;
+
+  line-height: 1.75;
+
+  font-weight: 400;
+
+  max-width: 190px;
+
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 720px) {
+
+  .process-timeline {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 16px;
+  }
+
+  .process-timeline::before {
+    display: none;
+  }
+
+}
+
+@media (max-width: 440px) {
+
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+}
+  
+
+
+</style>

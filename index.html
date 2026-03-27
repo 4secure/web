@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-
-
 <head>
 
   <!-- Google Tag Manager -->
@@ -36,7 +32,7 @@
 
   <title>Four Secure | Advanced Cybersecurity for the Digital World</title>
 
-  <link rel="stylesheet" href="css/style.css?v=1.0.0">
+  <link rel="stylesheet" href="css/style.css">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.png">
 
@@ -810,7 +806,7 @@
 
   
 
-
+<!-- hero-carousel-section -->
    <section class="hero-carousel-section" id="hero-home">
         <!-- Section Heading -->
         <div class="hero-section-heading">
@@ -833,380 +829,89 @@
             </div>
         </div>
     </section>
-
-    <script>
-        // Portfolio data for carousel - Services We Provide
-        const heroPortfolioData = [
-            {
-                id: 1,
-                title: '24x7 Managed SOC',
-                description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
-                image: '/assets/images/service-1.jpg',
-                link: '../Services/24x7-SOC.html',
-                tech: ['SOC', 'SIEM', 'Threat Detection', 'AI Analysis']
-            },
-            {
-                id: 2,
-                title: 'VAPT',
-                description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
-                image: '/assets/images/service-2.jpg',
-                link: '../Services/vapt.html',
-                tech: ['Pentesting', 'Vulnerability Assessment', 'Security Testing', 'Risk Analysis']
-            },
-            {
-                id: 3,
-                title: 'Assessments & Audits',
-                description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
-                image: '/assets/images/service-3.jpg',
-                link: '../Services/assessment.html',
-                tech: ['Compliance', 'ISO 27001', 'NIST', 'GDPR', 'Gap Analysis']
-            },
-            {
-                id: 4,
-                title: 'Managed Security',
-                description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
-                image: '/assets/images/service-4.jpg',
-                link: '../Services/mss.html',
-                tech: ['Firewall Management', 'Endpoint Security', '24/7 Monitoring', 'Expert Management']
-            },
-            {
-                id: 5,
-                title: 'Threat Intelligence',
-                description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
-                image: '/assets/images/service-5.jpg',
-                link: '../Services/threat-intel.html',
-                tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
-            },
-            {
-                id: 6,
-                title: 'Incident Response',
-                description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
-                image: '/assets/images/service-6.jpg',
-                link: '../Services/ir.html',
-                tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery', '30-min SLA']
-            },
-            {
-                id: 7,
-                title: 'Governance, Risk & Compliance',
-                description: 'Integrated risk management, policy, and alignment with ISO/NIST.',
-                image: '/assets/images/service-7.jpg',
-                link: '../Services/grc.html',
-                tech: ['Risk Management', 'Policy Development', 'ISO/NIST Alignment', 'GRC Framework']
-            },
-            {
-                id: 8,
-                title: 'Identity & Access Management',
-                description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
-                image: '/assets/images/service-8.jpg',
-                link: '../Services/iam.html',
-                tech: ['SSO', 'MFA', 'PAM', 'Identity Governance', 'Access Control']
-            },
-            {
-                id: 9,
-                title: 'Cloud Security',
-                description: 'AWS, Azure, GCP: CSPM, CWPP, container hardening, architecture review.',
-                image: '/assets/images/service-10.jpg',
-                link: '../Services/cloud.html',
-                tech: ['AWS Security', 'Azure Security', 'CSPM', 'CWPP', 'Container Security']
-            },
-            {
-                id: 10,
-                title: 'SOAR & Automation',
-                description: 'Playbook automation, security orchestration, faster incident response.',
-                image: '/assets/images/service-11.jpg',
-                link: '../Services/automation.html',
-                tech: ['Security Orchestration', 'Automation', 'Playbooks', 'SOAR Platform']
-            },
-            {
-                id: 11,
-                title: 'Network Security',
-                description: 'Firewall, IDS/IPS, segmentation, secure architecture design.',
-                image: '/assets/images/service-12.jpg',
-                link: '../Services/network.html',
-                tech: ['Firewall', 'IDS/IPS', 'Network Segmentation', 'Security Architecture']
-            },
-            {
-                id: 12,
-                title: 'Application Security',
-                description: 'Secure SDLC, code review, SAST/DAST, DevSecOps integration.',
-                image: '/assets/images/service-14.jpg',
-                link: '../Services/appsec.html',
-                tech: ['Secure SDLC', 'Code Review', 'SAST/DAST', 'DevSecOps', 'Application Testing']
-            }
-        ];
-
-        // Carousel variables
-        let heroCurrentIndex = 0;
-        const heroCarousel = document.getElementById('heroCarousel');
-        const heroIndicatorsContainer = document.getElementById('heroIndicators');
-
-        // Create individual carousel item
-        function heroCreateCarouselItem(data, index) {
-            const item = document.createElement('div');
-            item.className = 'hero-carousel-item';
-            item.dataset.index = index;
-            
-            const techBadges = data.tech.map(tech => 
-                `<span class="hero-tech-badge">${tech}</span>`
-            ).join('');
-            
-            item.innerHTML = `
-                <div class="hero-card">
-                    <div class="hero-card-number">0${data.id}</div>
-                    <div class="hero-card-image">
-                        <img src="${data.image}" alt="${data.title}">
-                    </div>
-                    <h3 class="hero-card-title">${data.title}</h3>
-                    <p class="hero-card-description">${data.description}</p>
-                    <div class="hero-card-tech">${techBadges}</div>
-                    <button class="hero-card-cta" onclick="window.location.href='${data.link}'">Learn More</button>
-                </div>
-            `;
-            
-            return item;
-        }
-
-        // Initialize carousel with all items
-        function heroInitCarousel() {
-            // Clear any existing content
-            heroCarousel.innerHTML = '';
-            heroIndicatorsContainer.innerHTML = '';
-            
-            // Create carousel items
-            heroPortfolioData.forEach((data, index) => {
-                const item = heroCreateCarouselItem(data, index);
-                heroCarousel.appendChild(item);
-                
-                // Create indicator
-                const indicator = document.createElement('div');
-                indicator.className = 'hero-indicator';
-                if (index === 0) indicator.classList.add('active');
-                indicator.dataset.index = index;
-                indicator.addEventListener('click', () => heroGoToSlide(index));
-                heroIndicatorsContainer.appendChild(indicator);
-            });
-            
-            heroUpdateCarousel();
-        }
-
-        // Update carousel positions based on current index
-        function heroUpdateCarousel() {
-            const items = document.querySelectorAll('.hero-carousel-item');
-            const indicators = document.querySelectorAll('.hero-indicator');
-            const totalItems = items.length;
-            const isMobile = window.innerWidth <= 768;
-            const isTablet = window.innerWidth <= 1024;
-            
-            items.forEach((item, index) => {
-                // Calculate relative position
-                let offset = index - heroCurrentIndex;
-                
-                // Wrap around for continuous rotation
-                if (offset > totalItems / 2) {
-                    offset -= totalItems;
-                } else if (offset < -totalItems / 2) {
-                    offset += totalItems;
-                }
-                
-                const absOffset = Math.abs(offset);
-                const sign = offset < 0 ? -1 : 1;
-                
-                // Reset transform
-                item.style.transform = '';
-                item.style.opacity = '';
-                item.style.zIndex = '';
-                item.style.transition = 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                
-                // Adjust spacing based on screen size
-                let spacing1 = 400;
-                let spacing2 = 600;
-                let spacing3 = 750;
-                
-                if (isMobile) {
-                    spacing1 = 280;
-                    spacing2 = 420;
-                    spacing3 = 550;
-                } else if (isTablet) {
-                    spacing1 = 340;
-                    spacing2 = 520;
-                    spacing3 = 650;
-                }
-                
-                if (absOffset === 0) {
-                    // Center item - fully visible, no transparency
-                    item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
-                    item.style.opacity = '1';
-                    item.style.zIndex = '10';
-                } else if (absOffset === 1) {
-                    // Side items - slightly reduced opacity but still visible
-                    const translateX = sign * spacing1;
-                    const rotation = isMobile ? 20 : 25;
-                    const scale = isMobile ? 0.88 : 0.85;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-150px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.85';
-                    item.style.zIndex = '5';
-                } else if (absOffset === 2) {
-                    // Further side items - moderately visible
-                    const translateX = sign * spacing2;
-                    const rotation = isMobile ? 30 : 35;
-                    const scale = isMobile ? 0.75 : 0.72;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-280px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.6';
-                    item.style.zIndex = '3';
-                } else if (absOffset === 3) {
-                    // Further items - subtle visibility
-                    const translateX = sign * spacing3;
-                    const rotation = isMobile ? 38 : 42;
-                    const scale = isMobile ? 0.62 : 0.58;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-400px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.35';
-                    item.style.zIndex = '2';
-                } else {
-                    // Hidden items (behind) - barely visible
-                    item.style.transform = 'translate(-50%, -50%) translateZ(-550px) scale(0.45)';
-                    item.style.opacity = '0.15';
-                    item.style.zIndex = '1';
-                }
-            });
-            
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === heroCurrentIndex);
-            });
-        }
-
-        // Navigate to next slide
-        function heroNextSlide() {
-            heroCurrentIndex = (heroCurrentIndex + 1) % heroPortfolioData.length;
-            heroUpdateCarousel();
-        }
-
-        // Navigate to previous slide
-        function heroPrevSlide() {
-            heroCurrentIndex = (heroCurrentIndex - 1 + heroPortfolioData.length) % heroPortfolioData.length;
-            heroUpdateCarousel();
-        }
-
-        // Go to specific slide
-        function heroGoToSlide(index) {
-            heroCurrentIndex = index;
-            heroUpdateCarousel();
-        }
-
-        // Event listeners for carousel controls
-        document.getElementById('heroNextBtn').addEventListener('click', heroNextSlide);
-        document.getElementById('heroPrevBtn').addEventListener('click', heroPrevSlide);
-
-        // Auto-rotate carousel every 5 seconds
-        let heroAutoRotate = setInterval(heroNextSlide, 5000);
-
-        // Pause auto-rotation on hover
-        const heroSection = document.querySelector('.hero-carousel-section');
-        heroSection.addEventListener('mouseenter', () => {
-            clearInterval(heroAutoRotate);
-        });
-        heroSection.addEventListener('mouseleave', () => {
-            heroAutoRotate = setInterval(heroNextSlide, 5000);
-        });
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') heroPrevSlide();
-            if (e.key === 'ArrowRight') heroNextSlide();
-        });
-
-        // Update carousel on window resize with debounce
-        let heroResizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(heroResizeTimeout);
-            heroResizeTimeout = setTimeout(() => {
-                heroUpdateCarousel();
-            }, 250);
-        });
-
-        // Initialize carousel when page loads
-        heroInitCarousel();
-    </script>
-
-
-
-
-
-
-
-
-
-
   <!-- Cyber Silo -->
-<section class="cybersilo-process">
-  <div class="process-header">
-    <h2 class="reveal fade-up">How Four Secure Protects Your Business</h2>
-    <div class="process-rule reveal fade-up" style="--delay: 0.1"></div>
-    <p class="reveal fade-up" style="--delay: 0.2">Our comprehensive cybersecurity process ensures complete protection</p>
-  </div>
 
-  <div class="process-timeline">
-
-    <!-- Step 1: Collect Data -->
-    <div class="process-step reveal fade-left" style="--delay: 0.3">
-      <div class="process-badge">1</div>
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="12" cy="5.5" rx="9" ry="2.8" fill="#2b4d8d" opacity="0.12" stroke="#2b4d8d" stroke-width="1.7"/>
-          <path d="M3 5.5v3.8C3 11 7.03 12.3 12 12.3s9-1.3 9-3V5.5" stroke="#2b4d8d" stroke-width="1.7"/>
-          <path d="M3 9.3v3.8c0 1.66 4.03 3 9 3s9-1.34 9-3V9.3" stroke="#2b4d8d" stroke-width="1.7"/>
-          <path d="M3 13.1V17c0 1.66 4.03 3 9 3s9-1.34 9-3v-3.9" stroke="#2b4d8d" stroke-width="1.7"/>
-        </svg>
-      </div>
-      <div class="process-title">Collect Data</div>
-      <p class="process-desc">Gather logs and security data from networks, endpoints, and critical systems</p>
-    </div>
-
-    <!-- Step 2: Detect Threats -->
-    <div class="process-step reveal fade-right" style="--delay: 0.5">
-      <div class="process-badge">2</div>
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="11" cy="11" r="7.2" stroke="#2b4d8d" stroke-width="1.8"/>
-          <line x1="16.5" y1="16.5" x2="22.2" y2="22.2" stroke="#2b4d8d" stroke-width="1.9" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="process-title">Detect Threats</div>
-      <p class="process-desc">AI-driven analytics identify unusual activity and potential attacks</p>
-    </div>
-
-    <!-- Step 3: Respond & Protect -->
-    <div class="process-step reveal fade-left" style="--delay: 0.7">
-      <div class="process-badge">3</div>
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
-            fill="#2b4d8d" opacity="1" stroke="#2b4d8d" stroke-width="1.7" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="process-title">Respond &amp; Protect</div>
-      <p class="process-desc">Alerts and automatic security measures keep your business safe</p>
-    </div>
-
-    <!-- Step 4: Monitor & Comply -->
-    <div class="process-step reveal fade-right" style="--delay: 0.9">
-      <div class="process-badge">4</div>
-      <div class="process-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="3 17 9 11 13 15 21 7" stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="17 7 21 7 21 11"      stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="3" y1="21" x2="21" y2="21"   stroke="#2b4d8d" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="process-title">Monitor &amp; Comply</div>
-      <p class="process-desc">Continuous monitoring and compliance reporting ensure ongoing protection</p>
-    </div>
-
-  </div>
-</section>
  
 
+<!-- CYBERSILO COMPONENT - LIGHT THEME - CENTERED ON SCREEN -->
+<div class="cybersilo-wrapper">
+  <div class="cybersilo-section">
 
+    <div class="cybersilo-header">
+      <div class="cybersilo-ghost-text">How We Do It</div>
+      <h2>How CyberSilo Protects Your Business</h2>
+    </div>
+
+    <div class="cybersilo-timeline" id="cybersiloTimeline">
+
+      <!-- SVG lines drawn by JS -->
+      <svg class="cybersilo-lines-svg" id="cybersiloLinesSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+      <!-- Red dot (JS positions it) -->
+      <div class="cybersilo-dot-red" id="cybersiloDot"></div>
+
+      <!-- ── STEP 1 LEFT ── -->
+      <div class="cybersilo-step cybersilo-step-left cybersilo-step-1" id="cybersiloStep1">
+        <div class="cybersilo-icon-ring" id="cybersiloIcon1">
+          <!-- pie-clock -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="17"/>
+            <line x1="24" y1="24" x2="24" y2="7"/>
+            <line x1="24" y1="24" x2="38.7" y2="31.5"/>
+            <path d="M24 24 L24 7 A17 17 0 0 1 41 24 Z" fill="rgba(43,77,141,0.08)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="cybersilo-text-block">
+          <span class="cybersilo-label">Design</span>
+          <span class="cybersilo-big-num">01</span>
+          <div class="cybersilo-title">Collect Data</div>
+          <p class="cybersilo-desc">Gather logs and security data from networks, endpoints, and critical systems across your entire infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="cybersilo-spacer"></div>
+
+      <!-- ── STEP 2 RIGHT ── -->
+      <div class="cybersilo-step cybersilo-step-right cybersilo-step-2" id="cybersiloStep2">
+        <div class="cybersilo-icon-ring" id="cybersiloIcon2">
+          <!-- large circle + small satellite bubble -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="29" cy="25" r="15"/>
+            <circle cx="12" cy="16" r="7"/>
+            <circle cx="13" cy="17" r="2.4" fill="rgba(43,77,141,0.1)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="cybersilo-text-block">
+          <span class="cybersilo-label">Statement</span>
+          <span class="cybersilo-big-num">02</span>
+          <div class="cybersilo-title">Detect Threats</div>
+          <p class="cybersilo-desc">AI-driven analytics identify unusual activity and potential attacks before they cause damage to your systems.</p>
+        </div>
+      </div>
+
+      <div class="cybersilo-spacer"></div>
+
+      <!-- ── STEP 3 LEFT ── -->
+      <div class="cybersilo-step cybersilo-step-left cybersilo-step-3" id="cybersiloStep3">
+        <div class="cybersilo-icon-ring" id="cybersiloIcon3">
+          <!-- two overlapping circles -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="18" cy="26" r="13"/>
+            <circle cx="32" cy="26" r="13"/>
+            <circle cx="19" cy="29" r="3" fill="rgba(43,77,141,0.08)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="cybersilo-text-block">
+          <span class="cybersilo-label">Process</span>
+          <span class="cybersilo-big-num">03</span>
+          <div class="cybersilo-title">Respond &amp; Protect</div>
+          <p class="cybersilo-desc">Alerts and automatic security measures keep your business safe with immediate response and containment actions.</p>
+        </div>
+      </div>
+
+    </div><!-- /cybersilo-timeline -->
+  </div><!-- /cybersilo-section -->
+</div>
 
   <!-- ============ CTA ============ -->
 
