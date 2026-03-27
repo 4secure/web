@@ -1202,3 +1202,56 @@ document.addEventListener('DOMContentLoaded', function() {
   // Apply to all textarea icons
   textareaIcons.forEach(handleTextareaIconSlide);
 });
+(function () {
+  function cybersiloCenter(el, ref) {
+    const r = ref.getBoundingClientRect();
+    const e = el.getBoundingClientRect();
+    return {
+      x: e.left + e.width  / 2 - r.left,
+      y: e.top  + e.height / 2 - r.top
+    };
+  }
+
+  function cybersiloRender() {
+    const tl   = document.getElementById('cybersiloTimeline');
+    const svg  = document.getElementById('cybersiloLinesSvg');
+    const dot  = document.getElementById('cybersiloDot');
+    const ic1  = document.getElementById('cybersiloIcon1');
+    const ic2  = document.getElementById('cybersiloIcon2');
+    const ic3  = document.getElementById('cybersiloIcon3');
+
+    if (!tl || !svg || !dot || !ic1 || !ic2 || !ic3) return;
+
+    const W = tl.offsetWidth;
+    const H = tl.offsetHeight;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.innerHTML = '';
+
+    const p1 = cybersiloCenter(ic1, tl);
+    const p2 = cybersiloCenter(ic2, tl);
+    const p3 = cybersiloCenter(ic3, tl);
+
+    function cybersiloLine(x1, y1, x2, y2) {
+      const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+      el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+      el.setAttribute('stroke', 'rgba(255,255,255,0.17)');
+      el.setAttribute('stroke-width', '1.1');
+      el.setAttribute('stroke-dasharray', '5 5');
+      svg.appendChild(el);
+    }
+
+    cybersiloLine(p1.x, p1.y, p2.x, p2.y);
+    cybersiloLine(p2.x, p2.y, p3.x, p3.y);
+
+    // red dot at midpoint of line 1
+    const mx = (p1.x + p2.x) / 2;
+    const my = (p1.y + p2.y) / 2;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  }
+
+  const cybersiloGo = () => setTimeout(cybersiloRender, 120);
+  document.readyState === 'complete' ? cybersiloGo() : window.addEventListener('load', cybersiloGo);
+  window.addEventListener('resize', cybersiloRender);
+})();

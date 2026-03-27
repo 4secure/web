@@ -1,46 +1,413 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Test Form Validation</title>
-    <style>
-        .error { border: 2px solid red !important; }
-        .form-error { color: red; font-size: 0.8rem; margin-top: 5px; }
-        .custom-dropdown.error { border: 2px solid red !important; }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CyberSilo - Security Protection Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet"/>
+<style>
+/* ======================================== */
+/* CYBERSILO - COMPLETE WRAPPED COMPONENT  */
+/* All styles are scoped under .cybersilo-wrapper */
+/* No conflicts with existing CSS classes   */
+/* ======================================== */
+
+.cybersilo-wrapper {
+  /* Reset any inherited styles */
+  all: initial;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
+  background: #060b1f;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* subtle deep radial glow matching the image's blue-tinted center */
+.cybersilo-wrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 42%, rgba(12,25,100,0.5) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 35% at 25% 65%, rgba(8,15,65,0.35) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========== CYBERSILO SECTION ========== */
+.cybersilo-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 110px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ── */
+.cybersilo-header {
+  text-align: center;
+  margin-bottom: 68px;
+  position: relative;
+}
+
+.cybersilo-ghost-text {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(2rem, 7vw, 4.8rem);
+  font-weight: 900;
+  font-style: italic;
+  color: rgba(255,255,255,0.042);
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.cybersilo-header h2 {
+  font-size: clamp(1rem, 2.3vw, 1.45rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* ── TIMELINE CONTAINER ── */
+.cybersilo-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* SVG lines layer — sits behind everything */
+.cybersilo-lines-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── STEP ── */
+.cybersilo-step {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  position: relative;
+  z-index: 2;
+}
+
+.cybersilo-step-left  { flex-direction: row;         }
+.cybersilo-step-right { flex-direction: row-reverse; }
+
+/* vertical spacer rows */
+.cybersilo-spacer { height: 88px; flex-shrink: 0; }
+
+/* ── ICON CIRCLE ── */
+.cybersilo-icon-ring {
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  border: 1.15px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.cybersilo-icon-ring::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cybersilo-icon-ring:hover {
+  border-color: rgba(255,255,255,0.38);
+  box-shadow: 0 0 28px rgba(100,140,255,0.1);
+}
+
+.cybersilo-icon-ring svg {
+  width: 50px;
+  height: 50px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.82;
+}
+
+/* ── TEXT BLOCK ── */
+.cybersilo-text-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 310px;
+}
+
+.cybersilo-label {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.cybersilo-big-num {
+  font-size: clamp(4.5rem, 11vw, 7rem);
+  font-weight: 900;
+  font-style: italic;
+  color: rgba(255,255,255,0.07);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  display: block;
+  margin-bottom: -6px;
+}
+
+.cybersilo-title {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.cybersilo-desc {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.34);
+  line-height: 2;
+  font-weight: 400;
+  max-width: 265px;
+}
+
+/* flip text alignment for right steps */
+.cybersilo-step-right .cybersilo-text-block { text-align: right; }
+.cybersilo-step-right .cybersilo-desc       { margin-left: auto; }
+
+/* ── RED DOT ── */
+.cybersilo-dot-red {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #df3232;
+  box-shadow:
+    0 0 6px  #df3232,
+    0 0 16px rgba(223,50,50,0.55),
+    0 0 36px rgba(223,50,50,0.22);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes cybersilo-fade-up {
+  from { opacity:0; transform:translateY(28px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes cybersilo-from-left {
+  from { opacity:0; transform:translateX(-38px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes cybersilo-from-right {
+  from { opacity:0; transform:translateX(38px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+
+.cybersilo-header      { animation: cybersilo-fade-up    0.7s ease both 0.05s; }
+.cybersilo-step-1      { animation: cybersilo-from-left  0.7s ease both 0.2s;  }
+.cybersilo-step-2      { animation: cybersilo-from-right 0.7s ease both 0.38s; }
+.cybersilo-step-3      { animation: cybersilo-from-left  0.7s ease both 0.56s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 560px) {
+  .cybersilo-step-left,
+  .cybersilo-step-right {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .cybersilo-step-right .cybersilo-text-block { text-align: center; }
+  .cybersilo-step-right .cybersilo-desc       { margin: 0 auto; }
+  .cybersilo-spacer { height: 50px; }
+  .cybersilo-big-num { font-size: 4rem; }
+}
+
+/* Ensure all text elements inherit proper styling */
+.cybersilo-wrapper * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cybersilo-wrapper h1, 
+.cybersilo-wrapper h2, 
+.cybersilo-wrapper h3, 
+.cybersilo-wrapper h4, 
+.cybersilo-wrapper p, 
+.cybersilo-wrapper span, 
+.cybersilo-wrapper div {
+  font-family: 'Poppins', sans-serif;
+}
+</style>
 </head>
 <body>
-    <h1>Test Service Validation</h1>
-    
-    <form id="contact-form">
-        <input type="text" id="name" name="name" placeholder="Name" required><br><br>
-        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
-        <textarea id="message" name="message" placeholder="Message" required></textarea><br><br>
-        
-        <div class="custom-dropdown">
-            <div class="dropdown-trigger" id="service-dropdown-trigger">
-                <span class="dropdown-selected">Select a service</span>
-            </div>
-            <div class="dropdown-menu" id="service-dropdown-menu">
-                <div class="dropdown-item" data-value="test">Test Service</div>
-            </div>
-        </div>
-        <input type="hidden" id="service" name="service" value="">
-        <span class="form-error"></span><br><br>
-        
-        <button type="submit">Submit</button>
-        <div class="form-success" style="display: none; color: green;">Success!</div>
-    </form>
+<!-- CYBERSILO COMPONENT - FULLY ISOLATED WITH UNIQUE CLASS NAMES -->
+<div class="cybersilo-wrapper">
+  <div class="cybersilo-section">
 
-    <script src="js/validate.js"></script>
-    <script>
-        // Test the validation
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Form type detection test:');
-            const form = document.getElementById('contact-form');
-            const hasFirstName = form.querySelector('#first-name') !== null;
-            console.log('Has first-name field:', hasFirstName);
-            console.log('Should use unified form:', !hasFirstName);
-        });
-    </script>
+    <div class="cybersilo-header">
+      <div class="cybersilo-ghost-text">How We Do It</div>
+      <h2>How CyberSilo Protects Your Business</h2>
+    </div>
+
+    <div class="cybersilo-timeline" id="cybersiloTimeline">
+
+      <!-- SVG lines drawn by JS -->
+      <svg class="cybersilo-lines-svg" id="cybersiloLinesSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+
+      <!-- Red dot (JS positions it) -->
+      <div class="cybersilo-dot-red" id="cybersiloDot"></div>
+
+      <!-- ── STEP 1 LEFT ── -->
+      <div class="cybersilo-step cybersilo-step-left cybersilo-step-1" id="cybersiloStep1">
+        <div class="cybersilo-icon-ring" id="cybersiloIcon1">
+          <!-- pie-clock -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="17"/>
+            <line x1="24" y1="24" x2="24" y2="7"/>
+            <line x1="24" y1="24" x2="38.7" y2="31.5"/>
+            <path d="M24 24 L24 7 A17 17 0 0 1 41 24 Z" fill="rgba(255,255,255,0.07)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="cybersilo-text-block">
+          <span class="cybersilo-label">Design</span>
+          <span class="cybersilo-big-num">01</span>
+          <div class="cybersilo-title">Collect Data</div>
+          <p class="cybersilo-desc">Gather logs and security data from networks, endpoints, and critical systems across your entire infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="cybersilo-spacer"></div>
+
+      <!-- ── STEP 2 RIGHT ── -->
+      <div class="cybersilo-step cybersilo-step-right cybersilo-step-2" id="cybersiloStep2">
+        <div class="cybersilo-icon-ring" id="cybersiloIcon2">
+          <!-- large circle + small satellite bubble -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="29" cy="25" r="15"/>
+            <circle cx="12" cy="16" r="7"/>
+            <circle cx="13" cy="17" r="2.4" fill="rgba(255,255,255,0.1)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="cybersilo-text-block">
+          <span class="cybersilo-label">Statement</span>
+          <span class="cybersilo-big-num">02</span>
+          <div class="cybersilo-title">Detect Threats</div>
+          <p class="cybersilo-desc">AI-driven analytics identify unusual activity and potential attacks before they cause damage to your systems.</p>
+        </div>
+      </div>
+
+      <div class="cybersilo-spacer"></div>
+
+      <!-- ── STEP 3 LEFT ── -->
+      <div class="cybersilo-step cybersilo-step-left cybersilo-step-3" id="cybersiloStep3">
+        <div class="cybersilo-icon-ring" id="cybersiloIcon3">
+          <!-- two overlapping circles -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="18" cy="26" r="13"/>
+            <circle cx="32" cy="26" r="13"/>
+            <circle cx="19" cy="29" r="3" fill="rgba(255,255,255,0.09)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="cybersilo-text-block">
+          <span class="cybersilo-label">Process</span>
+          <span class="cybersilo-big-num">03</span>
+          <div class="cybersilo-title">Respond &amp; Protect</div>
+          <p class="cybersilo-desc">Alerts and automatic security measures keep your business safe with immediate response and containment actions.</p>
+        </div>
+      </div>
+
+    </div><!-- /cybersilo-timeline -->
+  </div><!-- /cybersilo-section -->
+</div><!-- /cybersilo-wrapper -->
+
+<script>
+(function () {
+  function cybersiloCenter(el, ref) {
+    const r = ref.getBoundingClientRect();
+    const e = el.getBoundingClientRect();
+    return {
+      x: e.left + e.width  / 2 - r.left,
+      y: e.top  + e.height / 2 - r.top
+    };
+  }
+
+  function cybersiloRender() {
+    const tl   = document.getElementById('cybersiloTimeline');
+    const svg  = document.getElementById('cybersiloLinesSvg');
+    const dot  = document.getElementById('cybersiloDot');
+    const ic1  = document.getElementById('cybersiloIcon1');
+    const ic2  = document.getElementById('cybersiloIcon2');
+    const ic3  = document.getElementById('cybersiloIcon3');
+
+    if (!tl || !svg || !dot || !ic1 || !ic2 || !ic3) return;
+
+    const W = tl.offsetWidth;
+    const H = tl.offsetHeight;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.innerHTML = '';
+
+    const p1 = cybersiloCenter(ic1, tl);
+    const p2 = cybersiloCenter(ic2, tl);
+    const p3 = cybersiloCenter(ic3, tl);
+
+    function cybersiloLine(x1, y1, x2, y2) {
+      const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+      el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+      el.setAttribute('stroke', 'rgba(255,255,255,0.17)');
+      el.setAttribute('stroke-width', '1.1');
+      el.setAttribute('stroke-dasharray', '5 5');
+      svg.appendChild(el);
+    }
+
+    cybersiloLine(p1.x, p1.y, p2.x, p2.y);
+    cybersiloLine(p2.x, p2.y, p3.x, p3.y);
+
+    // red dot at midpoint of line 1
+    const mx = (p1.x + p2.x) / 2;
+    const my = (p1.y + p2.y) / 2;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  }
+
+  const cybersiloGo = () => setTimeout(cybersiloRender, 120);
+  if (document.readyState === 'complete') {
+    cybersiloGo();
+  } else {
+    window.addEventListener('load', cybersiloGo);
+  }
+  window.addEventListener('resize', cybersiloRender);
+})();
+</script>
 </body>
 </html>
