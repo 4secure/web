@@ -771,7 +771,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 (function () {
-  function cybersiloCenter(el, ref) {
+  function center(el, ref) {
     const r = ref.getBoundingClientRect();
     const e = el.getBoundingClientRect();
     return {
@@ -780,63 +780,49 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  function cybersiloRender() {
-    const tl   = document.getElementById('cybersiloTimeline');
-    const svg  = document.getElementById('cybersiloLinesSvg');
-    const dot  = document.getElementById('cybersiloDot');
-    const ic1  = document.getElementById('cybersiloIcon1');
-    const ic2  = document.getElementById('cybersiloIcon2');
-    const ic3  = document.getElementById('cybersiloIcon3');
+  function render() {
+    const tl  = document.getElementById('tlTimeline');
+    const svg = document.getElementById('tlSvg');
+    const dot = document.getElementById('tlDot');
+    const i1  = document.getElementById('tlIcon1');
+    const i2  = document.getElementById('tlIcon2');
+    const i3  = document.getElementById('tlIcon3');
+    const i4  = document.getElementById('tlIcon4');
 
-    if (!tl || !svg || !dot || !ic1 || !ic2 || !ic3) return;
+    if (!tl || !svg || !dot || !i1 || !i2 || !i3 || !i4) return;
 
     const W = tl.offsetWidth;
     const H = tl.offsetHeight;
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     svg.innerHTML = '';
 
-    const p1 = cybersiloCenter(ic1, tl);
-    const p2 = cybersiloCenter(ic2, tl);
-    const p3 = cybersiloCenter(ic3, tl);
+    const p1 = center(i1, tl);
+    const p2 = center(i2, tl);
+    const p3 = center(i3, tl);
+    const p4 = center(i4, tl);
 
-    const radius = 70; // Half of icon ring width (140px / 2)
-    
-    // Calculate specific connection points: bottom to top
-    const p1Bottom = { x: p1.x, y: p1.y + radius }; // Bottom of circle 1
-    const p2Top = { x: p2.x, y: p2.y - radius };    // Top of circle 2
-    const p2Bottom = { x: p2.x, y: p2.y + radius }; // Bottom of circle 2  
-    const p3Top = { x: p3.x, y: p3.y - radius };    // Top of circle 3
-
-    function cybersiloLine(x1, y1, x2, y2) {
+    function line(x1, y1, x2, y2) {
       const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       el.setAttribute('x1', x1); el.setAttribute('y1', y1);
       el.setAttribute('x2', x2); el.setAttribute('y2', y2);
-      el.setAttribute('stroke', 'rgba(43,77,141,0.2)');
+      el.setAttribute('stroke', 'rgba(110,192,251,0.18)');
       el.setAttribute('stroke-width', '1.5');
       el.setAttribute('stroke-dasharray', '6 5');
       svg.appendChild(el);
     }
 
-    // Connect bottom of circle 1 to top of circle 2
-    cybersiloLine(p1Bottom.x, p1Bottom.y, p2Top.x, p2Top.y);
-    
-    // Connect bottom of circle 2 to top of circle 3
-    cybersiloLine(p2Bottom.x, p2Bottom.y, p3Top.x, p3Top.y);
+    line(p1.x, p1.y, p2.x, p2.y);
+    line(p2.x, p2.y, p3.x, p3.y);
+    line(p3.x, p3.y, p4.x, p4.y);
 
-    // red dot at midpoint of first line
-    const mx = (p1Bottom.x + p2Top.x) / 2;
-    const my = (p1Bottom.y + p2Top.y) / 2;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
+    dot.style.left = ((p1.x + p2.x) / 2) + 'px';
+    dot.style.top  = ((p1.y + p2.y) / 2) + 'px';
   }
 
-  const cybersiloGo = () => setTimeout(cybersiloRender, 120);
-  if (document.readyState === 'complete') {
-    cybersiloGo();
-  } else {
-    window.addEventListener('load', cybersiloGo);
-  }
-  window.addEventListener('resize', cybersiloRender);
+  const go = () => setTimeout(render, 120);
+  if (document.readyState === 'complete') { go(); }
+  else { window.addEventListener('load', go); }
+  window.addEventListener('resize', render);
 })();
 
         // Update carousel positions based on current index
@@ -1563,57 +1549,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // Apply to all textarea icons
   textareaIcons.forEach(handleTextareaIconSlide);
 });
-(function () {
-  function cybersiloCenter(el, ref) {
-    const r = ref.getBoundingClientRect();
-    const e = el.getBoundingClientRect();
-    return {
-      x: e.left + e.width  / 2 - r.left,
-      y: e.top  + e.height / 2 - r.top
-    };
-  }
 
-  function cybersiloRender() {
-    const tl   = document.getElementById('cybersiloTimeline');
-    const svg  = document.getElementById('cybersiloLinesSvg');
-    const dot  = document.getElementById('cybersiloDot');
-    const ic1  = document.getElementById('cybersiloIcon1');
-    const ic2  = document.getElementById('cybersiloIcon2');
-    const ic3  = document.getElementById('cybersiloIcon3');
-
-    if (!tl || !svg || !dot || !ic1 || !ic2 || !ic3) return;
-
-    const W = tl.offsetWidth;
-    const H = tl.offsetHeight;
-    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    svg.innerHTML = '';
-
-    const p1 = cybersiloCenter(ic1, tl);
-    const p2 = cybersiloCenter(ic2, tl);
-    const p3 = cybersiloCenter(ic3, tl);
-
-    function cybersiloLine(x1, y1, x2, y2) {
-      const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      el.setAttribute('x1', x1); el.setAttribute('y1', y1);
-      el.setAttribute('x2', x2); el.setAttribute('y2', y2);
-      el.setAttribute('stroke', 'rgba(255,255,255,0.17)');
-      el.setAttribute('stroke-width', '1.1');
-      el.setAttribute('stroke-dasharray', '5 5');
-      svg.appendChild(el);
-    }
-
-    cybersiloLine(p1.x, p1.y, p2.x, p2.y);
-    cybersiloLine(p2.x, p2.y, p3.x, p3.y);
-
-    // red dot at midpoint of line 1
-    const mx = (p1.x + p2.x) / 2;
-    const my = (p1.y + p2.y) / 2;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-  }
-
-  const cybersiloGo = () => setTimeout(cybersiloRender, 120);
-  document.readyState === 'complete' ? cybersiloGo() : window.addEventListener('load', cybersiloGo);
-  window.addEventListener('resize', cybersiloRender);
-})();
 
