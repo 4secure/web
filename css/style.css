@@ -15539,7 +15539,8 @@ body.loaded .loader-wrapper {
 
 .tl-wrapper {
   width: 100%;
-  max-width: 860px;
+  background-color: white;
+  max-width: 100%;
   margin: 0 auto;
   padding: 80px 32px;
   position: relative;
@@ -15550,6 +15551,7 @@ body.loaded .loader-wrapper {
   text-align: center;
   margin-bottom: 72px;
   position: relative;
+  color: red;
   animation: fadeUp 0.7s ease both 0.05s;
 }
 
@@ -15561,7 +15563,7 @@ body.loaded .loader-wrapper {
   font-size: clamp(2rem, 7vw, 4.5rem);
   font-weight: 900;
   font-style: italic;
-  color: rgba(110,192,251,0.06);
+  color: rgba(43, 77, 141, 0.08);
   white-space: nowrap;
   letter-spacing: 0.06em;
   pointer-events: none;
@@ -15571,7 +15573,7 @@ body.loaded .loader-wrapper {
 .tl-header h2 {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 700;
-  color: #e8f0ff;
+  color: #2b4d8d;
   position: relative;
 }
 
@@ -15630,14 +15632,14 @@ body.loaded .loader-wrapper {
   width: 116px;
   height: 116px;
   border-radius: 50%;
-  border: 1.5px solid rgba(110,192,251,0.25);
+  border: 1.5px solid rgba(43, 77, 141, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(13,21,37,0.6);
+  background: rgba(255, 255, 255, 0.9);
   position: relative;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  box-shadow: 0 0 20px rgba(43,77,141,0.15);
+  box-shadow: 0 0 20px rgba(43, 77, 141, 0.1);
   flex-shrink: 0;
 }
 
@@ -15646,20 +15648,20 @@ body.loaded .loader-wrapper {
   position: absolute;
   inset: -1px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(110,192,251,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(43, 77, 141, 0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .tl-icon-ring:hover {
-  border-color: rgba(110,192,251,0.6);
-  box-shadow: 0 0 32px rgba(110,192,251,0.2);
+  border-color: rgba(43, 77, 141, 0.6);
+  box-shadow: 0 0 32px rgba(43, 77, 141, 0.15);
   transform: scale(1.04);
 }
 
 .tl-icon-ring svg {
   width: 52px;
   height: 52px;
-  stroke: rgba(200,220,255,0.75);
+  stroke: rgba(43, 77, 141, 0.7);
   fill: none;
   stroke-width: 1.3;
   stroke-linecap: round;
@@ -15667,7 +15669,7 @@ body.loaded .loader-wrapper {
   transition: stroke 0.3s;
 }
 
-.tl-icon-ring:hover svg { stroke: #6ec0fb; }
+.tl-icon-ring:hover svg { stroke: #2b4d8d; }
 
 /* ── TEXT BLOCK ── */
 .tl-text {
@@ -15683,7 +15685,7 @@ body.loaded .loader-wrapper {
   font-size: 0.46rem;
   font-weight: 600;
   letter-spacing: 0.26em;
-  color: #6ec0fb;
+  color: #2b4d8d;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
@@ -15692,7 +15694,7 @@ body.loaded .loader-wrapper {
   font-size: clamp(4rem, 10vw, 6.5rem);
   font-weight: 900;
   font-style: italic;
-  color: rgba(110,192,251,0.10);
+  color: rgba(43, 77, 141, 0.15);
   line-height: 0.85;
   letter-spacing: -0.03em;
   display: block;
@@ -15702,21 +15704,21 @@ body.loaded .loader-wrapper {
 .tl-title {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #e8f0ff;
+  color: #1a2f4a;
   margin-top: 6px;
   margin-bottom: 10px;
 }
 
 .tl-desc {
   font-size: 0.66rem;
-  color: rgba(180,200,240,0.55);
+  color: rgba(43, 77, 141, 0.7);
   line-height: 2;
   font-weight: 400;
   max-width: 255px;
 }
 
 /* ── GLOWING DOT ── */
-.tl-dot {
+/* .tl-dot {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -15730,7 +15732,7 @@ body.loaded .loader-wrapper {
   z-index: 10;
   pointer-events: none;
   animation: pulse-dot 2s ease-in-out infinite;
-}
+} */
 
 @keyframes pulse-dot {
   0%,100% { transform: translate(-50%,-50%) scale(1);    opacity: 1; }
