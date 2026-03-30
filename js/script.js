@@ -16,6 +16,78 @@ window.addEventListener('load', function() {
   }
 });
 
+// ============================================
+// TIMELINE ZIGZAG PATTERN
+// ============================================
+function initTimelineZigzag() {
+  const svg = document.getElementById('tlSvg');
+  const dot = document.getElementById('tlDot');
+  
+  if (!svg || !dot) return;
+  
+  // Clear existing content
+  svg.innerHTML = '';
+  
+  // Get all timeline rows
+  const rows = document.querySelectorAll('.tl-row');
+  if (rows.length === 0) return;
+  
+  // Create zigzag path
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  let pathData = '';
+  
+  rows.forEach((row, index) => {
+    const icon = row.querySelector('.tl-icon-ring');
+    if (!icon) return;
+    
+    const rect = icon.getBoundingClientRect();
+    const svgRect = svg.getBoundingClientRect();
+    
+    const x = rect.left + rect.width / 2 - svgRect.left;
+    const y = rect.top + rect.height / 2 - svgRect.top;
+    
+    if (index === 0) {
+      pathData += `M ${x} ${y}`;
+    } else {
+      // Create straight line
+      pathData += ` L ${x} ${y}`;
+    }
+  });
+  
+  // Set path attributes
+  path.setAttribute('d', pathData);
+  path.setAttribute('stroke', 'rgba(110, 192, 251, 0.3)');
+  path.setAttribute('stroke-width', '2');
+  path.setAttribute('stroke-dasharray', '5, 5');
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  
+  svg.appendChild(path);
+  
+  // Position dot at first icon
+  const firstIcon = document.querySelector('.tl-icon-ring');
+  if (firstIcon) {
+    const firstRect = firstIcon.getBoundingClientRect();
+    const svgRect = svg.getBoundingClientRect();
+    
+    dot.style.left = (firstRect.left + firstRect.width / 2 - svgRect.left) + 'px';
+    dot.style.top = (firstRect.top + firstRect.height / 2 - svgRect.top) + 'px';
+  }
+}
+
+// Initialize timeline when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  initTimelineZigzag();
+  
+  // Redraw on window resize
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initTimelineZigzag, 250);
+  });
+});
+
 // Also hide loader when DOM is ready (fallback)
 document.addEventListener('DOMContentLoaded', function() {
   // If page loads very quickly, still show loader briefly
@@ -614,354 +686,253 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- // Portfolio data for carousel - Services We Provide
-        const heroPortfolioData = [
-            {
-                id: 1,
-                title: '24x7 Managed SOC',
-                description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
-                image: '/assets/images/service-1.jpg',
-                link: '../Services/24x7-SOC.html',
-                tech: ['SOC', 'SIEM', 'Threat Detection', 'AI Analysis']
-            },
-            {
-                id: 2,
-                title: 'VAPT',
-                description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
-                image: '/assets/images/service-2.jpg',
-                link: '../Services/vapt.html',
-                tech: ['Pentesting', 'Vulnerability Assessment', 'Security Testing', 'Risk Analysis']
-            },
-            {
-                id: 3,
-                title: 'Assessments & Audits',
-                description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
-                image: '/assets/images/service-3.jpg',
-                link: '../Services/assessment.html',
-                tech: ['Compliance', 'ISO 27001', 'NIST', 'GDPR', 'Gap Analysis']
-            },
-            {
-                id: 4,
-                title: 'Managed Security',
-                description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
-                image: '/assets/images/service-4.jpg',
-                link: '../Services/mss.html',
-                tech: ['Firewall Management', 'Endpoint Security', '24/7 Monitoring', 'Expert Management']
-            },
-            {
-                id: 5,
-                title: 'Threat Intelligence',
-                description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
-                image: '/assets/images/service-5.jpg',
-                link: '../Services/threat-intel.html',
-                tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
-            },
-            {
-                id: 6,
-                title: 'Incident Response',
-                description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
-                image: '/assets/images/service-6.jpg',
-                link: '../Services/ir.html',
-                tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery', '30-min SLA']
-            },
-            {
-                id: 7,
-                title: 'Governance, Risk & Compliance',
-                description: 'Integrated risk management, policy, and alignment with ISO/NIST.',
-                image: '/assets/images/service-7.jpg',
-                link: '../Services/grc.html',
-                tech: ['Risk Management', 'Policy Development', 'ISO/NIST Alignment', 'GRC Framework']
-            },
-            {
-                id: 8,
-                title: 'Identity & Access Management',
-                description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
-                image: '/assets/images/service-8.jpg',
-                link: '../Services/iam.html',
-                tech: ['SSO', 'MFA', 'PAM', 'Identity Governance', 'Access Control']
-            }
-            // {
-            //     id: 9,
-            //     title: 'Cloud Security',
-            //     description: 'AWS, Azure, GCP: CSPM, CWPP, container hardening, architecture review.',
-            //     image: '/assets/images/service-10.jpg',
-            //     link: '../Services/cloud.html',
-            //     tech: ['AWS Security', 'Azure Security', 'CSPM', 'CWPP', 'Container Security']
-            // },
-            // {
-            //     id: 10,
-            //     title: 'SOAR & Automation',
-            //     description: 'Playbook automation, security orchestration, faster incident response.',
-            //     image: '/assets/images/service-11.jpg',
-            //     link: '../Services/automation.html',
-            //     tech: ['Security Orchestration', 'Automation', 'Playbooks', 'SOAR Platform']
-            // },
-            // {
-            //     id: 11,
-            //     title: 'Network Security',
-            //     description: 'Firewall, IDS/IPS, segmentation, secure architecture design.',
-            //     image: '/assets/images/service-12.jpg',
-            //     link: '../Services/network.html',
-            //     tech: ['Firewall', 'IDS/IPS', 'Network Segmentation', 'Security Architecture']
-            // },
-            // {
-            //     id: 12,
-            //     title: 'Application Security',
-            //     description: 'Secure SDLC, code review, SAST/DAST, DevSecOps integration.',
-            //     image: '/assets/images/service-14.jpg',
-            //     link: '../Services/appsec.html',
-            //     tech: ['Secure SDLC', 'Code Review', 'SAST/DAST', 'DevSecOps', 'Application Testing']
-            // }
-        ];
-
-        // Carousel variables
-        let heroCurrentIndex = 0;
-        const heroCarousel = document.getElementById('heroCarousel');
-        const heroIndicatorsContainer = document.getElementById('heroIndicators');
-
-        // Create individual carousel item
-        function heroCreateCarouselItem(data, index) {
-            const item = document.createElement('div');
-            item.className = 'hero-carousel-item';
-            item.dataset.index = index;
-            
-            const techBadges = data.tech.map(tech => 
-                `<span class="hero-tech-badge">${tech}</span>`
-            ).join('');
-            
-            item.innerHTML = `
-                <a href="${data.link}" class="hero-card-link">
-                    <div class="hero-card">
-                        <div class="hero-card-number">0${data.id}</div>
-                        <div class="hero-card-image">
-                            <img src="${data.image}" alt="${data.title}">
-                        </div>
-                        <h3 class="hero-card-title">${data.title}</h3>
-                        <p class="hero-card-description">${data.description}</p>
-                        <div class="hero-card-tech">${techBadges}</div>
-                        <div class="hero-card-cta">Learn More</div>
-                    </div>
-                </a>
-            `;
-            
-            return item;
-        }
-
-        // Initialize carousel with all items
-        function heroInitCarousel() {
-            // Clear any existing content
-            heroCarousel.innerHTML = '';
-            heroIndicatorsContainer.innerHTML = '';
-            
-            // Create carousel items
-            heroPortfolioData.forEach((data, index) => {
-                const item = heroCreateCarouselItem(data, index);
-                heroCarousel.appendChild(item);
-                
-                // Create indicator
-                const indicator = document.createElement('div');
-                indicator.className = 'hero-indicator';
-                if (index === 0) indicator.classList.add('active');
-                indicator.dataset.index = index;
-                indicator.addEventListener('click', () => heroGoToSlide(index));
-                heroIndicatorsContainer.appendChild(indicator);
-            });
-            
-            heroUpdateCarousel();
-        }
-
-(function () {
-  function center(el, ref) {
-    const r = ref.getBoundingClientRect();
-    const e = el.getBoundingClientRect();
-    return {
-      x: e.left + e.width  / 2 - r.left,
-      y: e.top  + e.height / 2 - r.top
-    };
-  }
-
-  function render() {
-    const tl  = document.getElementById('tlTimeline');
-    const svg = document.getElementById('tlSvg');
-    const dot = document.getElementById('tlDot');
-    const i1  = document.getElementById('tlIcon1');
-    const i2  = document.getElementById('tlIcon2');
-    const i3  = document.getElementById('tlIcon3');
-    const i4  = document.getElementById('tlIcon4');
-
-    if (!tl || !svg || !dot || !i1 || !i2 || !i3 || !i4) return;
-
-    const W = tl.offsetWidth;
-    const H = tl.offsetHeight;
-    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-    svg.innerHTML = '';
-
-    const p1 = center(i1, tl);
-    const p2 = center(i2, tl);
-    const p3 = center(i3, tl);
-    const p4 = center(i4, tl);
-
-    function line(x1, y1, x2, y2) {
-      const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      el.setAttribute('x1', x1); el.setAttribute('y1', y1);
-      el.setAttribute('x2', x2); el.setAttribute('y2', y2);
-      el.setAttribute('stroke', 'rgba(0,0,0,0.15)');
-      el.setAttribute('stroke-width', '1.5');
-      el.setAttribute('stroke-dasharray', '6 5');
-      svg.appendChild(el);
+ /* ─── Portfolio data ────────────────────────────────────────────── */
+  const heroPortfolioData = [
+    {
+      id: 1,
+      title: '24x7 Managed SOC',
+      description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
+      image: '/assets/images/service-1.jpg',
+      link: '../Services/24x7-SOC.html',
+      tech: ['SOC', 'SIEM', 'Threat Detection', 'AI Analysis']
+    },
+    {
+      id: 2,
+      title: 'VAPT',
+      description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
+      image: '/assets/images/service-2.jpg',
+      link: '../Services/vapt.html',
+      tech: ['Pentesting', 'Vulnerability Assessment', 'Security Testing', 'Risk Analysis']
+    },
+    {
+      id: 3,
+      title: 'Assessments & Audits',
+      description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
+      image: '/assets/images/service-3.jpg',
+      link: '../Services/assessment.html',
+      tech: ['Compliance', 'ISO 27001', 'NIST', 'GDPR', 'Gap Analysis']
+    },
+    {
+      id: 4,
+      title: 'Managed Security',
+      description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
+      image: '/assets/images/service-4.jpg',
+      link: '../Services/mss.html',
+      tech: ['Firewall Management', 'Endpoint Security',  'Expert Management']
+    },
+    {
+      id: 5,
+      title: 'Threat Intelligence',
+      description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
+      image: '/assets/images/service-5.jpg',
+      link: '../Services/threat-intel.html',
+      tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
+    },
+    {
+      id: 6,
+      title: 'Incident Response',
+      description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
+      image: '/assets/images/service-6.jpg',
+      link: '../Services/ir.html',
+      tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery', '30-min SLA']
+    },
+    {
+      id: 7,
+      title: 'Governance, Risk & Compliance',
+      description: 'Integrated risk management, policy, and alignment with ISO/NIST.',
+      image: '/assets/images/service-7.jpg',
+      link: '../Services/grc.html',
+      tech: ['Risk Management', 'Policy Development', 'ISO/NIST Alignment', 'GRC Framework']
+    },
+    {
+      id: 8,
+      title: 'Identity & Access Management',
+      description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
+      image: '/assets/images/service-8.jpg',
+      link: '../Services/iam.html',
+      tech: ['SSO', 'MFA', 'PAM', 'Identity Governance', 'Access Control']
     }
+  ];
 
-    line(p1.x, p1.y, p2.x, p2.y);
-    line(p2.x, p2.y, p3.x, p3.y);
-    line(p3.x, p3.y, p4.x, p4.y);
+  /* ─── State ─────────────────────────────────────────────────────── */
+  let heroCurrentIndex = 0;
+  const heroCarousel            = document.getElementById('heroCarousel');
+  const heroIndicatorsContainer = document.getElementById('heroIndicators');
 
-    dot.style.left = ((p1.x + p2.x) / 2) + 'px';
-    dot.style.top  = ((p1.y + p2.y) / 2) + 'px';
+  /* ─── Build one card element ────────────────────────────────────── */
+  function heroCreateCarouselItem(data, index) {
+    const item         = document.createElement('div');
+    item.className     = 'hero-carousel-item';
+    item.dataset.index = index;
+
+    const techBadges = data.tech
+      .map(t => `<span class="hero-tech-badge">${t}</span>`)
+      .join('');
+
+    const num = data.id < 10 ? '0' + data.id : String(data.id);
+
+    item.innerHTML = `
+      <a href="${data.link}" class="hero-card-link">
+        <div class="hero-card">
+          <div class="hero-card-number">${num}</div>
+          <div class="hero-card-image">
+            <img src="${data.image}" alt="${data.title}" loading="lazy">
+          </div>
+          <h3 class="hero-card-title">${data.title}</h3>
+          <p class="hero-card-description">${data.description}</p>
+          <div class="hero-card-tech">${techBadges}</div>
+          <div class="hero-card-cta">Learn More</div>
+        </div>
+      </a>`;
+
+    return item;
   }
 
-  const go = () => setTimeout(render, 120);
-  if (document.readyState === 'complete') { go(); }
-  else { window.addEventListener('load', go); }
-  window.addEventListener('resize', render);
-})();
+  /* ─── Build the full carousel ───────────────────────────────────── */
+  function heroInitCarousel() {
+    heroCarousel.innerHTML            = '';
+    heroIndicatorsContainer.innerHTML = '';
 
-        // Update carousel positions based on current index
-        function heroUpdateCarousel() {
-            const items = document.querySelectorAll('.hero-carousel-item');
-            const indicators = document.querySelectorAll('.hero-indicator');
-            const totalItems = items.length;
-            const isMobile = window.innerWidth <= 768;
-            const isTablet = window.innerWidth <= 1024;
-            
-            items.forEach((item, index) => {
-                // Calculate relative position
-                let offset = index - heroCurrentIndex;
-                
-                // Wrap around for continuous rotation
-                if (offset > totalItems / 2) {
-                    offset -= totalItems;
-                } else if (offset < -totalItems / 2) {
-                    offset += totalItems;
-                }
-                
-                const absOffset = Math.abs(offset);
-                const sign = offset < 0 ? -1 : 1;
-                
-                // Reset transform
-                item.style.transform = '';
-                item.style.opacity = '';
-                item.style.zIndex = '';
-                item.style.transition = 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                
-                // Adjust spacing based on screen size
-                let spacing1 = 400;
-                let spacing2 = 600;
-                let spacing3 = 750;
-                
-                if (isMobile) {
-                    spacing1 = 280;
-                    spacing2 = 420;
-                    spacing3 = 550;
-                } else if (isTablet) {
-                    spacing1 = 340;
-                    spacing2 = 520;
-                    spacing3 = 650;
-                }
-                
-                if (absOffset === 0) {
-                    // Center item - fully visible, no transparency
-                    item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
-                    item.style.opacity = '1';
-                    item.style.zIndex = '10';
-                } else if (absOffset === 1) {
-                    // Side items - slightly reduced opacity but still visible
-                    const translateX = sign * spacing1;
-                    const rotation = isMobile ? 20 : 25;
-                    const scale = isMobile ? 0.88 : 0.85;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-150px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.85';
-                    item.style.zIndex = '5';
-                } else if (absOffset === 2) {
-                    // Further side items - moderately visible
-                    const translateX = sign * spacing2;
-                    const rotation = isMobile ? 30 : 35;
-                    const scale = isMobile ? 0.75 : 0.72;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-280px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.6';
-                    item.style.zIndex = '3';
-                } else if (absOffset === 3) {
-                    // Further items - subtle visibility
-                    const translateX = sign * spacing3;
-                    const rotation = isMobile ? 38 : 42;
-                    const scale = isMobile ? 0.62 : 0.58;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-400px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.35';
-                    item.style.zIndex = '2';
-                } else {
-                    // Hidden items (behind) - barely visible
-                    item.style.transform = 'translate(-50%, -50%) translateZ(-550px) scale(0.45)';
-                    item.style.opacity = '0.15';
-                    item.style.zIndex = '1';
-                }
-            });
-            
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === heroCurrentIndex);
-            });
-        }
+    heroPortfolioData.forEach((data, index) => {
+      heroCarousel.appendChild(heroCreateCarouselItem(data, index));
 
-        // Navigate to next slide
-        function heroNextSlide() {
-            heroCurrentIndex = (heroCurrentIndex + 1) % heroPortfolioData.length;
-            heroUpdateCarousel();
-        }
+      const dot = document.createElement('div');
+      dot.className     = 'hero-indicator' + (index === 0 ? ' active' : '');
+      dot.dataset.index = index;
+      dot.addEventListener('click', () => heroGoToSlide(index));
+      heroIndicatorsContainer.appendChild(dot);
+    });
 
-        // Navigate to previous slide
-        function heroPrevSlide() {
-            heroCurrentIndex = (heroCurrentIndex - 1 + heroPortfolioData.length) % heroPortfolioData.length;
-            heroUpdateCarousel();
-        }
+    heroUpdateCarousel();
+  }
 
-        // Go to specific slide
-        function heroGoToSlide(index) {
-            heroCurrentIndex = index;
-            heroUpdateCarousel();
-        }
+  /* ─── Read card size from CSS variables ─────────────────────────── */
+  /*
+    JS reads --card-w so spacing multipliers always match whatever
+    size the CSS breakpoint has set. No duplicated numbers.
+  */
+  function getCardWidth() {
+    return parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--card-w')
+    ) || 360;
+  }
 
-        // Event listeners for carousel controls
-        document.getElementById('heroNextBtn').addEventListener('click', heroNextSlide);
-        document.getElementById('heroPrevBtn').addEventListener('click', heroPrevSlide);
+  /* ─── Position all cards ────────────────────────────────────────── */
+  function heroUpdateCarousel() {
+    const items      = document.querySelectorAll('.hero-carousel-item');
+    const indicators = document.querySelectorAll('.hero-indicator');
+    const total      = items.length;
+    const vw         = window.innerWidth;
+    const isMobile   = vw <= 768;
 
-        // Auto-rotate carousel every 5 seconds
-        let heroAutoRotate = setInterval(heroNextSlide, 5000);
+    const cardW = getCardWidth();
 
-        // Pause auto-rotation on hover
-        const heroSection = document.querySelector('.hero-carousel-section');
-        heroSection.addEventListener('mouseenter', () => {
-            clearInterval(heroAutoRotate);
-        });
-        heroSection.addEventListener('mouseleave', () => {
-            heroAutoRotate = setInterval(heroNextSlide, 5000);
-        });
+    /*
+      Spacing derived from card width — no hardcoded pixel values.
+      Multipliers chosen so adjacent cards have a small visible gap
+      and still feel like a 3-D fan.
+    */
+    const sp1 = Math.round(cardW * 1.15);
+    const sp2 = Math.round(cardW * 1.75);
+    const sp3 = Math.round(cardW * 2.15);
 
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') heroPrevSlide();
-            if (e.key === 'ArrowRight') heroNextSlide();
-        });
+    items.forEach((item, index) => {
+      let offset = index - heroCurrentIndex;
+      if (offset >  total / 2) offset -= total;
+      if (offset < -total / 2) offset += total;
 
-        // Update carousel on window resize with debounce
-        let heroResizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(heroResizeTimeout);
-            heroResizeTimeout = setTimeout(() => {
-                heroUpdateCarousel();
-            }, 250);
-        });
+      const abs  = Math.abs(offset);
+      const sign = offset < 0 ? -1 : 1;
 
-        // Initialize carousel when page loads
-        heroInitCarousel();
+      item.style.transition = 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)';
+
+      if (abs === 0) {
+        item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
+        item.style.opacity   = '1';
+        item.style.zIndex    = '10';
+      } else if (abs === 1) {
+        const rot = isMobile ? 20 : 25;
+        const sc  = isMobile ? 0.88 : 0.85;
+        item.style.transform = `translate(-50%,-50%) translateX(${sign * sp1}px) translateZ(-150px) rotateY(${-sign * rot}deg) scale(${sc})`;
+        item.style.opacity   = '0.85';
+        item.style.zIndex    = '5';
+      } else if (abs === 2) {
+        const rot = isMobile ? 30 : 35;
+        const sc  = isMobile ? 0.75 : 0.72;
+        item.style.transform = `translate(-50%,-50%) translateX(${sign * sp2}px) translateZ(-280px) rotateY(${-sign * rot}deg) scale(${sc})`;
+        item.style.opacity   = '0.6';
+        item.style.zIndex    = '3';
+      } else if (abs === 3) {
+        const rot = isMobile ? 38 : 42;
+        const sc  = isMobile ? 0.62 : 0.58;
+        item.style.transform = `translate(-50%,-50%) translateX(${sign * sp3}px) translateZ(-400px) rotateY(${-sign * rot}deg) scale(${sc})`;
+        item.style.opacity   = '0.35';
+        item.style.zIndex    = '2';
+      } else {
+        item.style.transform = 'translate(-50%,-50%) translateZ(-550px) scale(0.45)';
+        item.style.opacity   = '0.15';
+        item.style.zIndex    = '1';
+      }
+    });
+
+    indicators.forEach((dot, i) =>
+      dot.classList.toggle('active', i === heroCurrentIndex)
+    );
+  }
+
+  /* ─── Navigation ────────────────────────────────────────────────── */
+  function heroNextSlide() {
+    heroCurrentIndex = (heroCurrentIndex + 1) % heroPortfolioData.length;
+    heroUpdateCarousel();
+  }
+
+  function heroPrevSlide() {
+    heroCurrentIndex = (heroCurrentIndex - 1 + heroPortfolioData.length) % heroPortfolioData.length;
+    heroUpdateCarousel();
+  }
+
+  function heroGoToSlide(index) {
+    heroCurrentIndex = index;
+    heroUpdateCarousel();
+  }
+
+  /* ─── Controls ──────────────────────────────────────────────────── */
+  document.getElementById('heroNextBtn').addEventListener('click', heroNextSlide);
+  document.getElementById('heroPrevBtn').addEventListener('click', heroPrevSlide);
+
+  /* Auto-rotate */
+  let heroAutoRotate = setInterval(heroNextSlide, 2000);
+  const heroSection  = document.querySelector('.hero-carousel-section');
+  heroSection.addEventListener('mouseenter', () => clearInterval(heroAutoRotate));
+  heroSection.addEventListener('mouseleave', () => {
+    heroAutoRotate = setInterval(heroNextSlide, 2000);
+  });
+
+  /* Keyboard */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  heroPrevSlide();
+    if (e.key === 'ArrowRight') heroNextSlide();
+  });
+
+  /* Swipe */
+  let touchStartX = 0;
+  heroSection.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  heroSection.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) dx < 0 ? heroNextSlide() : heroPrevSlide();
+  }, { passive: true });
+
+  /* Resize */
+  let heroResizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(heroResizeTimeout);
+    heroResizeTimeout = setTimeout(heroUpdateCarousel, 250);
+  });
+
+  /* ─── Init ──────────────────────────────────────────────────────── */
+  heroInitCarousel();
 
 
 
