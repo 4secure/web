@@ -2,786 +2,795 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>PRISM FLUX - 3D Carousel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CyberVault | Services 3D Carousel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* ==================== */
-        /* HERO CAROUSEL SECTION - FULLY RESPONSIVE */
-        /* ==================== */
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --hero-primary-black: #0a0a0a;
-            --hero-carbon-dark: #121212;
-            --hero-carbon-medium: #1a1a1a;
-            --hero-carbon-light: #2a2a2a;
-            --hero-metal-dark: #3a3a3a;
-            --hero-metal-light: #4a4a4a;
-            --hero-accent-red: #ff3333;
-            --hero-accent-blue: #00a8ff;
-            --hero-accent-green: #00ff88;
-            --hero-accent-purple: #9945ff;
-            --hero-accent-cyan: #6ec0fb;
-            --hero-text-primary: #ffffff;
-            --hero-text-secondary: #b0b0b0;
-            --hero-text-dim: #808080;
-            --bg-card: rgba(26, 26, 26, 0.95);
-            --bg-secondary: rgba(18, 18, 18, 0.98);
-            --border: rgba(58, 58, 58, 0.6);
-            --text-muted: #3a3a3a;
-            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
         body {
-            font-family: 'Orbitron', 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--hero-primary-black);
-            color: var(--hero-text-primary);
+            background: #0a0c12;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
 
-        /* Hero Section with 3D Carousel */
-        .hero-carousel-section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 80px 20px 100px;
-            background: radial-gradient(ellipse at center,
-                    rgba(110, 192, 251, 0.08) 0%,
-                    transparent 70%);
-            overflow-x: hidden;
+        /* --- CSS Variables (consistent with design) --- */
+        :root {
+            --hero-primary-black: #05070c;
+            --hero-text-primary: #ffffff;
+            --hero-text-secondary: #b0c4de;
+            --hero-accent-cyan: #6ec0fb;
+            --hero-accent-purple: #a570e0;
+            --bg-card: rgba(12, 18, 28, 0.85);
+            --bg-secondary: rgba(6, 10, 18, 0.95);
+            --border: rgba(110, 192, 251, 0.25);
+            --text-muted: #4b5b73;
         }
 
-        /* Section Heading */
-        .hero-section-heading {
-            text-align: center;
-            position: relative;
-            z-index: 20;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto 20px;
-            padding: 0 15px;
-        }
+     /* ═══════════════════════════════════════════════
+   HERO CAROUSEL SECTION — COMPLETE CSS
+   ═══════════════════════════════════════════════ */
 
-        .hero-section-heading h2 {
-            font-size: clamp(28px, 6vw, 48px);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, var(--hero-text-primary), var(--hero-accent-purple), var(--hero-accent-cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: #fff;
-            position: relative;
-            display: inline-block;
-        }
+.hero-carousel-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding: 80px 20px 120px;
+    background: radial-gradient(ellipse at center,
+            rgba(110, 192, 251, 0.08) 0%,
+            transparent 70%);
+    overflow: hidden;
+    box-sizing: border-box;
+}
 
-        .hero-section-heading h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--hero-accent-purple), var(--hero-accent-cyan));
-            border-radius: 2px;
-        }
+/* ── Section Heading ── */
+.hero-section-heading {
+    text-align: center;
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 15px;
+    flex-shrink: 0;
+}
 
-        .hero-section-heading p {
-            color: var(--hero-text-secondary);
-            font-size: clamp(14px, 4vw, 18px);
-            letter-spacing: 1px;
-            margin-top: 20px;
-        }
+.hero-section-heading h2 {
+    font-size: clamp(24px, 4vw, 48px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--hero-text-primary), var(--hero-accent-purple), var(--hero-accent-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+}
 
-        .hero-carousel-container {
-            width: 100%;
-            max-width: 1400px;
-            height: auto;
-            min-height: 500px;
-            perspective: 1000px;
-            position: relative;
-            margin-top: 20px;
-            overflow: visible;
-        }
+.hero-section-heading h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--hero-accent-purple), var(--hero-accent-cyan));
+    border-radius: 2px;
+}
 
-        .hero-carousel {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.hero-section-heading p {
+    color: var(--hero-text-secondary);
+    font-size: clamp(13px, 1.5vw, 18px);
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
 
-        .hero-carousel-item {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform-style: preserve-3d;
-            transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-            cursor: pointer;
-            transform-origin: center center;
-            filter: none;
-            backdrop-filter: none;
-        }
+/* ── Carousel Container ── */
+.hero-carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    height: 420px;
+    perspective: 1100px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: visible;
+    margin: 0 auto;
+}
 
-        .hero-carousel-item .hero-card {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            transition: all 0.3s ease;
-        }
+/* ── Carousel Track ── */
+.hero-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .hero-carousel-item:hover .hero-card {
-            border-color: var(--hero-accent-cyan);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
+/* ── Carousel Item (each card wrapper) ── */
+.hero-carousel-item {
+    position: absolute;
+    width: 260px;
+    height: 340px;
+    left: 50%;
+    top: 50%;
+    margin-left: -130px;
+    margin-top: -170px;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+    transform-origin: center center;
+}
 
-        .hero-carousel-item .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(110, 192, 251, 0.5),
-                    transparent);
-            animation: hero-scanline 3s linear infinite;
-            pointer-events: none;
-        }
+/* ── Card Inner ── */
+.hero-carousel-item .hero-card {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
 
-        @keyframes hero-scanline {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(500px);
-            }
-        }
+.hero-card-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
 
-        .hero-card-number {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 60px;
-            font-weight: 900;
-            color: var(--hero-accent-cyan);
-            font-family: 'Orbitron', monospace;
-            z-index: 1;
-            opacity: 0.2;
-        }
+.hero-carousel-item:hover .hero-card {
+    border-color: var(--hero-accent-cyan);
+    box-shadow: 0 0 20px rgba(110, 192, 251, 0.15);
+}
 
-        .hero-card-image {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: linear-gradient(135deg, var(--bg-secondary), var(--hero-primary-black));
-            border-radius: 12px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            position: relative;
-            border: 1px solid var(--border);
-        }
+/* Scanline animation */
+.hero-carousel-item .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(110, 192, 251, 0.5),
+            transparent);
+    animation: hero-scanline 3s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
 
-        .hero-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-            opacity: 0.9;
-        }
+@keyframes hero-scanline {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(400px); }
+}
 
-        .hero-carousel-item:hover .hero-card-image img {
-            transform: scale(1.05);
-            opacity: 1;
-        }
+/* ── Card Number ── */
+.hero-card-number {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--hero-accent-cyan);
+    font-family: 'Orbitron', monospace;
+    z-index: 1;
+    opacity: 0.15;
+    line-height: 1;
+    pointer-events: none;
+}
 
-        .hero-card-title {
-            font-size: clamp(16px, 4vw, 22px);
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, var(--hero-text-primary), var(--hero-accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+/* ── Card Image ── */
+.hero-card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--hero-primary-black));
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
 
-        .hero-card-description {
-            color: var(--hero-text-secondary);
-            line-height: 1.4;
-            margin-bottom: 12px;
-            font-size: clamp(11px, 3vw, 13px);
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+.hero-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    opacity: 0.9;
+    display: block;
+}
 
-        .hero-card-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 15px;
-        }
+.hero-carousel-item:hover .hero-card-image img {
+    transform: scale(1.05);
+    opacity: 1;
+}
 
-        .hero-tech-badge {
-            padding: 3px 10px;
-            background: rgba(110, 192, 251, 0.12);
-            border: 1px solid rgba(110, 192, 251, 0.3);
-            border-radius: 20px;
-            font-size: 9px;
-            color: var(--hero-accent-cyan);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
+/* ── Card Title ── */
+.hero-card-title {
+    font-size: clamp(12px, 1.1vw, 16px);
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: linear-gradient(135deg, var(--hero-text-primary), var(--hero-accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
 
-        .hero-card-cta {
-            padding: 8px 20px;
-            background: linear-gradient(135deg, var(--hero-accent-cyan), #2b4d8d);
-            border: none;
-            border-radius: 30px;
-            color: var(--hero-text-primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(110, 192, 251, 0.3);
-            font-size: 11px;
-            width: 100%;
-        }
+/* ── Card Description ── */
+.hero-card-description {
+    color: var(--hero-text-secondary);
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-size: clamp(10px, 0.8vw, 12px);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-shrink: 0;
+}
 
-        .hero-card-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(110, 192, 251, 0.5);
-        }
+/* ── Tech Badges ── */
+.hero-card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 12px;
+    flex: 1;
+    align-content: flex-start;
+}
 
-        /* Carousel Controls */
-        .hero-carousel-controls {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 15px;
-            z-index: 100;
-        }
+.hero-tech-badge {
+    padding: 2px 8px;
+    background: rgba(110, 192, 251, 0.1);
+    border: 1px solid rgba(110, 192, 251, 0.28);
+    border-radius: 20px;
+    font-size: 8px;
+    color: var(--hero-accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    white-space: nowrap;
+}
 
-        .hero-carousel-btn {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            color: var(--hero-accent-cyan);
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* ── CTA Button ── */
+.hero-card-cta {
+    padding: 7px 16px;
+    background: linear-gradient(135deg, var(--hero-accent-cyan), #2b4d8d);
+    border: none;
+    border-radius: 30px;
+    color: var(--hero-text-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(110, 192, 251, 0.25);
+    font-size: 9px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    flex-shrink: 0;
+    margin-top: auto;
+    text-decoration: none;
+}
 
-        .hero-carousel-btn:hover {
-            border-color: var(--hero-accent-cyan);
-            background: linear-gradient(135deg, rgba(110, 192, 251, 0.2), rgba(43, 77, 141, 0.2));
-            transform: scale(1.1);
-            color: var(--hero-text-primary);
-        }
+.hero-card-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(110, 192, 251, 0.45);
+}
 
-        .hero-carousel-indicators {
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 100;
-        }
+/* ── Carousel Controls ── */
+.hero-carousel-controls {
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 14px;
+    z-index: 100;
+}
 
-        .hero-indicator {
-            width: 8px;
-            height: 8px;
-            background: var(--text-muted);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.hero-carousel-btn {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--hero-accent-cyan);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
 
-        .hero-indicator.active {
-            background: linear-gradient(135deg, var(--hero-accent-cyan), #2b4d8d);
-            box-shadow: 0 0 10px rgba(110, 192, 251, 0.6);
-            transform: scale(1.2);
-            border-color: transparent;
-        }
+.hero-carousel-btn:hover {
+    border-color: var(--hero-accent-cyan);
+    background: linear-gradient(135deg, rgba(110, 192, 251, 0.2), rgba(43, 77, 141, 0.2));
+    transform: scale(1.1);
+    color: var(--hero-text-primary);
+}
 
-        /* Responsive Breakpoints */
-        @media (min-width: 1400px) {
-            .hero-carousel-item {
-                width: 420px;
-                height: 520px;
-            }
-            .hero-carousel-container {
-                height: 620px;
-            }
-        }
+/* ── Indicators ── */
+.hero-carousel-indicators {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
 
-        @media (max-width: 1200px) {
-            .hero-carousel-item {
-                width: 360px;
-                height: 480px;
-            }
-            .hero-carousel-container {
-                height: 580px;
-            }
-        }
+.hero-indicator {
+    width: 7px;
+    height: 7px;
+    background: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        @media (max-width: 992px) {
-            .hero-carousel-item {
-                width: 320px;
-                height: 460px;
-            }
-            .hero-carousel-container {
-                height: 540px;
-            }
-            .hero-card-number {
-                font-size: 50px;
-                top: 12px;
-                right: 15px;
-            }
-        }
+.hero-indicator.active {
+    background: linear-gradient(135deg, var(--hero-accent-cyan), #2b4d8d);
+    box-shadow: 0 0 10px rgba(110, 192, 251, 0.6);
+    transform: scale(1.3);
+    border-color: transparent;
+}
 
-        @media (max-width: 768px) {
-            .hero-carousel-section {
-                padding: 60px 15px 90px;
-            }
-            .hero-carousel-item {
-                width: 280px;
-                height: 420px;
-            }
-            .hero-carousel-container {
-                height: 500px;
-                perspective: 800px;
-            }
-            .hero-card {
-                padding: 16px;
-            }
-            .hero-card-number {
-                font-size: 40px;
-                top: 10px;
-                right: 12px;
-            }
-            .hero-card-image {
-                margin-bottom: 12px;
-            }
-            .hero-card-title {
-                margin-bottom: 8px;
-            }
-            .hero-card-description {
-                margin-bottom: 10px;
-                -webkit-line-clamp: 2;
-            }
-            .hero-card-tech {
-                margin-bottom: 12px;
-                gap: 5px;
-            }
-            .hero-tech-badge {
-                padding: 2px 8px;
-                font-size: 8px;
-            }
-            .hero-card-cta {
-                padding: 7px 16px;
-                font-size: 10px;
-            }
-            .hero-carousel-controls {
-                bottom: -35px;
-                gap: 12px;
-            }
-            .hero-carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-            .hero-carousel-indicators {
-                bottom: -2px;
-                gap: 8px;
-            }
-            .hero-indicator {
-                width: 7px;
-                height: 7px;
-            }
-        }
+/* ═══════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════ */
 
-        @media (max-width: 576px) {
-            .hero-carousel-section {
-                padding: 50px 12px 80px;
-            }
-            .hero-carousel-item {
-                width: 260px;
-                height: 400px;
-            }
-            .hero-carousel-container {
-                height: 480px;
-                perspective: 600px;
-            }
-            .hero-card {
-                padding: 14px;
-            }
-            .hero-card-number {
-                font-size: 35px;
-                top: 8px;
-                right: 10px;
-            }
-            .hero-card-image {
-                margin-bottom: 10px;
-            }
-            .hero-card-title {
-                font-size: 16px;
-                margin-bottom: 6px;
-            }
-            .hero-card-description {
-                font-size: 10px;
-                margin-bottom: 8px;
-                -webkit-line-clamp: 2;
-            }
-            .hero-tech-badge {
-                padding: 2px 6px;
-                font-size: 7px;
-            }
-            .hero-card-cta {
-                padding: 6px 12px;
-                font-size: 9px;
-            }
-            .hero-carousel-controls {
-                bottom: -30px;
-                gap: 10px;
-            }
-            .hero-carousel-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-            .hero-section-heading h2::after {
-                width: 40px;
-                bottom: -8px;
-            }
-        }
+/* ── 1600px+ (large desktops) ── */
+@media (min-width: 1600px) {
+    .hero-carousel-item {
+        width: 320px;
+        height: 400px;
+        margin-left: -160px;
+        margin-top: -200px;
+    }
+    .hero-carousel-container { height: 500px; }
+}
 
-        @media (max-width: 400px) {
-            .hero-carousel-item {
-                width: 240px;
-                height: 380px;
-            }
-            .hero-carousel-container {
-                height: 460px;
-            }
-            .hero-card-number {
-                font-size: 30px;
-            }
-        }
+/* ── 1400px–1599px ── */
+@media (max-width: 1599px) and (min-width: 1400px) {
+    .hero-carousel-item {
+        width: 295px;
+        height: 370px;
+        margin-left: -147px;
+        margin-top: -185px;
+    }
+    .hero-carousel-container { height: 470px; }
+}
 
-        /* Hide scrollbar but keep functionality */
-        .hero-carousel-section::-webkit-scrollbar {
-            display: none;
-        }
+/* ── 1200px–1399px (Dell Latitude 1366px lives here) ── */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .hero-carousel-item {
+        width: 265px;
+        height: 345px;
+        margin-left: -132px;
+        margin-top: -172px;
+    }
+    .hero-carousel-container {
+        height: 440px;
+        perspective: 1000px;
+    }
+    .hero-card-number { font-size: 44px; }
+}
+
+/* ── 992px–1199px (small laptop / large tablet landscape) ── */
+@media (max-width: 1199px) and (min-width: 993px) {
+    .hero-carousel-item {
+        width: 240px;
+        height: 315px;
+        margin-left: -120px;
+        margin-top: -157px;
+    }
+    .hero-carousel-container {
+        height: 410px;
+        perspective: 900px;
+    }
+    .hero-card { padding: 15px; }
+    .hero-card-number { font-size: 38px; top: 10px; right: 13px; }
+    .hero-card-title { font-size: 13px; }
+    .hero-card-description { font-size: 10px; }
+}
+
+/* ── 768px–992px (tablet portrait) ── */
+@media (max-width: 992px) and (min-width: 769px) {
+    .hero-carousel-section { padding: 60px 15px 110px; }
+    .hero-section-heading { margin-bottom: 45px; }
+    .hero-carousel-item {
+        width: 215px;
+        height: 285px;
+        margin-left: -107px;
+        margin-top: -142px;
+    }
+    .hero-carousel-container {
+        height: 375px;
+        perspective: 800px;
+    }
+    .hero-card { padding: 13px; }
+    .hero-card-number { font-size: 32px; top: 9px; right: 11px; }
+    .hero-card-image { margin-bottom: 10px; }
+    .hero-card-title { font-size: 12px; margin-bottom: 6px; }
+    .hero-card-description { font-size: 9px; -webkit-line-clamp: 2; margin-bottom: 8px; }
+    .hero-tech-badge { padding: 2px 6px; font-size: 7px; }
+    .hero-card-cta { padding: 6px 12px; font-size: 8px; }
+    .hero-carousel-controls { bottom: -48px; }
+    .hero-carousel-btn { width: 38px; height: 38px; font-size: 17px; }
+}
+
+/* ── below 768px (mobile landscape) ── */
+@media (max-width: 768px) {
+    .hero-carousel-section { padding: 50px 12px 100px; }
+    .hero-section-heading { margin-bottom: 35px; }
+    .hero-carousel-item {
+        width: 195px;
+        height: 260px;
+        margin-left: -97px;
+        margin-top: -130px;
+    }
+    .hero-carousel-container {
+        height: 345px;
+        perspective: 750px;
+    }
+    .hero-card { padding: 12px; }
+    .hero-card-number { font-size: 28px; top: 8px; right: 10px; }
+    .hero-card-image { margin-bottom: 9px; }
+    .hero-card-title { font-size: 11px; margin-bottom: 5px; letter-spacing: 0.5px; }
+    .hero-card-description { font-size: 9px; margin-bottom: 7px; -webkit-line-clamp: 2; }
+    .hero-card-tech { gap: 4px; margin-bottom: 8px; }
+    .hero-tech-badge { padding: 2px 5px; font-size: 7px; }
+    .hero-card-cta { padding: 5px 10px; font-size: 8px; }
+    .hero-carousel-controls { bottom: -44px; gap: 10px; }
+    .hero-carousel-btn { width: 36px; height: 36px; font-size: 16px; }
+    .hero-carousel-indicators { bottom: -16px; gap: 7px; }
+    .hero-indicator { width: 6px; height: 6px; }
+    .hero-section-heading h2::after { width: 45px; bottom: -8px; }
+}
+
+/* ── below 576px (mobile portrait) ── */
+@media (max-width: 576px) {
+    .hero-carousel-section { padding: 45px 10px 90px; }
+    .hero-section-heading { margin-bottom: 28px; }
+    .hero-carousel-item {
+        width: 175px;
+        height: 235px;
+        margin-left: -87px;
+        margin-top: -117px;
+    }
+    .hero-carousel-container {
+        height: 315px;
+        perspective: 650px;
+    }
+    .hero-card { padding: 11px; }
+    .hero-card-number { font-size: 24px; top: 7px; right: 9px; }
+    .hero-card-title { font-size: 10px; }
+    .hero-card-description { font-size: 8px; -webkit-line-clamp: 2; }
+    .hero-tech-badge { padding: 1px 5px; font-size: 6px; }
+    .hero-card-cta { padding: 5px 8px; font-size: 7px; }
+    .hero-carousel-controls { bottom: -40px; gap: 8px; }
+    .hero-carousel-btn { width: 32px; height: 32px; font-size: 15px; }
+    .hero-section-heading h2::after { width: 36px; bottom: -7px; }
+}
+
+/* ── below 400px (very small phones) ── */
+@media (max-width: 400px) {
+    .hero-carousel-item {
+        width: 158px;
+        height: 215px;
+        margin-left: -79px;
+        margin-top: -107px;
+    }
+    .hero-carousel-container { height: 295px; perspective: 550px; }
+    .hero-card { padding: 10px; }
+    .hero-card-number { font-size: 20px; }
+    .hero-card-title { font-size: 9px; }
+    .hero-card-description { font-size: 8px; }
+    .hero-card-cta { font-size: 7px; padding: 4px 7px; }
+}
+
+/* ── Hide scrollbar ── */
+.hero-carousel-section::-webkit-scrollbar { display: none; }
+.hero-carousel-section { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body>
-    <!-- Hero Section with 3D Carousel - Fully Responsive -->
-    <section class="hero-carousel-section" id="hero-home">
-        <!-- Section Heading -->
-        <div class="hero-section-heading">
-            <h2>Services We Provide</h2>
-            <p>Cutting-edge digital solutions powered by next-generation technology</p>
+<section class="hero-carousel-section" id="hero-home">
+    <div class="hero-section-heading">
+        <h2>SERVICES WE PROVIDE</h2>
+        <p>Cutting-edge digital solutions powered by next-generation technology — 24/7 resilience, AI-driven defense, and zero-trust readiness.</p>
+    </div>
+    <div class="hero-carousel-container">
+        <div class="hero-carousel" id="heroCarousel"></div>
+        <div class="hero-carousel-controls">
+            <button class="hero-carousel-btn" id="heroPrevBtn">‹</button>
+            <button class="hero-carousel-btn" id="heroNextBtn">›</button>
         </div>
+        <div class="hero-carousel-indicators" id="heroIndicators"></div>
+    </div>
+</section>
+
+<script>
+    // --- Enhanced service data matching the visual theme from image & GRC/IAM/SOC etc.
+    const servicesData = [
+        {
+            title: "GRC FRAMEWORK",
+            description: "Integrated risk management, policy alignment, and continuous compliance with ISO 27001, NIST, and regulatory standards.",
+            tech: ["ISO 27001", "NIST CSF", "Risk Analytics", "Policy Mgmt"],
+            iconType: "grc"
+        },
+        {
+            title: "IDENTITY & ACCESS",
+            description: "SSO, MFA, PAM, identity governance — secure your enterprise with zero-trust identity fabric and privileged access controls.",
+            tech: ["SSO", "MFA", "PAM", "Identity Governance"],
+            iconType: "iam"
+        },
+        {
+            title: "24X7 MANAGED SOC",
+            description: "Round-the-clock threat detection, AI correlation, Tier 1-3 analysis. Continuous monitoring and rapid emergency response.",
+            tech: ["Threat Detection", "SIEM", "AI Analysis", "Incident Response"],
+            iconType: "soc"
+        },
+        {
+            title: "EMERGENCY RESPONSE",
+            description: "Immediate containment, breach mitigation, forensic analysis, and ransomware readiness. Activate rapid IR playbooks.",
+            tech: ["Containment", "Forensics", "Ransomware Defense", "Crisis Mgmt"],
+            iconType: "emergency"
+        },
+        {
+            title: "THREAT MANAGEMENT",
+            description: "Proactive threat hunting, adversary emulation, attack surface reduction, and purple team exercises for cyber resilience.",
+            tech: ["Threat Hunting", "Purple Team", "Adversary Emulation", "Vulnerability Mgmt"],
+            iconType: "threat"
+        },
+        {
+            title: "COMPLIANCE & AUDIT",
+            description: "Automated compliance workflows, audit readiness, policy development, and continuous control monitoring for SOX, HIPAA, GDPR.",
+            tech: ["Audit Automation", "GDPR", "HIPAA", "SOX Compliance"],
+            iconType: "compliance"
+        }
+    ];
+
+    // SVG icons for each category (clean tech aesthetic)
+    function getSvgIcon(type) {
+        switch(type) {
+            case 'grc':
+                return `<svg viewBox="0 0 24 24" fill="none" stroke="#6ec0fb" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`;
+            case 'iam':
+                return `<svg viewBox="0 0 24 24" fill="none" stroke="#6ec0fb" stroke-width="1.5"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/><circle cx="12" cy="8" r="2"/><path d="M17 8l2 2 4-4"/></svg>`;
+            case 'soc':
+                return `<svg viewBox="0 0 24 24" fill="none" stroke="#6ec0fb" stroke-width="1.3"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9h-4m-7 9A9 9 0 0 1 3 12m9 9v-4M3 12a9 9 0 0 1 9-9m-9 9h4m7-9a9 9 0 0 1 9 9"/><circle cx="12" cy="12" r="3"/></svg>`;
+            case 'emergency':
+                return `<svg viewBox="0 0 24 24" fill="none" stroke="#6ec0fb" stroke-width="1.5"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v2"/></svg>`;
+            case 'threat':
+                return `<svg viewBox="0 0 24 24" fill="none" stroke="#6ec0fb" stroke-width="1.5"><polygon points="12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2"/><path d="M12 6v6l3 2"/></svg>`;
+            default:
+                return `<svg viewBox="0 0 24 24" fill="none" stroke="#6ec0fb" stroke-width="1.2"><path d="M9 12h6M12 9v6M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>`;
+        }
+    }
+
+    let currentIndex = 0;
+    let items = [];
+    let totalItems = servicesData.length;
+
+    // DOM elements
+    const carouselContainer = document.getElementById('heroCarousel');
+    const indicatorsContainer = document.getElementById('heroIndicators');
+    const prevBtn = document.getElementById('heroPrevBtn');
+    const nextBtn = document.getElementById('heroNextBtn');
+
+    // Helper: generate carousel items with absolute positioning and transform style
+    function buildCarousel() {
+        carouselContainer.innerHTML = '';
+        indicatorsContainer.innerHTML = '';
         
-        <div class="hero-carousel-container">
-            <div class="hero-carousel" id="heroCarousel">
-                <!-- Carousel items will be generated by JavaScript -->
-            </div>
+        servicesData.forEach((service, idx) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'hero-carousel-item';
+            itemDiv.setAttribute('data-index', idx);
             
-            <div class="hero-carousel-controls">
-                <button class="hero-carousel-btn" id="heroPrevBtn">‹</button>
-                <button class="hero-carousel-btn" id="heroNextBtn">›</button>
-            </div>
+            const iconSvg = getSvgIcon(service.iconType);
+            const techBadges = service.tech.map(t => `<span class="hero-tech-badge">${t}</span>`).join('');
             
-            <div class="hero-carousel-indicators" id="heroIndicators">
-                <!-- Indicators will be generated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Portfolio data for carousel - Services We Provide
-        const heroPortfolioData = [
-            {
-                id: 1,
-                title: 'Neural Network AI',
-                description: 'Advanced AI systems with deep learning capabilities for predictive analytics, pattern recognition, and intelligent automation.',
-                image: 'https://picsum.photos/id/1/400/300',
-                tech: ['TensorFlow', 'Python', 'CUDA', 'PyTorch']
-            },
-            {
-                id: 2,
-                title: 'Quantum Cloud',
-                description: 'Next-generation cloud infrastructure leveraging quantum computing for unprecedented processing power and security.',
-                image: 'https://picsum.photos/id/20/400/300',
-                tech: ['AWS', 'Kubernetes', 'Docker', 'Quantum SDK']
-            },
-            {
-                id: 3,
-                title: 'Blockchain Vault',
-                description: 'Secure decentralized storage solutions using advanced encryption and distributed ledger technology.',
-                image: 'https://picsum.photos/id/26/400/300',
-                tech: ['Ethereum', 'Solidity', 'Web3', 'Smart Contracts']
-            },
-            {
-                id: 4,
-                title: 'Cyber Defense',
-                description: 'Military-grade cybersecurity framework with real-time threat detection and automated response systems.',
-                image: 'https://picsum.photos/id/29/400/300',
-                tech: ['Zero Trust', 'AI Defense', 'Encryption', 'SIEM']
-            },
-            {
-                id: 5,
-                title: 'Data Nexus',
-                description: 'Big data processing platform capable of analyzing petabytes of information in real-time with AI insights.',
-                image: 'https://picsum.photos/id/42/400/300',
-                tech: ['Apache Spark', 'Hadoop', 'Kafka', 'Flink']
-            },
-            {
-                id: 6,
-                title: 'AR Interface',
-                description: 'Augmented reality systems for immersive data visualization and interactive digital experiences.',
-                image: 'https://picsum.photos/id/48/400/300',
-                tech: ['Unity', 'ARCore', 'Computer Vision', 'WebXR']
-            },
-            {
-                id: 7,
-                title: 'IoT Matrix',
-                description: 'Intelligent IoT ecosystem connecting millions of devices with edge computing and real-time analytics.',
-                image: 'https://picsum.photos/id/58/400/300',
-                tech: ['MQTT', 'Edge AI', '5G', 'LoRaWAN']
-            }
-        ];
-
-        // Carousel variables
-        let heroCurrentIndex = 0;
-        const heroCarousel = document.getElementById('heroCarousel');
-        const heroIndicatorsContainer = document.getElementById('heroIndicators');
-
-        // Create individual carousel item
-        function heroCreateCarouselItem(data, index) {
-            const item = document.createElement('div');
-            item.className = 'hero-carousel-item';
-            item.dataset.index = index;
-            
-            const techBadges = data.tech.map(tech => 
-                `<span class="hero-tech-badge">${tech}</span>`
-            ).join('');
-            
-            item.innerHTML = `
+            itemDiv.innerHTML = `
                 <div class="hero-card">
-                    <div class="hero-card-number">0${data.id}</div>
+                    <div class="hero-card-number">${String(idx+1).padStart(2,'0')}</div>
                     <div class="hero-card-image">
-                        <img src="${data.image}" alt="${data.title}" loading="lazy">
+                        ${iconSvg}
                     </div>
-                    <h3 class="hero-card-title">${data.title}</h3>
-                    <p class="hero-card-description">${data.description}</p>
+                    <div class="hero-card-title">${service.title}</div>
+                    <div class="hero-card-description">${service.description}</div>
                     <div class="hero-card-tech">${techBadges}</div>
-                    <button class="hero-card-cta" onclick="alert('Explore ${data.title} service')">Learn More</button>
+                    <div class="hero-card-cta">LEARN MORE →</div>
                 </div>
             `;
-            
-            return item;
-        }
-
-        // Initialize carousel with all items
-        function heroInitCarousel() {
-            heroCarousel.innerHTML = '';
-            heroIndicatorsContainer.innerHTML = '';
-            
-            heroPortfolioData.forEach((data, index) => {
-                const item = heroCreateCarouselItem(data, index);
-                heroCarousel.appendChild(item);
-                
-                const indicator = document.createElement('div');
-                indicator.className = 'hero-indicator';
-                if (index === 0) indicator.classList.add('active');
-                indicator.dataset.index = index;
-                indicator.addEventListener('click', () => heroGoToSlide(index));
-                heroIndicatorsContainer.appendChild(indicator);
+            // optional click handler
+            itemDiv.addEventListener('click', (e) => {
+                e.stopPropagation();
+                alert(`Explore more about ${service.title} — advanced cyber solutions.`);
             });
+            carouselContainer.appendChild(itemDiv);
             
-            heroUpdateCarousel();
-        }
-
-        // Update carousel positions based on current index - FULLY RESPONSIVE
-        function heroUpdateCarousel() {
-            const items = document.querySelectorAll('.hero-carousel-item');
-            const indicators = document.querySelectorAll('.hero-indicator');
-            const totalItems = items.length;
-            const screenWidth = window.innerWidth;
+            // indicator
+            const indicator = document.createElement('div');
+            indicator.classList.add('hero-indicator');
+            if (idx === currentIndex) indicator.classList.add('active');
+            indicator.addEventListener('click', () => {
+                setCurrentIndex(idx);
+                updateCarouselPositions();
+            });
+            indicatorsContainer.appendChild(indicator);
+        });
+        
+        items = document.querySelectorAll('.hero-carousel-item');
+        updateCarouselPositions(); // initial positions
+    }
+    
+    // 3D carousel logic: places items in a circle on Y-axis with rotation & translateZ for depth
+    // We use a "radius" and angle step for smooth spherical look. To avoid overlapping we use moderate radius.
+    // Perfect for all screens, scales dynamically based on container width.
+    function updateCarouselPositions() {
+        if (!items.length) return;
+        const containerRect = document.querySelector('.hero-carousel-container').getBoundingClientRect();
+        const baseWidth = Math.min(containerRect.width, 1300);
+        // Dynamic radius: based on screen width for better responsive 3D look
+        let radius = Math.max(320, baseWidth * 0.36);
+        if (window.innerWidth <= 768) radius = Math.max(260, baseWidth * 0.48);
+        if (window.innerWidth <= 576) radius = Math.max(220, baseWidth * 0.52);
+        if (window.innerWidth <= 400) radius = Math.max(200, baseWidth * 0.55);
+        
+        const angleStep = (Math.PI * 2) / totalItems;
+        
+        items.forEach((item, i) => {
+            // angle offset to make currentIndex front and center
+            let angle = (i - currentIndex) * angleStep;
+            // compute x = sin(angle) * radius, z = cos(angle) * radius
+            const xPos = Math.sin(angle) * radius;
+            const zPos = Math.cos(angle) * radius;
+            // Scale for items at back slightly to fake depth
+            let scaleVal = 0.85 + (Math.cos(angle) + 1) / 3.5;
+            scaleVal = Math.min(1.0, Math.max(0.75, scaleVal));
+            // opacity
+            let opacityVal = 0.55 + (Math.cos(angle) + 1) / 3.2;
+            opacityVal = Math.min(1, Math.max(0.5, opacityVal));
+            // blur effect for side items
+            const blurVal = Math.abs(Math.sin(angle)) > 0.8 ? 0 : 0;
             
-            // Dynamic spacing based on screen width
-            let spacing1, spacing2, spacing3, rotation, scale1, scale2, scale3;
-            
-            if (screenWidth <= 576) {
-                spacing1 = 180;
-                spacing2 = 280;
-                spacing3 = 380;
-                rotation = 18;
-                scale1 = 0.82;
-                scale2 = 0.68;
-                scale3 = 0.55;
-            } else if (screenWidth <= 768) {
-                spacing1 = 210;
-                spacing2 = 320;
-                spacing3 = 430;
-                rotation = 20;
-                scale1 = 0.84;
-                scale2 = 0.7;
-                scale3 = 0.58;
-            } else if (screenWidth <= 992) {
-                spacing1 = 260;
-                spacing2 = 400;
-                spacing3 = 540;
-                rotation = 22;
-                scale1 = 0.86;
-                scale2 = 0.72;
-                scale3 = 0.6;
-            } else if (screenWidth <= 1200) {
-                spacing1 = 300;
-                spacing2 = 480;
-                spacing3 = 640;
-                rotation = 24;
-                scale1 = 0.87;
-                scale2 = 0.74;
-                scale3 = 0.62;
+            // transform: translate3d for X, Z, plus Y rotation? We keep clean translate & scale
+            const transform = `translate3d(${xPos}px, 0px, ${zPos}px) scale(${scaleVal})`;
+            item.style.transform = transform;
+            item.style.opacity = opacityVal;
+            item.style.filter = `blur(${blurVal}px)`;
+            item.style.zIndex = Math.floor(100 + (Math.cos(angle) + 1) * 50);
+            // additional refinement: items behind should be slightly smaller but not distracting
+            if (Math.abs(angle) > Math.PI / 2.2) {
+                item.style.pointerEvents = 'none';
             } else {
-                spacing1 = 340;
-                spacing2 = 540;
-                spacing3 = 720;
-                rotation = 26;
-                scale1 = 0.88;
-                scale2 = 0.75;
-                scale3 = 0.63;
+                item.style.pointerEvents = 'auto';
             }
-            
-            items.forEach((item, index) => {
-                let offset = index - heroCurrentIndex;
-                
-                if (offset > totalItems / 2) offset -= totalItems;
-                else if (offset < -totalItems / 2) offset += totalItems;
-                
-                const absOffset = Math.abs(offset);
-                const sign = offset < 0 ? -1 : 1;
-                
-                item.style.transform = '';
-                item.style.opacity = '';
-                item.style.zIndex = '';
-                item.style.transition = 'all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                
-                if (absOffset === 0) {
-                    item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
-                    item.style.opacity = '1';
-                    item.style.zIndex = '10';
-                } else if (absOffset === 1) {
-                    const translateX = sign * spacing1;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-120px) rotateY(${-sign * rotation}deg) scale(${scale1})`;
-                    item.style.opacity = '0.85';
-                    item.style.zIndex = '5';
-                } else if (absOffset === 2) {
-                    const translateX = sign * spacing2;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-220px) rotateY(${-sign * (rotation + 8)}deg) scale(${scale2})`;
-                    item.style.opacity = '0.6';
-                    item.style.zIndex = '3';
-                } else if (absOffset === 3) {
-                    const translateX = sign * spacing3;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-320px) rotateY(${-sign * (rotation + 15)}deg) scale(${scale3})`;
-                    item.style.opacity = '0.4';
-                    item.style.zIndex = '2';
-                } else {
-                    item.style.transform = 'translate(-50%, -50%) translateZ(-450px) scale(0.45)';
-                    item.style.opacity = '0.15';
-                    item.style.zIndex = '1';
-                }
-            });
-            
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === heroCurrentIndex);
-            });
-        }
-
-        function heroNextSlide() {
-            heroCurrentIndex = (heroCurrentIndex + 1) % heroPortfolioData.length;
-            heroUpdateCarousel();
-        }
-
-        function heroPrevSlide() {
-            heroCurrentIndex = (heroCurrentIndex - 1 + heroPortfolioData.length) % heroPortfolioData.length;
-            heroUpdateCarousel();
-        }
-
-        function heroGoToSlide(index) {
-            heroCurrentIndex = index;
-            heroUpdateCarousel();
-        }
-
-        // Event listeners
-        document.getElementById('heroNextBtn').addEventListener('click', heroNextSlide);
-        document.getElementById('heroPrevBtn').addEventListener('click', heroPrevSlide);
-
-        // Auto-rotate
-        let heroAutoRotate = setInterval(heroNextSlide, 5000);
-
-        const heroSection = document.querySelector('.hero-carousel-section');
-        heroSection.addEventListener('mouseenter', () => clearInterval(heroAutoRotate));
-        heroSection.addEventListener('mouseleave', () => {
-            heroAutoRotate = setInterval(heroNextSlide, 5000);
         });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') heroPrevSlide();
-            if (e.key === 'ArrowRight') heroNextSlide();
+        
+        // update active indicators
+        const indicators = document.querySelectorAll('.hero-indicator');
+        indicators.forEach((ind, idx) => {
+            if (idx === currentIndex) ind.classList.add('active');
+            else ind.classList.remove('active');
         });
-
-        // Responsive resize handler
-        let heroResizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(heroResizeTimeout);
-            heroResizeTimeout = setTimeout(() => {
-                heroUpdateCarousel();
-            }, 150);
+    }
+    
+    // smooth carousel movement
+    function setCurrentIndex(newIndex) {
+        currentIndex = (newIndex + totalItems) % totalItems;
+        updateCarouselPositions();
+    }
+    
+    function nextSlide() {
+        setCurrentIndex(currentIndex + 1);
+    }
+    
+    function prevSlide() {
+        setCurrentIndex(currentIndex - 1);
+    }
+    
+    // auto play optional (soft, non intrusive)
+    let autoInterval;
+    function startAutoPlay() {
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = setInterval(() => {
+            nextSlide();
+        }, 5500);
+    }
+    
+    function stopAutoPlay() {
+        if (autoInterval) {
+            clearInterval(autoInterval);
+            autoInterval = null;
+        }
+    }
+    
+    // resize handler ensures reflow positions
+    let resizeTimer;
+    function handleResize() {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (items.length) updateCarouselPositions();
+        }, 150);
+    }
+    
+    // initial render and events
+    function init() {
+        buildCarousel();
+        startAutoPlay();
+        
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            stopAutoPlay();
+            prevSlide();
+            startAutoPlay();
         });
-
-        // Initialize
-        heroInitCarousel();
-    </script>
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            stopAutoPlay();
+            nextSlide();
+            startAutoPlay();
+        });
+        
+        window.addEventListener('resize', handleResize);
+        // hover on carousel container pause auto
+        const container = document.querySelector('.hero-carousel-container');
+        container.addEventListener('mouseenter', () => stopAutoPlay());
+        container.addEventListener('mouseleave', () => startAutoPlay());
+        
+        // touch support for mobile swipe (light)
+        let touchStartX = 0;
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoPlay();
+        });
+        container.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].screenX;
+            const diff = endX - touchStartX;
+            if (Math.abs(diff) > 40) {
+                if (diff > 0) prevSlide();
+                else nextSlide();
+            }
+            startAutoPlay();
+        });
+    }
+    
+    init();
+</script>
 </body>
 </html>

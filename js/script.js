@@ -805,7 +805,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       el.setAttribute('x1', x1); el.setAttribute('y1', y1);
       el.setAttribute('x2', x2); el.setAttribute('y2', y2);
-      el.setAttribute('stroke', 'rgba(110,192,251,0.18)');
+      el.setAttribute('stroke', 'rgba(0,0,0,0.15)');
       el.setAttribute('stroke-width', '1.5');
       el.setAttribute('stroke-dasharray', '6 5');
       svg.appendChild(el);
