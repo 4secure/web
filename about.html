@@ -298,32 +298,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Company Story -->
   <section class="about-story">
     <div class="container">
-      <div class="grid-2">
-        <div class="reveal-left">
+      <div class="about-story-wrapper">
+        <!-- Left Side - Content -->
+        <div class="about-story-content">
           <div class="section-tag">Our Foundation</div>
           <h2 class="section-title">From the Frontlines of Cyber Warfare</h2>
-          <p class="section-subtitle" style="margin-bottom:24px;">Welcome to Four Secure Your Premier Partner in Cybersecurity Excellence
-In today's rapidly evolving digital landscape, ensuring robust protection against cyber threats is more critical than ever. At Four Secure, we stand at the forefront of cybersecurity innovation, offering a comprehensive suite of services designed to safeguard your organization's most valuable assets. .</p>
+          <p class="section-subtitle">Welcome to Four Secure Your Premier Partner in Cybersecurity Excellence. In today's rapidly evolving digital landscape, ensuring robust protection against cyber threats is more critical than ever. At Four Secure, we stand at the forefront of cybersecurity innovation, offering comprehensive security solutions.</p>
           <a href="contact.html" class="btn btn-primary">Work With Us</a>
         </div>
 
-        <div class="reveal-right" style="position:relative;height:400px;">
-          <div class="about-img-box main">
-  <div class="about-img-inner">
-    <img src="/assets/images/about-1.webp" alt="Four Secure Security Operations Center" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-</div>
-<div class="about-img-box accent">
-  <div class="about-img-inner">
-    <img src="/assets/images/about-2.webp" alt="Four Secure Cybersecurity Operations" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-</div>
-          <!-- Floating stat -->
-          <div style="position:absolute;top:20px;left:-20px;">
-            <img src="/assets/images/about.jfif" alt="Security Experts" style="width: 170px; height: 120px; object-fit: cover; border-radius: 12px;">
-          </div>
-          <div style="position:absolute;bottom:20px;right:-10px;">
-            <img src="/assets/images/about2.jpg" alt="Countries Served" style="width: 200px; height: 120px; object-fit: cover; border-radius: 12px;">
+        <!-- Right Side - Images Grid -->
+        <div class="about-story-images">
+          <div class="about-story-grid">
+            <div class="about-story-box about-story-box-1"></div>
+            <div class="about-story-box about-story-box-2"></div>
+            <div class="about-story-box about-story-box-3"></div>
+            <div class="about-story-box about-story-box-4"></div>
           </div>
         </div>
       </div>
@@ -440,6 +430,12 @@ In today's rapidly evolving digital landscape, ensuring robust protection agains
             <img src="/assets/images/mangopress.jpg" alt="Mango Press" class="company-logo-circle">
           </div>
           <span class="company-name-horizontal" style="color: var(--accent-blue);">Mango Press</span>
+        </div>
+        <div class="logo-strip-item">
+          <div class="logo-circle-wrapper">
+            <img src="/assets/images/aqua.jpg" alt="Mango Press" class="company-logo-circle">
+          </div>
+          <span class="company-name-horizontal" style="color: var(--accent-blue);">Aqua Secure Ai</span>
         </div>
         
         <!-- IVolve -->
@@ -802,7 +798,7 @@ In today's rapidly evolving digital landscape, ensuring robust protection agains
     .logo-circle-wrapper {
       width: 100px;
       height: 100px;
-      border-radius: 50%;
+      border-radius: 20%;
       overflow: hidden;
       border: 3px solid var(--accent-cyan);
       background: rgba(0, 212, 255, 0.1);
@@ -841,61 +837,339 @@ In today's rapidly evolving digital landscape, ensuring robust protection agains
         font-size: 0.9rem;
       }
     }
+
+    /* About Story Section */
+    .about-story {
+      padding: 60px 0;
+    }
+
+    .about-story-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-story-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .about-story-content .section-tag {
+      color: var(--accent-cyan);
+      margin-bottom: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-story-content .section-title {
+      color: #2b4d8d;
+      margin-bottom: 24px;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .about-story-content .section-subtitle {
+      color: #334155;
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .about-story-images {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+    }
+
+    .about-story-box {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(43, 77, 141, 0.12);
+      box-shadow: 0 4px 16px rgba(43, 77, 141, 0.08);
+      transition: all 0.3s ease;
+      background-image: url('https://img.freepik.com/free-vector/security-shield-cyber-security-technology-blue-tone_53876-119534.jpg');
+      background-repeat: no-repeat;
+      background-size: 400px 400px;
+    }
+
+    .about-story-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(43, 77, 141, 0.15);
+      border-color: rgba(110, 192, 251, 0.3);
+    }
+
+    .about-story-box-1 {
+      background-position: 0 0;
+    }
+
+    .about-story-box-2 {
+      background-position: -200px 0;
+    }
+
+    .about-story-box-3 {
+      background-position: 0 -200px;
+    }
+
+    .about-story-box-4 {
+      background-position: -200px -200px;
+    }
+
+    /* Large Desktop */
+    @media (max-width: 1200px) {
+      .about-story-wrapper {
+        gap: 50px;
+      }
+
+      .about-story-grid {
+        max-width: 380px;
+      }
+
+      .about-story-box {
+        background-size: 380px 380px;
+      }
+
+      .about-story-box-2 {
+        background-position: -190px 0;
+      }
+
+      .about-story-box-3 {
+        background-position: 0 -190px;
+      }
+
+      .about-story-box-4 {
+        background-position: -190px -190px;
+      }
+
+      .about-story-content .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Tablets - Stacked Layout */
+    @media (max-width: 991px) {
+      .about-story-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-story-grid {
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 14px;
+      }
+
+      .about-story-box {
+        background-size: 320px 320px;
+      }
+
+      .about-story-box-1 {
+        background-position: 0 0;
+      }
+
+      .about-story-box-2 {
+        background-position: -160px 0;
+      }
+
+      .about-story-box-3 {
+        background-position: 0 -160px;
+      }
+
+      .about-story-box-4 {
+        background-position: -160px -160px;
+      }
+
+      .about-story-content {
+        text-align: center;
+      }
+
+      .about-story-content .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* iPad - Smaller Grid */
+    @media (max-width: 768px) {
+      .about-story-wrapper {
+        gap: 35px;
+      }
+
+      .about-story-grid {
+        max-width: 280px;
+        gap: 12px;
+      }
+
+      .about-story-box {
+        background-size: 280px 280px;
+      }
+
+      .about-story-box-2 {
+        background-position: -140px 0;
+      }
+
+      .about-story-box-3 {
+        background-position: 0 -140px;
+      }
+
+      .about-story-box-4 {
+        background-position: -140px -140px;
+      }
+
+      .about-story-content .section-title {
+        font-size: 1.5rem;
+      }
+
+      .about-story-content .section-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* Large Mobile */
+    @media (max-width: 640px) {
+      .about-story-wrapper {
+        gap: 30px;
+      }
+
+      .about-story-grid {
+        max-width: 240px;
+        gap: 10px;
+      }
+
+      .about-story-box {
+        background-size: 240px 240px;
+      }
+
+      .about-story-box-2 {
+        background-position: -120px 0;
+      }
+
+      .about-story-box-3 {
+        background-position: 0 -120px;
+      }
+
+      .about-story-box-4 {
+        background-position: -120px -120px;
+      }
+
+      .about-story-content .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+      }
+
+      .about-story-content .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .about-story {
+        padding: 40px 0;
+      }
+
+      .about-story-wrapper {
+        gap: 25px;
+      }
+
+      .about-story-grid {
+        max-width: 200px;
+        gap: 8px;
+      }
+
+      .about-story-box {
+        background-size: 200px 200px;
+        border-radius: 8px;
+      }
+
+      .about-story-box-2 {
+        background-position: -100px 0;
+      }
+
+      .about-story-box-3 {
+        background-position: 0 -100px;
+      }
+
+      .about-story-box-4 {
+        background-position: -100px -100px;
+      }
+
+      .about-story-content .section-tag {
+        font-size: 0.8rem;
+      }
+
+      .about-story-content .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .about-story-content .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 18px;
+      }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 380px) {
+      .about-story {
+        padding: 30px 0;
+      }
+
+      .about-story-wrapper {
+        gap: 20px;
+      }
+
+      .about-story-grid {
+        max-width: 160px;
+        gap: 6px;
+      }
+
+      .about-story-box {
+        background-size: 160px 160px;
+        border-radius: 6px;
+      }
+
+      .about-story-box-2 {
+        background-position: -80px 0;
+      }
+
+      .about-story-box-3 {
+        background-position: 0 -80px;
+      }
+
+      .about-story-box-4 {
+        background-position: -80px -80px;
+      }
+
+      .about-story-content .section-title {
+        font-size: 1.1rem;
+      }
+
+      .about-story-content .section-subtitle {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 
   <script>
-    // Auto-scrolling Logo Strip
-    (function() {
-      const logoStrip = document.getElementById('logoStripHorizontal');
-      if (!logoStrip) return;
-
-      // Clone the logos to create seamless loop
-      const logos = logoStrip.innerHTML;
-      logoStrip.innerHTML = logos + logos; // Duplicate for seamless scrolling
-
-      // Pause on hover
-      const container = document.querySelector('.testimonials-logo-strip');
-      if (container) {
-        container.addEventListener('mouseenter', () => {
-          logoStrip.style.animationPlayState = 'paused';
-        });
-        container.addEventListener('mouseleave', () => {
-          logoStrip.style.animationPlayState = 'running';
-        });
-      }
-    })();
-
-    // Timeline Dot Glow Animation on Scroll
-    (function() {
-      const timelineItems = document.querySelectorAll('.timeline-item');
-      
-      if (timelineItems.length === 0) return;
-
-      const observerOptions = {
-        threshold: 0.6,
-        rootMargin: '0px 0px -20px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        // First, remove glow from all dots
-        timelineItems.forEach(item => {
-          const dot = item.querySelector('.timeline-dot');
-          if (dot) dot.classList.remove('glow');
-        });
-
-        // Then add glow only to the most visible item
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-            const dot = entry.target.querySelector('.timeline-dot');
-            if (dot) dot.classList.add('glow');
-          }
-        });
-      }, observerOptions);
-
-      timelineItems.forEach(item => {
-        observer.observe(item);
-      });
-    })();
+  
   </script>
 </body>
 

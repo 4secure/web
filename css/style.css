@@ -1056,7 +1056,7 @@ h6 {
 
 
 
-  border-radius: 6px;
+  border-radius: 140px;
 
 
 
@@ -1752,7 +1752,7 @@ h6 {
 
 
 
-  transition: var(--transition);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 
 
@@ -1792,7 +1792,35 @@ h6 {
 
 
 
+#navbar.navbar-hidden {
 
+
+
+  transform: translateY(-100%);
+
+
+
+}
+
+
+
+#navbar.navbar-hidden ~ .mobile-nav {
+
+
+
+  visibility: hidden;
+
+
+
+  pointer-events: none;
+
+
+
+  display: none !important;
+
+
+
+}
 
 
 
@@ -4509,7 +4537,6 @@ h6 {
 
 
   text-align: center;
-
 
 
   justify-content: center;
@@ -8712,6 +8739,21 @@ h6 {
 
 
 
+.cta-actions .btn-primary,
+.why-us-cta .btn-primary,
+#aqua-partner-section .btn-primary,
+.aqua-partner-text .btn-primary {
+
+  width: fit-content !important;
+
+  padding: 12px 28px !important;
+
+  display: inline-flex !important;
+
+}
+
+
+
 
 
 
@@ -8736,7 +8778,11 @@ h6 {
 
 
 
-  background: linear-gradient(to bottom, #6ec0fb 40%, #021326 80%);
+ background: linear-gradient(
+  to bottom,
+  #6ec0fb 0%,
+  #021326 100%
+);
 
 
 
@@ -9944,7 +9990,7 @@ body.index-page .form-textarea:focus+.textarea-icon {
 
 
 
-  display: block;
+  display: none;
 
 
 
@@ -10972,7 +11018,7 @@ footer::before {
 
 
 
-  background-image: url("/favicon.png");
+  /* background-image: url("/favicon.png"); */
 
 
 
@@ -12452,6 +12498,10 @@ display: none;
 
 
 
+  --timeline-height: 0;
+
+
+
 }
 
 
@@ -12480,19 +12530,31 @@ display: none;
 
 
 
-  bottom: 0;
+  width: 2px;
 
 
 
-  width: 1px;
+  height: var(--timeline-height, 0);
 
 
 
-  background: var(--border);
+  background: linear-gradient(to bottom, rgba(110, 192, 251, 0.8), rgba(110, 192, 251, 0.3), rgba(110, 192, 251, 0.1));
 
 
 
   transform: translateX(-50%);
+
+
+
+  transition: height 0.5s ease-out;
+
+
+
+  filter: drop-shadow(0 0 12px rgba(110, 192, 251, 0.5));
+
+
+
+  box-shadow: inset 0 0 6px rgba(110, 192, 251, 0.3);
 
 
 
@@ -30329,7 +30391,6 @@ a.service-brick {
   color: #2b4d8d !important;
 
 
-
   border-color: #6ec0fb !important;
 
 
@@ -31188,7 +31249,7 @@ body.loaded .loader-wrapper {
 
   margin: 0 auto;
 
-  padding: 120px 40px;
+  padding: 60px 40px;
 
   position: relative;
 
@@ -31206,7 +31267,7 @@ body.loaded .loader-wrapper {
 
   text-align: center;
 
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   position: relative;
 
@@ -31338,7 +31399,7 @@ body.loaded .loader-wrapper {
 
 
 
-.tl-spacer-row { height: 120px; }
+.tl-spacer-row { height: 60px; }
 
 
 
@@ -31374,9 +31435,9 @@ body.loaded .loader-wrapper {
 
 .tl-icon-ring {
 
-  width: 130px;
+  width: 110px;
 
-  height: 130px;
+  height: 110px;
 
   border-radius: 50%;
 
@@ -31904,7 +31965,7 @@ body.loaded .loader-wrapper {
 
 #aqua-partner-section {
 
-  padding: 100px 0;
+  padding: 50px 0;
 
   position: relative;
 
@@ -32276,6 +32337,405 @@ body.loaded .loader-wrapper {
 
 
 
+/* Mobile Responsiveness - Tablet */
+@media (max-width: 768px) {
+
+  #aqua-partner-section {
+
+    padding: 40px 0;
+
+  }
+
+
+
+  .aqua-partner-content {
+
+    gap: 40px;
+
+  }
+
+
+
+  .aqua-partner-text h2 {
+
+    font-size: 1.5rem;
+
+  }
+
+
+
+  .aqua-partner-text p {
+
+    font-size: 0.95rem;
+
+    margin-bottom: 24px;
+
+  }
+
+
+
+  .aqua-partner-points li {
+
+    font-size: 0.9rem;
+
+  }
+
+
+
+  .tech-anim-wrap {
+
+    width: 200px;
+
+    height: 240px;
+
+  }
+
+
+
+  .tech-icon-card {
+
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 8px;
+
+  }
+
+
+
+  .tech-ring-outer {
+
+    width: 180px;
+
+    height: 180px;
+
+  }
+
+
+
+  .tech-ring-mid {
+
+    width: 120px;
+
+    height: 120px;
+
+  }
+
+
+
+  .tech-center-emblem {
+
+    width: 70px;
+
+    height: 70px;
+
+    font-size: 8px;
+
+  }
+
+}
+
+
+
+/* Mobile Responsiveness - Small Devices */
+@media (max-width: 640px) {
+
+  #aqua-partner-section {
+
+    padding: 30px 0;
+
+  }
+
+
+
+  .aqua-partner-badge {
+
+    margin-bottom: 24px;
+
+    padding: 5px 12px;
+
+    font-size: 0.7rem;
+
+  }
+
+
+
+  .aqua-partner-content {
+
+    gap: 30px;
+
+  }
+
+
+
+  .aqua-partner-text h2 {
+
+    font-size: 1.3rem;
+
+    margin-bottom: 16px;
+
+  }
+
+
+
+  .aqua-partner-text p {
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+  }
+
+
+
+  .aqua-partner-points {
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+  }
+
+
+
+  .aqua-partner-points li {
+
+    font-size: 0.85rem;
+
+    gap: 10px;
+
+  }
+
+
+
+  .aqua-partner-points li svg {
+
+    width: 16px;
+
+    height: 16px;
+
+  }
+
+
+
+  .tech-anim-wrap {
+
+    display: none;
+
+  }
+
+
+
+  .tech-icon-card {
+
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 7px;
+
+    border-radius: 8px;
+
+  }
+
+
+
+  .tech-ring-outer {
+
+    width: 140px;
+
+    height: 140px;
+
+  }
+
+
+
+  .tech-ring-mid {
+
+    width: 90px;
+
+    height: 90px;
+
+  }
+
+
+
+  .tech-center-emblem {
+
+    width: 60px;
+
+    height: 60px;
+
+    font-size: 7px;
+
+  }
+
+}
+
+
+
+/* Mobile Responsiveness - Extra Small */
+@media (max-width: 480px) {
+
+  #aqua-partner-section {
+
+    padding: 24px 0;
+
+  }
+
+
+
+  .aqua-partner-badge {
+
+    margin-bottom: 20px;
+
+    font-size: 0.65rem;
+
+    padding: 4px 10px;
+
+  }
+
+
+
+  .aqua-partner-content {
+
+    gap: 24px;
+
+  }
+
+
+
+  .aqua-partner-text h2 {
+
+    font-size: 1.1rem;
+
+    line-height: 1.3;
+
+    margin-bottom: 12px;
+
+  }
+
+
+
+  .aqua-partner-text p {
+
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 16px;
+
+  }
+
+
+
+  .aqua-partner-points {
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+  }
+
+
+
+  .aqua-partner-points li {
+
+    font-size: 0.8rem;
+
+    gap: 8px;
+
+  }
+
+
+
+  .aqua-partner-points li svg {
+
+    width: 14px;
+
+    height: 14px;
+
+  }
+
+
+
+  .tech-anim-wrap {
+
+    display: none;
+
+  }
+
+
+
+  .tech-icon-card {
+
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 6px;
+
+    border-radius: 6px;
+
+  }
+
+
+
+  .tech-icon-card span {
+
+    font-size: 9px;
+
+  }
+
+
+
+  .tech-ring-outer {
+
+    width: 110px;
+
+    height: 110px;
+
+  }
+
+
+
+  .tech-ring-mid {
+
+    width: 70px;
+
+    height: 70px;
+
+  }
+
+
+
+  .tech-center-emblem {
+
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 6px;
+
+  }
+
+
+
+  .btn.btn-primary {
+
+    padding: 12px 20px;
+
+    font-size: 0.9rem;
+
+  }
+
+}
+
+
+
 /* servicehero */
 
 /* ─── Section ───────────────────────────────────────────────────── */
@@ -32303,7 +32763,7 @@ body.loaded .loader-wrapper {
     }
  
     .hero-section-heading h2 {
-      font-size: clamp(28px, 6vw, 48px);
+      font-size: clamp(25px, 6vw, 48px);
       font-weight: 900;
       margin-top: 30px;
       text-transform: uppercase;

@@ -131,15 +131,133 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
+  // SET CONTACT FORM PLACEHOLDERS
+  // ============================================
+  const placeholders = {
+    'name': 'Your Name',
+    'email': 'you@example.com',
+    'company': 'Company',
+    'phone': '+92 300 1234567',
+    'message': 'Tell us about your security needs...'
+  };
+
+  // Apply placeholders to each form field
+  for (const [fieldId, placeholderText] of Object.entries(placeholders)) {
+    const element = document.getElementById(fieldId);
+    if (element) {
+      element.placeholder = placeholderText;
+    }
+  }
+
+
+  // Auto-scrolling Logo Strip
+    (function() {
+      const logoStrip = document.getElementById('logoStripHorizontal');
+      if (!logoStrip) return;
+
+      // Clone the logos to create seamless loop
+      const logos = logoStrip.innerHTML;
+      logoStrip.innerHTML = logos + logos; // Duplicate for seamless scrolling
+
+      // Pause on hover
+      const container = document.querySelector('.testimonials-logo-strip');
+      if (container) {
+        container.addEventListener('mouseenter', () => {
+          logoStrip.style.animationPlayState = 'paused';
+        });
+        container.addEventListener('mouseleave', () => {
+          logoStrip.style.animationPlayState = 'running';
+        });
+      }
+    })();
+
+    // Timeline Dot Glow Animation on Scroll
+    (function() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      if (timelineItems.length === 0) return;
+
+      const observerOptions = {
+        threshold: 0.6,
+        rootMargin: '0px 0px -20px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        // First, remove glow from all dots
+        timelineItems.forEach(item => {
+          const dot = item.querySelector('.timeline-dot');
+          if (dot) dot.classList.remove('glow');
+        });
+
+        // Then add glow only to the most visible item
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+            const dot = entry.target.querySelector('.timeline-dot');
+            if (dot) dot.classList.add('glow');
+          }
+        });
+      }, observerOptions);
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    })();
+
+    // Timeline Line Animation on Scroll
+    (function() {
+      const timeline = document.querySelector('.timeline');
+      if (!timeline) return;
+
+      const handleTimelineScroll = () => {
+        const timelineRect = timeline.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate progress based on how far down we've scrolled through the timeline
+        // When timeline enters from bottom (top = windowHeight): progress = 0
+        // As timeline scrolls up, progress increases
+        // When fully scrolled past (top < -height): progress = 1
+        const progress = Math.max(0, Math.min(1, (windowHeight - timelineRect.top) / timelineRect.height));
+        
+        // Update the CSS variable for timeline height
+        const maxHeight = timelineRect.height;
+        const newHeight = maxHeight * progress;
+        timeline.style.setProperty('--timeline-height', newHeight + 'px');
+      };
+
+      window.addEventListener('scroll', handleTimelineScroll, { passive: true });
+      handleTimelineScroll(); // Initial call
+    })();
+
+
+
+  // ============================================
   // NAVBAR SCROLL EFFECT
   // ============================================
   const navbar = document.getElementById('navbar');
+  let lastScrollY = 0;
+  let isScrollingDown = false;
+  
   const handleScroll = () => {
-    if (window.scrollY > 30) {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 30) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
     }
+    
+    // Detect scroll direction - hide navbar on scroll down, show on scroll up
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down
+      isScrollingDown = true;
+      navbar?.classList.add('navbar-hidden');
+    } else if (currentScrollY < lastScrollY) {
+      // Scrolling up
+      isScrollingDown = false;
+      navbar?.classList.remove('navbar-hidden');
+    }
+    
+    lastScrollY = currentScrollY;
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
