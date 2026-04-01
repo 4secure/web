@@ -812,7 +812,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
       image: '/assets/images/service-1.jpg',
       link: '../Services/24x7-SOC.html',
-      tech: ['SOC', 'SIEM', 'Threat Detection', 'AI Analysis']
+      tech: ['SOC', 'SIEM', 'Threat Detection'  ]
     },
     {
       id: 2,
@@ -820,7 +820,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
       image: '/assets/images/service-2.jpg',
       link: '../Services/vapt.html',
-      tech: ['Pentesting', 'Vulnerability Assessment', 'Security Testing', 'Risk Analysis']
+      tech: ['Pentesting', 'Vulnerability Assessment',  'Risk Analysis']
     },
     {
       id: 3,
@@ -828,7 +828,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
       image: '/assets/images/service-3.jpg',
       link: '../Services/assessment.html',
-      tech: ['Compliance', 'ISO 27001', 'NIST', 'GDPR', 'Gap Analysis']
+      tech: ['Compliance', 'ISO 27001', 'NIST',  'Gap Analysis']
     },
     {
       id: 4,
@@ -868,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
       image: '/assets/images/service-8.jpg',
       link: '../Services/iam.html',
-      tech: ['SSO', 'MFA', 'PAM', 'Identity Governance', 'Access Control']
+      tech: [ ]
     }
   ];
 
@@ -898,7 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <h3 class="hero-card-title">${data.title}</h3>
           <p class="hero-card-description">${data.description}</p>
-          <div class="hero-card-tech">${techBadges}</div>
+          ${techBadges ? `<div class="hero-card-tech">${techBadges}</div>` : ''}
           <div class="hero-card-cta">Learn More</div>
         </div>
       </a>`;
