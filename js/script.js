@@ -263,11 +263,22 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll();
 
   // Active nav link
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPage = window.location.pathname;
   document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    
+    // Normalize both paths for comparison
+    const normalizedCurrent = currentPage.endsWith('/') ? currentPage.slice(0, -1) : currentPage;
+    const normalizedHref = href.endsWith('/') ? href.slice(0, -1) : href;
+    
+    // Handle root path specially
+    if ((normalizedCurrent === '' && normalizedHref === '') || 
+        (normalizedCurrent === '/' && normalizedHref === '') ||
+        normalizedCurrent === normalizedHref ||
+        (normalizedCurrent !== '' && currentPage.includes(href) && href !== '/')) {
       link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
 
@@ -525,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   // SCROLL REVEAL
   // ============================================
-  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .fade-up, .fade-down, .fade-left, .fade-right, .scale-up');
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -537,6 +548,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // ============================================
+  // CYBERSILO TIMELINE STAGGERED ANIMATIONS
+  // ============================================
+  const initCyberSiloAnimations = () => {
+    const timelineRows = document.querySelectorAll('.tl-row');
+    const timelineIcons = document.querySelectorAll('.tl-icon-ring');
+    const timelineTexts = document.querySelectorAll('.tl-text');
+    
+    // Create specialized observer for timeline elements with staggered delays
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const row = entry.target;
+          const icon = row.querySelector('.tl-icon-ring');
+          const text = row.querySelector('.tl-text');
+          
+          // Animate row first
+          setTimeout(() => {
+            row.classList.add('visible');
+          }, index * 200);
+          
+          // Then animate icon with slight delay
+          if (icon) {
+            setTimeout(() => {
+              icon.classList.add('visible');
+            }, index * 200 + 100);
+          }
+          
+          // Finally animate text
+          if (text) {
+            setTimeout(() => {
+              text.classList.add('visible');
+            }, index * 200 + 200);
+          }
+          
+          timelineObserver.unobserve(row);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    
+    timelineRows.forEach(row => timelineObserver.observe(row));
+  };
+
+  // Initialize cybersilo animations
+  initCyberSiloAnimations();
 
   // ============================================
   // ANIMATED COUNTERS
@@ -631,8 +688,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   // BLOG SEARCH & FILTER
   // ============================================
-  const searchInput = document.getElementById('blog-search');
-  const blogCards = document.querySelectorAll('.blog-list-card');
+  const searchInput = document.getElementById('Blogs-search');
+  const BlogsCards = document.querySelectorAll('.Blogs-list-card');
   const categoryItems = document.querySelectorAll('.category-item');
 
   if (searchInput) {
@@ -653,7 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = searchInput?.value.toLowerCase() || '';
     const activeCategory = document.querySelector('.category-item.active')?.dataset.category || 'all';
 
-    blogCards.forEach(card => {
+    BlogsCards.forEach(card => {
       const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
       const text = card.querySelector('p')?.textContent.toLowerCase() || '';
       const cat = card.dataset.category || '';
@@ -811,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: '24x7 Managed SOC',
       description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
       image: '/assets/images/service-1.jpg',
-      link: '../Services/24x7-SOC.html',
+      link: '../Services/24x7-SOC/',
       tech: ['SOC', 'SIEM', 'Threat Detection'  ]
     },
     {
@@ -819,7 +876,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'VAPT',
       description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
       image: '/assets/images/service-2.jpg',
-      link: '../Services/vapt.html',
+      link: '../Services/vapt/',
       tech: ['Pentesting', 'Vulnerability Assessment',  'Risk Analysis']
     },
     {
@@ -827,15 +884,15 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Assessments & Audits',
       description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
       image: '/assets/images/service-3.jpg',
-      link: '../Services/assessment.html',
-      tech: ['Compliance', 'ISO 27001', 'NIST',  'Gap Analysis']
+      link: '../Services/assessment/',
+      tech: ['Compliance', 'ISO 27001',  'Gap Analysis']
     },
     {
       id: 4,
       title: 'Managed Security',
       description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
       image: '/assets/images/service-4.jpg',
-      link: '../Services/mss.html',
+      link: '../Services/mss/',
       tech: ['Firewall Management', 'Endpoint Security',  'Expert Management']
     },
     {
@@ -843,7 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Threat Intelligence',
       description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
       image: '/assets/images/service-5.jpg',
-      link: '../Services/threat-intel.html',
+      link: '../Services/threat-intel/',
       tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
     },
     {
@@ -851,24 +908,24 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Incident Response',
       description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
       image: '/assets/images/service-6.jpg',
-      link: '../Services/ir.html',
-      tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery', '30-min SLA']
+      link: '../Services/ir/',
+      tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery' ]
     },
     {
       id: 7,
       title: 'Governance, Risk & Compliance',
       description: 'Integrated risk management, policy, and alignment with ISO/NIST.',
       image: '/assets/images/service-7.jpg',
-      link: '../Services/grc.html',
-      tech: ['Risk Management', 'Policy Development', 'ISO/NIST Alignment', 'GRC Framework']
+      link: '../Services/grc/',
+      tech: ['Risk Management', 'Policy Development', 'GRC Framework']
     },
     {
       id: 8,
       title: 'Identity & Access Management',
       description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
       image: '/assets/images/service-8.jpg',
-      link: '../Services/iam.html',
-      tech: [ ]
+      link: '../Services/iam/',
+      tech: [ 'IAM', 'Zero Trust', 'Privileged Access']
     }
   ];
 
@@ -1057,7 +1114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // // ============================================================
 // // FOUR SECURE — Contact Form Email Handler
-// // Works on both index.html and contact.html automatically
+// // Works on both / and /contact/ automatically
 // // ============================================================
 
 // (function () {
@@ -1076,7 +1133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     const lastName  = (form.querySelector('#last-name')?.value  || '').trim();
 //     const nameField = (form.querySelector('#name')?.value       || '').trim();
 
-//     // contact.html uses first + last name; index.html uses single #name field
+//     // /contact/ uses first + last name; / uses single #name field
 //     const name    = nameField || [firstName, lastName].filter(Boolean).join(' ');
 //     const email   = (form.querySelector('#email')?.value   || '').trim();
 //     const phone   = (form.querySelector('#phone')?.value   || '').trim();
@@ -1085,7 +1142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     const subject = (form.querySelector('#subject')?.value || '').trim();
 //     const message = (form.querySelector('#message')?.value || '').trim();
 
-//     // Consent checkbox (contact.html only)
+//     // Consent checkbox (/contact/ only)
 //     const consentEl = form.querySelector('#consent');
 //     if (consentEl && !consentEl.checked) {
 //       alert('Please agree to the data processing consent before submitting.');
