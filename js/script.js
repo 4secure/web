@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   const placeholders = {
     'name': 'Your Name',
-    'email': 'you@example.com',
+    'email': 'your@example.com',
     'company': 'Company',
     'phone': '+92 300 1234567',
     'message': 'Tell us about your security needs...'
