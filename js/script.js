@@ -3,18 +3,77 @@
    ============================================ */
 
 // ============================================
-// LOADER FUNCTIONALITY
+// SMART LOADER FUNCTIONALITY
 // ============================================
-// Hide loader when page is fully loaded
-window.addEventListener('load', function() {
+let loaderTimer;
+let pageLoadStart = Date.now();
+let minLoadTime = 600;
+let loaderShown = false;
+
+// Function to show loader if needed
+function showLoaderIfNeeded() {
+  if (loaderShown) return false; // Don't show if already shown
+  
+  const loadTime = Date.now() - pageLoadStart;
+  const loaderWrapper = document.querySelector('.loader-wrapper');
+  
+  // Don't show if page is already loaded
+  if (document.readyState === 'complete') {
+    console.log('Page already loaded, not showing loader');
+    return false;
+  }
+  
+  // Simple check: show loader if page is taking time to load
+  if (loaderWrapper && loadTime >= minLoadTime) {
+    loaderWrapper.style.opacity = '1';
+    loaderWrapper.style.visibility = 'visible';
+    loaderWrapper.style.display = 'flex';
+    loaderShown = true;
+    console.log('Loader shown at:', loadTime + 'ms');
+    return true;
+  }
+  return false;
+}
+
+// Function to hide loader
+function hideLoader() {
   const loaderWrapper = document.querySelector('.loader-wrapper');
   if (loaderWrapper) {
-    setTimeout(function() {
-      loaderWrapper.classList.add('hidden');
-      document.body.classList.add('loaded');
-    }, 500); // Show loader for at least 500ms
+    loaderWrapper.style.opacity = '0';
+    loaderWrapper.style.visibility = 'hidden';
+    loaderWrapper.style.display = 'none';
+    loaderWrapper.classList.add('hidden');
+    document.body.classList.add('loaded');
+    loaderShown = false;
+    console.log('Loader hidden completely');
   }
+}
+
+// Check if page is taking too long to load
+loaderTimer = setTimeout(function() {
+  showLoaderIfNeeded();
+}, minLoadTime);
+
+// Always hide loader when page is fully loaded
+window.addEventListener('load', function() {
+  clearTimeout(loaderTimer);
+  console.log('Page fully loaded - hiding loader');
+  hideLoader();
 });
+
+// Also hide on DOMContentLoaded as backup
+document.addEventListener('DOMContentLoaded', function() {
+  clearTimeout(loaderTimer);
+  console.log('DOM loaded - hiding loader');
+  hideLoader();
+});
+
+// Ultimate fallback - hide loader after 3 seconds max
+setTimeout(function() {
+  clearTimeout(loaderTimer);
+  console.log('Fallback timeout - hiding loader');
+  hideLoader();
+}, 3000);
 
 // ============================================
 // TIMELINE ZIGZAG PATTERN
@@ -87,27 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
     resizeTimer = setTimeout(initTimelineZigzag, 250);
   });
 });
-
-// Also hide loader when DOM is ready (fallback)
-document.addEventListener('DOMContentLoaded', function() {
-  // If page loads very quickly, still show loader briefly
-  setTimeout(function() {
-    const loaderWrapper = document.querySelector('.loader-wrapper');
-    if (loaderWrapper) {
-      loaderWrapper.classList.add('hidden');
-      document.body.classList.add('loaded');
-    }
-  }, 1000);
-});
-
-// Force hide loader after 3 seconds as ultimate fallback
-setTimeout(function() {
-  const loaderWrapper = document.querySelector('.loader-wrapper');
-  if (loaderWrapper && !loaderWrapper.classList.contains('hidden')) {
-    loaderWrapper.classList.add('hidden');
-    document.body.classList.add('loaded');
-  }
-}, 3000);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -638,6 +676,142 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(counter => counterObserver.observe(counter));
 
   // ============================================
+  // AI CARD CLICK INTERACTIONS - ULTRA FAST
+  // ============================================
+  const initAquaCardInteractions = () => {
+    const aiCards = document.querySelectorAll('.ai-card');
+    
+    // Inject CSS for ultra-fast animations
+    const style = document.createElement('style');
+    style.textContent = `
+      .ai-card.moving {
+        cursor: grabbing !important;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+      }
+      
+      .moving-dot {
+        position: absolute !important;
+        width: 4px !important;
+        height: 4px !important;
+        background: rgba(14, 165, 233, 0.9) !important;
+        border-radius: 50% !important;
+        pointer-events: none !important;
+        z-index: 20 !important;
+        animation: moveDot 0.8s infinite ease-in-out !important;
+      }
+      
+      @keyframes moveDot {
+        0% { transform: translate(0, 0) scale(0); opacity: 0; }
+        5% { transform: translate(0, 0) scale(1); opacity: 1; }
+        50% { transform: translate(var(--tx, 20px), var(--ty, 20px)) scale(1); opacity: 0.8; }
+        100% { transform: translate(var(--tx, 40px), var(--ty, 40px)) scale(0.3); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    aiCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Prevent multiple clicks during animation
+        if (card.classList.contains('moving')) return;
+        
+        // Generate ultra-fast dots
+        createMovingDots(card);
+        
+        // Start card movement
+        startCardMovement(card);
+      });
+    });
+    
+    const createMovingDots = (card) => {
+      // Clear existing dots instantly
+      const existingDots = card.querySelectorAll('.moving-dot');
+      existingDots.forEach(dot => dot.remove());
+      
+      // Create 8 dots with instant generation - all appear within 1 second
+      for (let i = 0; i < 8; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'moving-dot';
+        
+        // Random position and movement direction
+        const x = Math.random() * 80 + 10;
+        const y = Math.random() * 80 + 10;
+        const tx = (Math.random() - 0.5) * 60;
+        const ty = (Math.random() - 0.5) * 60;
+        
+        dot.style.cssText = `
+          left: ${x}%;
+          top: ${y}%;
+          --tx: ${tx}px;
+          --ty: ${ty}px;
+          animation-delay: ${i * 0.01}s;
+        `;
+        
+        card.appendChild(dot);
+      }
+    };
+    
+    const startCardMovement = (card) => {
+      // Random movement direction
+      const tx = (Math.random() - 0.5) * 30;
+      const ty = (Math.random() - 0.5) * 30;
+      
+      card.classList.add('moving');
+      card.style.transform = `translate(${tx}px, ${ty}px) scale(0.95)`;
+      
+      // Reset after 500ms to complete within 1 second
+      setTimeout(() => {
+        card.style.transform = '';
+        card.classList.remove('moving');
+        
+        // Clean up dots immediately after reset
+        const dots = card.querySelectorAll('.moving-dot');
+        dots.forEach(dot => dot.remove());
+      }, 500);
+    };
+  };
+
+  // Initialize AI card interactions
+  initAquaCardInteractions();
+
+  // ============================================
+  // BACK TO TOP BUTTON
+  // ============================================
+  let backToTopButton = document.getElementById('backToTop');
+
+  // Inject if it doesn't exist
+  if (!backToTopButton) {
+    backToTopButton = document.createElement('button');
+    backToTopButton.id = 'backToTop';
+    backToTopButton.className = 'back-to-top';
+    document.body.appendChild(backToTopButton);
+  }
+
+  // Force standardize properties and correctly aligned SVG on all pages
+  backToTopButton.type = 'button';
+  backToTopButton.setAttribute('aria-label', 'Back to top');
+  backToTopButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>';
+
+  if (backToTopButton) {
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+
+    // Scroll to top when clicked
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent any form submission or unexpected jumps
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // ============================================
   // TESTIMONIAL SLIDER
   // ============================================
   const track = document.querySelector('.testimonials-track');
@@ -863,32 +1037,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
  /* ─── Portfolio data ────────────────────────────────────────────── */
   const heroPortfolioData = [
+    
     {
       id: 1,
-      title: '24x7 Managed SOC',
-      description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
-      image: '/assets/images/service-1.jpg',
-      link: '../Services/24x7-SOC/',
-      tech: ['SOC', 'SIEM', 'Threat Detection'  ]
-    },
-    {
-      id: 2,
-      title: 'VAPT',
-      description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
-      image: '/assets/images/service-2.jpg',
-      link: '../Services/vapt/',
-      tech: ['Pentesting', 'Vulnerability Assessment',  'Risk Analysis']
-    },
-    {
-      id: 3,
-      title: 'Assessments & Audits',
-      description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
-      image: '/assets/images/service-3.jpg',
-      link: '../Services/assessment/',
-      tech: ['Compliance', 'ISO 27001',  'Gap Analysis']
-    },
-    {
-      id: 4,
       title: 'Managed Security',
       description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
       image: '/assets/images/service-4.jpg',
@@ -896,23 +1047,15 @@ document.addEventListener('DOMContentLoaded', () => {
       tech: ['Firewall Management', 'Endpoint Security',  'Expert Management']
     },
     {
-      id: 5,
-      title: 'Threat Intelligence',
-      description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
-      image: '/assets/images/service-5.jpg',
-      link: '../Services/threat-intel/',
-      tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
-    },
-    {
-      id: 6,
+      id: 2,
       title: 'Incident Response',
       description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
       image: '/assets/images/service-6.jpg',
       link: '../Services/ir/',
       tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery' ]
     },
-    {
-      id: 7,
+     {
+      id: 3,
       title: 'Governance, Risk & Compliance',
       description: 'Integrated risk management, policy, and alignment with ISO/NIST.',
       image: '/assets/images/service-7.jpg',
@@ -920,13 +1063,50 @@ document.addEventListener('DOMContentLoaded', () => {
       tech: ['Risk Management', 'Policy Development', 'GRC Framework']
     },
     {
-      id: 8,
+      id: 4,
       title: 'Identity & Access Management',
       description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
       image: '/assets/images/service-8.jpg',
       link: '../Services/iam/',
       tech: [ 'IAM', 'Zero Trust', 'Privileged Access']
+    },
+    {
+      id: 5,
+      title: 'Managed SOC',
+      description: 'Round-the-clock threat detection, AI correlation & Tier 1-3 analysis. Continuous monitoring and rapid response.',
+      image: '/assets/images/service-1.jpg',
+      link: '../Services/SOC/',
+      tech: ['SOC', 'SIEM', 'Threat Detection'  ]
+    },
+    {
+      id: 6,
+      title: 'Threat Intelligence',
+      description: 'Dark web monitoring, threat feeds, and contextual analysis for proactive defense.',
+      image: '/assets/images/service-5.jpg',
+      link: '../Services/threat-intel/',
+      tech: ['Threat Feeds', 'Dark Web Monitoring', 'Contextual Analysis', 'Proactive Defense']
+    },
+    {
+      id: 7,
+      title: 'VAPT',
+      description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
+      image: '/assets/images/service-2.jpg',
+      link: '../Services/vapt/',
+      tech: ['Pentesting', 'Vulnerability Assessment',  'Risk Analysis']
+    },
+    {
+      id: 8,
+      title: 'Assessments & Audits',
+      description: 'Deep-dive posture evaluation, gap analysis, compliance readiness (ISO, NIST, GDPR).',
+      image: '/assets/images/service-3.jpg',
+      link: '../Services/assessment/',
+      tech: ['Compliance', 'ISO 27001',  'Gap Analysis']
     }
+    
+    
+    
+   
+    
   ];
 
   /* ─── State ─────────────────────────────────────────────────────── */
@@ -956,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3 class="hero-card-title">${data.title}</h3>
           <p class="hero-card-description">${data.description}</p>
           ${techBadges ? `<div class="hero-card-tech">${techBadges}</div>` : ''}
-          <div class="hero-card-cta">Learn More</div>
+          <div class="hero-card-cta btn btn-primary">Learn More</div>
         </div>
       </a>`;
 
@@ -1304,6 +1484,170 @@ document.addEventListener('DOMContentLoaded', () => {
         mediaQuery.addListener(initServiceBrickSync);
       }
     })();
+
+
+
+
+
+    // aqua partner
+(function () {
+  const wrap   = document.getElementById('animWrap');
+  const canvas = document.getElementById('mainCanvas');
+  const ctx    = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = wrap.offsetWidth;
+    canvas.height = wrap.offsetHeight;
+  }
+  resize();
+
+  function rel(el) {
+    const wr = wrap.getBoundingClientRect();
+    const er = el.getBoundingClientRect();
+    return {
+      left:   er.left   - wr.left,
+      top:    er.top    - wr.top,
+      right:  er.right  - wr.left,
+      bottom: er.bottom - wr.top,
+      cx:     er.left   - wr.left + er.width  / 2,
+      cy:     er.top    - wr.top  + er.height / 2,
+    };
+  }
+
+  let PATHS = [];
+
+  function buildPaths() {
+    const ai  = rel(document.getElementById('aiCenter'));
+    const r   = rel(document.getElementById('nRisk'));
+    const th  = rel(document.getElementById('nThreat'));
+    const dm  = rel(document.getElementById('nDmarc'));
+    const dw  = rel(document.getElementById('nDark'));
+    const sc  = rel(document.getElementById('nSecurity'));
+    const gr  = rel(document.getElementById('nGrc'));
+    const c1  = rel(document.getElementById('card1'));
+    const c2  = rel(document.getElementById('card2'));
+    const c3  = rel(document.getElementById('card3'));
+
+    PATHS = [
+      { color: '#0ea5e9', delay: 0.0, pts: [{ x: r.cx,  y: r.bottom  }, { x: r.cx,        y: ai.top - 18 }, { x: ai.cx - 36, y: ai.top - 18 }, { x: ai.cx - 36, y: ai.top }] },
+      { color: '#0284c7', delay: 0.9, pts: [{ x: th.cx, y: th.bottom }, { x: th.cx,        y: ai.top - 10 }, { x: ai.cx - 16, y: ai.top - 10 }, { x: ai.cx - 16, y: ai.top }] },
+      { color: '#0369a1', delay: 1.8, pts: [{ x: dm.cx, y: dm.bottom }, { x: dm.cx,        y: ai.top - 20 }, { x: ai.cx + 30, y: ai.top - 20 }, { x: ai.cx + 30, y: ai.top }] },
+      { color: '#075985', delay: 2.6, pts: [{ x: dw.cx, y: dw.bottom }, { x: dw.cx,        y: ai.top -  6 }, { x: ai.cx +  8, y: ai.top -  6 }, { x: ai.cx +  8, y: ai.top }] },
+      { color: '#38bdf8', delay: 3.4, pts: [{ x: sc.right, y: sc.cy }, { x: sc.right + 12, y: sc.cy }, { x: ai.left - 12, y: sc.cy }, { x: ai.left - 12, y: ai.cy }, { x: ai.left, y: ai.cy }] },
+      { color: '#38bdf8', delay: 4.2, pts: [{ x: gr.left,  y: gr.cy }, { x: gr.left  - 12, y: gr.cy }, { x: ai.right + 12, y: gr.cy }, { x: ai.right + 12, y: ai.cy }, { x: ai.right, y: ai.cy }] },
+      { color: '#7dd3fc', delay: 0.5, pts: [{ x: ai.cx, y: ai.bottom }, { x: ai.cx - 22, y: ai.bottom + 10 }, { x: c1.cx, y: ai.bottom + 10 }, { x: c1.cx, y: c1.top }] },
+      { color: '#bae6fd', delay: 1.3, pts: [{ x: ai.cx, y: ai.bottom }, { x: ai.cx,       y: ai.bottom +  8 }, { x: c2.cx, y: ai.bottom +  8 }, { x: c2.cx, y: c2.top }] },
+      { color: '#7dd3fc', delay: 2.1, pts: [{ x: ai.cx, y: ai.bottom }, { x: ai.cx + 24, y: ai.bottom + 12 }, { x: c3.cx, y: ai.bottom + 12 }, { x: c3.cx, y: c3.top }] },
+    ];
+  }
+
+  function segLens(pts) {
+    return pts.slice(0, -1).map((_, i) => {
+      const dx = pts[i + 1].x - pts[i].x;
+      const dy = pts[i + 1].y - pts[i].y;
+      return Math.sqrt(dx * dx + dy * dy);
+    });
+  }
+  function sum(arr) { return arr.reduce((a, b) => a + b, 0); }
+  function ptAt(pts, lens, total, t) {
+    let d = t * total;
+    for (let i = 0; i < lens.length; i++) {
+      if (d <= lens[i] + 1e-6) {
+        const f = lens[i] < 1e-6 ? 0 : d / lens[i];
+        return { x: pts[i].x + (pts[i + 1].x - pts[i].x) * f, y: pts[i].y + (pts[i + 1].y - pts[i].y) * f };
+      }
+      d -= lens[i];
+    }
+    return pts[pts.length - 1];
+  }
+
+  let meta = [];
+  function cacheMeta() {
+    meta = PATHS.map(p => { const ls = segLens(p.pts); return { ls, total: sum(ls) }; });
+  }
+
+  function drawTrack(pts) {
+    if (!pts || pts.length < 2) return;
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(110, 85, 210, 0.25)';
+    ctx.lineWidth   = 1.5;
+    ctx.lineCap     = 'round';
+    ctx.lineJoin    = 'round';
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+    ctx.stroke();
+  }
+
+  function drawDot(x, y, color, opacity) {
+    const g = ctx.createRadialGradient(x, y, 0, x, y, 10);
+    g.addColorStop(0,   color + 'dd');
+    g.addColorStop(0.4, color + '88');
+    g.addColorStop(1,   color + '00');
+    ctx.globalAlpha = opacity * 0.75;
+    ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2);
+    ctx.fillStyle = g; ctx.fill();
+    ctx.globalAlpha = opacity;
+    ctx.beginPath(); ctx.arc(x, y, 3.2, 0, Math.PI * 2);
+    ctx.fillStyle = color; ctx.fill();
+    ctx.globalAlpha = opacity * 0.95;
+    ctx.beginPath(); ctx.arc(x, y, 1.4, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffffff'; ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+
+  const CYCLE = 6.5;
+  let t0 = null;
+
+  function frame(ts) {
+    if (!t0) t0 = ts;
+    const el = (ts - t0) / 1000;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    PATHS.forEach((p, i) => {
+      const m = meta[i];
+      if (!m || !p.pts || p.pts.length < 2) return;
+      drawTrack(p.pts);
+      const raw     = ((el + p.delay) % CYCLE) / CYCLE;
+      const opacity = raw < 0.07 ? raw / 0.07 : raw > 0.93 ? (1 - raw) / 0.07 : 1;
+      const pt      = ptAt(p.pts, m.ls, m.total, raw);
+      drawDot(pt.x, pt.y, p.color, opacity);
+    });
+
+    const aiEl = document.getElementById('aiCenter');
+    if (aiEl) {
+      const ap    = rel(aiEl);
+      const pulse = (el * 3.5) % 1;
+      ctx.beginPath();
+      ctx.arc(ap.cx, ap.cy, 28 + pulse * 6, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(140, 100, 255, ${0.3 - pulse * 0.1})`;
+      ctx.lineWidth   = 1.5;
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  function init() {
+    resize();
+    buildPaths();
+    cacheMeta();
+    t0 = null;
+    requestAnimationFrame(frame);
+  }
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      resize();
+      buildPaths();
+      cacheMeta();
+      t0 = null;
+    }, 100);
+  });
+
+  setTimeout(init, 80);
+})();
 
 
 
