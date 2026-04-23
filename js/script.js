@@ -1015,7 +1015,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 7,
-      title: 'VAPT',
+      title: 'Vulnerability Assessment',
       description: 'Web, mobile, API, network pentesting and social engineering simulations. Real-world attack emulation.',
       image: '/assets/images/service-2.jpg',
       link: '../Services/vapt/',

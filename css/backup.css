@@ -6458,7 +6458,7 @@ footer > * {
     padding: 0;
   }
 
-  /* Hide the "Let's Discuss" button on tablet */
+  /* Hide the "Schedule a Call" button on tablet */
   .nav-actions .btn-primary {
     display: none;
   }
