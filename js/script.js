@@ -823,6 +823,499 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+
+
+
+    // <!-- ============ BLOG PAGINATION & FILTERING SCRIPT ============ -->
+    
+        (function() {
+            // ─────────────────────────────────────
+            // BLOG DATA ARRAY
+            // Sorted newest-first. Add new blogs here.
+            // ─────────────────────────────────────
+           const blogData = [
+    {
+        id: 1,
+        title: "The Rise of AI-Driven vCISO Platforms",
+        date: "2026-02-24",
+        category: "ai",
+        categoryName: "AI & Innovation",
+        image: "/assets/images/rise-ai-vciso-platforms.jpg",
+        link: "../Blogs/rise-ai-vciso-platforms/",
+        excerpt: "How artificial intelligence is democratizing executive-level security expertise and transforming the way organizations approach strategic cybersecurity leadership."
+    },
+    {
+        id: 2,
+        title: "From Reactive to Proactive Security Operations",
+        date: "2026-02-18",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "/assets/images/ai-machine-learning-cybersecurity.jpg",
+        link: "../Blogs/ai-machine-learning-cybersecurity/",
+        excerpt: "Why waiting for alerts is no longer enough. Learn how leading security teams are shifting left, implementing threat hunting, and building proactive defense mechanisms."
+    },
+    {
+        id: 3,
+        title: "Closing the Gap in Global Cyber Defense",
+        date: "2026-02-10",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "/assets/images/forget-cybersecurity-computer.jpg",
+        link: "../Blogs/forget-cybersecurity-computer/",
+        excerpt: "An in-depth analysis of the cybersecurity skills shortage and how organizations are bridging the gap through automation, AI-assisted operations, and innovative training programs."
+    },
+    {
+        id: 4,
+        title: "Don't Forget Cybersecurity on Your Computer",
+        date: "2026-02-05",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "/assets/images/reactive-to-proactive-security.jpg",
+        link: "../Blogs/reactive-to-proactive-security/",
+        excerpt: "Essential security practices every professional should follow. From basic hygiene to advanced protections, this guide covers what you need to know to keep your endpoints secure in 2026."
+    },
+    {
+        id: 5,
+        title: "Cisco Acquired Cybersecurity Company Splunk In Cash Deal Worth $28 Billion",
+        date: "2026-01-28",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "/assets/images/closing-gap-global-cyber-defense.jpg",
+        link: "../Blogs/closing-gap-global-cyber-defense/",
+        excerpt: "Analysis of the largest cybersecurity acquisition in history and what it means for the future of security operations, observability, and enterprise defense strategies."
+    },
+    {
+        id: 6,
+        title: "Artificial Intelligence And Machine Learning In Cybersecurity",
+        date: "2026-01-15",
+        category: "ai",
+        categoryName: "AI & Machine Learning",
+        image: "/assets/images/cisco-splunk-28b-deal.jpg",
+        link: "../Blogs/cisco-splunk-28b-deal/",
+        excerpt: "A comprehensive look at how AI/ML are revolutionizing threat detection, automating incident response, and predicting attacks before they happen. Real-world use cases and implementation strategies."
+    },
+     {
+        id: 7,
+        title: "Zero Trust Architecture: Beyond the Perimeter Model",
+        date: "2025-12-20",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?q=80&w=1000&auto=format&fit=crop", // digital network security concept
+        link: "../Blogs/zero-trust-architecture/",
+        excerpt: "Exploring how Zero Trust principles are reshaping enterprise security architectures..."
+    },
+    // ───── Blog 8 – Ransomware Evolution ─────
+    {
+        id: 8,
+        title: "Ransomware Evolution: What to Expect in 2026",
+        date: "2025-12-10",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1000&auto=format&fit=crop", // hacker silhouette / ransomware
+        link: "../Blogs/ransomware-evolution-2026/",
+        excerpt: "Analyzing the latest ransomware trends including double-extortion tactics..."
+    },
+    // ───── Blog 11 – Ransomware Incident Response ─────
+    {
+        id: 11,
+        title: "Ransomware Incident Response: A Step‑by‑Step Guide",
+        date: "2025-12-01",
+        category: "ir",
+        categoryName: "Incident Response",
+        image: "https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=1000&auto=format&fit=crop", // incident response / analysis
+        link: "../Blogs/ransomware-incident-response-guide/",
+        excerpt: "A tested incident response plan can mean the difference between a minor disruption..."
+    },
+    // ───── Blog 9 – Cybersecurity Culture ─────
+    {
+        id: 9,
+        title: "Building a Cybersecurity-Aware Culture in Your Organization",
+        date: "2025-11-28",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", // team collaboration / security awareness
+        link: "../Blogs/cybersecurity-culture/",
+        excerpt: "Practical steps to foster security awareness across all levels of your organization..."
+    },
+    // ───── Blog 10 – Cloud‑Native Security ─────
+    {
+        id: 10,
+        title: "Cloud-Native Security: Serverless & Container Best Practices",
+        date: "2025-11-15",
+        category: "ai",
+        categoryName: "AI & Innovation",
+        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000&auto=format&fit=crop", // cloud network / serverless concept
+        link: "../Blogs/cloud-native-security/",
+        excerpt: "Securing serverless functions and containerized workloads requires a paradigm shift..."
+    },
+    // ───── Blog 12 – Zero Trust Enterprise ─────
+    {
+        id: 12,
+        title: "Implementing Zero Trust Architecture in Your Enterprise",
+        date: "2025-11-05",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1000&auto=format&fit=crop", // lock / access control
+        link: "../Blogs/zero-trust-architecture-enterprise/",
+        excerpt: "Zero Trust is a strategic framework that assumes breach and verifies every request..."
+    },
+    // ───── Blog 13 – Cloud Security Best Practices ─────
+    {
+        id: 13,
+        title: "Cloud Security Best Practices for 2026",
+        date: "2025-10-12",
+        category: "cloud",
+        categoryName: "Cloud Security",
+        image: "https://images.unsplash.com/photo-1508873535684-277a39b3a681?q=80&w=1000&auto=format&fit=crop", // cloud security / shield in the cloud
+        link: "../Blogs/cloud-security-best-practices-2026/",
+        excerpt: "Adopting a Cloud-Native Application Protection Platform (CNAPP)..."
+    }
+];
+
+         // ─────────────────────────────────────
+        // CONFIGURATION
+        // ─────────────────────────────────────
+        const BLOGS_PER_PAGE = 6;
+
+        // ─────────────────────────────────────
+        // STATE – start by reading the URL hash
+        // ─────────────────────────────────────
+        let currentPage = 1; // default
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // Read page from URL hash (e.g., #page=3)
+        const hashPage = parseInt(window.location.hash.replace('#page=', ''), 10);
+        if (!isNaN(hashPage) && hashPage > 0) {
+            currentPage = hashPage;
+        }
+
+        // ─────────────────────────────────────
+        // DOM REFS
+        // ─────────────────────────────────────
+        const blogsContainer = document.getElementById('blogs-container');
+        const paginationContainer = document.getElementById('pagination-container');
+        const searchInput = document.getElementById('Blogs-search');
+        const categoryList = document.getElementById('category-list');
+        const recentPostsList = document.getElementById('recent-posts-list');
+
+        // ─────────────────────────────────────
+        // HELPERS (unchanged)
+        // ─────────────────────────────────────
+        function formatDate(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function getFilteredBlogs() {
+            let filtered = [...blogData];
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(b => b.category === currentCategory);
+            }
+            if (currentSearch.trim()) {
+                const q = currentSearch.trim().toLowerCase();
+                filtered = filtered.filter(b =>
+                    b.title.toLowerCase().includes(q) ||
+                    b.excerpt.toLowerCase().includes(q)
+                );
+            }
+            return filtered;
+        }
+
+        function getCategoryCounts() {
+            const counts = { all: blogData.length };
+            blogData.forEach(b => {
+                counts[b.category] = (counts[b.category] || 0) + 1;
+            });
+            return counts;
+        }
+
+        // ─────────────────────────────────────
+        // RENDER: BLOG CARDS (unchanged)
+        // ─────────────────────────────────────
+        function renderBlogs() {
+            const filtered = getFilteredBlogs();
+            const totalPages = Math.ceil(filtered.length / BLOGS_PER_PAGE) || 1;
+
+            // Clamp current page (in case URL hash gave a too‑high number)
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+
+            const start = (currentPage - 1) * BLOGS_PER_PAGE;
+            const pageBlogs = filtered.slice(start, start + BLOGS_PER_PAGE);
+
+            if (filtered.length === 0) {
+                blogsContainer.innerHTML = `
+                    <div class="no-results">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            <line x1="8" y1="11" x2="14" y2="11"/>
+                        </svg>
+                        <h3>No articles found</h3>
+                        <p>Try adjusting your search or category filter.</p>
+                        <button class="btn btn-primary" onclick="window.resetBlogFilters()" style="cursor:pointer;">
+                            Clear Filters
+                        </button>
+                    </div>`;
+                paginationContainer.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            pageBlogs.forEach((blog) => {
+                html += `
+                <a href="${blog.link}" class="Blogs-list-card" data-category="${blog.category}"
+                    style="display: flex; background: #ffffff; border: 1px solid #e5e7eb; border-radius: var(--radius); overflow: hidden; transition: var(--transition); margin-bottom: 24px; cursor: pointer; text-decoration: none; color: inherit; opacity:1; transform:none;">
+                    <div class="Blogs-list-img"
+                        style="width: 240px; flex-shrink: 0; background: linear-gradient(135deg, rgba(0,102,255,0.12), rgba(0,212,255,0.04)); display: flex; align-items: center; justify-content: center;">
+                        <img src="${blog.image}" alt="${blog.categoryName} Blog"
+                            style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                    </div>
+                    <div class="Blogs-list-body" style="padding: 28px;">
+                        <div class="Blogs-meta"
+                            style="display: flex; gap: 16px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+                            <span class="Blogs-category"
+                                style="background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 100px; text-transform: uppercase;">${blog.categoryName}</span>
+                            <span class="Blogs-date"
+                                style="font-family: var(--font-mono); font-size: 0.7rem; color: #6b7280;">${formatDate(blog.date)}</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; transition: color 0.3s; color: #1f2937;">${blog.title}</h3>
+                        <p style="font-size: 0.87rem; color: #4b5563; line-height: 1.7; margin-bottom: 16px;">${blog.excerpt}</p>
+                        <span class="Blogs-read-more"
+                            style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; color: var(--accent-blue); letter-spacing: 0.08em; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; text-decoration: none;">Read
+                            Article <span style="transition: transform 0.3s ease;">→</span></span>
+                    </div>
+                </a>`;
+            });
+            blogsContainer.innerHTML = html;
+
+            // Also update the hash to the current (possibly clamped) page
+            updateHash(currentPage);
+            renderPagination(totalPages, filtered.length);
+        }
+
+        // ─────────────────────────────────────
+        // RENDER: PAGINATION (unchanged, but uses updated currentPage)
+        // ─────────────────────────────────────
+        function renderPagination(totalPages, totalBlogs) {
+            if (totalPages <= 0) {
+                paginationContainer.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+            const startBlog = (currentPage - 1) * BLOGS_PER_PAGE + 1;
+            const endBlog = Math.min(currentPage * BLOGS_PER_PAGE, totalBlogs);
+            paginationHTML += `<div class="pagination-info">Showing ${startBlog}–${endBlog} of ${totalBlogs} articles</div>`;
+
+            paginationHTML += '<div class="pagination-row">';
+            paginationHTML += `
+                <button class="pagination-btn pagination-nav" ${currentPage === 1 ? 'disabled' : ''}
+                    onclick="window.goToPage(${currentPage - 1})" aria-label="Previous page">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    Prev
+                </button>`;
+
+            const maxVisible = 5;
+            let pages = [];
+            if (totalPages <= maxVisible + 2) {
+                for (let i = 1; i <= totalPages; i++) pages.push(i);
+            } else {
+                pages.push(1);
+                let startP = Math.max(2, currentPage - 1);
+                let endP = Math.min(totalPages - 1, currentPage + 1);
+                if (currentPage <= 3) { startP = 2; endP = 4; }
+                if (currentPage >= totalPages - 2) { startP = totalPages - 3; endP = totalPages - 1; }
+                if (startP > 2) pages.push('...');
+                for (let i = startP; i <= endP; i++) pages.push(i);
+                if (endP < totalPages - 1) pages.push('...');
+                pages.push(totalPages);
+            }
+
+            pages.forEach(p => {
+                if (p === '...') {
+                    paginationHTML += '<span class="pagination-ellipsis">&hellip;</span>';
+                } else {
+                    paginationHTML += `
+                        <button class="pagination-btn ${p === currentPage ? 'active' : ''}"
+                            onclick="window.goToPage(${p})" aria-label="Page ${p}">${p}</button>`;
+                }
+            });
+
+            paginationHTML += `
+                <button class="pagination-btn pagination-nav" ${currentPage === totalPages ? 'disabled' : ''}
+                    onclick="window.goToPage(${currentPage + 1})" aria-label="Next page">
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>`;
+            paginationHTML += '</div>';
+            paginationContainer.innerHTML = paginationHTML;
+        }
+
+        // ─────────────────────────────────────
+        // RENDER: SIDEBAR CATEGORIES (unchanged)
+        // ─────────────────────────────────────
+        function renderCategories() {
+            const counts = getCategoryCounts();
+            const categories = [
+                { slug: 'all', label: 'All Articles', count: counts.all },
+                { slug: 'ai', label: 'AI & Machine Learning', count: counts.ai || 0 },
+                { slug: 'operations', label: 'Security Operations', count: counts.operations || 0 },
+                { slug: 'strategy', label: 'Cyber Strategy', count: counts.strategy || 0 },
+                { slug: 'awareness', label: 'Security Awareness', count: counts.awareness || 0 },
+                { slug: 'industry', label: 'Industry News', count: counts.industry || 0 },
+            ];
+
+            categoryList.innerHTML = categories.map(cat => `
+                <div class="category-item ${currentCategory === cat.slug ? 'active' : ''}"
+                    data-category="${cat.slug}"
+                    style="display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.87rem; color: #4b5563;">
+                    ${cat.label}
+                    <span class="category-count"
+                        style="font-family: var(--font-mono); font-size: 0.72rem; color: #6b7280;">${cat.count}</span>
+                </div>
+            `).join('');
+
+            categoryList.querySelectorAll('.category-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const cat = this.getAttribute('data-category');
+                    window.filterByCategory(cat);
+                });
+            });
+        }
+
+        // ─────────────────────────────────────
+        // RENDER: SIDEBAR RECENT POSTS (unchanged)
+        // ─────────────────────────────────────
+        function renderRecentPosts() {
+            const recent = blogData.slice(0, 4);
+            recentPostsList.innerHTML = recent.map(blog => `
+                <a href="${blog.link}" class="recent-post-item"
+                    style="display: flex; gap: 12px; align-items: flex-start; text-decoration: none; transition: all 0.3s ease; padding: 8px; border-radius: var(--radius-sm);">
+                    <div class="recent-post-icon"
+                        style="width: 40px; height: 40px; background: rgba(0,102,255,0.06); border: 1px solid #e5e7eb; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"
+                            style="width: 18px; height: 18px; color: var(--accent-blue);">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <div class="recent-post-content" style="flex: 1;">
+                        <div class="recent-post-title"
+                            style="font-size: 0.85rem; color: #1f2937; line-height: 1.4; margin-bottom: 4px;">${blog.title}</div>
+                        <div class="recent-post-date"
+                            style="font-family: var(--font-mono); font-size: 0.7rem; color: #6b7280;">${formatDate(blog.date)}</div>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        // ─────────────────────────────────────
+        // HELPER: update URL hash without reload
+        // ─────────────────────────────────────
+        function updateHash(page) {
+            const newHash = 'page=' + page;
+            if (window.location.hash !== '#' + newHash) {
+                // Use replaceState to avoid creating a new history entry on every render
+                history.replaceState(null, '', '#' + newHash);
+            }
+        }
+
+        // ─────────────────────────────────────
+        // NAVIGATION ACTIONS
+        // ─────────────────────────────────────
+        window.goToPage = function(page) {
+            const filtered = getFilteredBlogs();
+            const totalPages = Math.ceil(filtered.length / BLOGS_PER_PAGE) || 1;
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderBlogs(); // renderBlogs will also update the hash
+            // Smooth scroll
+            const blogsList = document.querySelector('.Blogs-list');
+            if (blogsList) {
+                const rect = blogsList.getBoundingClientRect();
+                const offset = rect.top + window.pageYOffset - 100;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
+        };
+
+        window.filterByCategory = function(cat) {
+            currentCategory = cat;
+            currentPage = 1;
+            currentSearch = '';
+            searchInput.value = '';
+            renderBlogs(); // sets hash to page 1
+            renderCategories();
+        };
+
+        window.resetBlogFilters = function() {
+            currentCategory = 'all';
+            currentPage = 1;
+            currentSearch = '';
+            searchInput.value = '';
+            renderBlogs();
+            renderCategories();
+        };
+
+        // ─────────────────────────────────────
+        // EVENT LISTENERS
+        // ─────────────────────────────────────
+        let searchDebounce;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchDebounce);
+            searchDebounce = setTimeout(() => {
+                currentSearch = this.value;
+                currentPage = 1;
+                currentCategory = 'all';
+                renderBlogs();
+                renderCategories();
+            }, 300);
+        });
+
+        // Listen for browser back/forward (hash change)
+        window.addEventListener('hashchange', function() {
+            const pageFromHash = parseInt(window.location.hash.replace('#page=', ''), 10);
+            if (!isNaN(pageFromHash) && pageFromHash > 0) {
+                if (pageFromHash !== currentPage) {
+                    currentPage = pageFromHash;
+                    renderBlogs();
+                    // scroll? optional, let it stay where it is
+                }
+            }
+        });
+
+        // ─────────────────────────────────────
+        // INITIAL RENDER
+        // ─────────────────────────────────────
+        function init() {
+            renderCategories();
+            renderRecentPosts();
+            renderBlogs(); // will clamp page and update hash if needed
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
+        console.log(
+            '%c🛡️ Four Secure Blog Pagination Ready %c| %c' + blogData.length + ' articles loaded %c| %c' +
+            BLOGS_PER_PAGE + ' per page',
+            'color:#0066ff;font-weight:bold;',
+            '',
+            'color:#00d4ff;',
+            '',
+            'color:#6b7280;'
+        );
+    })();
+    
   // ============================================
   // SMOOTH SCROLL FOR ANCHOR LINKS
   // ============================================
