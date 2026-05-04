@@ -895,16 +895,16 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "../Blogs/cisco-splunk-28b-deal/",
         excerpt: "A comprehensive look at how AI/ML are revolutionizing threat detection, automating incident response, and predicting attacks before they happen. Real-world use cases and implementation strategies."
     },
-     {
-        id: 7,
-        title: "Zero Trust Architecture: Beyond the Perimeter Model",
-        date: "2025-12-20",
-        category: "strategy",
-        categoryName: "Cyber Strategy",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?q=80&w=1000&auto=format&fit=crop", // digital network security concept
-        link: "../Blogs/zero-trust-architecture/",
-        excerpt: "Exploring how Zero Trust principles are reshaping enterprise security architectures..."
-    },
+    //  {
+    //     id: 7,
+    //     title: "Zero Trust Architecture: Beyond the Perimeter Model",
+    //     date: "2025-12-20",
+    //     category: "strategy",
+    //     categoryName: "Cyber Strategy",
+    //     image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?q=80&w=1000&auto=format&fit=crop", // digital network security concept
+    //     link: "../Blogs/zero-trust-architecture/",
+    //     excerpt: "Exploring how Zero Trust principles are reshaping enterprise security architectures..."
+    // },
     // ───── Blog 8 – Ransomware Evolution ─────
     {
         id: 8,
@@ -916,61 +916,61 @@ document.addEventListener('DOMContentLoaded', () => {
         link: "../Blogs/ransomware-evolution-2026/",
         excerpt: "Analyzing the latest ransomware trends including double-extortion tactics..."
     },
-    // ───── Blog 11 – Ransomware Incident Response ─────
-    {
-        id: 11,
-        title: "Ransomware Incident Response: A Step‑by‑Step Guide",
-        date: "2025-12-01",
-        category: "ir",
-        categoryName: "Incident Response",
-        image: "https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=1000&auto=format&fit=crop", // incident response / analysis
-        link: "../Blogs/ransomware-incident-response-guide/",
-        excerpt: "A tested incident response plan can mean the difference between a minor disruption..."
-    },
-    // ───── Blog 9 – Cybersecurity Culture ─────
-    {
-        id: 9,
-        title: "Building a Cybersecurity-Aware Culture in Your Organization",
-        date: "2025-11-28",
-        category: "awareness",
-        categoryName: "Security Awareness",
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", // team collaboration / security awareness
-        link: "../Blogs/cybersecurity-culture/",
-        excerpt: "Practical steps to foster security awareness across all levels of your organization..."
-    },
-    // ───── Blog 10 – Cloud‑Native Security ─────
-    {
-        id: 10,
-        title: "Cloud-Native Security: Serverless & Container Best Practices",
-        date: "2025-11-15",
-        category: "ai",
-        categoryName: "AI & Innovation",
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000&auto=format&fit=crop", // cloud network / serverless concept
-        link: "../Blogs/cloud-native-security/",
-        excerpt: "Securing serverless functions and containerized workloads requires a paradigm shift..."
-    },
-    // ───── Blog 12 – Zero Trust Enterprise ─────
-    {
-        id: 12,
-        title: "Implementing Zero Trust Architecture in Your Enterprise",
-        date: "2025-11-05",
-        category: "strategy",
-        categoryName: "Cyber Strategy",
-        image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1000&auto=format&fit=crop", // lock / access control
-        link: "../Blogs/zero-trust-architecture-enterprise/",
-        excerpt: "Zero Trust is a strategic framework that assumes breach and verifies every request..."
-    },
-    // ───── Blog 13 – Cloud Security Best Practices ─────
-    {
-        id: 13,
-        title: "Cloud Security Best Practices for 2026",
-        date: "2025-10-12",
-        category: "cloud",
-        categoryName: "Cloud Security",
-        image: "https://images.unsplash.com/photo-1508873535684-277a39b3a681?q=80&w=1000&auto=format&fit=crop", // cloud security / shield in the cloud
-        link: "../Blogs/cloud-security-best-practices-2026/",
-        excerpt: "Adopting a Cloud-Native Application Protection Platform (CNAPP)..."
-    }
+    // // ───── Blog 11 – Ransomware Incident Response ─────
+    // {
+    //     id: 11,
+    //     title: "Ransomware Incident Response: A Step‑by‑Step Guide",
+    //     date: "2025-12-01",
+    //     category: "ir",
+    //     categoryName: "Incident Response",
+    //     image: "https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=1000&auto=format&fit=crop", // incident response / analysis
+    //     link: "../Blogs/ransomware-incident-response-guide/",
+    //     excerpt: "A tested incident response plan can mean the difference between a minor disruption..."
+    // },
+    // // ───── Blog 9 – Cybersecurity Culture ─────
+    // {
+    //     id: 9,
+    //     title: "Building a Cybersecurity-Aware Culture in Your Organization",
+    //     date: "2025-11-28",
+    //     category: "awareness",
+    //     categoryName: "Security Awareness",
+    //     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", // team collaboration / security awareness
+    //     link: "../Blogs/cybersecurity-culture/",
+    //     excerpt: "Practical steps to foster security awareness across all levels of your organization..."
+    // },
+    // // ───── Blog 10 – Cloud‑Native Security ─────
+    // {
+    //     id: 10,
+    //     title: "Cloud-Native Security: Serverless & Container Best Practices",
+    //     date: "2025-11-15",
+    //     category: "ai",
+    //     categoryName: "AI & Innovation",
+    //     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000&auto=format&fit=crop", // cloud network / serverless concept
+    //     link: "../Blogs/cloud-native-security/",
+    //     excerpt: "Securing serverless functions and containerized workloads requires a paradigm shift..."
+    // },
+    // // ───── Blog 12 – Zero Trust Enterprise ─────
+    // {
+    //     id: 12,
+    //     title: "Implementing Zero Trust Architecture in Your Enterprise",
+    //     date: "2025-11-05",
+    //     category: "strategy",
+    //     categoryName: "Cyber Strategy",
+    //     image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1000&auto=format&fit=crop", // lock / access control
+    //     link: "../Blogs/zero-trust-architecture-enterprise/",
+    //     excerpt: "Zero Trust is a strategic framework that assumes breach and verifies every request..."
+    // },
+    // // ───── Blog 13 – Cloud Security Best Practices ─────
+    // {
+    //     id: 13,
+    //     title: "Cloud Security Best Practices for 2026",
+    //     date: "2025-10-12",
+    //     category: "cloud",
+    //     categoryName: "Cloud Security",
+    //     image: "https://images.unsplash.com/photo-1508873535684-277a39b3a681?q=80&w=1000&auto=format&fit=crop", // cloud security / shield in the cloud
+    //     link: "../Blogs/cloud-security-best-practices-2026/",
+    //     excerpt: "Adopting a Cloud-Native Application Protection Platform (CNAPP)..."
+    // }
 ];
 
          // ─────────────────────────────────────
