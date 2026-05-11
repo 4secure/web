@@ -835,6 +835,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sorted newest-first. Add new blogs here.
             // ─────────────────────────────────────
            const blogData = [
+             {
+        id: 8,
+        title: "Ransomware Evolution: What to Expect in 2026",
+        date: "2025-12-10",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1000&auto=format&fit=crop", // hacker silhouette / ransomware
+        link: "../Blogs/ransomware-evolution-2026/",
+        excerpt: "Analyzing the latest ransomware trends including double-extortion tactics..."
+    },
     {
         id: 1,
         title: "The Rise of AI-Driven vCISO Platforms",
@@ -906,16 +916,16 @@ document.addEventListener('DOMContentLoaded', () => {
     //     excerpt: "Exploring how Zero Trust principles are reshaping enterprise security architectures..."
     // },
     // ───── Blog 8 – Ransomware Evolution ─────
-    {
-        id: 8,
-        title: "Ransomware Evolution: What to Expect in 2026",
-        date: "2025-12-10",
-        category: "operations",
-        categoryName: "Security Operations",
-        image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1000&auto=format&fit=crop", // hacker silhouette / ransomware
-        link: "../Blogs/ransomware-evolution-2026/",
-        excerpt: "Analyzing the latest ransomware trends including double-extortion tactics..."
-    },
+    // {
+    //     id: 8,
+    //     title: "Ransomware Evolution: What to Expect in 2026",
+    //     date: "2025-12-10",
+    //     category: "operations",
+    //     categoryName: "Security Operations",
+    //     image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1000&auto=format&fit=crop", // hacker silhouette / ransomware
+    //     link: "../Blogs/ransomware-evolution-2026/",
+    //     excerpt: "Analyzing the latest ransomware trends including double-extortion tactics..."
+    // },
     // // ───── Blog 11 – Ransomware Incident Response ─────
     // {
     //     id: 11,
