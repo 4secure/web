@@ -842,7 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
         date: "2026-06-08",
         category: "awareness",
         categoryName: "Security Awareness",
-        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop", // professional team meeting / strategy session
+        image: "/assets/images/tabletop-exercise.webp", // professional team meeting / strategy session
         link: "../Blogs/tabletop-exercises-engaging-team/",
         excerpt: "How to design tabletop exercises that actually engage your team, surface real gaps, and build the muscle memory needed when a real incident hits at 2 a.m."
     },
