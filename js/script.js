@@ -835,6 +835,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sorted newest-first. Add new blogs here.
             // ─────────────────────────────────────
            const blogData = [
+                // ─── NEW: Cyber Strategy blog ───
+    {
+        id: 15,
+        title: "The Boardroom Case for Cyber Resilience in 2026",
+        date: "2026-06-08",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop", // boardroom / executive meeting
+        link: "../Blogs/boardroom-case-cyber-resilience-2026/",
+        excerpt: "Why cyber resilience has moved from an IT concern to a board-level priority in 2026 — and how directors should measure, fund, and govern it as a business outcome."
+    },
+                // ─── Industry News blog ───
+    {
+        id: 14,
+        title: "CISA's 2026 Joint Cyber Defense Collaborative: What It Means for Enterprises",
+        date: "2026-04-18",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop", // cybersecurity collaboration / government
+        link: "../Blogs/cisa-jcdc-2026/",
+        excerpt: "Breaking down CISA’s latest collaborative framework and how mandatory incident reporting requirements will reshape enterprise security strategies in the coming year."
+    },
              {
         id: 8,
         title: "Ransomware Evolution: What to Expect in 2026",
@@ -934,7 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     category: "ir",
     //     categoryName: "Incident Response",
     //     image: "https://images.unsplash.com/photo-1562813733-b31f71025d54?q=80&w=1000&auto=format&fit=crop", // incident response / analysis
-    //     link: "../Blogs/ransomware-incident-response-guide/",
+    //     link: "../Blogs/ransomwarOe-incident-response-guide/",
     //     excerpt: "A tested incident response plan can mean the difference between a minor disruption..."
     // },
     // // ───── Blog 9 – Cybersecurity Culture ─────
