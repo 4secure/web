@@ -835,7 +835,62 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sorted newest-first. Add new blogs here.
             // ─────────────────────────────────────
            const blogData = [
+                // ─── NEW: AI & Machine Learning blog ───
+    {
+        id: 17,
+        title: "Agentic AI in the SOC: Promise, Pitfalls, and Practical Guardrails",
+        date: "2026-06-08",
+        category: "ai",
+        categoryName: "AI & Machine Learning",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/agentic-ai-soc-guardrails/",
+        excerpt: "Agentic AI is moving from demos into production SOCs in 2026. What it actually changes, where it still fails, and the guardrails every security team should put in place before turning it loose."
+    },
+                // ─── NEW: Security Operations blog ───
+    {
+        id: 18,
+        title: "Engineering Out Alert Fatigue: A Detection Tuning Playbook for 2026",
+        date: "2026-06-07",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/engineering-out-alert-fatigue/",
+        excerpt: "Alert fatigue is a detection engineering problem, not a staffing problem. A practical playbook for cutting noise without losing signal — and giving analysts a fighting chance."
+    },
+                // ─── NEW: Cyber Strategy blog ───
+    {
+        id: 19,
+        title: "Quantifying Cyber Risk in Dollars: Moving Beyond the Heat Map",
+        date: "2026-06-06",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/quantifying-cyber-risk-dollars/",
+        excerpt: "Red/amber/green heat maps no longer satisfy boards or insurers. How leading security programs are quantifying cyber risk in financial terms — and what changes when they do."
+    },
                 // ─── NEW: Security Awareness blog ───
+    {
+        id: 20,
+        title: "Why Your Phishing Simulation Program Is Backfiring (And How to Fix It)",
+        date: "2026-06-05",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/phishing-simulations-that-work/",
+        excerpt: "Punitive phishing simulations are training employees to hide mistakes, not report them. An honest look at what actually changes behavior — and what just generates click metrics for the auditor."
+    },
+                // ─── NEW: Industry News blog ───
+    {
+        id: 21,
+        title: "NIS2 Enforcement Begins: Lessons From the First Wave of European Fines",
+        date: "2026-06-04",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/nis2-enforcement-first-fines/",
+        excerpt: "Eighteen months after NIS2 came into force, European regulators are handing out the first significant fines. The pattern reveals what supervisors actually care about — and what trips organizations up."
+    },
+                // ─── Security Awareness blog ───
     {
         id: 16,
         title: "Tabletop Exercises That Don't Bore Your Team to Death",
