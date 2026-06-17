@@ -837,6 +837,61 @@ document.addEventListener('DOMContentLoaded', () => {
            const blogData = [
                 // ─── NEW: AI & Machine Learning blog ───
     {
+        id: 22,
+        title: "Prompt Injection Is the New SQL Injection: Defending LLM Applications in 2026",
+        date: "2026-06-16",
+        category: "ai",
+        categoryName: "AI & Machine Learning",
+        image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/prompt-injection-defending-llm-apps/",
+        excerpt: "Every company is shipping an LLM feature, but almost none have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade — and the controls that actually contain it."
+    },
+                // ─── NEW: Security Operations blog ───
+    {
+        id: 23,
+        title: "Detection-as-Code: Bringing Software Engineering Discipline to Your SOC",
+        date: "2026-06-15",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/detection-as-code-modern-soc/",
+        excerpt: "Hand-edited rules in a console don't scale and can't be trusted. How treating detections like source code — versioned, tested, and peer-reviewed — transforms SOC reliability in 2026."
+    },
+                // ─── NEW: Cyber Strategy blog ───
+    {
+        id: 24,
+        title: "Building a Three-Year Cybersecurity Roadmap Your Board Will Actually Fund",
+        date: "2026-06-14",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/three-year-cybersecurity-roadmap/",
+        excerpt: "A wishlist of tools is not a strategy. How to build a three-year roadmap that ties spending to business risk, survives budget season, and earns the board's confidence."
+    },
+                // ─── NEW: Security Awareness blog ───
+    {
+        id: 25,
+        title: "Beyond Annual Training: Designing Security Awareness That Actually Sticks",
+        date: "2026-06-13",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/security-awareness-that-sticks/",
+        excerpt: "The once-a-year compliance video changes nothing. How to design an awareness program built on habit, relevance, and culture — one that measurably changes behavior instead of just ticking a box."
+    },
+                // ─── NEW: Industry News blog ───
+    {
+        id: 26,
+        title: "The SEC Cyber Disclosure Rules, One Year On: What the Filings Reveal",
+        date: "2026-06-12",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/sec-cyber-disclosure-one-year/",
+        excerpt: "A review of public 8-K cyber filings shows companies wrestling with the materiality question and the four-day clock. What the first wave of SEC cyber disclosures teaches the rest of us."
+    },
+                // ─── AI & Machine Learning blog ───
+    {
         id: 17,
         title: "Agentic AI in the SOC: Promise, Pitfalls, and Practical Guardrails",
         date: "2026-06-08",
