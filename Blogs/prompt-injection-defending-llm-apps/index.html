@@ -25,7 +25,7 @@
     </title>
     <meta
       name="description"
-      content="Every company is shipping an LLM feature, but few have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade — and the controls that actually contain it."
+      content="Every company is shipping an LLM feature, but few have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade, and the controls that actually contain it."
     />
     <link
       rel="canonical"
@@ -39,7 +39,7 @@
     />
     <meta
       property="og:description"
-      content="Every company is shipping an LLM feature, but few have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade — and the controls that actually contain it."
+      content="Every company is shipping an LLM feature, but few have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade, and the controls that actually contain it."
     />
     <meta
       property="og:url"
@@ -415,8 +415,8 @@
                 kept working long after the industry agreed it was solved.
                 Prompt injection is shaping up to be its successor. Every
                 organization is racing to bolt a large language model onto a
-                product – a support chatbot, a document summarizer, an internal
-                copilot – and almost none of them have stopped to threat‑model
+                product, a support chatbot, a document summarizer, an internal
+                copilot, and almost none of them have stopped to threat-model
                 what happens when the model reads text written by an attacker.
               </p>
 
@@ -436,13 +436,13 @@
                 <p>
                   "The model doesn't know the difference between your
                   instructions and the attacker's. To an LLM, it's all just
-                  text – and the most recent, most specific instruction often
+                  text, and the most recent, most specific instruction often
                   wins."
                 </p>
               </div>
 
               <p>
-                What makes 2026 different is the rise of tool‑using agents. A
+                What makes 2026 different is the rise of tool-using agents. A
                 chatbot that can only produce text is an annoyance when it
                 misbehaves. An agent wired to send emails, query a database,
                 call internal APIs, or execute code is a liability. This is
@@ -455,23 +455,23 @@
 
               <p>
                 The controls that actually contain this are familiar to anyone
-                who has done application security – they just need to be applied
+                who has done application security, they just need to be applied
                 to a new surface. Treat every model output as untrusted user
                 input before it touches a downstream system. Scope the agent's
                 permissions to the absolute minimum and require human approval
                 for irreversible or sensitive actions. Keep the data plane and
                 the control plane separate: don't let retrieved content silently
                 rewrite the agent's objectives. And validate outputs against
-                strict schemas rather than executing whatever free‑form text the
+                strict schemas rather than executing whatever free-form text the
                 model returns.
               </p>
 
               <p>
                 Just as importantly, test the system adversarially before
-                shipping it. Red‑team your own prompts, feed the application
+                shipping it. Red-team your own prompts, feed the application
                 deliberately malicious documents, and see what it will do when
                 pushed. The organizations that get burned in 2026 won't be the
-                ones that used AI – they'll be the ones that wired a powerful,
+                ones that used AI, they'll be the ones that wired a powerful,
                 gullible agent into production and assumed the prompt was a
                 contract the model would honor. It isn't. Design as though every
                 input is hostile, because eventually one will be.

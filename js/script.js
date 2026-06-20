@@ -837,6 +837,61 @@ document.addEventListener('DOMContentLoaded', () => {
            const blogData = [
                 // ─── NEW: AI & Machine Learning blog ───
     {
+        id: 27,
+        title: "Shadow AI: Governing the Generative Tools Your Employees Already Use",
+        date: "2026-06-20",
+        category: "ai",
+        categoryName: "AI & Machine Learning",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/shadow-ai-governance/",
+        excerpt: "Your employees adopted AI faster than your policies did. Why banning generative tools backfires, and how to build governance that captures the productivity without leaking your crown jewels."
+    },
+                // ─── NEW: Security Operations blog ───
+    {
+        id: 28,
+        title: "Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams",
+        date: "2026-06-19",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/threat-hunting-on-a-budget/",
+        excerpt: "You don't need a dedicated hunt team or a seven-figure platform to hunt threats. How small security teams can run a disciplined, hypothesis-driven hunting program with the telemetry they already collect."
+    },
+                // ─── NEW: Cyber Strategy blog ───
+    {
+        id: 29,
+        title: "Cyber Insurance in 2026: How to Pass Underwriting and Cut Your Premium",
+        date: "2026-06-18",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/cyber-insurance-underwriting-2026/",
+        excerpt: "Underwriters have stopped taking your word for it. What insurers now verify before they quote, and the controls that move you from declined to a defensible premium."
+    },
+                // ─── NEW: Security Awareness blog ───
+    {
+        id: 30,
+        title: "Deepfake Social Engineering: Training Your Team for the Voice-Clone Era",
+        date: "2026-06-17",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/deepfake-social-engineering-defense/",
+        excerpt: "The 'urgent call from the CEO' now sounds exactly like the CEO. Why deepfake voice and video are breaking traditional awareness training, and the verification habits that still hold up."
+    },
+                // ─── NEW: Industry News blog ───
+    {
+        id: 31,
+        title: "The EU AI Act's Security Obligations Take Effect: What Security Teams Must Do Now",
+        date: "2026-06-16",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop",
+        link: "../Blogs/eu-ai-act-security-obligations/",
+        excerpt: "The EU AI Act is no longer theoretical, its security and risk-management duties are landing on real systems. A practical read on what changes for security teams operating or building AI in 2026."
+    },
+                // ─── NEW: AI & Machine Learning blog ───
+    {
         id: 22,
         title: "Prompt Injection Is the New SQL Injection: Defending LLM Applications in 2026",
         date: "2026-06-16",
@@ -844,7 +899,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "AI & Machine Learning",
         image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/prompt-injection-defending-llm-apps/",
-        excerpt: "Every company is shipping an LLM feature, but almost none have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade — and the controls that actually contain it."
+        excerpt: "Every company is shipping an LLM feature, but almost none have threat-modeled it. Why prompt injection is becoming the defining application vulnerability of the decade, and the controls that actually contain it."
     },
                 // ─── NEW: Security Operations blog ───
     {
@@ -855,7 +910,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Security Operations",
         image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/detection-as-code-modern-soc/",
-        excerpt: "Hand-edited rules in a console don't scale and can't be trusted. How treating detections like source code — versioned, tested, and peer-reviewed — transforms SOC reliability in 2026."
+        excerpt: "Hand-edited rules in a console don't scale and can't be trusted. How treating detections like source code, versioned, tested, and peer-reviewed, transforms SOC reliability in 2026."
     },
                 // ─── NEW: Cyber Strategy blog ───
     {
@@ -877,7 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Security Awareness",
         image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/security-awareness-that-sticks/",
-        excerpt: "The once-a-year compliance video changes nothing. How to design an awareness program built on habit, relevance, and culture — one that measurably changes behavior instead of just ticking a box."
+        excerpt: "The once-a-year compliance video changes nothing. How to design an awareness program built on habit, relevance, and culture, one that measurably changes behavior instead of just ticking a box."
     },
                 // ─── NEW: Industry News blog ───
     {
@@ -910,7 +965,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Security Operations",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/engineering-out-alert-fatigue/",
-        excerpt: "Alert fatigue is a detection engineering problem, not a staffing problem. A practical playbook for cutting noise without losing signal — and giving analysts a fighting chance."
+        excerpt: "Alert fatigue is a detection engineering problem, not a staffing problem. A practical playbook for cutting noise without losing signal, and giving analysts a fighting chance."
     },
                 // ─── NEW: Cyber Strategy blog ───
     {
@@ -921,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Cyber Strategy",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/quantifying-cyber-risk-dollars/",
-        excerpt: "Red/amber/green heat maps no longer satisfy boards or insurers. How leading security programs are quantifying cyber risk in financial terms — and what changes when they do."
+        excerpt: "Red/amber/green heat maps no longer satisfy boards or insurers. How leading security programs are quantifying cyber risk in financial terms, and what changes when they do."
     },
                 // ─── NEW: Security Awareness blog ───
     {
@@ -932,7 +987,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Security Awareness",
         image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/phishing-simulations-that-work/",
-        excerpt: "Punitive phishing simulations are training employees to hide mistakes, not report them. An honest look at what actually changes behavior — and what just generates click metrics for the auditor."
+        excerpt: "Punitive phishing simulations are training employees to hide mistakes, not report them. An honest look at what actually changes behavior, and what just generates click metrics for the auditor."
     },
                 // ─── NEW: Industry News blog ───
     {
@@ -943,7 +998,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Industry News",
         image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop",
         link: "../Blogs/nis2-enforcement-first-fines/",
-        excerpt: "Eighteen months after NIS2 came into force, European regulators are handing out the first significant fines. The pattern reveals what supervisors actually care about — and what trips organizations up."
+        excerpt: "Eighteen months after NIS2 came into force, European regulators are handing out the first significant fines. The pattern reveals what supervisors actually care about, and what trips organizations up."
     },
                 // ─── Security Awareness blog ───
     {
@@ -965,7 +1020,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryName: "Cyber Strategy",
         image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop", // boardroom / executive meeting
         link: "../Blogs/boardroom-case-cyber-resilience-2026/",
-        excerpt: "Why cyber resilience has moved from an IT concern to a board-level priority in 2026 — and how directors should measure, fund, and govern it as a business outcome."
+        excerpt: "Why cyber resilience has moved from an IT concern to a board-level priority in 2026, and how directors should measure, fund, and govern it as a business outcome."
     },
                 // ─── Industry News blog ───
     {
@@ -1058,7 +1113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     link: "../Blogs/zero-trust-architecture/",
     //     excerpt: "Exploring how Zero Trust principles are reshaping enterprise security architectures..."
     // },
-    // ───── Blog 8 – Ransomware Evolution ─────
+    // ───── Blog 8, Ransomware Evolution ─────
     // {
     //     id: 8,
     //     title: "Ransomware Evolution: What to Expect in 2026",
@@ -1069,10 +1124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //     link: "../Blogs/ransomware-evolution-2026/",
     //     excerpt: "Analyzing the latest ransomware trends including double-extortion tactics..."
     // },
-    // // ───── Blog 11 – Ransomware Incident Response ─────
+    // // ───── Blog 11, Ransomware Incident Response ─────
     // {
     //     id: 11,
-    //     title: "Ransomware Incident Response: A Step‑by‑Step Guide",
+    //     title: "Ransomware Incident Response: A Step-by-Step Guide",
     //     date: "2025-12-01",
     //     category: "ir",
     //     categoryName: "Incident Response",
@@ -1080,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     link: "../Blogs/ransomwarOe-incident-response-guide/",
     //     excerpt: "A tested incident response plan can mean the difference between a minor disruption..."
     // },
-    // // ───── Blog 9 – Cybersecurity Culture ─────
+    // // ───── Blog 9, Cybersecurity Culture ─────
     // {
     //     id: 9,
     //     title: "Building a Cybersecurity-Aware Culture in Your Organization",
@@ -1091,7 +1146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     link: "../Blogs/cybersecurity-culture/",
     //     excerpt: "Practical steps to foster security awareness across all levels of your organization..."
     // },
-    // // ───── Blog 10 – Cloud‑Native Security ─────
+    // // ───── Blog 10, Cloud-Native Security ─────
     // {
     //     id: 10,
     //     title: "Cloud-Native Security: Serverless & Container Best Practices",
@@ -1102,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     link: "../Blogs/cloud-native-security/",
     //     excerpt: "Securing serverless functions and containerized workloads requires a paradigm shift..."
     // },
-    // // ───── Blog 12 – Zero Trust Enterprise ─────
+    // // ───── Blog 12, Zero Trust Enterprise ─────
     // {
     //     id: 12,
     //     title: "Implementing Zero Trust Architecture in Your Enterprise",
@@ -1113,7 +1168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     link: "../Blogs/zero-trust-architecture-enterprise/",
     //     excerpt: "Zero Trust is a strategic framework that assumes breach and verifies every request..."
     // },
-    // // ───── Blog 13 – Cloud Security Best Practices ─────
+    // // ───── Blog 13, Cloud Security Best Practices ─────
     // {
     //     id: 13,
     //     title: "Cloud Security Best Practices for 2026",
@@ -1132,7 +1187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const BLOGS_PER_PAGE = 6;
 
         // ─────────────────────────────────────
-        // STATE – start by reading the URL hash
+        // STATE, start by reading the URL hash
         // ─────────────────────────────────────
         let currentPage = 1; // default
         let currentCategory = 'all';
@@ -1195,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const filtered = getFilteredBlogs();
             const totalPages = Math.ceil(filtered.length / BLOGS_PER_PAGE) || 1;
 
-            // Clamp current page (in case URL hash gave a too‑high number)
+            // Clamp current page (in case URL hash gave a too-high number)
             if (currentPage > totalPages) currentPage = totalPages;
             if (currentPage < 1) currentPage = 1;
 
@@ -1265,7 +1320,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let paginationHTML = '';
             const startBlog = (currentPage - 1) * BLOGS_PER_PAGE + 1;
             const endBlog = Math.min(currentPage * BLOGS_PER_PAGE, totalBlogs);
-            paginationHTML += `<div class="pagination-info">Showing ${startBlog}–${endBlog} of ${totalBlogs} articles</div>`;
+            paginationHTML += `<div class="pagination-info">Showing ${startBlog}, ${endBlog} of ${totalBlogs} articles</div>`;
 
             paginationHTML += '<div class="pagination-row">';
             paginationHTML += `
@@ -1614,7 +1669,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 1,
       title: 'Managed Security',
-      description: 'Firewall, endpoint, and continuous monitoring — fully managed by security experts.',
+      description: 'Firewall, endpoint, and continuous monitoring, fully managed by security experts.',
       image: '/assets/images/service-4.jpg',
       link: '../Services/mss/',
       tech: ['Firewall Management', 'Endpoint Security',  'Expert Management']
@@ -1622,7 +1677,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 2,
       title: 'Incident Response',
-      description: 'Emergency containment, forensics, ransomware recovery — 30-min SLA.',
+      description: 'Emergency containment, forensics, ransomware recovery, 30-min SLA.',
       image: '/assets/images/service-6.jpg',
       link: '../Services/ir/',
       tech: ['Emergency Response', 'Forensics', 'Ransomware Recovery' ]
@@ -1638,7 +1693,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 4,
       title: 'Identity & Access Management',
-      description: 'SSO, MFA, PAM, identity governance — secure your digital identities.',
+      description: 'SSO, MFA, PAM, identity governance, secure your digital identities.',
       image: '/assets/images/service-8.jpg',
       link: '../Services/iam/',
       tech: [ 'IAM', 'Zero Trust', 'Privileged Access']
@@ -1756,7 +1811,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardW = getCardWidth();
 
     /*
-      Spacing derived from card width — no hardcoded pixel values.
+      Spacing derived from card width, no hardcoded pixel values.
       Multipliers chosen so adjacent cards have a small visible gap
       and still feel like a 3-D fan.
     */
@@ -1866,7 +1921,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // // ============================================================
-// // FOUR SECURE — Contact Form Email Handler
+// // FOUR SECURE, Contact Form Email Handler
 // // Works on both / and /contact/ automatically
 // // ============================================================
 
@@ -1881,7 +1936,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     const successEl = form.querySelector('.form-success');
 //     const submitBtn = form.querySelector('button[type="submit"]');
 
-//     // Collect fields — handles both page layouts
+//     // Collect fields, handles both page layouts
 //     const firstName = (form.querySelector('#first-name')?.value || '').trim();
 //     const lastName  = (form.querySelector('#last-name')?.value  || '').trim();
 //     const nameField = (form.querySelector('#name')?.value       || '').trim();
@@ -1907,7 +1962,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //     if (!email)   { alert('Please enter your email address.'); return; }
 //     if (!message) { alert('Please enter a message.'); return; }
 
-//     // Build full message — appends company, service, subject for email context
+//     // Build full message, appends company, service, subject for email context
 //     let fullMessage = message;
 //     if (company) fullMessage += `\n\nCompany: ${company}`;
 //     if (service) fullMessage += `\nService Interest: ${service}`;
