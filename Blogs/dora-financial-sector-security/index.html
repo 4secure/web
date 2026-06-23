@@ -21,33 +21,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams | Four Secure Blog
+      DORA in Force: What Financial Sector Security Teams Must Operationalize | Four Secure Blog
     </title>
     <meta
       name="description"
-      content="You don't need a dedicated hunt team or a seven-figure platform to hunt threats. How small security teams can run a disciplined, hypothesis-driven hunting program with the telemetry they already collect."
+      content="The EU's Digital Operational Resilience Act has moved from deadline to enforcement. What DORA actually demands of financial entities and their tech suppliers, and the operational gaps regulators are now probing."
     />
     <link
       rel="canonical"
-      href="https://4secu.com/Blogs/threat-hunting-on-a-budget/"
+      href="https://4secu.com/Blogs/dora-financial-sector-security/"
     />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams | Four Secure Blog"
+      content="DORA in Force: What Financial Sector Security Teams Must Operationalize | Four Secure Blog"
     />
     <meta
       property="og:description"
-      content="You don't need a dedicated hunt team or a seven-figure platform to hunt threats. How small security teams can run a disciplined, hypothesis-driven hunting program with the telemetry they already collect."
+      content="The EU's Digital Operational Resilience Act has moved from deadline to enforcement. What DORA actually demands of financial entities and their tech suppliers, and the operational gaps regulators are now probing."
     />
     <meta
       property="og:url"
-      content="https://4secu.com/Blogs/threat-hunting-on-a-budget/"
+      content="https://4secu.com/Blogs/dora-financial-sector-security/"
     />
     <meta
       property="og:image"
-      content="/assets/images/blog/threat-hunting-on-a-budget.jpg"
+      content="/assets/images/blog/dora-financial-sector-security.jpg"
     />
     <meta property="og:image:width" content="1000" />
     <meta property="og:image:height" content="667" />
@@ -371,17 +371,17 @@
           <span>/</span>
           <a href="/Blogs/">Blog</a>
           <span>/</span>
-          <span class="sapn">Security Operations</span>
+          <span class="sapn">Industry News</span>
         </div>
 
         <div class="Blogs-post-meta">
-          <span class="Blogs-post-category">Security Operations</span>
-          <span class="Blogs-post-date">June 19, 2026</span>
+          <span class="Blogs-post-category">Industry News</span>
+          <span class="Blogs-post-date">June 22, 2026</span>
           <span class="Blogs-post-read-time">6 min read</span>
         </div>
 
         <h1>
-          Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams
+          DORA in Force: What Financial Sector Security Teams Must Operationalize
         </h1>
 
         <div class="Blogs-post-author">
@@ -402,85 +402,90 @@
           <article class="Blogs-post-article">
             <div class="Blogs-post-featured-image">
               <img
-                src="/assets/images/blog/threat-hunting-on-a-budget.jpg"
-                alt="Analyst tracking a hypothesis across security telemetry"
+                src="/assets/images/blog/dora-financial-sector-security.jpg"
+                alt="Financial district buildings representing the banking and finance sector"
                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
               />
             </div>
 
             <div class="Blogs-post-content">
               <p>
-                Threat hunting has an image problem. The marketing around it
-                suggests you need a dedicated hunt team, a data lake the size of
-                a small country, and a six-figure platform with a name that
-                sounds like a fighter jet. For the vast majority of security
-                teams, three or four people covering everything, that picture is
-                so far out of reach it becomes an excuse not to hunt at all. The
-                irony is that the discipline at the heart of hunting costs almost
-                nothing. What it requires is structure, and structure is free.
+                For a while, the Digital Operational Resilience Act lived on
+                compliance roadmaps as a future deadline, something to be ready
+                for. That phase is over. DORA now applies in full across the
+                EU's financial sector, and the conversation has shifted from "are
+                we in scope" to "can we actually demonstrate this when a
+                supervisor asks." For banks, insurers, investment firms, and the
+                long tail of payment and crypto-asset providers, the act has
+                turned operational resilience from a best-practice aspiration into
+                a supervised obligation with real teeth.
               </p>
 
               <p>
-                Real hunting is hypothesis-driven. You start with a specific,
-                testable statement, "if an attacker were living off the land on
-                our network, we'd see unusual parent-child process relationships
-                from Office applications", and then you go looking in your data
-                for evidence that confirms or refutes it. That's the entire
-                method. It separates hunting from the aimless dashboard-staring
-                that often gets called hunting, and it's something a small team
-                can do for an hour a week with the telemetry they already pay to
-                collect.
+                What makes DORA different from the compliance regimes finance
+                teams are used to is that it is not satisfied by a policy binder.
+                It reaches into how the organization actually operates, demanding
+                a functioning ICT risk-management framework, the ability to
+                detect and classify incidents against defined criteria, and report
+                the significant ones to regulators on a tight timeline. It is
+                explicitly outcome-focused: the question is not whether you wrote
+                down a process, but whether that process works when something
+                breaks at three in the morning.
               </p>
 
               <div class="Blogs-post-highlight">
                 <p>
-                  "A hunt that finds nothing is not a failed hunt. A hunt
-                  without a hypothesis is, because you'll never be able to say
-                  what you ruled out or whether it's worth doing again."
+                  "DORA does not ask whether you have a resilience policy. It asks
+                  whether you can keep running when your most critical third-party
+                  provider goes dark, and whether you can prove it."
                 </p>
               </div>
 
               <p>
-                Where do the hypotheses come from? The richest source is a threat
-                model of your own environment crossed with a framework like MITRE
-                ATT&CK. Pick the techniques most relevant to how attackers
-                actually reach organizations like yours, credential dumping,
-                scheduled-task persistence, suspicious remote-management tooling,
-                and turn each into a question you can answer with the logs on
-                hand. Endpoint process telemetry, authentication logs, and DNS
-                records will fuel more good hunts than most teams realize, and
-                you are almost certainly already collecting them.
+                The third-party dimension is where many institutions are most
+                exposed. DORA pulls critical ICT service providers, the cloud
+                platforms, data vendors, and managed services that finance now
+                runs on, into its oversight regime, and it expects firms to map
+                that dependency chain in detail. That means knowing which
+                providers underpin which critical functions, holding contracts
+                that include the audit, exit, and incident-cooperation rights the
+                act requires, and understanding your concentration risk when half
+                the sector leans on the same handful of hyperscalers. Regulators
+                examining DORA readiness are probing exactly these registers of
+                information, and gaps in them are proving hard to paper over.
               </p>
 
               <p>
-                The part lean teams skip, and shouldn't, is writing it down.
-                Every hunt should leave behind a short record: the hypothesis,
-                the data you queried, what you found, and what you concluded. That
-                log is what turns a one-off afternoon of curiosity into a program.
-                When a hunt surfaces something real, it becomes a new detection.
-                When it finds nothing, it tells you that a particular attack path
-                is reasonably covered, which is genuinely useful information the
-                next time someone asks what you're worried about.
+                Then there is resilience testing, which DORA elevates from a
+                periodic checkbox to an ongoing discipline. Firms are expected to
+                test their digital operational resilience regularly, and the
+                largest and most systemic among them face threat-led penetration
+                testing modeled on real adversary behavior. The bar is no longer a
+                passing vulnerability scan; it is evidence that you have probed how
+                your critical services fail under realistic attack and recovered.
+                This is where security operations, business continuity, and
+                procurement have to stop working in separate silos.
               </p>
 
               <p>
-                None of this competes with day-to-day monitoring; it sharpens it.
-                Hunts routinely reveal logging blind spots, misconfigured assets,
-                and detections that quietly stopped firing months ago, the kind
-                of findings that make your alerting better even when the hunt
-                itself comes up empty. Start with one hypothesis a week, keep a
-                running log, and convert every confirmed finding into a rule.
-                Within a couple of quarters you'll have a hunting program that
-                looks nothing like the expensive version the brochures sell, and
-                does most of what actually matters.
+                The practical takeaway for financial-sector security leaders is
+                that DORA rewards operationalization over documentation. Treat the
+                incident-reporting clock as a live capability you rehearse, keep
+                your third-party register current rather than reconstructing it
+                under audit pressure, and fold resilience testing into the normal
+                rhythm of the security program. The institutions that fare best
+                under this regime are the ones that internalized resilience as an
+                operating principle long before the supervisor knocked, and that
+                can now show their work. For everyone else, the enforcement era is
+                the deadline that finally makes the difference real.
               </p>
 
               <div class="Blogs-post-tags">
-                <span class="Blogs-post-tag">Threat Hunting</span>
-                <span class="Blogs-post-tag">Security Operations</span>
-                <span class="Blogs-post-tag">MITRE ATT&CK</span>
-                <span class="Blogs-post-tag">Detection Engineering</span>
-                <span class="Blogs-post-tag">SecOps</span>
+                <span class="Blogs-post-tag">DORA</span>
+                <span class="Blogs-post-tag">Financial Services</span>
+                <span class="Blogs-post-tag">Operational Resilience</span>
+                <span class="Blogs-post-tag">Third-Party Risk</span>
+                <span class="Blogs-post-tag">Compliance</span>
               </div>
 
               <div class="Blogs-post-share">
@@ -511,83 +516,83 @@
             <div class="sidebar-widget">
               <h4>Related Articles</h4>
               <div class="related-posts">
-                <a href="/Blogs/detection-as-code-modern-soc/" class="related-post">
+                <a href="/Blogs/nis2-enforcement-first-fines/" class="related-post">
                   <div class="related-post-icon">
                     <img
-                      src="/assets/images/blog/detection-as-code-modern-soc.jpg"
-                      alt="Detection as Code"
+                      src="/assets/images/blog/eu-ai-act-security-obligations.jpg"
+                      alt="NIS2 Enforcement"
                       style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
                     />
                   </div>
                   <div class="related-post-content">
                     <div class="related-post-title">
-                      Detection-as-Code: Engineering Discipline for Your SOC
+                      NIS2 Enforcement Begins: The First Wave of Fines
                     </div>
-                    <div class="related-post-date">Jun 15, 2026</div>
+                    <div class="related-post-date">Jun 4, 2026</div>
                   </div>
                 </a>
 
-                <a href="/Blogs/engineering-out-alert-fatigue/" class="related-post">
+                <a href="/Blogs/eu-ai-act-security-obligations/" class="related-post">
                   <div class="related-post-icon">
                     <img
-                      src="/assets/images/blog/engineering-out-alert-fatigue.jpg"
-                      alt="Alert Fatigue"
+                      src="/assets/images/blog/eu-ai-act-security-obligations.jpg"
+                      alt="EU AI Act"
                       style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
                     />
                   </div>
                   <div class="related-post-content">
                     <div class="related-post-title">
-                      Engineering Out Alert Fatigue
+                      The EU AI Act's Security Obligations Take Effect
+                    </div>
+                    <div class="related-post-date">Jun 16, 2026</div>
+                  </div>
+                </a>
+
+                <a href="/Blogs/sec-cyber-disclosure-one-year/" class="related-post">
+                  <div class="related-post-icon">
+                    <img
+                      src="/assets/images/blog/sec-cyber-disclosure-one-year.jpg"
+                      alt="SEC Cyber Disclosure"
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+                    />
+                  </div>
+                  <div class="related-post-content">
+                    <div class="related-post-title">
+                      The SEC Cyber Disclosure Rules, One Year On
+                    </div>
+                    <div class="related-post-date">Jun 12, 2026</div>
+                  </div>
+                </a>
+
+                <a href="/Blogs/cyber-insurance-underwriting-2026/" class="related-post">
+                  <div class="related-post-icon">
+                    <img
+                      src="/assets/images/blog/cyber-insurance-underwriting-2026.jpg"
+                      alt="Cyber Insurance"
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+                    />
+                  </div>
+                  <div class="related-post-content">
+                    <div class="related-post-title">
+                      Cyber Insurance in 2026: How to Pass Underwriting
+                    </div>
+                    <div class="related-post-date">Jun 18, 2026</div>
+                  </div>
+                </a>
+
+                <a href="/Blogs/boardroom-case-cyber-resilience-2026/" class="related-post">
+                  <div class="related-post-icon">
+                    <img
+                      src="/assets/images/blog/boardroom-case-cyber-resilience-2026.jpg"
+                      alt="Cyber Resilience"
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+                    />
+                  </div>
+                  <div class="related-post-content">
+                    <div class="related-post-title">
+                      The Boardroom Case for Cyber Resilience in 2026
                     </div>
                     <div class="related-post-date">Jun 7, 2026</div>
-                  </div>
-                </a>
-
-                <a href="/Blogs/ai-machine-learning-cybersecurity/" class="related-post">
-                  <div class="related-post-icon">
-                    <img
-                      src="/assets/images/ai-machine-learning-cybersecurity.jpg"
-                      alt="Proactive Security Operations"
-                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
-                    />
-                  </div>
-                  <div class="related-post-content">
-                    <div class="related-post-title">
-                      From Reactive to Proactive Security Operations
-                    </div>
-                    <div class="related-post-date">Feb 18, 2026</div>
-                  </div>
-                </a>
-
-                <a href="/Blogs/ransomware-evolution-2026/" class="related-post">
-                  <div class="related-post-icon">
-                    <img
-                      src="/assets/images/blog/ransomware-evolution-2026.jpg"
-                      alt="Ransomware Evolution"
-                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
-                    />
-                  </div>
-                  <div class="related-post-content">
-                    <div class="related-post-title">
-                      Ransomware Evolution: What to Expect in 2026
-                    </div>
-                    <div class="related-post-date">Dec 10, 2025</div>
-                  </div>
-                </a>
-
-                <a href="/Blogs/agentic-ai-soc-guardrails/" class="related-post">
-                  <div class="related-post-icon">
-                    <img
-                      src="/assets/images/blog/agentic-ai-soc-guardrails.jpg"
-                      alt="Agentic AI in the SOC"
-                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
-                    />
-                  </div>
-                  <div class="related-post-content">
-                    <div class="related-post-title">
-                      Agentic AI in the SOC: Promise, Pitfalls, and Guardrails
-                    </div>
-                    <div class="related-post-date">Jun 8, 2026</div>
                   </div>
                 </a>
               </div>

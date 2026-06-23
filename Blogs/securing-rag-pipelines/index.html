@@ -21,33 +21,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams | Four Secure Blog
+      Securing RAG Pipelines: The New Attack Surface Inside Your AI Stack | Four Secure Blog
     </title>
     <meta
       name="description"
-      content="You don't need a dedicated hunt team or a seven-figure platform to hunt threats. How small security teams can run a disciplined, hypothesis-driven hunting program with the telemetry they already collect."
+      content="Retrieval-augmented generation made your chatbot smarter and your attack surface bigger. How poisoned knowledge bases, leaky retrievers, and over-trusted context become the soft underbelly of enterprise AI, and the controls that lock them down."
     />
     <link
       rel="canonical"
-      href="https://4secu.com/Blogs/threat-hunting-on-a-budget/"
+      href="https://4secu.com/Blogs/securing-rag-pipelines/"
     />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams | Four Secure Blog"
+      content="Securing RAG Pipelines: The New Attack Surface Inside Your AI Stack | Four Secure Blog"
     />
     <meta
       property="og:description"
-      content="You don't need a dedicated hunt team or a seven-figure platform to hunt threats. How small security teams can run a disciplined, hypothesis-driven hunting program with the telemetry they already collect."
+      content="Retrieval-augmented generation made your chatbot smarter and your attack surface bigger. How poisoned knowledge bases, leaky retrievers, and over-trusted context become the soft underbelly of enterprise AI, and the controls that lock them down."
     />
     <meta
       property="og:url"
-      content="https://4secu.com/Blogs/threat-hunting-on-a-budget/"
+      content="https://4secu.com/Blogs/securing-rag-pipelines/"
     />
     <meta
       property="og:image"
-      content="/assets/images/blog/threat-hunting-on-a-budget.jpg"
+      content="/assets/images/blog/securing-rag-pipelines.jpg"
     />
     <meta property="og:image:width" content="1000" />
     <meta property="og:image:height" content="667" />
@@ -371,17 +371,17 @@
           <span>/</span>
           <a href="/Blogs/">Blog</a>
           <span>/</span>
-          <span class="sapn">Security Operations</span>
+          <span class="sapn">AI & Machine Learning</span>
         </div>
 
         <div class="Blogs-post-meta">
-          <span class="Blogs-post-category">Security Operations</span>
-          <span class="Blogs-post-date">June 19, 2026</span>
+          <span class="Blogs-post-category">AI & Machine Learning</span>
+          <span class="Blogs-post-date">June 23, 2026</span>
           <span class="Blogs-post-read-time">6 min read</span>
         </div>
 
         <h1>
-          Threat Hunting on a Budget: A Hypothesis-Driven Program for Lean Teams
+          Securing RAG Pipelines: The New Attack Surface Inside Your AI Stack
         </h1>
 
         <div class="Blogs-post-author">
@@ -402,85 +402,93 @@
           <article class="Blogs-post-article">
             <div class="Blogs-post-featured-image">
               <img
-                src="/assets/images/blog/threat-hunting-on-a-budget.jpg"
-                alt="Analyst tracking a hypothesis across security telemetry"
+                src="/assets/images/blog/securing-rag-pipelines.jpg"
+                alt="Server racks and data infrastructure powering an AI retrieval system"
                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
               />
             </div>
 
             <div class="Blogs-post-content">
               <p>
-                Threat hunting has an image problem. The marketing around it
-                suggests you need a dedicated hunt team, a data lake the size of
-                a small country, and a six-figure platform with a name that
-                sounds like a fighter jet. For the vast majority of security
-                teams, three or four people covering everything, that picture is
-                so far out of reach it becomes an excuse not to hunt at all. The
-                irony is that the discipline at the heart of hunting costs almost
-                nothing. What it requires is structure, and structure is free.
+                Retrieval-augmented generation quietly became the default way
+                enterprises ship useful AI. Instead of fine-tuning a model on
+                proprietary data, teams bolt a retriever onto a general-purpose
+                LLM and feed it relevant documents at query time. It is cheaper,
+                faster to update, and keeps sensitive data out of model weights.
+                It also introduces an entirely new attack surface that most
+                security programs have not yet mapped, because the riskiest part
+                of a RAG system is not the model at all, it is everything feeding
+                it.
               </p>
 
               <p>
-                Real hunting is hypothesis-driven. You start with a specific,
-                testable statement, "if an attacker were living off the land on
-                our network, we'd see unusual parent-child process relationships
-                from Office applications", and then you go looking in your data
-                for evidence that confirms or refutes it. That's the entire
-                method. It separates hunting from the aimless dashboard-staring
-                that often gets called hunting, and it's something a small team
-                can do for an hour a week with the telemetry they already pay to
-                collect.
+                The core problem is trust. A RAG pipeline pulls chunks of text
+                from a vector store and pastes them into the prompt as
+                authoritative context. If an attacker can influence what lands in
+                that store, they can influence what the model says and does. A
+                poisoned support ticket, a booby-trapped PDF in a shared drive, a
+                wiki page edited by a disgruntled contractor, any of these can
+                carry instructions that the model reads as gospel. This is
+                indirect prompt injection, and RAG is its ideal delivery
+                mechanism precisely because the system is designed to ingest
+                untrusted content and act on it.
               </p>
 
               <div class="Blogs-post-highlight">
                 <p>
-                  "A hunt that finds nothing is not a failed hunt. A hunt
-                  without a hypothesis is, because you'll never be able to say
-                  what you ruled out or whether it's worth doing again."
+                  "In a RAG system, your knowledge base is no longer just data.
+                  It is executable instruction, and you should secure it as if an
+                  attacker can write to it, because often they can."
                 </p>
               </div>
 
               <p>
-                Where do the hypotheses come from? The richest source is a threat
-                model of your own environment crossed with a framework like MITRE
-                ATT&CK. Pick the techniques most relevant to how attackers
-                actually reach organizations like yours, credential dumping,
-                scheduled-task persistence, suspicious remote-management tooling,
-                and turn each into a question you can answer with the logs on
-                hand. Endpoint process telemetry, authentication logs, and DNS
-                records will fuel more good hunts than most teams realize, and
-                you are almost certainly already collecting them.
+                Start by treating the ingestion path as a security boundary.
+                Every document that enters the vector store should carry
+                provenance, who created it, from which source, and with what
+                trust level, so that retrieval can prefer high-trust content and
+                flag the rest. Sanitize and strip content during ingestion the
+                way you would untrusted user input, and isolate tenants so one
+                customer's documents can never surface in another's responses.
+                The most damaging RAG breaches in production have been mundane
+                access-control failures: a retriever with broad permissions
+                cheerfully returning documents the asking user was never supposed
+                to see.
               </p>
 
               <p>
-                The part lean teams skip, and shouldn't, is writing it down.
-                Every hunt should leave behind a short record: the hypothesis,
-                the data you queried, what you found, and what you concluded. That
-                log is what turns a one-off afternoon of curiosity into a program.
-                When a hunt surfaces something real, it becomes a new detection.
-                When it finds nothing, it tells you that a particular attack path
-                is reasonably covered, which is genuinely useful information the
-                next time someone asks what you're worried about.
+                At query time, the controls shift to containment. Keep the
+                retrieved context clearly delimited from system instructions so
+                the model knows the difference between policy and payload.
+                Constrain what the model is allowed to do with that context,
+                especially when RAG feeds an agent that can call tools, send
+                email, or query a database. Log the full chain, the query, the
+                chunks retrieved, and the response, so that when something goes
+                wrong you can reconstruct exactly which document drove the
+                behavior. Output filtering matters too, because a retriever that
+                surfaces a customer record can just as easily leak it into a
+                reply.
               </p>
 
               <p>
-                None of this competes with day-to-day monitoring; it sharpens it.
-                Hunts routinely reveal logging blind spots, misconfigured assets,
-                and detections that quietly stopped firing months ago, the kind
-                of findings that make your alerting better even when the hunt
-                itself comes up empty. Start with one hypothesis a week, keep a
-                running log, and convert every confirmed finding into a rule.
-                Within a couple of quarters you'll have a hunting program that
-                looks nothing like the expensive version the brochures sell, and
-                does most of what actually matters.
+                The strategic takeaway is that RAG collapses the old boundary
+                between data and code. The documents in your knowledge base now
+                shape system behavior, which means data governance and
+                application security are no longer separate disciplines for these
+                workloads. Inventory your pipelines, threat-model each retriever
+                as a place where untrusted input meets privileged action, and
+                build the provenance, isolation, and logging before you scale.
+                The organizations that get this right will keep shipping AI
+                features fast; the ones that skip it are quietly running an
+                injection vulnerability with a friendly chat interface on top.
               </p>
 
               <div class="Blogs-post-tags">
-                <span class="Blogs-post-tag">Threat Hunting</span>
-                <span class="Blogs-post-tag">Security Operations</span>
-                <span class="Blogs-post-tag">MITRE ATT&CK</span>
-                <span class="Blogs-post-tag">Detection Engineering</span>
-                <span class="Blogs-post-tag">SecOps</span>
+                <span class="Blogs-post-tag">RAG Security</span>
+                <span class="Blogs-post-tag">LLM Applications</span>
+                <span class="Blogs-post-tag">Prompt Injection</span>
+                <span class="Blogs-post-tag">Data Governance</span>
+                <span class="Blogs-post-tag">AI Security</span>
               </div>
 
               <div class="Blogs-post-share">
@@ -511,67 +519,35 @@
             <div class="sidebar-widget">
               <h4>Related Articles</h4>
               <div class="related-posts">
-                <a href="/Blogs/detection-as-code-modern-soc/" class="related-post">
+                <a href="/Blogs/prompt-injection-defending-llm-apps/" class="related-post">
                   <div class="related-post-icon">
                     <img
-                      src="/assets/images/blog/detection-as-code-modern-soc.jpg"
-                      alt="Detection as Code"
+                      src="/assets/images/blog/prompt-injection-defending-llm-apps.jpg"
+                      alt="LLM Security"
                       style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
                     />
                   </div>
                   <div class="related-post-content">
                     <div class="related-post-title">
-                      Detection-as-Code: Engineering Discipline for Your SOC
+                      Prompt Injection Is the New SQL Injection
                     </div>
-                    <div class="related-post-date">Jun 15, 2026</div>
+                    <div class="related-post-date">Jun 16, 2026</div>
                   </div>
                 </a>
 
-                <a href="/Blogs/engineering-out-alert-fatigue/" class="related-post">
+                <a href="/Blogs/shadow-ai-governance/" class="related-post">
                   <div class="related-post-icon">
                     <img
-                      src="/assets/images/blog/engineering-out-alert-fatigue.jpg"
-                      alt="Alert Fatigue"
+                      src="/assets/images/blog/shadow-ai-governance.jpg"
+                      alt="Shadow AI Governance"
                       style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
                     />
                   </div>
                   <div class="related-post-content">
                     <div class="related-post-title">
-                      Engineering Out Alert Fatigue
+                      Shadow AI: Governing the Tools Employees Already Use
                     </div>
-                    <div class="related-post-date">Jun 7, 2026</div>
-                  </div>
-                </a>
-
-                <a href="/Blogs/ai-machine-learning-cybersecurity/" class="related-post">
-                  <div class="related-post-icon">
-                    <img
-                      src="/assets/images/ai-machine-learning-cybersecurity.jpg"
-                      alt="Proactive Security Operations"
-                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
-                    />
-                  </div>
-                  <div class="related-post-content">
-                    <div class="related-post-title">
-                      From Reactive to Proactive Security Operations
-                    </div>
-                    <div class="related-post-date">Feb 18, 2026</div>
-                  </div>
-                </a>
-
-                <a href="/Blogs/ransomware-evolution-2026/" class="related-post">
-                  <div class="related-post-icon">
-                    <img
-                      src="/assets/images/blog/ransomware-evolution-2026.jpg"
-                      alt="Ransomware Evolution"
-                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
-                    />
-                  </div>
-                  <div class="related-post-content">
-                    <div class="related-post-title">
-                      Ransomware Evolution: What to Expect in 2026
-                    </div>
-                    <div class="related-post-date">Dec 10, 2025</div>
+                    <div class="related-post-date">Jun 20, 2026</div>
                   </div>
                 </a>
 
@@ -588,6 +564,38 @@
                       Agentic AI in the SOC: Promise, Pitfalls, and Guardrails
                     </div>
                     <div class="related-post-date">Jun 8, 2026</div>
+                  </div>
+                </a>
+
+                <a href="/Blogs/eu-ai-act-security-obligations/" class="related-post">
+                  <div class="related-post-icon">
+                    <img
+                      src="/assets/images/blog/eu-ai-act-security-obligations.jpg"
+                      alt="EU AI Act"
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+                    />
+                  </div>
+                  <div class="related-post-content">
+                    <div class="related-post-title">
+                      The EU AI Act's Security Obligations Take Effect
+                    </div>
+                    <div class="related-post-date">Jun 16, 2026</div>
+                  </div>
+                </a>
+
+                <a href="/Blogs/rise-ai-vciso-platforms/" class="related-post">
+                  <div class="related-post-icon">
+                    <img
+                      src="/assets/images/rise-ai-vciso-platforms.jpg"
+                      alt="AI vCISO Platforms"
+                      style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+                    />
+                  </div>
+                  <div class="related-post-content">
+                    <div class="related-post-title">
+                      The Rise of AI-Driven vCISO Platforms
+                    </div>
+                    <div class="related-post-date">Feb 24, 2026</div>
                   </div>
                 </a>
               </div>

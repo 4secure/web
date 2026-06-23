@@ -837,12 +837,67 @@ document.addEventListener('DOMContentLoaded', () => {
            const blogData = [
                 // ─── NEW: AI & Machine Learning blog ───
     {
+        id: 32,
+        title: "Securing RAG Pipelines: The New Attack Surface Inside Your AI Stack",
+        date: "2026-06-23",
+        category: "ai",
+        categoryName: "AI & Machine Learning",
+        image: "/assets/images/blog/securing-rag-pipelines.jpg",
+        link: "../Blogs/securing-rag-pipelines/",
+        excerpt: "Retrieval-augmented generation made your chatbot smarter and your attack surface bigger. How poisoned knowledge bases, leaky retrievers, and over-trusted context become the soft underbelly of enterprise AI, and the controls that lock them down."
+    },
+                // ─── NEW: Security Awareness blog ───
+    {
+        id: 33,
+        title: "The Negligent Insider: Building Awareness for the Threat You Can't Phish-Test",
+        date: "2026-06-23",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "/assets/images/blog/negligent-insider-awareness.jpg",
+        link: "../Blogs/negligent-insider-awareness/",
+        excerpt: "Most insider incidents aren't malicious, they're careless. Why the well-meaning employee who mishandles data is your most common insider risk, and how to build awareness that actually changes everyday behavior."
+    },
+                // ─── NEW: Security Operations blog ───
+    {
+        id: 34,
+        title: "From SIEM to Security Data Lake: Rebuilding Log Management for Scale",
+        date: "2026-06-22",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "/assets/images/blog/siem-to-security-data-lake.jpg",
+        link: "../Blogs/siem-to-security-data-lake/",
+        excerpt: "Your SIEM bill grows faster than your visibility. Why security teams are splitting detection from storage with data lakes, what the architecture actually buys you, and how to migrate without going blind."
+    },
+                // ─── NEW: Industry News blog ───
+    {
+        id: 35,
+        title: "DORA in Force: What Financial Sector Security Teams Must Operationalize",
+        date: "2026-06-22",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "/assets/images/blog/dora-financial-sector-security.jpg",
+        link: "../Blogs/dora-financial-sector-security/",
+        excerpt: "The EU's Digital Operational Resilience Act has moved from deadline to enforcement. What DORA actually demands of financial entities and their tech suppliers, and the operational gaps regulators are now probing."
+    },
+                // ─── NEW: Cyber Strategy blog ───
+    {
+        id: 36,
+        title: "Building a Cyber Crisis Communication Plan Before You Need It",
+        date: "2026-06-21",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "/assets/images/blog/cyber-crisis-communication-plan.jpg",
+        link: "../Blogs/cyber-crisis-communication-plan/",
+        excerpt: "When a breach hits, silence and spin both backfire. How to build a crisis communication plan that holds up under pressure, who needs to speak, what to say, and the decisions you must make long before the incident starts."
+    },
+                // ─── NEW: AI & Machine Learning blog ───
+    {
         id: 27,
         title: "Shadow AI: Governing the Generative Tools Your Employees Already Use",
         date: "2026-06-20",
         category: "ai",
         categoryName: "AI & Machine Learning",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+        image: "/assets/images/blog/shadow-ai-governance.jpg",
         link: "../Blogs/shadow-ai-governance/",
         excerpt: "Your employees adopted AI faster than your policies did. Why banning generative tools backfires, and how to build governance that captures the productivity without leaking your crown jewels."
     },
@@ -853,7 +908,7 @@ document.addEventListener('DOMContentLoaded', () => {
         date: "2026-06-19",
         category: "operations",
         categoryName: "Security Operations",
-        image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1000&auto=format&fit=crop",
+        image: "/assets/images/blog/threat-hunting-on-a-budget.jpg",
         link: "../Blogs/threat-hunting-on-a-budget/",
         excerpt: "You don't need a dedicated hunt team or a seven-figure platform to hunt threats. How small security teams can run a disciplined, hypothesis-driven hunting program with the telemetry they already collect."
     },
@@ -864,7 +919,7 @@ document.addEventListener('DOMContentLoaded', () => {
         date: "2026-06-18",
         category: "strategy",
         categoryName: "Cyber Strategy",
-        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop",
+        image: "/assets/images/blog/cyber-insurance-underwriting-2026.jpg",
         link: "../Blogs/cyber-insurance-underwriting-2026/",
         excerpt: "Underwriters have stopped taking your word for it. What insurers now verify before they quote, and the controls that move you from declined to a defensible premium."
     },
@@ -875,7 +930,7 @@ document.addEventListener('DOMContentLoaded', () => {
         date: "2026-06-17",
         category: "awareness",
         categoryName: "Security Awareness",
-        image: "https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&w=1000&auto=format&fit=crop",
+        image: "/assets/images/blog/deepfake-social-engineering-defense.jpg",
         link: "../Blogs/deepfake-social-engineering-defense/",
         excerpt: "The 'urgent call from the CEO' now sounds exactly like the CEO. Why deepfake voice and video are breaking traditional awareness training, and the verification habits that still hold up."
     },
@@ -886,7 +941,7 @@ document.addEventListener('DOMContentLoaded', () => {
         date: "2026-06-16",
         category: "industry",
         categoryName: "Industry News",
-        image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1000&auto=format&fit=crop",
+        image: "/assets/images/blog/eu-ai-act-security-obligations.jpg",
         link: "../Blogs/eu-ai-act-security-obligations/",
         excerpt: "The EU AI Act is no longer theoretical, its security and risk-management duties are landing on real systems. A practical read on what changes for security teams operating or building AI in 2026."
     },
