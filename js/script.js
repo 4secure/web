@@ -837,6 +837,61 @@ document.addEventListener('DOMContentLoaded', () => {
            const blogData = [
                 // ─── NEW: AI & Machine Learning blog ───
     {
+        id: 37,
+        title: "Securing the AI Model Supply Chain: Trust, Provenance, and Borrowed Intelligence",
+        date: "2026-06-29",
+        category: "ai",
+        categoryName: "AI & Machine Learning",
+        image: "/assets/images/blog/securing-ai-model-supply-chain.jpg",
+        link: "../Blogs/securing-ai-model-supply-chain/",
+        excerpt: "Almost no one trains foundation models from scratch. How borrowed weights, poisoned datasets, and unsigned model files turn the AI supply chain into your next attack surface, and the provenance and isolation controls that lock it down."
+    },
+                // ─── NEW: Security Awareness blog ───
+    {
+        id: 38,
+        title: "Beyond Annual Training: Building Security Habits That Outlast the Module",
+        date: "2026-06-28",
+        category: "awareness",
+        categoryName: "Security Awareness",
+        image: "/assets/images/blog/continuous-security-awareness-habits.jpg",
+        link: "../Blogs/continuous-security-awareness-habits/",
+        excerpt: "The annual training module gets completed and forgotten. Why security awareness is habit formation, not knowledge transfer, and how continuous, in-workflow nudges build behavior that holds up when an attacker is counting on a distracted human."
+    },
+                // ─── NEW: Security Operations blog ───
+    {
+        id: 39,
+        title: "Purple Teaming as Practice: Turning Red vs. Blue Into One Feedback Loop",
+        date: "2026-06-27",
+        category: "operations",
+        categoryName: "Security Operations",
+        image: "/assets/images/blog/purple-teaming-continuous-validation.jpg",
+        link: "../Blogs/purple-teaming-continuous-validation/",
+        excerpt: "A pentest tells you that you can be broken into; purple teaming tells you whether you would notice. How to turn red and blue into one real-time feedback loop that closes detection gaps before anyone leaves the room."
+    },
+                // ─── NEW: Industry News blog ───
+    {
+        id: 40,
+        title: "The Quantum Clock Starts: Post-Quantum Cryptography and What to Do Now",
+        date: "2026-06-26",
+        category: "industry",
+        categoryName: "Industry News",
+        image: "/assets/images/blog/post-quantum-cryptography-migration.jpg",
+        link: "../Blogs/post-quantum-cryptography-migration/",
+        excerpt: "Quantum is no longer ten years away on the planning horizon. With post-quantum standards finalized and harvest-now-decrypt-later already underway, here is the cryptographic discovery and crypto-agility program security teams must start in 2026."
+    },
+                // ─── NEW: Cyber Strategy blog ───
+    {
+        id: 41,
+        title: "Measuring What Matters: A Security Metrics Program the Board Will Trust",
+        date: "2026-06-25",
+        category: "strategy",
+        categoryName: "Cyber Strategy",
+        image: "/assets/images/blog/security-metrics-board-trust.jpg",
+        link: "../Blogs/security-metrics-board-trust/",
+        excerpt: "Most security dashboards reassure rather than inform. How to build a metrics program that measures exposure and trajectory instead of activity, ties risk to dollars, and earns the board's trust with honesty over green numbers."
+    },
+                // ─── NEW: AI & Machine Learning blog ───
+    {
         id: 32,
         title: "Securing RAG Pipelines: The New Attack Surface Inside Your AI Stack",
         date: "2026-06-23",
